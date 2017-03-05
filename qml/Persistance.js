@@ -1,11 +1,16 @@
-//config.js
+//Persistance.js
+//originated from Noto
+//datamodel: one table to hold tracked artists, venues, metroareas, these can be differentiated by type column
+//one table to hold one entry: username
+
 .import QtQuick.LocalStorage 2.0 as LS
+
 // First, let's create a short helper function to get the database connection
 function getDatabase() {
     return LS.LocalStorage.openDatabaseSync("SailKick", "1.0", "StorageDatabase", 100000);
 }
 
-// We want a unique id for notes
+// returns a unique id based on date-time
 function getUniqueId()
 {
      var dateObject = new Date();
@@ -18,7 +23,7 @@ function getUniqueId()
      return uniqueId;
 };
 
-// At the start of the application, we can initialize the tables we need if they haven't been created yet
+// At the start of the application, this creates tables if not already there
 function initialize() {
     var db = getDatabase();
     db.transaction(
@@ -29,6 +34,7 @@ function initialize() {
                     tx.executeSql('CREATE TABLE IF NOT EXISTS user(uid LONGVARCHAR UNIQUE, title TEXT,pwd TEXT)');
                 });
 }
+
 
 function setUser(title,txt)
 {
@@ -66,7 +72,7 @@ function getUser()
     })
 }
 
-// This function is used to write notes into the database
+// This function is used to saved tracked entries into the database, new and existing ones
 function setTrackingEntry(type,uid,title,skid,txt) {
     // title: name representing the title of the location
     // txt: optional description
