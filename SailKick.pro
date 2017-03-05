@@ -20,6 +20,8 @@ SOURCES += \
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
     translations/*.ts
+    icons/*.png
+
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 

@@ -17,6 +17,8 @@ CoverBackground {
             iconSource: "image://theme/icon-cover-refresh"
         }
 
+        /*CoverAction {
+            iconSource: "image://theme/icon-cover-pause"
+        }*/
     }
 }
-
