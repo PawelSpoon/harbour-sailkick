@@ -4,6 +4,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Persistance.js" as DB
 import "../ResponseConverter.js" as Convert
+import "../SongKickApi.js" as API
 import "../common"
 
 
@@ -25,6 +26,7 @@ Page {
     {
         var contains = trackingModel.contains(uid)
         if (contains[0]) console.log("contains already " + title);
+        print("adding to tracking model: " + title + " " + type + " " + skid + " " + uid)
         trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid})
     }
 
@@ -38,7 +40,7 @@ Page {
           trackingModel.append({"title": title, "type": type, "uid": newUid, "skid": skid})
           DB.setTrackingEntry(type,newUid,title,skid,"some text")
           console.log("added to list")
-          fillUpCommingModel()
+          fillUpCommingModelForAllItemsInTrackingModel()
         }
     }
 
@@ -48,7 +50,7 @@ Page {
         if (contains[0]) {
           DB.setTrackingEntry(type,uid,title,skid,"some text")
           console.log("added to list")
-          fillUpCommingModel()
+          fillUpCommingModelForAllItemsInTrackingModel()
         }
     }
 
@@ -71,21 +73,51 @@ Page {
         DB.removeAllTrackingEntries("location")
         DB.removeAllTrackingEntries("artist")
         DB.removeAllTrackingEntries("venue")
-        fillUpCommingModel()
+        upcommingModel.clear()
     }
 
-    function fillUpCommingModel()
+    function fillUpCommingModelForAllItemsInTrackingModel()
     {
         upcommingModel.clear()
-        for (var i = 0; i <= trackingModel.count; i++)
+        print("number of items in tracking model: " + trackingModel.count)
+        for(var i = 0; i < trackingModel.count; i++)
         {
-            for (var j = 1; j < 3; j++)
-            {
-                upcommingModel.append({"title": trackingModel.get(i).title + j, "date": "2017-03-0"+j.toString(), "type": trackingModel.get(i).type, "uri" : "https:\\www.google.com" })
-            }
+            print(trackingModel.get(i))
+            request(trackingModel.get(i).type, trackingModel.get(i).skid)
         }
     }
 
+    function fillUpCommingModelForOneTrackingEntry(type, events)
+    {
+        print('number of events: ' +  events.length)
+        for (var i = 0; i < events.length; i++)
+        {
+            upcommingModel.append({"title": events[i].name, "type":type, "date": events[i].date, "uri" : events[i].uri })
+        }
+        sortModel()
+    }
+
+    function request(type,id) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
+                print('HEADERS_RECEIVED')
+            } else if(xhr.readyState === XMLHttpRequest.DONE) {
+                print('DONE')
+                var json = JSON.parse(xhr.responseText.toString())
+                var events = API.parseFromApi(json)
+                fillUpCommingModelForOneTrackingEntry(type, events)
+            }
+        }
+        var queryType
+        if (type === "artist") queryType = "artists"
+        if (type === "location") queryType = "metro_areas"
+        var query = queryType + "/" + id
+        xhr.open("GET", "http://api.songkick.com/api/3.0/" + query + "/calendar.json?apikey=io09K9l3ebJxmxe2");
+        xhr.send();
+    }
+
+    //todo: make a method that clears upcomming model and loads all events for items in tracking list
     Component.onCompleted:
     {
         clearTrackingModel();
@@ -98,7 +130,22 @@ Page {
         console.log("venue loaded")
         DB.getTrackedItems("artist")
         console.log("artist loaded")
-        fillUpCommingModel();
+        fillUpCommingModelForAllItemsInTrackingModel()
+        //sortModel()
+    }
+
+    function sortModel()
+    {
+        print("sorting")
+        for(var i=0; i<upcommingModel.count; i++)
+        {
+            for(var j=0; j<i; j++)
+            {
+                if(upcommingModel.get(i).date === upcommingModel.get(j).date)
+                   upcommingModel.move(i,j,1)
+                break
+            }
+        }
     }
 
     property ListModel locationList : trackingModel
@@ -153,14 +200,14 @@ Page {
             }
             MenuItem {
                 text: qsTr("Refresh")
-                onClicked: fillUpCommingModel()
+                onClicked: fillUpCommingModelForAllItemsInTrackingModel()//request("artist","549892-a-perfect-circle") //todo: call the method
             }
         }
 
         PushUpMenu {
             MenuItem {
-                text: qsTr("Top") // will scroll to top
-                onClicked: upcommingList.scrollToTop()
+                text: qsTr("Load more")
+                //onClicked: upcommingList.scrollToTop()
             }
             MenuItem {
                 text: qsTr("Help") // will show help page (could be on Settings page instead)
@@ -177,7 +224,7 @@ Page {
         }
 
         // try to have sections by date
-        /*section {
+        section {
             property: "date"
             criteria: ViewSection.FullString
             delegate: Rectangle {
@@ -190,7 +237,7 @@ Page {
                     text: section
                 }
             }
-        }*/
+        }
 
         delegate: Item {
             id: myListItem
@@ -208,6 +255,10 @@ Page {
                 width: parent.width
 
                 onPressAndHold: {
+                    upcommingList.currentIndex = index
+
+                    print("on press: upcomminglist " + upcommingList.currentIndex)
+                    print("on press: upcommingModelElement.Name  " + upcommingModelElement.objectName)
                     if (!contextMenu)
                         contextMenu = contextMenuComponent.createObject(mainPage.locationList)
                     contextMenu.show(myListItem)
@@ -219,7 +270,8 @@ Page {
                     anchors.leftMargin: Theme.paddingSmall
                     source: {
                         /*if (type === "location") "image://theme/icon-l-copy"
-                        else*/ "image://theme/icon-m-levels"
+                        else "image://theme/icon-m-levels"*/
+                        "../../icons/sk-badge-pink.png"
                     }
                     height: parent.height
                     width: height
@@ -274,7 +326,11 @@ Page {
                 MenuItem {
                     text: "Open in browser"
                     onClicked: {
-                        Qt.openUrlExternally("http://www.songkick.com")
+                        print ('')
+                        print(upcommingList.currentIndex)
+                        Qt.openUrlExternally(upcommingModel.get(upcommingList.currentIndex).uri)
+
+                        //Qt.openUrlExternally("http://www.songkick.com")
                         //QDesktopService.openUrl(QUrl("https:\\www.google.com", QUrl.TolerantMode));
                     }
                 }

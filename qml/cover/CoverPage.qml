@@ -14,11 +14,11 @@ CoverBackground {
         id: coverAction
 
         CoverAction {
-            iconSource: "image://theme/icon-cover-next"
+            iconSource: "image://theme/icon-cover-refresh"
         }
 
-        CoverAction {
+        /*CoverAction {
             iconSource: "image://theme/icon-cover-pause"
-        }
+        }*/
     }
 }
