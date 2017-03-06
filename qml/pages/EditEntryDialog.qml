@@ -98,30 +98,16 @@ Dialog {
             TextField {
                 id: entrySongKickIdTextField
                 width: parent.width
-                inputMethodHints: Qt.ImhDigitsOnly
+                inputMethodHints: Qt.ImhLowercaseOnly
                 label: qsTr("SongKick Id")
                 text: ""
-                placeholderText: qsTr("Set SongKick Id")
+                placeholderText: qsTr("Set Songkick Id: 138058-interpol")
                 EnterKey.enabled: !errorHighlight
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
-                EnterKey.onClicked: entryUsernameTextField.focus = true
+                EnterKey.onClicked: entryCommentTextField.focus = true
                 onTextChanged: {
                     editEntryDialog.songKickIdChanged =
                             (editEntryDialog.origSongKickId !== text ? true : false)
-                    editEntryDialog.updateCoverState()
-                }
-                focusOutBehavior: -1
-            }
-
-            TextArea {
-                id: entryCommentTextField
-                width: parent.width
-                label: qsTr("Comment")
-                text: ""
-                placeholderText: qsTr("Set comment")
-                onTextChanged: {
-                    editEntryDialog.commentChanged =
-                            (editEntryDialog.origComment !== text ? true : false)
                     editEntryDialog.updateCoverState()
                 }
                 focusOutBehavior: -1
