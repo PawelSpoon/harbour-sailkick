@@ -14,12 +14,23 @@ TARGET = SailKick
 
 CONFIG += sailfishapp
 
+QT += network
+
+
+# adding common QML files, QML imports, C++ libs and image files for the app
+common_files.path   = /usr/share/$${TARGET}
+common_files.files += \
+    /icons
+
+INSTALLS += \
+    common_files \
+
 SOURCES += \
     src/SailKick.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
-    translations/*.ts
+    translations/*.ts \
     icons/*.png
 
 
@@ -36,7 +47,6 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/SailKick-de.ts
 
 DISTFILES += \
-    qml/config.js \
     qml/common/InfoPopup.qml \
     qml/common/PageHeaderExtended.qml \
     qml/common/PasswordFieldCombo.qml \
@@ -54,4 +64,10 @@ DISTFILES += \
     qml/pages/EditEntryDialog.qml \
     qml/pages/SettingsPage.qml \
     qml/pages/HelpMainPage.qml \
-    qml/pages/HelpPage.qml
+    qml/pages/HelpPage.qml \
+    qml/Persistance.js \
+    qml/SongKickApi.js \
+    icons/sk-badge-pink.png \
+    ReadMe.txt
+
+

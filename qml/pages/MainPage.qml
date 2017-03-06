@@ -83,7 +83,7 @@ Page {
         for(var i = 0; i < trackingModel.count; i++)
         {
             print(trackingModel.get(i))
-            request(trackingModel.get(i).type, trackingModel.get(i).skid)
+            API.getUpcommingEventsForTrackedItem(trackingModel.get(i).type, trackingModel.get(i).skid,fillUpCommingModelForOneTrackingEntry)
         }
     }
 
@@ -97,25 +97,6 @@ Page {
         sortModel()
     }
 
-    function request(type,id) {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-                print('HEADERS_RECEIVED')
-            } else if(xhr.readyState === XMLHttpRequest.DONE) {
-                print('DONE')
-                var json = JSON.parse(xhr.responseText.toString())
-                var events = API.parseFromApi(json)
-                fillUpCommingModelForOneTrackingEntry(type, events)
-            }
-        }
-        var queryType
-        if (type === "artist") queryType = "artists"
-        if (type === "location") queryType = "metro_areas"
-        var query = queryType + "/" + id
-        xhr.open("GET", "http://api.songkick.com/api/3.0/" + query + "/calendar.json?apikey=io09K9l3ebJxmxe2");
-        xhr.send();
-    }
 
     //todo: make a method that clears upcomming model and loads all events for items in tracking list
     Component.onCompleted:
@@ -228,7 +209,7 @@ Page {
             property: "date"
             criteria: ViewSection.FullString
             delegate: Rectangle {
-                color: "#b0dfb0"
+                color: Theme.highlightColor
                 width: parent.width
                 height: childrenRect.height + 4
                 Text { anchors.horizontalCenter: parent.horizontalCenter
@@ -271,7 +252,7 @@ Page {
                     source: {
                         /*if (type === "location") "image://theme/icon-l-copy"
                         else "image://theme/icon-m-levels"*/
-                        "../../icons/sk-badge-pink.png"
+                        "/usr/share/SailKick/icons/sk-badge-pink.png"
                     }
                     height: parent.height
                     width: height
