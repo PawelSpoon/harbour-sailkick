@@ -62,12 +62,15 @@ DISTFILES += \
     rpm/SailKick.changes.in \
     SailKick.desktop \
     qml/pages/EditEntryDialog.qml \
-    qml/pages/SettingsPage.qml \
     qml/pages/HelpMainPage.qml \
     qml/pages/HelpPage.qml \
     qml/Persistance.js \
     qml/SongKickApi.js \
     icons/sk-badge-pink.png \
-    ReadMe.txt
+    ReadMe.txt \
+    qml/sk-badge-white.png \
+    qml/powered-by-songkick-white.png \
+    qml/pages/SettingsPageAnonymous.qml \
+    qml/pages/SettingsPage.qml
 
 

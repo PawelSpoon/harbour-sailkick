@@ -1,8 +1,10 @@
+.import "Persistance.js" as DB
+
 // encapsulates songkick api
 // all get methods do require a callback method
 
-var apiKey = "apikey=io09K9l3ebJxmxe2"
-var songKickUri = "http://api.songkick.com/api/3.0"
+var apiKey = "apikey="
+var songKickUri = "https://api.songkick.com/api/3.0"
 
 // sends a upcomming events to songkick (tracked artists in users metro areas)
 // returns paginated areas
@@ -17,11 +19,11 @@ function getUsersUpcommingEvents(type,username, callback) {
         } else if(xhr.readyState === XMLHttpRequest.DONE) {
             print('DONE')
             var json = JSON.parse(xhr.responseText.toString())
-            var events = API.convertUpcommingEventsResponse(json)
+            var events = convertUpcommingEventsResponse(json)
             callback(type, events)
         }
     }
-    xhr.open("GET", songKickUri + "/users/" + username + "/calendar.json?reason=tracked_artist?" + apiKey);
+    xhr.open("GET", songKickUri + "/users/" + username + "/calendar.json?reason=tracked_artist?" + apiKey + DB.getRandom());
     xhr.send();
 }
 
@@ -38,14 +40,14 @@ function getUsersTrackedItems(type,username, callback) {
         } else if(xhr.readyState === XMLHttpRequest.DONE) {
             print('DONE')
             var json = JSON.parse(xhr.responseText.toString())
-            var events = API.convertCalendarResponse(json) //todo: replace with correct convertMethod
+            var events = convertCalendarResponse(json) //todo: replace with correct convertMethod
             callback(type, events)
         }
     }
     var queryType
     if (type === "artist") queryType = "artists"
     if (type === "location") queryType = "metro_areas"
-    xhr.open("GET", songKickUri + "/users/" + username + "/" + queryType +  "/tracked.json?" + apiKey);
+    xhr.open("GET", songKickUri + "/users/" + username + "/" + queryType +  "/tracked.json?" + apiKey + DB.getRandom());
     xhr.send();
 }
 
@@ -62,7 +64,7 @@ function getUpcommingEventsForTrackedItem(type,id, callback) {
         } else if(xhr.readyState === XMLHttpRequest.DONE) {
             print('DONE')
             var json = JSON.parse(xhr.responseText.toString())
-            var events = API.convertUpcommingEventsResponse(json)
+            var events = convertUpcommingEventsResponse(json)
             callback(type, events)
         }
     }
@@ -71,7 +73,7 @@ function getUpcommingEventsForTrackedItem(type,id, callback) {
     if (type === "location") queryType = "metro_areas"
     if (type === "venue") queryType = "venues"
     var query = "/" + queryType + "/" + id
-    var url = songKickUri + query + "/calendar.json?" + apiKey;
+    var url = songKickUri + query + "/calendar.json?" + apiKey + DB.getRandom();
     print(url)
     xhr.open("GET", url);
 
@@ -192,7 +194,7 @@ function convertUpcommingEventsResponse(resp) {
     var metroAreaName = currentEvent.venue.metroArea.displayName;
     var artistId = currentEvent.performance[0].id;
     var artistName = currentEvent.performance[0].displayName;
-    var eventi = {id:eventId, uri:eventUri, name:eventName, date: eventDate, time: eventTime, venueId: venueId, venueName: venueName}
+    var eventi = {id:eventId, uri:eventUri, name:eventName, date: eventDate, time: eventTime, venueId: venueId, venueName: venueName, metroAreaId:metroAreaId, metroAreaName: metroAreaName}
 
     events.push(eventi);
     print('pushed: ' +  eventi.name)

@@ -36,9 +36,9 @@ CoverBackground {
     CoverActionList {
         id: coverAction
 
-        CoverAction {
+        /*CoverAction {
             iconSource: "image://theme/icon-cover-refresh"
-        }
+        }*/
 
     }
 }

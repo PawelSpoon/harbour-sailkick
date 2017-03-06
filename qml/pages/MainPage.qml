@@ -3,7 +3,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Persistance.js" as DB
-import "../ResponseConverter.js" as Convert
 import "../SongKickApi.js" as API
 import "../common"
 
@@ -92,7 +91,8 @@ Page {
         print('number of events: ' +  events.length)
         for (var i = 0; i < events.length; i++)
         {
-            upcommingModel.append({"title": events[i].name, "type":type, "date": events[i].date, "uri" : events[i].uri })
+            //artistName
+            upcommingModel.append({"title": events[i].name, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": events[i].date, "uri" : events[i].uri })
         }
         sortModel()
     }
@@ -124,7 +124,7 @@ Page {
             {
                 if(upcommingModel.get(i).date === upcommingModel.get(j).date)
                    upcommingModel.move(i,j,1)
-                break
+                //break
             }
         }
     }
@@ -152,7 +152,7 @@ Page {
     // this list is going to be populated from songkick webpage
     ListModel {
         id: upcommingModel
-        ListElement { title : "Title"; type : "Type"; date: "Date"; uri: "uri"}
+        ListElement { title : "Title"; type : "Type"; date: "Date"; venue: "Venue"; uri: "uri"}
     }
 
     ListElement {
@@ -210,10 +210,13 @@ Page {
             criteria: ViewSection.FullString
             delegate: Rectangle {
                 color: Theme.highlightColor
+                opacity: 0.4
                 width: parent.width
-                height: childrenRect.height + 4
-                Text { anchors.horizontalCenter: parent.horizontalCenter
-                    font.pixelSize: 16
+                height: childrenRect.height + 10
+                Text {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.pixelSize: Theme.fontSizeSmall
                     font.bold: true
                     text: section
                 }
@@ -252,7 +255,7 @@ Page {
                     source: {
                         /*if (type === "location") "image://theme/icon-l-copy"
                         else "image://theme/icon-m-levels"*/
-                        "/usr/share/SailKick/icons/sk-badge-pink.png"
+                        "../sk-badge-white.png"
                     }
                     height: parent.height
                     width: height
@@ -265,7 +268,7 @@ Page {
                     anchors.top: parent.top //.verticalCenter : parent.verticalCenter
                     anchors.topMargin:  Theme.paddingSmall
                     font.capitalization: Font.Capitalize
-                    font.pixelSize: 36
+                    font.pixelSize: Theme.fontSizeSmall
                     truncationMode: TruncationMode.Elide
                     elide: Text.ElideRight
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
@@ -278,20 +281,21 @@ Page {
                     anchors.top: titleText.bottom
                     anchors.topMargin: Theme.paddingSmall
                     font.capitalization: Font.MixedCase
-                    font.pixelSize: 18
+                    font.pixelSize: Theme.fontSizeTiny
                     truncationMode: TruncationMode.Elide
                     elide: Text.ElideRight
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
                 }
                 Label {
                     id: dateText
-                    text: date
+                    text: venue
                     anchors.left: typeIcon.right
                     anchors.leftMargin: 100
                     anchors.top: locationText.top
                     anchors.topMargin: 0
                     font.capitalization: Font.MixedCase
-                    font.pixelSize: 18
+                    font.pixelSize: Theme.fontSizeTiny
+                    font.italic: true
                     truncationMode: TruncationMode.Elide
                     elide: Text.ElideRight
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
@@ -311,8 +315,6 @@ Page {
                         print(upcommingList.currentIndex)
                         Qt.openUrlExternally(upcommingModel.get(upcommingList.currentIndex).uri)
 
-                        //Qt.openUrlExternally("http://www.songkick.com")
-                        //QDesktopService.openUrl(QUrl("https:\\www.google.com", QUrl.TolerantMode));
                     }
                 }
             }

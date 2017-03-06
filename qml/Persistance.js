@@ -35,11 +35,15 @@ function initialize() {
                 });
 }
 
+function getRandom()
+{
+    return "io09K9l3ebJxmxe2";
+}
 
 function setUser(title,txt)
 {
     // title: represents user name, this is needed for songkick queries
-    // txt: optional
+    // txt: represents password
     // there will be only one user in the db >> uid = hardcoded 1
     var db = getDatabase();
     var res = "";
@@ -63,13 +67,17 @@ function getUser()
     var db = getDatabase();
     var respath="";
     console.log("getUser called")
+    var user
     db.transaction(function(tx) {
-        var rs = tx.executeSql('SELECT DISTINCT title,txt FROM user;');
+        var rs = tx.executeSql('SELECT DISTINCT title,pwd FROM user;');
         for (var i = 0; i < rs.rows.length; i++) {
-            root.addLocation(rs.rows.item(i).title,rs.rows.item(i).uid)
-            console.debug("get user:" + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid)
+            //root.addLocation(rs.rows.item(i).title,rs.rows.item(i).uid)
+            console.debug("get user:" + rs.rows.item(i).title + " with pwd:" + rs.rows.item(i).pwd);
+            user = {"name": rs.rows.item(i).title, "pwd":rs.rows.item(i).pwd}
+            break;
         }
     })
+    return user;
 }
 
 // This function is used to saved tracked entries into the database, new and existing ones
