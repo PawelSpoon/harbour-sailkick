@@ -8,7 +8,8 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Sun Apr 13 2014 Jack Tar <jack.tar@example.com> 0.0.1-1
-- Scrubbed the deck
-- Hoisted the sails
+* Sun March 10 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.2-1
+- prototype implementation
+- you can manually add one location and mainview will show the next 50 upcomming events
+- you can add more then one, and main page will show the sorted result).
 
