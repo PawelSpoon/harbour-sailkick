@@ -12,8 +12,8 @@ Name:       SailKick
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    Native SongKick client
-Version:    0.1
+Summary:    Unofficial native SongKick client
+Version:    0.2
 Release:    1
 Group:      Qt/Qt
 License:    LICENSE
@@ -28,7 +28,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my Sailfish OS Application
+Unofficial SongKick client
 
 
 %prep
