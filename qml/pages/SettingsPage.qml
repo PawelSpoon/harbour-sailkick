@@ -5,6 +5,7 @@ import Sailfish.Silica 1.0
 
 import "../common"
 import "../Persistance.js" as DB
+import "../SongKickApi.js" as API
 
 //Page {
 Dialog {
@@ -30,6 +31,15 @@ Dialog {
             MenuItem {
                 text: qsTr("Anonymous settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPageAnonymous.qml"), {mainPage: settings.mainPage})
+            }
+            MenuItem {
+                text: qsTr("Get tracked items from songkick")
+                onClicked: {
+                    API.getUsersTrackedItems("location",entrySongKickUserName.text, settings.mainPage.updateTrackingItemsInDb)
+                    API.getUsersTrackedItems("artist",entrySongKickUserName.text, settings.mainPage.updateTrackingItemsInDb)
+                    settings.mainPage.reloadTrackingItemsAndUpcomming()
+
+                }
             }
         }
 
@@ -74,8 +84,8 @@ Dialog {
                 inputMethodHints: Qt.ImhSensitiveData
                 label: qsTr("Songkick Password")
                 text: ""
-                placeholderText: qsTr("Set password (mandatory)")
-                errorHighlight: text.length === 0
+                placeholderText: qsTr("Set password")
+                errorHighlight: text.length === -1 // not mandatory
                 EnterKey.enabled: !errorHighlight
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
                 EnterKey.onClicked: entryUsernameTextField.focus = true
@@ -90,12 +100,12 @@ Dialog {
             Label {
                 id: helpText
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "if you do not have a
+                text: "Username is needed to retrieve
+your tracked items from songkick.com.
+If you do not have a
 Songkick account yet,
  you can define the tracked
-items in anonymous settings.
-actually this is currently
-the only working option ;-)"
+items locally in anonymous settings."
             }
 
         }

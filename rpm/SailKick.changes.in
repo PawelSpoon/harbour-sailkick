@@ -8,6 +8,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat March 11 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.3-1
+- retrieve tracked items from songkick.com using username
+- anonymous option is still enabled
+
 * Sun March 10 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.2-1
 - prototype implementation
 - you can manually add one location and mainview will show the next 50 upcomming events

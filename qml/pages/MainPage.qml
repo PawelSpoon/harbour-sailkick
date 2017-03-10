@@ -29,6 +29,27 @@ Page {
         trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid})
     }
 
+    function updateTrackingItemsInDb(type, items)
+    {
+        print('number of items: ' +  items.length)
+
+        var count = items.length
+        for (var i = 0; i < count; i++) {
+          var currentItem = items[i];
+          print('storing: ' +  currentItem.title)
+          DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.txt)
+        }
+        print ('number of items: ' + items.length)
+
+        clearTrackingModel()
+        DB.getTrackedItems("location")
+        console.debug("locations loaded")
+        DB.getTrackedItems("venue")
+        console.log("venue loaded")
+        DB.getTrackedItems("artist")
+        console.log("artist loaded")
+    }
+
     // adds one entry into trackingModel and persists it in db
     // location and artist are planned to be supported, currently in two separated tables (join? them)
     function addEntry(title, type, skid, uid)
@@ -72,7 +93,8 @@ Page {
         DB.removeAllTrackingEntries("location")
         DB.removeAllTrackingEntries("artist")
         DB.removeAllTrackingEntries("venue")
-        upcommingModel.clear()
+        trackingModel.clear()
+        fillUpCommingModelForAllItemsInTrackingModel()
     }
 
     function fillUpCommingModelForAllItemsInTrackingModel()
@@ -82,7 +104,7 @@ Page {
         for(var i = 0; i < trackingModel.count; i++)
         {
             print(trackingModel.get(i))
-            API.getUpcommingEventsForTrackedItem(trackingModel.get(i).type, trackingModel.get(i).skid,fillUpCommingModelForOneTrackingEntry)
+            API.getUpcommingEventsForTrackedItem(trackingModel.get(i).type, trackingModel.get(i).skid, fillUpCommingModelForOneTrackingEntry)
         }
     }
 
@@ -103,6 +125,12 @@ Page {
     {
         clearTrackingModel();
         DB.initialize();
+        reloadTrackingItemsAndUpcomming()
+    }
+
+    function reloadTrackingItemsAndUpcomming()
+    {
+        clearTrackingModel();
         console.debug("db initilized")
         //DB.getLocations();
         DB.getTrackedItems("location")
@@ -112,8 +140,8 @@ Page {
         DB.getTrackedItems("artist")
         console.log("artist loaded")
         fillUpCommingModelForAllItemsInTrackingModel()
-        //sortModel()
     }
+
 
     function sortModel()
     {

@@ -36,18 +36,20 @@ function getUsersTrackedItems(type,username, callback) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-            print('HEADERS_RECEIVED')
+            print('HEADERS_RECEIVED');
         } else if(xhr.readyState === XMLHttpRequest.DONE) {
             print('DONE')
             var json = JSON.parse(xhr.responseText.toString())
-            var events = convertCalendarResponse(json) //todo: replace with correct convertMethod
-            callback(type, events)
+            var items = convertTrackedItemsResponse(type,json)
+            callback(type,items)
         }
     }
     var queryType
     if (type === "artist") queryType = "artists"
     if (type === "location") queryType = "metro_areas"
+    print(songKickUri + "/users/" + username + "/" + queryType +  "/tracked.json?" + apiKey + DB.getRandom())
     xhr.open("GET", songKickUri + "/users/" + username + "/" + queryType +  "/tracked.json?" + apiKey + DB.getRandom());
+
     xhr.send();
 }
 
@@ -65,7 +67,7 @@ function getUpcommingEventsForTrackedItem(type,id, callback) {
             print('DONE')
             var json = JSON.parse(xhr.responseText.toString())
             var events = convertUpcommingEventsResponse(json)
-            callback(type, events)
+            callback(type,events)
         }
     }
     var queryType
@@ -204,3 +206,46 @@ function convertUpcommingEventsResponse(resp) {
   return events
 }
 
+//{"resultsPage":
+//{"status":"ok",
+//"results":{"metroArea":[
+//{"lat":47.0667,"lng":15.45,"country":{"displayName":"Austria"},"uri":"http://www.songkick.com/metro_areas/26766-austria-graz?utm_source=14198&utm_medium=partner","displayName":"Graz","id":26766},
+//{"lat":50.0833,"lng":14.4667,"country":{"displayName":"Czech Republic"},"uri":"http://www.songkick.com/metro_areas/28425-czech-republic-prague?utm_source=14198&utm_medium=partner","displayName":"Prague","id":28425},
+//{"lat":48.2,"lng":16.3667,"country":{"displayName":"Austria"},"uri":"http://www.songkick.com/metro_areas/26771-austria-vienna?utm_source=14198&utm_medium=partner","displayName":"Vienna","id":26771}
+//]},
+//"perPage":50,"page":1,"totalEntries":3}}
+function convertTrackedItemsResponse(type,resp) {
+
+    var trackedItems = [];
+    var errorEvent;
+
+    if (resp.resultsPage.status !== "ok") {
+      console.log("return value is not ok");
+      errorEvent = {id:0, uri:"", name:"resultPage.status not ok", date: "", time: "", venueId: 1, venueName: "undefined"}
+      trackedItems.push(errorEvent)
+      return trackedItems
+    }
+
+    if (resp.resultsPage.totalEntries === 0) {
+      console.log("0 values found");
+      return trackedItems
+    }
+
+    var items = resp.resultsPage.totalEntries;
+
+    if (items > resp.resultsPage.perPage) { items = resp.resultsPage.perPage; }
+
+    for (var i = 0; i < items; i++) {
+      var currentItem = resp.resultsPage.results.metroArea[i];
+      var trackId = currentItem.id;
+      //var eventUri = currentItem.uri;
+      var trackName = currentItem.displayName;
+      var eventi = {type: type, uid: trackId + "-" + trackName, title: trackName, skid: trackId + "-" + trackName, txt: "loaded from songkick.com"}
+
+      trackedItems.push(eventi);
+      print('pushed: ' +  eventi.title)
+    }
+    print ('number of items: ' + trackedItems.length)
+
+    return trackedItems
+}
