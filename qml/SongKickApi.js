@@ -6,7 +6,7 @@
 var apiKey = "apikey="
 var songKickUri = "https://api.songkick.com/api/3.0"
 
-// sends a upcomming events to songkick (tracked artists in users metro areas)
+// sends a upcomming events to songkick (tracked artists in users metro areas) == users calendar
 // returns paginated areas
 // in: type: "artist" / "area"
 //     username: "username"
@@ -19,11 +19,12 @@ function getUsersUpcommingEvents(type,username, callback) {
         } else if(xhr.readyState === XMLHttpRequest.DONE) {
             print('DONE')
             var json = JSON.parse(xhr.responseText.toString())
-            var events = convertUpcommingEventsResponse(json)
+            var events = convertCalendarResponse(json)
             callback(type, events)
         }
     }
-    xhr.open("GET", songKickUri + "/users/" + username + "/calendar.json?reason=tracked_artist?" + apiKey + DB.getRandom());
+    print(songKickUri + "/users/" + username + "/calendar.json?reason=tracked_artist&" + apiKey + DB.getRandom())
+    xhr.open("GET", songKickUri + "/users/" + username + "/calendar.json?reason=tracked_artist&" + apiKey + DB.getRandom());
     xhr.send();
 }
 
@@ -58,7 +59,7 @@ function getUsersTrackedItems(type,username, callback) {
 // in: type: "artist" / "area" / "venue"
 //     id: id of artist / area.. "23355-radiohead"
 //     callback: callback function that accepts string, event[]
-function getUpcommingEventsForTrackedItem(type,id, callback) {
+function getUpcommingEventsForTrackedItem(type,id,page,callback) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
@@ -151,11 +152,11 @@ function convertCalendarResponse(resp) {
     calendarEntries.push(eventi);
     print('pushed: ' +  eventi.name)
   }
-  print ('number of items: ' + events.length)
+  print ('number of items: ' + calendarEntries.length)
   return calendarEntries
 }
 
-// this function converts a users upcomming events
+// this function converts a artists/areas upcomming events
 // into event model
 // in: json response
 // out: array of events
@@ -206,6 +207,58 @@ function convertUpcommingEventsResponse(resp) {
   return events
 }
 
+
+/*// this function converts a users upcomming calendar
+// into event model
+// in: json response
+// out: array of events
+// failure: will return one event with message in case of failure
+//          will return empty array when no results found
+function convertUsersCalendarResponse(resp) {
+
+  var events = [];
+  var errorEvent
+
+  if (resp.resultsPage.status !== "ok") {
+    console.log("return value is not ok");
+    errorEvent = {id:0, uri:"", name:"resultPage.status not ok", date: "", time: "", venueId: 1, venueName: "undefined"}
+    events.push(errorEvent)
+    return events
+  }
+
+  if (resp.resultsPage.totalEntries === 0) {
+    console.log("0 values found");
+    return events
+  }
+
+  var items = resp.resultsPage.totalEntries;
+
+  if (items > resp.resultsPage.perPage) { items = resp.resultsPage.perPage; }
+
+  for (var i = 0; i < items; i++) {
+    var currentEvent = resp.resultsPage.results.event[i];
+    var eventId = currentEvent.id;
+    var eventUri = currentEvent.uri;
+    var eventName = currentEvent.displayName;
+    var eventDate = currentEvent.start.date;
+    var eventTime = currentEvent.start.time;
+
+    var venueId = currentEvent.venue.id;
+    var venueName = currentEvent.venue.displayName;
+    var metroAreaId = currentEvent.venue.metroArea.id;
+    var metroAreaName = currentEvent.venue.metroArea.displayName;
+    var artistId = currentEvent.performance[0].id;
+    var artistName = currentEvent.performance[0].displayName;
+    var eventi = {id:eventId, uri:eventUri, name:eventName, date: eventDate, time: eventTime, venueId: venueId, venueName: venueName, metroAreaId:metroAreaId, metroAreaName: metroAreaName}
+
+    events.push(eventi);
+    print('pushed: ' +  eventi.name)
+
+  }
+  print ('number of items: ' + events.length)
+  return events
+}*/
+
 //{"resultsPage":
 //{"status":"ok",
 //"results":{"metroArea":[
@@ -215,6 +268,8 @@ function convertUpcommingEventsResponse(resp) {
 //]},
 //"perPage":50,"page":1,"totalEntries":3}}
 function convertTrackedItemsResponse(type,resp) {
+
+    print('called for type: ' + type)
 
     var trackedItems = [];
     var errorEvent;
@@ -236,16 +291,19 @@ function convertTrackedItemsResponse(type,resp) {
     if (items > resp.resultsPage.perPage) { items = resp.resultsPage.perPage; }
 
     for (var i = 0; i < items; i++) {
-      var currentItem = resp.resultsPage.results.metroArea[i];
+      var currentItem
+      if (type === "location") currentItem = resp.resultsPage.results.metroArea[i];
+      if (type === "artist")  currentItem = resp.resultsPage.results.artist[i];
+
       var trackId = currentItem.id;
       //var eventUri = currentItem.uri;
       var trackName = currentItem.displayName;
       var eventi = {type: type, uid: trackId + "-" + trackName, title: trackName, skid: trackId + "-" + trackName, txt: "loaded from songkick.com"}
 
       trackedItems.push(eventi);
-      print('pushed: ' +  eventi.title)
+      print('pushed ' + type + ": " +  eventi.title)
     }
-    print ('number of items: ' + trackedItems.length)
+    print ('number of ' + type + '(s): ' + trackedItems.length)
 
     return trackedItems
 }

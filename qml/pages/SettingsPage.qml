@@ -28,17 +28,16 @@ Dialog {
         VerticalScrollDecorator {}
 
         PullDownMenu {
-            MenuItem {
+            /*MenuItem {
                 text: qsTr("Anonymous settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPageAnonymous.qml"), {mainPage: settings.mainPage})
-            }
+            }*/
             MenuItem {
                 text: qsTr("Get tracked items from songkick")
-                onClicked: {
-                    API.getUsersTrackedItems("location",entrySongKickUserName.text, settings.mainPage.updateTrackingItemsInDb)
+                onClicked: {                
                     API.getUsersTrackedItems("artist",entrySongKickUserName.text, settings.mainPage.updateTrackingItemsInDb)
-                    settings.mainPage.reloadTrackingItemsAndUpcomming()
-
+                    API.getUsersTrackedItems("location",entrySongKickUserName.text, settings.mainPage.updateTrackingItemsInDb)
+                    //settings.mainPage.reloadTrackingItemsAndUpcomming() happens before responses are back due to async
                 }
             }
         }
@@ -102,10 +101,13 @@ Dialog {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: "Username is needed to retrieve
 your tracked items from songkick.com.
+Password is currently not in use.
 If you do not have a
 Songkick account yet,
- you can define the tracked
-items locally in anonymous settings."
+ please create one.
+When ever you modify your tracking items
+on songkick.com, sync them using
+'Get tracked items ..' pulldow menue"
             }
 
         }

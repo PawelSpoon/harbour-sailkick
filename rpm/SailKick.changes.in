@@ -8,6 +8,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat March 11 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.5-4
+- fix concerts page ;-)
+- fix help page
+- major refactoring of the ui
+- cleaning up the code a bit
+- removed anonymous option
+
 * Sat March 11 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.3-1
 - retrieve tracked items from songkick.com using username
 - anonymous option is still enabled

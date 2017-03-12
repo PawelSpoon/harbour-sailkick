@@ -9,14 +9,21 @@ ApplicationWindow
     id: applicationWindow
     property Item mainPage: null
 
+
     initialPage: Component {
         MainPage {
             id: mainPage
+            Component.onCompleted: {
+               applicationWindow.mainPage = mainPage
 
-            Component.onCompleted: applicationWindow.mainPage = mainPage
+            }
         }
     }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
+
+    Component.onCompleted: {
+
+    }
 }
 

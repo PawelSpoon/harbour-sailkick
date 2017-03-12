@@ -1,5 +1,6 @@
 Implemented:
 
+cover with songkick long
 define locally artists and metro areas
 lookup for the upcomming events of locally defined ...
 

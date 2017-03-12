@@ -115,18 +115,23 @@ function getTrackedItem(type,uid)
     return detail;
 }
 
+//this should return a list
 function getTrackedItems(type)
 {
+    var trackedItems = []
     var db = getDatabase();
     var respath="";
     var sql = "SELECT DISTINCT uid, title, type, skid, txt from tracked where type='" + type + "';";
     db.transaction(function(tx) {
         var rs = tx.executeSql(sql);
         for (var i = 0; i < rs.rows.length; i++) {
-            root.fillTrackingModel(rs.rows.item(i).title,rs.rows.item(i).type,rs.rows.item(i).skid,rs.rows.item(i).uid)
+            //root.fillTrackingModel(rs.rows.item(i).title,rs.rows.item(i).type,rs.rows.item(i).skid,rs.rows.item(i).uid)
+            var trackedItem = {title: rs.rows.item(i).title, type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid}
             console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid)
+            trackedItems.push(trackedItem)
         }
     })
+    return trackedItems
 }
 
 // This function is used to remove a location or todo from the database

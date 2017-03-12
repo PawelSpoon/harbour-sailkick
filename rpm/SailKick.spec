@@ -13,8 +13,8 @@ Name:       SailKick
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Unofficial native SongKick client
-Version:    0.3
-Release:    1
+Version:    0.5
+Release:    4
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/

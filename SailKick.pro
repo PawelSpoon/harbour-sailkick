@@ -71,6 +71,9 @@ DISTFILES += \
     qml/sk-badge-white.png \
     qml/powered-by-songkick-white.png \
     qml/pages/SettingsPageAnonymous.qml \
-    qml/pages/SettingsPage.qml
+    qml/pages/SettingsPage.qml \
+    qml/pages/LocationPage.qml \
+    qml/pages/TrackedItemsPage.qml \
+    qml/pages/TrackedItemPage.qml
 
 
