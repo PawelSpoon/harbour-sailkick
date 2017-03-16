@@ -37,7 +37,7 @@ function initialize() {
 
 function getRandom()
 {
-    return "io34K9l3ebJxm34d";
+    return "io09K9l3ebJxmxe2";
 }
 
 function setUser(title,txt)

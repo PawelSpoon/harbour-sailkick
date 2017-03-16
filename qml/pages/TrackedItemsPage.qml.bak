@@ -12,39 +12,9 @@ import "../common"
 Page {
     id: trackedItemsPage
     property string trackedType : "location"
-    property Page mainPage
 
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
-
-    onStatusChanged: {
-        if (status === PageStatus.Active) {
-            //requestCoverPage("Default.qml")
-            var nextPageType
-            // it concerts == main -> plan -> location -> artist
-            if (trackedType === "location") nextPageType = "artist"
-            if (trackedType === "artist") nextPageType = "concert"
-            if (!priv.optionsPage) {
-                if (nextPageType === "concert"){
-                    /*priv.optionsPage = pageStack.pushAttached(mainPage)*/
-                    // this is a bit unstable ;-)
-                }
-                else {
-                priv.optionsPage = pageStack.pushAttached(
-                    Qt.resolvedUrl("TrackedItemsPage.qml"), {mainPage: mainPage, trackedType: nextPageType})
-                }
-            }
-        }
-    }
-
-    QtObject {
-        id: priv
-        property Item optionsPage
-        property string nextPageToken: ""
-        property variant searchParams: ({})
-        property bool ignoreNextAtYBeginning: false
-        property real autoLoadThreshold: 0.8
-    }
 
     Component.onCompleted:
     {
@@ -68,24 +38,9 @@ Page {
            fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid)
         }
         console.debug(trackedType + " loaded from DB")
-        sortModel()
     }
 
     property ListModel locationList : trackingModel
-
-    function sortModel()
-    {
-        print("sorting")
-        for(var i=0; i<trackingModel.count; i++)
-        {
-            for(var j=0; j<i; j++)
-            {
-                if(trackingModel.get(i).title === trackingModel.get(j).title)
-                   trackingModel.move(i,j,1)
-                //break
-            }
-        }
-    }
 
     // list of all tracked locations and artists
     // this is going to be populated from db
@@ -120,17 +75,9 @@ Page {
         }
 
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
-        PullDownMenu {
+        /*PullDownMenu {
 
-                MenuItem {
-                    text: qsTr("Manage")
-                    onClicked: {
-                        if (trackedType == "location") pageStack.push(Qt.resolvedUrl("TrackedItemDetailsPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/metro_areas", songKickId: "no songKickId", titleOf: "no titleOf" })
-                        if (trackedType == "artist")   pageStack.push(Qt.resolvedUrl("TrackedItemDetailsPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/artists", songKickId: "no songKickId", titleOf: "no titleOf" })
-                    }
-                }
-
-        }
+        }*/
 
         PushUpMenu {
             MenuItem {

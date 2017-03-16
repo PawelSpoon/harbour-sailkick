@@ -64,20 +64,21 @@ Dialog {
                 inputMethodHints: Qt.ImhSensitiveData
                 label: qsTr("Songkick Username")
                 text: ""
-                placeholderText: qsTr("Set username (mandatory)")
+                placeholderText: qsTr("set username (mandatory)")
                 errorHighlight: text.length === 0
                 EnterKey.enabled: !errorHighlight
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
-                EnterKey.onClicked: entrySongKickPassWord.focus = true
-                /*onTextChanged: {
+                font.capitalization: Font.MixedCase
+                /*EnterKey.onClicked: entrySongKickPassWord.focus = true
+                onTextChanged: {
                 editEntryDialog.titleChanged =
                         (editEntryDialog.origTitle !== text ? true : false)
                 editEntryDialog.updateCoverState()
-            }*/
-                //focusOutBehavior: -1 // This doesn't let the eye button steal focus
+            }
+                //focusOutBehavior: -1 // This doesn't let the eye button steal focus*/
             }
 
-            TextField {
+            /*TextField {
                 id: entrySongKickPassWord
                 width: parent.width
                 inputMethodHints: Qt.ImhSensitiveData
@@ -92,22 +93,28 @@ Dialog {
                 editEntryDialog.songKickIdChanged =
                         (editEntryDialog.origSongKickId !== text ? true : false)
                 editEntryDialog.updateCoverState()
-            }*/
-                //focusOutBehavior: -1
             }
+                //focusOutBehavior: -1
+            }*/
 
             Label {
                 id: helpText
                 anchors.horizontalCenter: parent.horizontalCenter
+                //anchors.left : entrySongKickUserName.left
+                //anchors.leftMargin: entrySongKickUserName.anchors.leftMargin
+                width: entrySongKickUserName.width - 100
                 text: "Username is needed to retrieve
-your tracked items from songkick.com.
-Password is currently not in use.
+your tracked items
+from songkick.com.
+Password is currently not needed.
 If you do not have a
 Songkick account yet,
- please create one.
-When ever you modify your tracking items
-on songkick.com, sync them using
-'Get tracked items ..' pulldow menue"
+please create one.
+When ever you modify your
+tracking items on songkick.com,
+sync them using
+'Get tracked items ..'
+pulldown menu"
             }
 
         }
@@ -116,7 +123,7 @@ on songkick.com, sync them using
     Component.onCompleted: {
         var user = DB.getUser();
         entrySongKickUserName.text = user.name;
-        entrySongKickPassWord.text = user.pwd;
+        //entrySongKickPassWord.text = user.pwd;
         //entryTitleTextField.focus = true
     }
 
@@ -127,7 +134,7 @@ on songkick.com, sync them using
     // tracking items get saved via EditEntryDialog
     // this will only save user and password
     onAccepted: {
-        DB.setUser(entrySongKickUserName.text, entrySongKickPassWord.text);
+        DB.setUser(entrySongKickUserName.text, "");
     }
     // user has rejected editing entry data, check if there are unsaved details
     onRejected: {

@@ -16,7 +16,6 @@ CONFIG += sailfishapp
 
 QT += network
 
-
 # adding common QML files, QML imports, C++ libs and image files for the app
 common_files.path   = /usr/share/$${TARGET}
 common_files.files += \
@@ -59,7 +58,6 @@ DISTFILES += \
     qml/SailKick.qml \
     rpm/SailKick.yaml \
     rpm/SailKick.spec \
-    rpm/SailKick.changes.in \
     SailKick.desktop \
     qml/pages/EditEntryDialog.qml \
     qml/pages/HelpMainPage.qml \
@@ -74,6 +72,8 @@ DISTFILES += \
     qml/pages/SettingsPage.qml \
     qml/pages/LocationPage.qml \
     qml/pages/TrackedItemsPage.qml \
-    qml/pages/TrackedItemPage.qml
+    qml/pages/TrackedItemPage.qml \
+    qml/pages/TrackedItemDetailsPage.qml \
+    rpm/SailKick.changes
 
 

@@ -31,8 +31,10 @@ Page {
         print('number of events: ' +  events.length)
         for (var i = 0; i < events.length; i++)
         {
-            // metroAreaName is obviously wrong ..
-            upcommingModel.append({"title": events[i].name, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": events[i].date, "uri" : events[i].uri })
+            var shortTitle = events[i].name
+            var pos = shortTitle.indexOf(" at ");
+            if (pos > 1) shortTitle = shortTitle.substr(0,pos)
+              upcommingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": events[i].date, "uri" : events[i].uri })
         }
     }
 
@@ -166,6 +168,13 @@ Page {
                     if (!contextMenu)
                         contextMenu = contextMenuComponent.createObject(mainPage.locationList)
                     contextMenu.show(myListItem)
+                }
+
+                onClicked: {
+                    upcommingList.currentIndex = index
+                    print(upcommingList.currentIndex)
+                    var current = upcommingModel.get(upcommingList.currentIndex)
+                    pageStack.push(Qt.resolvedUrl("TrackedItemDetailsPage.qml"),{mainPage: root, uri: current.uri, songKickId: current.skid, titleOf: current.title })
                 }
 
                 Image {

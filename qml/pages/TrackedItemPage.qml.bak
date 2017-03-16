@@ -6,111 +6,24 @@ import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
 import "../common"
 
-
+// shows all upcomming events of one item
+// this can be artist / location / venue
 
 Page {
-    id: root
+    id: trackedItemPage
+    property string type : "location"
+    property string songKickId
+    property string titleOf
+    property int page : 0
 
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
 
-    function clearTrackingModel()
+
+    function reloadUpCommingModel()
     {
-        trackingModel.clear(); // this deletes the dummy entry that i use to have a 'typed' model
-    }
-
-    // this method is called only from DB.getLocations
-    function fillTrackingModel(title, type, skid, uid)
-    {
-        var contains = trackingModel.contains(uid)
-        if (contains[0]) console.log("contains already " + title);
-        print("adding to tracking model: " + title + " " + type + " " + skid + " " + uid)
-        trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid})
-    }
-
-    function updateTrackingItemsInDb(type, items)
-    {
-        print('number of items: ' +  items.length)
-
-        var count = items.length
-        for (var i = 0; i < count; i++) {
-          var currentItem = items[i];
-          print('storing: ' +  currentItem.title)
-          DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.txt)
-        }
-        print ('number of items: ' + items.length)
-
-        clearTrackingModel()
-        var trackedItems = DB.getTrackedItems("location")
-        for (i=0; i< trackedItems.length; i++)
-        {
-           fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid)
-        }
-        console.debug("locations loaded")
-        trackedItems = DB.getTrackedItems("venue")
-        for (i=0; i< trackedItems.length; i++)
-        {
-           fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid)
-        }
-        console.log("venue loaded")
-        trackedItems = DB.getTrackedItems("artist")
-        for (i=0; i< trackedItems.length; i++)
-        {
-           fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid)
-        }
-        console.log("artist loaded")
-    }
-
-    // adds one entry into trackingModel and persists it in db
-    // location and artist are planned to be supported, currently in two separated tables (join? them)
-    function addEntry(title, type, skid, uid)
-    {
-        var contains = trackingModel.contains(uid)
-        if (!contains[0]) {
-          var newUid = DB.getUniqueId();
-          trackingModel.append({"title": title, "type": type, "uid": newUid, "skid": skid})
-          DB.setTrackingEntry(type,newUid,title,skid,"some text")
-          console.log("added to list")
-          fillUpCommingModelForAllItemsInTrackingModel()
-        }
-    }
-
-    function updateEntry(title, type, skid, uid)
-    {
-        var contains = trackingModel.contains(uid)
-        if (contains[0]) {
-          DB.setTrackingEntry(type,uid,title,skid,"some text")
-          console.log("added to list")
-          fillUpCommingModelForAllItemsInTrackingModel()
-        }
-    }
-
-    function getEntryDetails(type, uid)
-    {
-        return DB.getTrackedItem(type,uid);
-    }
-
-    // remove a single entry from trackingModel and db
-    function removeEntry(title, type, uid, index)
-    {
-        DB.removeTrackingEntry(type,title,uid)
-        //mainPage.locationList.remove(index) //this works
-        trackingModel.remove(index) // this is nicer
-    }
-
-    function cleanDb()
-    {
-        DB.removeAllTrackingEntries("location")
-        DB.removeAllTrackingEntries("artist")
-        DB.removeAllTrackingEntries("venue")
-        trackingModel.clear()
-        fillUpCommingModelForAllItemsInTrackingModel()
-    }
-
-    function fillUpCommingModelForAllItemsInTrackingModel()
-    {
-        upcommingModel.clear()       
-        API.getUsersUpcommingEvents("",DB.getUser().name,fillUpCommingModelForOneTrackingEntry)
+        upcommingModel.clear()
+        API.getUpcommingEventsForTrackedItem(type, songKickId, page, fillUpCommingModelForOneTrackingEntry)
     }
 
     function fillUpCommingModelForOneTrackingEntry(type, events)
@@ -118,70 +31,17 @@ Page {
         print('number of events: ' +  events.length)
         for (var i = 0; i < events.length; i++)
         {
-            //artistName           
-            var shortTitle = events[i].name
-            var pos = shortTitle.indexOf(" at ");
-            if (pos > 1) shortTitle = events[i].name.substr(0,pos)
-            upcommingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": events[i].date, "uri" : events[i].uri })
-        }
-        sortModel()
-    }
-
-
-    onStatusChanged: {
-        if (status === PageStatus.Active) {
-            //requestCoverPage("Default.qml")
-            if (!priv.optionsPage) {
-                priv.optionsPage = pageStack.pushAttached(
-                    Qt.resolvedUrl("TrackedItemsPage.qml"), {mainPage: root, trackedType: "location"})
-            }
+            // metroAreaName is obviously wrong ..
+            upcommingModel.append({"title": events[i].name, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": events[i].date, "uri" : events[i].uri })
         }
     }
 
-    QtObject {
-        id: priv
-        property Item optionsPage
-        property string nextPageToken: ""
-        property variant searchParams: ({})
-        property bool ignoreNextAtYBeginning: false
-        property real autoLoadThreshold: 0.8
-    }
 
     Component.onCompleted:
     {
-        clearTrackingModel();
-        DB.initialize();
-        reloadTrackingItemsAndUpcomming()
+        reloadUpCommingModel()
     }
 
-    function reloadTrackingItemsAndUpcomming()
-    {
-        clearTrackingModel();
-        console.debug("db initilized")
-        //DB.getLocations();
-        DB.getTrackedItems("location")
-        console.debug("locations loaded")
-        DB.getTrackedItems("venue")
-        console.log("venue loaded")
-        DB.getTrackedItems("artist")
-        console.log("artist loaded")
-        fillUpCommingModelForAllItemsInTrackingModel()
-    }
-
-
-    function sortModel()
-    {
-        print("sorting")
-        for(var i=0; i<upcommingModel.count; i++)
-        {
-            for(var j=0; j<i; j++)
-            {
-                if(upcommingModel.get(i).date === upcommingModel.get(j).date)
-                   upcommingModel.move(i,j,1)
-                //break
-            }
-        }
-    }
 
     property ListModel locationList : trackingModel
 
@@ -224,42 +84,44 @@ Page {
         model: upcommingModel
 
         header: PageHeader {
-            title: qsTr("Concerts")
+            title: titleOf
         }
 
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
-            MenuItem {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"), {mainPage: root})
-            }
+
             MenuItem {
                 text: qsTr("Refresh")
-                onClicked: fillUpCommingModelForAllItemsInTrackingModel()
+                onClicked: reloadUpCommingModel()
             }
             /*MenuItem {
                 text: qsTr("Artists")
-                onClicked: pageStack.push(Qt.resolvedUrl("TrackedItemsPage.qml"), {mainPage: root, trackedType: "artist"})
+                onClicked: pageStack.push(Qt.resolvedUrl("ArtistsPage.qml"), {mainPage: root})
             }
             MenuItem {
                 text: qsTr("Locations")
-                onClicked: pageStack.push(Qt.resolvedUrl("TrackedItemsPage.qml"), {mainPage: root, trackedType: "location"})
+                onClicked: pageStack.push(Qt.resolvedUrl("LocationPage.qml"), {mainPage: root})
+            }
+            /*MenuItem {
+                text: qsTr("Plans")
+                onClicked: pageStack.push(Qt.resolvedUrl("LocationPage.qml"), {mainPage: root})
             }*/
         }
 
         PushUpMenu {
             MenuItem {
+                text: qsTr("Load more")
+                //onClicked: upcommingList.scrollToTop()
+            }
+            MenuItem {
                 text: qsTr("Help") // will show help page (could be on Settings page instead)
                 onClicked: pageStack.push(Qt.resolvedUrl("HelpMainPage.qml"))
             }
-            /*MenuItem {
-                text: qsTr("About") // will show about page
-            }*/
         }
 
         ViewPlaceholder {
-            enabled: upcommingModel.count === 0 // show placeholder text when no locations/artists are tracked
-            text: qsTr("You have no upcomming concerts in your calendar")
+            enabled: trackingModel.count === 0 // show placeholder text when no locations/artists are tracked
+            text: qsTr("Add an artist, metro area or venue to your tracking list in Settings")
         }
 
         // try to have sections by date
@@ -348,7 +210,7 @@ Page {
                     id: dateText
                     text: venue
                     anchors.left: typeIcon.right
-                    anchors.leftMargin: 150
+                    anchors.leftMargin: 100
                     anchors.top: locationText.top
                     anchors.topMargin: 0
                     font.capitalization: Font.MixedCase

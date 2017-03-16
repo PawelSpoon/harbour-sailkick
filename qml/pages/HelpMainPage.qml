@@ -10,12 +10,11 @@ HelpPage {
 This page shows the upcoming events of your favorite artists in your area(s). <br>
 Click on an item will open the details page [not implemented] <br>
 PressAndHold on an item will open the event in browser on songkick.com.<br>
-PullDownMenu 'Locations' will open 'Locations' page with all your tracked locations. <br>
-PullDonwMenu 'Artists' will open 'Artists' page with all your favorite artists. <br>
 PullDownMenu 'Refresh' will refresh the content. <br>
 PullDownMenu 'Settings' will open 'Settings' page. <br>
 PushUpMenu Help did open this help page. <br>
-PushUpMenu About will open general Info page [not implemented] <br>
+PushUpMenu About will open general Info page. [not implemented] <br>
+You can switch between Conterts, Locations, Artists page with swipes.<br>
 <h2>Settings Page</h2>
 This page allows to do enter your songkick username. password is currently not needed.<br>
 songkick.com still supports http, so at least your username might be sent plain over the wire. This app is using https, but your browser might not.
@@ -28,10 +27,10 @@ Shows all your favorite artists. Click on any to see his/her/their upcoming even
 <h2>Artist/Area event page</h2>
 PullDownMenu 'Refresh' will refresh the content. <br>
 PushUpMenu 'Load more' will load the next 50 [not implemented]<br>
-PushAndHold on an item will open it in browser on songkick.com<br>
+Click on an item will open it in webview within the application. You will need to log in once in the webview.
+PushAndHold on an item will open it in web external browser<br>
 <h2>One last comment</h2>
 songkick.com provides only a read-only api.
-so all the managing of your account: favorite artists / venues etc. has to happen in browser.
-I will extend the app in future to support a webcontrol but this will remain a web experience.
+so all the managing of your account: favorite artists / venues etc. has to happen in an webview.
 ")
 }
