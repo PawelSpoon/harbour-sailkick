@@ -38,7 +38,11 @@ function initialize() {
 
 function getRandom()
 {
+<<<<<<< HEAD
     return "xxxxxxxxxxxxxxxx";
+=======
+    return "12345678";
+>>>>>>> origin/master
 }
 
 function setUser(title,txt)
