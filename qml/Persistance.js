@@ -1,4 +1,4 @@
-//Persistance.js
+﻿//Persistance.js
 //originated from Noto
 //datamodel: one table to hold tracked artists, venues, metroareas, these can be differentiated by type column
 //one table to hold one entry: username
@@ -38,11 +38,7 @@ function initialize() {
 
 function getRandom()
 {
-<<<<<<< HEAD
-    return "xxxxxxxxxxxxxxxx";
-=======
     return "12345678";
->>>>>>> origin/master
 }
 
 function setUser(title,txt)
