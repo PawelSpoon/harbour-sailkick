@@ -2,6 +2,7 @@
 //originated from Noto
 //datamodel: one table to hold tracked artists, venues, metroareas, these can be differentiated by type column
 //one table to hold one entry: username
+// tracked table: title == name, type == artist / location, skid == song kick id, txt == song kick uri
 
 .import QtQuick.LocalStorage 2.0 as LS
 
@@ -37,7 +38,7 @@ function initialize() {
 
 function getRandom()
 {
-    return "io34K9l3ebJxm34d";
+    return "xxxxxxxxxxxxxxxx";
 }
 
 function setUser(title,txt)
@@ -81,13 +82,13 @@ function getUser()
 }
 
 // This function is used to saved tracked entries into the database, new and existing ones
-function setTrackingEntry(type,uid,title,skid,txt) {
+function setTrackingEntry(type,uid,title,skid,uri) {
     // title: name representing the title of the location
     // txt: optional description
     var db = getDatabase();
     var res = "";
     db.transaction(function(tx) {
-        var rs = tx.executeSql('INSERT OR REPLACE INTO tracked VALUES (?,?,?,?,?);', [uid,title,type,skid,txt]);
+        var rs = tx.executeSql('INSERT OR REPLACE INTO tracked VALUES (?,?,?,?,?);', [uid,title,type,skid,uri]);
         if (rs.rowsAffected > 0) {
             res = "OK";
             console.log ("Saved to database: uid:" + uid + ", title:" + title + ", type:"+ type);
@@ -97,6 +98,7 @@ function setTrackingEntry(type,uid,title,skid,txt) {
         }
     }
     );
+
     // The function returns “OK” if it was successful, or “Error” if it wasn't
     return res;
 }
@@ -110,7 +112,7 @@ function getTrackedItem(type,uid)
     var detail;
     db.transaction(function(tx) {
         var rs = tx.executeSql(sql);
-        detail = [rs.rows.item(0).title,rs.rows.item(0).type,rs.rows.item(0).skid,rs.rows.item(0).ui]
+        detail = [rs.rows.item(0).title,rs.rows.item(0).type,rs.rows.item(0).skid,rs.rows.item(0).uid]
     })
     return detail;
 }
@@ -121,12 +123,12 @@ function getTrackedItems(type)
     var trackedItems = []
     var db = getDatabase();
     var respath="";
-    var sql = "SELECT DISTINCT uid, title, type, skid, txt from tracked where type='" + type + "';";
+    var sql = "SELECT DISTINCT uid, title, type, skid, txt from tracked where type='" + type + "' order by upper(title);";
     db.transaction(function(tx) {
         var rs = tx.executeSql(sql);
         for (var i = 0; i < rs.rows.length; i++) {
             //root.fillTrackingModel(rs.rows.item(i).title,rs.rows.item(i).type,rs.rows.item(i).skid,rs.rows.item(i).uid)
-            var trackedItem = {title: rs.rows.item(i).title, type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid}
+            var trackedItem = {title: rs.rows.item(i).title, type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid, uri: rs.rows.item(i).txt}
             console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid)
             trackedItems.push(trackedItem)
         }

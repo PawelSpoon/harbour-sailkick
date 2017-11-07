@@ -2,33 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
-    <name>EditEntryDialog</name>
-    <message>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Discard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Title</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set title (mandatory)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SongKick Id</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set Songkick Id: 138058-interpol</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>FileSystemDialog</name>
     <message>
         <source>Problem with SD card</source>
@@ -104,27 +77,34 @@
 <context>
     <name>HelpMainPage</name>
     <message>
-        <source>This is a native SongKick application.&lt;br&gt;&lt;br&gt;&lt;h2&gt;Main Page&lt;/h2&gt;
-This page shows the upcomming events for selected artists, venues, metro areas. &lt;br&gt;
-Click on an item will open the details page [not implemented]
-PressAndHold on an item will open the event on songkick.com in browser [not implemented]&lt;br&gt;
-PullDownMenu Refresh will refresh it&apos;s contect.
-PullDownMenu Settings will open settings page.
-PushUpMenu Load more will load the next 50 items.
-PushUpMenu Help did open this help page.
-PushUpMenu About will open general Info page [not implemented]
+        <source>This is a native SongKick application.&lt;br&gt;&lt;br&gt;&lt;h2&gt;Concerts&lt;/h2&gt;
+This page shows the upcoming events of your favorite artists in your area(s). &lt;br&gt;
+Click on an item will open the details page.&lt;br&gt;
+PressAndHold on an item will open the event in browser on songkick.com.&lt;br&gt;
+PullDownMenu &apos;Refresh&apos; will refresh the content. &lt;br&gt;
+PullDownMenu &apos;Settings&apos; will open &apos;Settings&apos; page. &lt;br&gt;
+PushUpMenu Help did open this help page. &lt;br&gt;
+PushUpMenu About will open general Info page. [not implemented] &lt;br&gt;
+You can switch between Concerts, Locations, Artists, Plans page with an swipe.&lt;br&gt;
 &lt;h2&gt;Settings Page&lt;/h2&gt;
-This page allows you to define who you want to track. &lt;br&gt;
-Use the various PushUpMenu&apos;s to add an artist / venue or metro area.
-Click on an item opens the edit page where you can change some details.
-PushAndHold on an item allows you to delete a single item.
-&lt;h2&gt;&lt;/h2&gt;
-A browse mechanism is currently not implemented. You have to define the name and the SongKick id manually.
-For this, open SongKick.com, search for the artist / venue / metro area and open it. The inspect the url to get the id.
-i.e.:
-https://www.songkick.com/artists/253846-radiohead
-&lt;br&gt;
-You will need to provide your username. this is needed to allow usage of SongKick API. &lt;br&gt;&lt;br&gt;</source>
+This page allows to do enter your songkick username. password is currently not needed.&lt;br&gt;
+songkick.com still supports http, so at least your username might be sent plain over the wire. This app is using https, but your browser might not.
+Consider this when creating the account and setting username and password. &lt;br&gt;
+PullDownMenu &apos;Get tracked items..&apos; will load your tracked artists, areas .. from songkick.com and store locally.&lt;br&gt;
+When ever you manage your tracked items on the web, you need to update the locally stored with &apos;Get tracked items ..&apos;&lt;br&gt;
+&lt;h2&gt;Locations&lt;/h2&gt;
+Shows all your favorite locations. Click on any to see the upcoming events.&lt;br&gt;
+&lt;h2&gt;Artists&lt;/h2&gt;
+Shows all your favorite artists. Click on any to see his/her/their upcoming events.&lt;br&gt;
+&lt;h2&gt;Artist/Area event page&lt;/h2&gt;
+PullDownMenu &apos;Refresh&apos; will refresh the content. &lt;br&gt;
+PushUpMenu &apos;Load more&apos; will load the next 50 [not implemented]&lt;br&gt;
+Click on an item will open it in webview within the application. You will need to log in once in the webview.
+PushAndHold on an item will open it in web external browser&lt;br&gt;
+&lt;h2&gt;One last comment&lt;/h2&gt;
+songkick.com provides only a read-only api.
+so all the managing of your account: favorite artists / venues etc. has to happen in an webview.
+</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -142,7 +122,7 @@ You will need to provide your username. this is needed to allow usage of SongKic
 <context>
     <name>MainPage</name>
     <message>
-        <source>Upcomming Events</source>
+        <source>Concerts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -158,15 +138,19 @@ You will need to provide your username. this is needed to allow usage of SongKic
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>About</source>
+        <source>You have no upcomming concerts in your calendar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add an artist, metro area or venue to your tracking list in Settings</source>
+        <source>Open in browser</source>
+        <translation type="unfinished">Open in browser</translation>
+    </message>
+    <message>
+        <source>Get tracked items from songkick</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Load more</source>
+        <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -194,7 +178,42 @@ You will need to provide your username. this is needed to allow usage of SongKic
     </message>
 </context>
 <context>
+    <name>PlansPage</name>
+    <message>
+        <source>im_going</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>i_might_go</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plans</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have no upcomming concerts in your calendar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in browser</source>
+        <translation type="unfinished">Open in browser</translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SettingsPage</name>
+    <message>
+        <source>Get tracked items from songkick</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Save</source>
         <translation type="unfinished"></translation>
@@ -212,42 +231,80 @@ You will need to provide your username. this is needed to allow usage of SongKic
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Set username (mandatory)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Songkick Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set password (mandatory)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Anonymous settings</source>
+        <source>set username (mandatory)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SettingsPageAnonymous</name>
+    <name>ShareWithPage</name>
     <message>
-        <source>Delete all</source>
+        <source>Discard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add artist</source>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TrackedItemPage</name>
+    <message>
+        <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add venue</source>
+        <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add metro area</source>
+        <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Settings</source>
+        <source>Seems there are no events planed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in browser</source>
+        <translation type="unfinished">Open in browser</translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TrackedItemsPage</name>
+    <message>
+        <source>Your locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your artists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your venues</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are not tracking any ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in browser</source>
+        <translation type="unfinished">Open in browser</translation>
+    </message>
+    <message>
+        <source>Back to top</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

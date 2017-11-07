@@ -1,0 +1,125 @@
+# Rename this file as harbour-sailkick.changes to include changelog
+# entries in your RPM file.
+#
+# Add new changelog entries following the format below.
+# Add newest entries to the top of the list.
+# Separate entries from eachother with a blank line.
+
+# * date Author's Name <author's email> version-release
+# - Summary of changes
+
+* Mon Nov 06 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.4-2
+- solved sharing issue to mail app
+- updated help page
+
+* Sat Nov 04 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.4-0
+- solved performance problem in locations page,
+  was blocked due to slow sorting on artist page
+- fixed sorting (now also working with upper case artists)
+- icons on plans page are now always white as pink will not be shown..
+
+* Sat Nov 04 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.3-6
+- add sharing, just longpress on item in Plans or Concerts
+
+* Sun Mai 28 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.3-4
+- german translations
+
+
+* Sat Mai 27 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.3-3
+- open event from plans page
+- open event in browser from plans page
+- fix date in plan page (show week also)
+- different icons on plans page based on attendance
+
+* Wed Mai 17 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.3-1
+- show plan
+
+* Wed Mai 17 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.2-2
+- fix load more items
+
+* Sat Mai 13 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.2-1
+- add 'Get items from ..' on mainpage pulley too
+
+* Sat Mai 13 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.2-0
+- fix a minure issue where 'Title' item was shown in lists of artists
+
+* Fri Mai 12 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.1-1
+- Load all tracked artists not only the first 50
+
+* Sat Apr 29 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.1-0
+- Add weekday to list
+- Final version -> maintenance mode
+
+* Wed Apr 24 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.0-3
+- Fixed some hardcoded strings, only help is not translated
+
+* Wed Apr 24 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.0-2
+- Fix start name
+- German translation
+
+* Sat Apr 08 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.0-1
+- Renamed the application package, folder etc.
+- You will have to uninstall the old version of sailkick, reenter your credentials and 'Get items from..'
+
+* Sat Apr 08 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.0-1
+- added plans page
+
+* Fri Mar 24 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.9-1
+- irresistible icon
+- sorting of fav locations and artists fixed
+- load next 50 events implemented
+- ui reworked, no overlapping between date and venue
+
+* Tue Mar 21 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.8-5
+- nicer icon
+
+- click on concerts item will open the item in webview
+* Tue Mar 21 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.8-4
+- allow all orientations in webview
+- add pulldown menu to webview to open page in browser
+- click on concerts item will open the item in webview
+
+* Mon Mar 20 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.8-1
+- fix removed tracked items issue
+- fix open in browser on artists / locations. you need to call 'get tracked items'
+- clean up artists / locations UI
+
+* Tue Mar 14 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.7-2
+- remove menus for Artists and Locations on Concerts page
+- update HelpPage
+
+* Tue Mar 14 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.7-1
+- navigation with swipes
+- an ugly icon
+
+* Tue Mar 14 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.6-4
+- add manage artists/locations pushdown menu
+
+* Tue Mar 14 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.6-3
+- fix saving of username
+
+* Mon Mar 13 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.6-2
+- update help text
+- update settings page: remove password
+- show only artist in title of concerts page
+
+* Sun Mar 12 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.6-1
+- web view
+
+* Sat Mar 11 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.5-4
+- fix concerts page ;-)
+- fix help page
+- major refactoring of the ui
+- cleaning up the code a bit
+- removed anonymous option
+
+* Sat Mar 11 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.3-1
+- retrieve tracked items from songkick.com using username
+- anonymous option is still enabled
+
+* Sun Mar 10 2017 Pawel Spoon <pawel@ich-habe-fertig.com> 0.0.2-1
+- prototype implementation
+- you can manually add one location and mainview will show the next 50 upcomming events
+- you can add more then one, and main page will show the sorted result).
+
+

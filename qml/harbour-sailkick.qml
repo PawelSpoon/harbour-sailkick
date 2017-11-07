@@ -11,13 +11,20 @@ ApplicationWindow
 
 
     initialPage: Component {
-        MainPage {
+        /*MainPage {
             id: mainPage
             Component.onCompleted: {
                applicationWindow.mainPage = mainPage
 
             }
+        }*/
+        PlansPage {
+            id:plansPage
+            Component.onCompleted: {
+                applicationWindow.mainPage = plansPage
+            }
         }
+
     }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations

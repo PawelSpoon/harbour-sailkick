@@ -26,8 +26,8 @@ Page {
             if (trackedType === "artist") nextPageType = "concert"
             if (!priv.optionsPage) {
                 if (nextPageType === "concert"){
-                    /*priv.optionsPage = pageStack.pushAttached(mainPage)*/
-                    // this is a bit unstable ;-)
+                    priv.optionsPage = pageStack.pushAttached(Qt.resolvedUrl("PlansPage.qml"), {mainPage: root})
+                    // this is just a workaround
                 }
                 else {
                 priv.optionsPage = pageStack.pushAttached(
@@ -51,12 +51,12 @@ Page {
         reloadTrackingItemsAndUpcomming()
     }
 
-    function fillTrackingModel(title, type, skid, uid)
+    function fillTrackingModel(title, type, skid, uid, uri)
     {
         var contains = trackingModel.contains(uid)
         if (contains[0]) console.log("contains already " + title);
-        print("adding to tracking model: " + title + " " + type + " " + skid + " " + uid)
-        trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid})
+//        print("adding to tracking model: " + title + ";type: " + type + ";skid: " + skid + ";uid: " + uid + "; uri:" + uri)
+        trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid, "uri": uri})
     }
 
     function reloadTrackingItemsAndUpcomming()
@@ -65,33 +65,34 @@ Page {
         var trackedItems = DB.getTrackedItems(trackedType)
         for (var i=0; i< trackedItems.length; i++)
         {
-           fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid)
+           fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri)
         }
         console.debug(trackedType + " loaded from DB")
-        sortModel()
+        //sortModel()
     }
 
     property ListModel locationList : trackingModel
 
     function sortModel()
     {
-        print("sorting")
-        for(var i=0; i<trackingModel.count; i++)
-        {
-            for(var j=0; j<i; j++)
+        var n;
+        var i;
+        for (n=0; n < trackingModel.count; n++)
+            for (i=n+1; i < trackingModel.count; i++)
             {
-                if(trackingModel.get(i).title === trackingModel.get(j).title)
-                   trackingModel.move(i,j,1)
-                //break
+                if (trackingModel.get(n).title> trackingModel.get(i).title)
+                {
+                    trackingModel.move(i, n, 1);
+                    n=0;
+                }
             }
-        }
     }
 
     // list of all tracked locations and artists
     // this is going to be populated from db
     ListModel {
         id: trackingModel
-        ListElement {title: "Title"; type: "Type"; uid: "UID"; skid: "Skid"}
+        //ListElement {title: "Title"; type: "Type"; uid: "UID"; skid: "Skid"; uri: "Uri"}
 
         function contains(uid) {
             for (var i=0; i<count; i++) {
@@ -134,8 +135,9 @@ Page {
 
         PushUpMenu {
             MenuItem {
-                text: qsTr("Load more")
-                //onClicked: upcommingList.scrollToTop()
+                text: qsTr("Back to top")
+                onClicked: trackedItemsList.scrollToTop()
+                visible: (trackedType == "artist")
             }
             MenuItem {
                 text: qsTr("Help") // will show help page (could be on Settings page instead)
@@ -203,12 +205,11 @@ Page {
                     id: typeIcon
                     anchors.left: parent.left
                     anchors.leftMargin: Theme.paddingSmall
+                    anchors.verticalCenter: parent.verticalCenter
                     source: {
-                        /*if (type === "location") "image://theme/icon-l-copy"
-                        else "image://theme/icon-m-levels"*/
                         "../sk-badge-white.png"
                     }
-                    height: parent.height
+                    height: parent.height - 10
                     width: height
                 }
                 Label {
@@ -216,43 +217,15 @@ Page {
                     text: title
                     anchors.left: typeIcon.right
                     anchors.leftMargin: Theme.paddingMedium
-                    anchors.top: parent.top //.verticalCenter : parent.verticalCenter
-                    anchors.topMargin:  Theme.paddingSmall
+                    anchors.verticalCenter : parent.verticalCenter
+                    //anchors.topMargin:  Theme.paddingSmall
                     font.capitalization: Font.Capitalize
-                    font.pixelSize: Theme.fontSizeSmall
-                    truncationMode: TruncationMode.Elide
-                    elide: Text.ElideRight
-                    color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
-                }
-                Label {
-                    id: locationText
-                    text: type
-                    anchors.left: typeIcon.right
-                    anchors.leftMargin: Theme.paddingMedium
-                    anchors.top: titleText.bottom
-                    anchors.topMargin: Theme.paddingSmall
-                    font.capitalization: Font.MixedCase
-                    font.pixelSize: Theme.fontSizeTiny
-                    truncationMode: TruncationMode.Elide
-                    elide: Text.ElideRight
-                    color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
-                }
-                Label {
-                    id: dateText
-                    text: venue
-                    anchors.left: typeIcon.right
-                    anchors.leftMargin: 100
-                    anchors.top: locationText.top
-                    anchors.topMargin: 0
-                    font.capitalization: Font.MixedCase
-                    font.pixelSize: Theme.fontSizeTiny
-                    font.italic: true
+                    font.pixelSize: Theme.fontSizeMedium
                     truncationMode: TruncationMode.Elide
                     elide: Text.ElideRight
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
                 }
             }
-
         }
 
         Component {
@@ -260,7 +233,7 @@ Page {
             ContextMenu {
                 id: menu
                 MenuItem {
-                    text: "Open in browser"
+                    text: qsTr("Open in browser")
                     onClicked: {
                         print ('')
                         print(trackingModel.currentIndex)

@@ -8,7 +8,7 @@ var songKickUri = "https://api.songkick.com/api/3.0"
 
 // sends a upcomming events to songkick (tracked artists in users metro areas) == users calendar
 // returns paginated areas
-// in: type: "artist" / "area"
+// in: type: "artist" / "attendance"
 //     username: "username"
 //     callback: callback function that accepts string, event[]
 function getUsersUpcommingEvents(type,username, callback) {
@@ -23,8 +23,11 @@ function getUsersUpcommingEvents(type,username, callback) {
             callback(type, events)
         }
     }
-    print(songKickUri + "/users/" + username + "/calendar.json?reason=tracked_artist&" + apiKey + DB.getRandom())
-    xhr.open("GET", songKickUri + "/users/" + username + "/calendar.json?reason=tracked_artist&" + apiKey + DB.getRandom());
+    var queryType
+    if (type === "artist") queryType = "tracked_artist"
+    if (type === "attendance") queryType = "attendance"
+    print(songKickUri + "/users/" + username + "/calendar.json?reason=" + queryType + "&" + apiKey + DB.getRandom())
+    xhr.open("GET", songKickUri + "/users/" + username + "/calendar.json?reason=" + queryType + "&" + apiKey + DB.getRandom());
     xhr.send();
 }
 
@@ -33,7 +36,7 @@ function getUsersUpcommingEvents(type,username, callback) {
 // in: type: "artist" / "area"
 //     username: "username"
 //     callback: callback function that accepts string, event[]
-function getUsersTrackedItems(type,username, callback) {
+function getUsersTrackedItems(type,page,username, callback) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
@@ -42,17 +45,19 @@ function getUsersTrackedItems(type,username, callback) {
             print('DONE')
             var json = JSON.parse(xhr.responseText.toString())
             var items = convertTrackedItemsResponse(type,json)
-            callback(type,items)
+            callback(type,page,username,items)
         }
     }
     var queryType
     if (type === "artist") queryType = "artists"
     if (type === "location") queryType = "metro_areas"
     print(songKickUri + "/users/" + username + "/" + queryType +  "/tracked.json?" + apiKey + DB.getRandom())
-    xhr.open("GET", songKickUri + "/users/" + username + "/" + queryType +  "/tracked.json?" + apiKey + DB.getRandom());
+    xhr.open("GET", songKickUri + "/users/" + username + "/" + queryType +  "/tracked.json?" + apiKey + DB.getRandom() + "&page=" + page);
 
     xhr.send();
 }
+
+
 
 // sends a calendar request to songkick
 // returns events
@@ -77,6 +82,7 @@ function getUpcommingEventsForTrackedItem(type,id,page,callback) {
     if (type === "venue") queryType = "venues"
     var query = "/" + queryType + "/" + id
     var url = songKickUri + query + "/calendar.json?" + apiKey + DB.getRandom();
+    if (page > 0) url = url + "&page=" + (page + 1)
     print(url)
     xhr.open("GET", url);
 
@@ -99,7 +105,7 @@ function getUpcommingEventsForTrackedItem(type,id,page,callback) {
         "calendarEntry": [
           {"reason": {
               "trackedArtist": [ARTIST, ARTIST],
-              "attendance": "i_might_go|im_going”
+              "attendance": "i_might_go|im_goingâ€
            },
            "event": {EVENT}
           }]
@@ -147,7 +153,7 @@ function convertCalendarResponse(resp) {
     var artistName = event.performance[0].displayName;
 
     //todo: correct class etc.
-    var eventi = {id:eventId, uri:eventUri, name:eventName, date: eventDate, time: eventTime, venueId: venueId, venueName: venueName}
+    var eventi = {id:eventId, uri:eventUri, name:eventName, artist: artist, metroAreaName: metroAreaName, date: eventDate, time: eventTime, venueId: venueId, venueName: venueName, attendance: attendance}
 
     calendarEntries.push(eventi);
     print('pushed: ' +  eventi.name)
@@ -185,6 +191,9 @@ function convertUpcommingEventsResponse(resp) {
 
   for (var i = 0; i < items; i++) {
     var currentEvent = resp.resultsPage.results.event[i];
+    if (currentEvent == null && currentEvent === undefined) {
+         break;
+    }
     var eventId = currentEvent.id;
     var eventUri = currentEvent.uri;
     var eventName = currentEvent.displayName;
@@ -207,6 +216,21 @@ function convertUpcommingEventsResponse(resp) {
   return events
 }
 
+//{ "resultsPage": {
+//      "status": "ok",
+//      "page": 1,
+//      "totalEntries": 1,
+//      "perPage": 50,
+//      "results": {
+//        "calendarEntry": [
+//          {"reason": {
+//              "trackedArtist": [ARTIST, ARTIST],
+//              "attendance": "i_might_go|im_goingâ€
+//           },
+//           "event": {EVENT}
+//          }]
+//      }
+//  } }
 
 /*// this function converts a users upcomming calendar
 // into event model
@@ -295,13 +319,13 @@ function convertTrackedItemsResponse(type,resp) {
       if (type === "location") currentItem = resp.resultsPage.results.metroArea[i];
       if (type === "artist")  currentItem = resp.resultsPage.results.artist[i];
 
+      if (currentItem == null) break;
       var trackId = currentItem.id;
-      //var eventUri = currentItem.uri;
       var trackName = currentItem.displayName;
-      var eventi = {type: type, uid: trackId + "-" + trackName, title: trackName, skid: trackId + "-" + trackName, txt: "loaded from songkick.com"}
+      var eventi = {type: type, uid: trackId + "-" + trackName, title: trackName, skid: trackId + "-" + trackName, txt: currentItem.uri, uri: currentItem.uri}
 
       trackedItems.push(eventi);
-      print('pushed ' + type + ": " +  eventi.title)
+      print('pushed ' + type + ": " +  eventi.title + "; uri: " + eventi.uri)
     }
     print ('number of ' + type + '(s): ' + trackedItems.length)
 

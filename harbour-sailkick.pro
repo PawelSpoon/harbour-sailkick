@@ -10,29 +10,21 @@
 #   - translation filenames have to be changed
 
 # The name of your application
-TARGET = SailKick
+TARGET = harbour-sailkick
 
 CONFIG += sailfishapp
 
-QT += network
+SOURCES += src/harbour-sailkick.cpp
 
-
-# adding common QML files, QML imports, C++ libs and image files for the app
-common_files.path   = /usr/share/$${TARGET}
-common_files.files += \
-    /icons
-
-INSTALLS += \
-    common_files \
-
-SOURCES += \
-    src/SailKick.cpp
-
-OTHER_FILES += \
+OTHER_FILES += qml/harbour-sailkick.qml \
     qml/cover/CoverPage.qml \
+    qml/pages/SecondPage.qml \
+    rpm/harbour-sailkick.changes.in \
+    rpm/harbour-sailkick.spec \
+    rpm/harbour-sailkick.yaml \
     translations/*.ts \
+    harbour-sailkick.desktop
     icons/*.png
-
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
@@ -44,36 +36,32 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/SailKick-de.ts
+TRANSLATIONS += translations/harbour-sailkick-de.ts
 
 DISTFILES += \
+    qml/Persistance.js \
+    qml/SongKickApi.js \
+    qml/sk-badge-white.png \
+    qml/sk-badge-black.png \
+    qml/sk-badge-pink.png \
     qml/common/InfoPopup.qml \
     qml/common/PageHeaderExtended.qml \
     qml/common/PasswordFieldCombo.qml \
+    qml/common/QueryDialog.qml \
     qml/common/SilicaCoverPlaceholder.qml \
     qml/common/SilicaLabel.qml \
     qml/common/SilicaMenuLabel.qml \
     qml/common/Tracer.qml \
     qml/common/ViewSearchPlaceholder.qml \
-    qml/pages/MainPage.qml \
-    qml/SailKick.qml \
-    rpm/SailKick.yaml \
-    rpm/SailKick.spec \
-    rpm/SailKick.changes.in \
-    SailKick.desktop \
-    qml/pages/EditEntryDialog.qml \
     qml/pages/HelpMainPage.qml \
     qml/pages/HelpPage.qml \
-    qml/Persistance.js \
-    qml/SongKickApi.js \
-    icons/sk-badge-pink.png \
-    ReadMe.txt \
-    qml/sk-badge-white.png \
-    qml/powered-by-songkick-white.png \
-    qml/pages/SettingsPageAnonymous.qml \
+    qml/pages/MainPage.qml \
+    qml/pages/PlansPage.qml \
     qml/pages/SettingsPage.qml \
-    qml/pages/LocationPage.qml \
+    qml/pages/TrackedItemDetailsPage.qml \
+    qml/pages/TrackedItemPage.qml \
     qml/pages/TrackedItemsPage.qml \
-    qml/pages/TrackedItemPage.qml
+    qml/common/ShareWithPage.qml \
+    qml/pages/ShareWithPage.qml
 
-
+RESOURCES +=

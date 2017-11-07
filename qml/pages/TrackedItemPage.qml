@@ -22,8 +22,15 @@ Page {
 
     function reloadUpCommingModel()
     {
-        upcommingModel.clear()
+        if (page == 0)
+          upcommingModel.clear()
         API.getUpcommingEventsForTrackedItem(type, songKickId, page, fillUpCommingModelForOneTrackingEntry)
+    }
+
+    function dateWithDay(datum)
+    {
+        var date = new Date(datum);
+        return date.toLocaleDateString();
     }
 
     function fillUpCommingModelForOneTrackingEntry(type, events)
@@ -34,7 +41,7 @@ Page {
             var shortTitle = events[i].name
             var pos = shortTitle.indexOf(" at ");
             if (pos > 1) shortTitle = shortTitle.substr(0,pos)
-              upcommingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": events[i].date, "uri" : events[i].uri })
+              upcommingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri })
         }
     }
 
@@ -96,24 +103,17 @@ Page {
                 text: qsTr("Refresh")
                 onClicked: reloadUpCommingModel()
             }
-            /*MenuItem {
-                text: qsTr("Artists")
-                onClicked: pageStack.push(Qt.resolvedUrl("ArtistsPage.qml"), {mainPage: root})
-            }
-            MenuItem {
-                text: qsTr("Locations")
-                onClicked: pageStack.push(Qt.resolvedUrl("LocationPage.qml"), {mainPage: root})
-            }
-            /*MenuItem {
-                text: qsTr("Plans")
-                onClicked: pageStack.push(Qt.resolvedUrl("LocationPage.qml"), {mainPage: root})
-            }*/
         }
 
         PushUpMenu {
             MenuItem {
                 text: qsTr("Load more")
-                //onClicked: upcommingList.scrollToTop()
+                enabled: true//((upcommingModel.count % 50) != 0)
+                onClicked: {
+                    page = page + 1
+                    upcommingList.currentIndex = ((page * 50) -1)
+                    reloadUpCommingModel() // as page > 1, it will not empty view
+                }
             }
             MenuItem {
                 text: qsTr("Help") // will show help page (could be on Settings page instead)
@@ -122,8 +122,8 @@ Page {
         }
 
         ViewPlaceholder {
-            enabled: trackingModel.count === 0 // show placeholder text when no locations/artists are tracked
-            text: qsTr("Add an artist, metro area or venue to your tracking list in Settings")
+            enabled: upcommingModel.count === 0 // show placeholder when no items in ...
+            text: qsTr("Seems there are no events planed")
         }
 
         // try to have sections by date
@@ -136,6 +136,7 @@ Page {
                 width: parent.width
                 height: childrenRect.height + 10
                 Text {
+                    id: childrenRect
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: Theme.fontSizeSmall
@@ -159,12 +160,10 @@ Page {
                 id: contentItem
 
                 width: parent.width
+                height: titleText.height + locationText.height + dateText.height + Theme.paddingMedium
 
                 onPressAndHold: {
                     upcommingList.currentIndex = index
-
-                    print("on press: upcomminglist " + upcommingList.currentIndex)
-                    print("on press: upcommingModelElement.Name  " + upcommingModelElement.objectName)
                     if (!contextMenu)
                         contextMenu = contextMenuComponent.createObject(mainPage.locationList)
                     contextMenu.show(myListItem)
@@ -180,13 +179,14 @@ Page {
                 Image {
                     id: typeIcon
                     anchors.left: parent.left
+                    //anchors.verticalCenter: parent.verticalCenter
+                    anchors.top: titleText.top
+                    anchors.topMargin: Theme.paddingMedium
                     anchors.leftMargin: Theme.paddingSmall
                     source: {
-                        /*if (type === "location") "image://theme/icon-l-copy"
-                        else "image://theme/icon-m-levels"*/
                         "../sk-badge-white.png"
                     }
-                    height: parent.height
+                    height: 0.8 * (titleText.height + locationText.height + dateText.height)
                     width: height
                 }
                 Label {
@@ -194,10 +194,24 @@ Page {
                     text: title
                     anchors.left: typeIcon.right
                     anchors.leftMargin: Theme.paddingMedium
-                    anchors.top: parent.top //.verticalCenter : parent.verticalCenter
-                    anchors.topMargin:  Theme.paddingSmall
+                    anchors.top: parent.top
+                    //anchors.topMargin:  Theme.paddingSmall
                     font.capitalization: Font.Capitalize
                     font.pixelSize: Theme.fontSizeSmall
+                    truncationMode: TruncationMode.Elide
+                    elide: Text.ElideRight
+                    color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
+                }
+                Label {
+                    id: dateText
+                    text: venue
+                    anchors.left: typeIcon.right
+                    anchors.leftMargin: Theme.paddingMedium
+                    anchors.top: titleText.bottom
+                    anchors.topMargin: 0
+                    font.capitalization: Font.MixedCase
+                    font.pixelSize: Theme.fontSizeTiny
+                    font.italic: true
                     truncationMode: TruncationMode.Elide
                     elide: Text.ElideRight
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
@@ -207,28 +221,15 @@ Page {
                     text: type
                     anchors.left: typeIcon.right
                     anchors.leftMargin: Theme.paddingMedium
-                    anchors.top: titleText.bottom
-                    anchors.topMargin: Theme.paddingSmall
+                    anchors.top: dateText.bottom
+                    anchors.topMargin: 0//Theme.paddingSmall
                     font.capitalization: Font.MixedCase
                     font.pixelSize: Theme.fontSizeTiny
                     truncationMode: TruncationMode.Elide
                     elide: Text.ElideRight
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
                 }
-                Label {
-                    id: dateText
-                    text: venue
-                    anchors.left: typeIcon.right
-                    anchors.leftMargin: 100
-                    anchors.top: locationText.top
-                    anchors.topMargin: 0
-                    font.capitalization: Font.MixedCase
-                    font.pixelSize: Theme.fontSizeTiny
-                    font.italic: true
-                    truncationMode: TruncationMode.Elide
-                    elide: Text.ElideRight
-                    color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
-                }
+
             }
 
         }
@@ -238,12 +239,18 @@ Page {
             ContextMenu {
                 id: menu
                 MenuItem {
-                    text: "Open in browser"
+                    text: qsTr("Open in browser")
                     onClicked: {
-                        print ('')
-                        print(upcommingList.currentIndex)
                         Qt.openUrlExternally(upcommingModel.get(upcommingList.currentIndex).uri)
 
+                    }
+                }
+                MenuItem {
+                    text: qsTr("Share")
+                    onClicked: {
+                        print(upcommingList.currentIndex)
+                        var current = upcommingModel.get(upcommingList.currentIndex)
+                        pageStack.push(Qt.resolvedUrl("ShareWithPage.qml"), {destroyOnPop:true, mainPage: mainPage, sharedName: "My plans", sharedContent: current.uri, sharedType:"text/x-url" })
                     }
                 }
             }

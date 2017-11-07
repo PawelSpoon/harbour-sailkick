@@ -28,16 +28,14 @@ Dialog {
         VerticalScrollDecorator {}
 
         PullDownMenu {
-            /*MenuItem {
-                text: qsTr("Anonymous settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPageAnonymous.qml"), {mainPage: settings.mainPage})
-            }*/
             MenuItem {
                 text: qsTr("Get tracked items from songkick")
-                onClicked: {                
-                    API.getUsersTrackedItems("artist",entrySongKickUserName.text, settings.mainPage.updateTrackingItemsInDb)
-                    API.getUsersTrackedItems("location",entrySongKickUserName.text, settings.mainPage.updateTrackingItemsInDb)
-                    //settings.mainPage.reloadTrackingItemsAndUpcomming() happens before responses are back due to async
+                onClicked: {
+                    DB.removeAllTrackingEntries("Type")
+                    DB.removeAllTrackingEntries("artist")
+                    DB.removeAllTrackingEntries("location")
+                    API.getUsersTrackedItems("artist",1,entrySongKickUserName.text, settings.mainPage.updateTrackingItemsInDb)
+                    API.getUsersTrackedItems("location",1,entrySongKickUserName.text, settings.mainPage.updateTrackingItemsInDb)
                 }
             }
         }
