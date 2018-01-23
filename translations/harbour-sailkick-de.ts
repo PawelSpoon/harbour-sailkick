@@ -1,84 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
-<context>
-    <name>FileSystemDialog</name>
-    <message>
-        <source>Problem with SD card</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SD cards with multiple partitions are not supported.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hide system files</source>
-        <extracomment>Used in file browser to hide the system files</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show system files</source>
-        <extracomment>Used in file browser to show the hidden system files</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hide file filter</source>
-        <extracomment>Used in file browser to hide the file name filter</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show file filter</source>
-        <extracomment>Used in file browser to show the file name filter</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select</source>
-        <extracomment>As in select file</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New file name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enter new file name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>File filter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set file filter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Device Memory</source>
-        <extracomment>&quot;Device Memory&quot; is used in the file browser and means all files which are saved under home folder of the user</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Android Storage</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
+<TS version="2.1" language="de">
 <context>
     <name>HelpMainPage</name>
     <message>
-        <source>This is a native SongKick application.&lt;br&gt;&lt;br&gt;&lt;h2&gt;Concerts&lt;/h2&gt;
-This page shows the upcoming events of your favorite artists in your area(s). &lt;br&gt;
+        <location filename="../qml/pages/HelpMainPage.qml" line="7"/>
+        <source>This is a native SongKick application.&lt;br&gt;&lt;br&gt;&lt;h2&gt;General Navigation&lt;/h2&gt;
+This app nearly implements an carousel. Starting with Plans page you can swipe to Concerts, Locations, Artists back to Plans.
+Click on an item in Locations or Artist page to view all corresponding events. Swipe back to return to main carousel.
+Click on an event to open the event details page. Swipe back to return or forward to open event in Browser.
+PressAndHold on an event will open a menu where you can again open event in Browser or share it.
+
+&lt;h2&gt;Plans&lt;/h2&gt;
+This page shows all events that you have marked either as &apos;i am going&apos; or &apos;track event&apos;.
+
+&lt;h2&gt;Concerts&lt;/h2&gt;
+This page shows the upcoming events of your favorite artists in your favorite area(s). &lt;br&gt;
 Click on an item will open the details page.&lt;br&gt;
 PressAndHold on an item will open the event in browser on songkick.com.&lt;br&gt;
 PullDownMenu &apos;Refresh&apos; will refresh the content. &lt;br&gt;
@@ -111,10 +48,12 @@ so all the managing of your account: favorite artists / venues etc. has to happe
 <context>
     <name>HelpPage</name>
     <message>
+        <location filename="../qml/pages/HelpPage.qml" line="29"/>
         <source>a native SongKick client</source>
-        <translation>SongKick App für Sailfish OS</translation>
+        <translation>SailfishOS App für songkick.com</translation>
     </message>
     <message>
+        <location filename="../qml/pages/HelpPage.qml" line="37"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
@@ -122,190 +61,204 @@ so all the managing of your account: favorite artists / venues etc. has to happe
 <context>
     <name>MainPage</name>
     <message>
+        <location filename="../qml/pages/MainPage.qml" line="232"/>
         <source>Concerts</source>
         <translation>Konzerte</translation>
     </message>
     <message>
+        <location filename="../qml/pages/MainPage.qml" line="238"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
+        <location filename="../qml/pages/MainPage.qml" line="242"/>
+        <source>Get tracked items from songkick</source>
+        <translation>Lade deine Städte / Artisten von songkick.com</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="259"/>
         <source>Refresh</source>
         <translation>Neu Laden</translation>
     </message>
     <message>
+        <location filename="../qml/pages/MainPage.qml" line="266"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
+        <location filename="../qml/pages/MainPage.qml" line="276"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">Leider, keine Konzerte, die &apos;s besuchen möchtest</translation>
+        <translation>Kalendar ist leer</translation>
     </message>
     <message>
+        <location filename="../qml/pages/MainPage.qml" line="390"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <source>Get tracked items from songkick</source>
-        <translation type="unfinished">Lade deine Favoriten von songkick.com</translation>
-    </message>
-    <message>
+        <location filename="../qml/pages/MainPage.qml" line="399"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PasswordFieldCombo</name>
-    <message>
-        <source>Enter master password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Master password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Confirm master password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Master password confirmed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Confirm password</source>
-        <translation type="unfinished"></translation>
+        <translation>Teilen</translation>
     </message>
 </context>
 <context>
     <name>PlansPage</name>
     <message>
+        <location filename="../qml/pages/PlansPage.qml" line="14"/>
         <source>im_going</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich gehe</translation>
     </message>
     <message>
+        <location filename="../qml/pages/PlansPage.qml" line="15"/>
         <source>i_might_go</source>
-        <translation type="unfinished"></translation>
+        <translation>Eventuell</translation>
     </message>
     <message>
+        <location filename="../qml/pages/PlansPage.qml" line="107"/>
         <source>Plans</source>
-        <translation type="unfinished"></translation>
+        <translation>Pläne</translation>
     </message>
     <message>
+        <location filename="../qml/pages/PlansPage.qml" line="124"/>
         <source>Help</source>
-        <translation type="unfinished">Hilfe</translation>
+        <translation>Hilfe</translation>
     </message>
     <message>
+        <location filename="../qml/pages/PlansPage.qml" line="134"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">Leider, keine Konzerte, die &apos;s besuchen möchtest</translation>
+        <translation>Kalendar ist leer</translation>
     </message>
     <message>
+        <location filename="../qml/pages/PlansPage.qml" line="269"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Im Browser öffnen</translation>
+        <translation>Im Browser öffnen</translation>
     </message>
     <message>
+        <location filename="../qml/pages/PlansPage.qml" line="278"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Teilen</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="32"/>
         <source>Get tracked items from songkick</source>
-        <translation>Lade deine Favoriten von songkick.com</translation>
+        <translation>Lade deine Städte / Artisten von songkick.com</translation>
     </message>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="50"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="51"/>
         <source>Discard</source>
-        <translation>Abbruch</translation>
+        <translation>Verwerfen</translation>
     </message>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="55"/>
         <source>Songkick credentials</source>
-        <translation>Songkick Login Daten</translation>
+        <translation>Songkick Zugangsdaten</translation>
     </message>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="63"/>
         <source>Songkick Username</source>
-        <translation>Songkick Nutzername</translation>
+        <translation>Songkick Benutzername</translation>
     </message>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="65"/>
         <source>set username (mandatory)</source>
-        <translation>gib Nutzernamen ein (Pflichtfeld)</translation>
+        <translation>Setze Nutzernamen (Pflichtfeld)</translation>
     </message>
 </context>
 <context>
     <name>ShareWithPage</name>
     <message>
-        <source>Discard</source>
-        <translation type="unfinished">Abbruch</translation>
+        <location filename="../qml/pages/ShareWithPage.qml" line="17"/>
+        <source>Done</source>
+        <translation>Fertig</translation>
     </message>
     <message>
-        <source>Done</source>
-        <translation type="unfinished"></translation>
+        <location filename="../qml/pages/ShareWithPage.qml" line="18"/>
+        <source>Discard</source>
+        <translation>Verwerfen</translation>
     </message>
 </context>
 <context>
     <name>TrackedItemPage</name>
     <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="103"/>
         <source>Refresh</source>
         <translation>Neu Laden</translation>
     </message>
     <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="110"/>
         <source>Load more</source>
-        <translation>Weitere Einträge Laden</translation>
+        <translation>Weitere Laden</translation>
     </message>
     <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="119"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="126"/>
         <source>Seems there are no events planed</source>
-        <translation>Leider, schaut schlecht aus</translation>
+        <translation>Anscheinend sind keine Konzerte geplant</translation>
     </message>
     <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="242"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="249"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Teilen</translation>
     </message>
 </context>
 <context>
     <name>TrackedItemsPage</name>
     <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="117"/>
         <source>Your locations</source>
-        <translation>Deine Orte</translation>
+        <translation>Städte</translation>
     </message>
     <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="118"/>
         <source>Your artists</source>
-        <translation>Deine Künstler</translation>
+        <translation>Künstler</translation>
     </message>
     <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="119"/>
         <source>Your venues</source>
-        <translation>Deine Veranstaltungsorte</translation>
+        <translation>Veranstaltungsorte</translation>
     </message>
     <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="127"/>
         <source>Manage</source>
-        <translation>Bearbeiten</translation>
+        <translation>Verwalten</translation>
     </message>
     <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="138"/>
+        <source>Back to top</source>
+        <translation>Zurück zum Anfang</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="143"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="150"/>
         <source>You are not tracking any ...</source>
-        <translation>Du scheinst niemanden zu folgen ...</translation>
+        <translation>Du folgst Niemandem ..</translation>
     </message>
     <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="236"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
-    </message>
-    <message>
-        <source>Back to top</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

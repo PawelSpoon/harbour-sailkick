@@ -18,7 +18,6 @@ SOURCES += src/harbour-sailkick.cpp
 
 OTHER_FILES += qml/harbour-sailkick.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/SecondPage.qml \
     rpm/harbour-sailkick.changes.in \
     rpm/harbour-sailkick.spec \
     rpm/harbour-sailkick.yaml \
@@ -36,7 +35,10 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/harbour-sailkick-de.ts
+TRANSLATIONS += translations/harbour-sailkick-de.ts \
+                translations/harbour-sailkick-en.ts \
+                translations/harbour-sailkick-cs.ts \
+                translations/harbour-sailkick-sv.ts
 
 DISTFILES += \
     qml/Persistance.js \
@@ -46,7 +48,6 @@ DISTFILES += \
     qml/sk-badge-pink.png \
     qml/common/InfoPopup.qml \
     qml/common/PageHeaderExtended.qml \
-    qml/common/PasswordFieldCombo.qml \
     qml/common/QueryDialog.qml \
     qml/common/SilicaCoverPlaceholder.qml \
     qml/common/SilicaLabel.qml \
@@ -61,7 +62,6 @@ DISTFILES += \
     qml/pages/TrackedItemDetailsPage.qml \
     qml/pages/TrackedItemPage.qml \
     qml/pages/TrackedItemsPage.qml \
-    qml/common/ShareWithPage.qml \
     qml/pages/ShareWithPage.qml
 
 RESOURCES +=
