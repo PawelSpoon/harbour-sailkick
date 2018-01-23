@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="cs">
 <context>
     <name>HelpMainPage</name>
     <message>
@@ -50,12 +50,12 @@ so all the managing of your account: favorite artists / venues etc. has to happe
     <message>
         <location filename="../qml/pages/HelpPage.qml" line="29"/>
         <source>a native SongKick client</source>
-        <translation type="unfinished"></translation>
+        <translation>SailfishOS klient pro songkick.com</translation>
     </message>
     <message>
         <location filename="../qml/pages/HelpPage.qml" line="37"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomoc</translation>
     </message>
 </context>
 <context>
@@ -63,42 +63,42 @@ so all the managing of your account: favorite artists / venues etc. has to happe
     <message>
         <location filename="../qml/pages/MainPage.qml" line="232"/>
         <source>Concerts</source>
-        <translation type="unfinished"></translation>
+        <translation>Koncerty</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="238"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="242"/>
         <source>Get tracked items from songkick</source>
-        <translation type="unfinished"></translation>
+        <translation>Získejte sledované položky od songkick.com</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="259"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="266"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomoc</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="276"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>V kalendáři nemáte žádné nadcházející koncerty</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="390"/>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít v prohlížeči</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="399"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Podíl</translation>
     </message>
 </context>
 <context>
@@ -106,37 +106,37 @@ so all the managing of your account: favorite artists / venues etc. has to happe
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="14"/>
         <source>im_going</source>
-        <translation type="unfinished"></translation>
+        <translation>Jdu</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="15"/>
         <source>i_might_go</source>
-        <translation type="unfinished"></translation>
+        <translation>Možná půjdu</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="107"/>
         <source>Plans</source>
-        <translation type="unfinished"></translation>
+        <translation>Plány</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="124"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomoc</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="134"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>V kalendáři nemáte žádné nadcházející koncerty</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="269"/>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít v prohlížeči</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="278"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Podíl</translation>
     </message>
 </context>
 <context>
@@ -144,32 +144,32 @@ so all the managing of your account: favorite artists / venues etc. has to happe
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="32"/>
         <source>Get tracked items from songkick</source>
-        <translation type="unfinished"></translation>
+        <translation>Získejte sledované položky od songkick.com</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="50"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="51"/>
         <source>Discard</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavrhnout</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="55"/>
         <source>Songkick credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Songkick pověření</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="63"/>
         <source>Songkick Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Uživatelské jméno</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="65"/>
         <source>set username (mandatory)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit uživatelské jméno (povinné)</translation>
     </message>
 </context>
 <context>
@@ -177,12 +177,12 @@ so all the managing of your account: favorite artists / venues etc. has to happe
     <message>
         <location filename="../qml/pages/ShareWithPage.qml" line="17"/>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation>Hotovo</translation>
     </message>
     <message>
         <location filename="../qml/pages/ShareWithPage.qml" line="18"/>
         <source>Discard</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavrhnout</translation>
     </message>
 </context>
 <context>
@@ -190,32 +190,32 @@ so all the managing of your account: favorite artists / venues etc. has to happe
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="103"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="110"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Načíst další</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="119"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomoc</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="126"/>
         <source>Seems there are no events planed</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdá se, že nejsou plánovány žádné události</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="242"/>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít v prohlížeči</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="249"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Podíl</translation>
     </message>
 </context>
 <context>
@@ -223,42 +223,42 @@ so all the managing of your account: favorite artists / venues etc. has to happe
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="117"/>
         <source>Your locations</source>
-        <translation type="unfinished"></translation>
+        <translation>Města</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="118"/>
         <source>Your artists</source>
-        <translation type="unfinished"></translation>
+        <translation>Umělci</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="119"/>
         <source>Your venues</source>
-        <translation type="unfinished"></translation>
+        <translation>Místa</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="127"/>
         <source>Manage</source>
-        <translation type="unfinished"></translation>
+        <translation>Spravovat</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="138"/>
         <source>Back to top</source>
-        <translation type="unfinished"></translation>
+        <translation>Zpět na začátek</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="143"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomoc</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="150"/>
         <source>You are not tracking any ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesledujete nikoho ...</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="236"/>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít v prohlížeči</translation>
     </message>
 </context>
 </TS>
