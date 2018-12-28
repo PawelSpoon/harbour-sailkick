@@ -1,2 +1,2 @@
 # harbour-sailkick
-a native sailfish client for songkick.com
+a native sailfish os client for www.songkick.com
