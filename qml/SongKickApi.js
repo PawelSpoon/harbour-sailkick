@@ -89,6 +89,31 @@ function getUpcommingEventsForTrackedItem(type,id,page,callback) {
     xhr.send();
 }
 
+// gets the details for one event
+// https://api.songkick.com/api/3.0/events/{event_id}.json?apikey={your_api_key}
+function getEvent(id, callback)
+{
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        console.log('receiving')
+        //console.log(xhr);
+        if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
+            print('HEADERS_RECEIVED');
+        } else if(xhr.readyState === XMLHttpRequest.DONE) {
+            print('DONE')
+            console.log(xhr.responseText);
+            var json = JSON.parse(xhr.responseText.toString());
+            var event = convertEventResponse(json);
+            callback(event);
+        }
+    }
+    print(songKickUri + "/events/" + id + ".json?" + apiKey + DB.getRandom());
+    xhr.open("GET", songKickUri + "/events/" + id + ".json?" + apiKey + DB.getRandom());
+
+    xhr.send();
+
+}
+
 // this function converts a calendar response (artist/metro-area/venue)
 // into event model
 // in: json response
@@ -105,7 +130,7 @@ function getUpcommingEventsForTrackedItem(type,id,page,callback) {
         "calendarEntry": [
           {"reason": {
               "trackedArtist": [ARTIST, ARTIST],
-              "attendance": "i_might_go|im_goingâ€
+              "attendance": "i_might_go|im_going"
            },
            "event": {EVENT}
           }]
@@ -191,7 +216,7 @@ function convertUpcommingEventsResponse(resp) {
 
   for (var i = 0; i < items; i++) {
     var currentEvent = resp.resultsPage.results.event[i];
-    if (currentEvent == null && currentEvent === undefined) {
+    if (currentEvent === null && currentEvent === undefined) {
          break;
     }
     var eventId = currentEvent.id;
@@ -225,7 +250,7 @@ function convertUpcommingEventsResponse(resp) {
 //        "calendarEntry": [
 //          {"reason": {
 //              "trackedArtist": [ARTIST, ARTIST],
-//              "attendance": "i_might_go|im_goingâ€
+//              "attendance": "i_might_go|im_goin"�
 //           },
 //           "event": {EVENT}
 //          }]
@@ -319,7 +344,7 @@ function convertTrackedItemsResponse(type,resp) {
       if (type === "location") currentItem = resp.resultsPage.results.metroArea[i];
       if (type === "artist")  currentItem = resp.resultsPage.results.artist[i];
 
-      if (currentItem == null) break;
+      if (currentItem === null) break;
       var trackId = currentItem.id;
       var trackName = currentItem.displayName;
       var eventi = {type: type, uid: trackId + "-" + trackName, title: trackName, skid: trackId + "-" + trackName, txt: currentItem.uri, uri: currentItem.uri}
@@ -330,4 +355,30 @@ function convertTrackedItemsResponse(type,resp) {
     print ('number of ' + type + '(s): ' + trackedItems.length)
 
     return trackedItems
+}
+
+
+function convertEventResponse(resp)
+{
+    print('called')
+
+    var eventi = {};
+
+    if (resp.resultsPage.status !== "ok") {
+      console.log("return value is not ok");
+      eventi = {id:0, uri:"", name:"resultPage.status not ok", date: "", time: "", venueId: 1, venueName: "undefined"}
+      return eventi;
+    }
+
+    eventi.displayName = resp.resultsPage.results.event.displayName;
+    eventi.type = resp.resultsPage.results.event.type;
+    eventi.dateTime = resp.resultsPage.results.event.start.date;
+    if (resp.resultsPage.results.event.start.datetime !== null) {
+       startTime.text = resp.resultsPage.results.event.start.datetime;
+    }
+    eventi.venue = resp.resultsPage.results.event.venue.displayName;
+    eventi.city = resp.resultsPage.results.event.venue.metroArea.displayName
+    eventi.artist = resp.resultsPage.results.event.performance[0].displayName
+
+    return eventi;
 }

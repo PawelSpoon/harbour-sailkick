@@ -7,6 +7,7 @@ import "../SongKickApi.js" as API
 import "../common"
 
 
+
 Page {
     id: root
 
@@ -141,14 +142,16 @@ Page {
             upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri })
         }
         sortModel()
+        applicationWindow.updateCoverList('Concerts', upcomingModel)
     }
 
 
     onStatusChanged: {
         if (status === PageStatus.Active) {
-            //requestCoverPage("Default.qml")
             pageStack.pushAttached(
                     Qt.resolvedUrl("TrackedItemsPage.qml"), {mainPage: root, trackedType: "location"})
+            applicationWindow.setCurrentPage('Concerts')
+            applicationWindow.updateCoverList('Concerts', upcomingModel)
         }
     }
 
@@ -315,7 +318,7 @@ Page {
                     upcommingList.currentIndex = index
                     print(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
-                    pageStack.push(Qt.resolvedUrl("TrackedItemDetailsPage.qml"),{mainPage: root, uri: current.uri})
+                    pageStack.push(Qt.resolvedUrl("EventPage.qml"),{mainPage: root, uri: current.uri})
                 }
 
                 onPressAndHold: {

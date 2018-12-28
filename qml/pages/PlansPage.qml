@@ -8,6 +8,7 @@ import "../common"
 
 
 
+
 Page {
     id: plans
     property Page mainPage
@@ -43,12 +44,18 @@ Page {
             upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri, "attendance": events[i].attendance })
         }
         sortModel()
+        applicationWindow.updateCoverList('Plans', upcomingModel)
     }
 
 
     onStatusChanged: {
-        onStateChanged:    {
+        if (status === PageStatus.Active) {
+            applicationWindow.setCurrentPage('Plans')
             pageStack.pushAttached(Qt.resolvedUrl("MainPage.qml"))
+            // during the inital startup the list won't be ready yet, but for a later swipe back to this page.
+            // this location is correct. thats why i check for the count, assuming that this reflects
+            // that list is ready
+            if (upcomingModel.count > 0) applicationWindow.updateCoverList('Plans', upcomingModel)
         }
     }
 
@@ -63,7 +70,7 @@ Page {
 
     Component.onCompleted:
     {
-       fillUpCommingModelForAllItemsInTrackingModel()
+       fillUpCommingModelForAllItemsInTrackingModel();
     }
 
 
@@ -174,8 +181,8 @@ Page {
                     print(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
                     // plans page does not have a link to mainpage yet, for that mainpage would need
-                    pageStack.push(Qt.resolvedUrl("TrackedItemDetailsPage.qml"),{mainPage: null, uri: current.uri}) // with mainPage null open in browser will not work
-                    //pageStack.push(Qt.resolvedUrl("TrackedItemDetailsPage.qml"),{mainPage: mainPage, uri: current.uri})
+                    pageStack.push(Qt.resolvedUrl("EventPage.qml"),{mainPage: null, uri: current.uri}) // with mainPage null open in browser will not work
+                    //pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: mainPage, uri: current.uri})
                 }
 
                 onPressAndHold: {

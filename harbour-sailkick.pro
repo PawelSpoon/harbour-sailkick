@@ -38,7 +38,8 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-sailkick-de.ts \
                 translations/harbour-sailkick-en.ts \
                 translations/harbour-sailkick-cs.ts \
-                translations/harbour-sailkick-sv.ts
+                translations/harbour-sailkick-sv.ts \
+                translations/harbour-sailkick-es.ts
 
 DISTFILES += \
     qml/Persistance.js \
@@ -59,9 +60,11 @@ DISTFILES += \
     qml/pages/MainPage.qml \
     qml/pages/PlansPage.qml \
     qml/pages/SettingsPage.qml \
-    qml/pages/TrackedItemDetailsPage.qml \
     qml/pages/TrackedItemPage.qml \
     qml/pages/TrackedItemsPage.qml \
-    qml/pages/ShareWithPage.qml
+    qml/pages/ShareWithPage.qml \
+    translations/harbour-sailkick-es.ts \
+    qml/pages/EventWebViewPage.qml \
+    qml/pages/EventPage.qml
 
 RESOURCES +=

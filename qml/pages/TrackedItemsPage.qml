@@ -19,11 +19,19 @@ Page {
 
     onStatusChanged: {
         if (status === PageStatus.Active) {
-            //requestCoverPage("Default.qml")
             var nextPageType
             // it concerts == main -> plan -> location -> artist
-            if (trackedType === "location") nextPageType = "artist"
-            if (trackedType === "artist") nextPageType = "concert"
+            if (trackedType === "location") {
+                nextPageType = "artist"
+                applicationWindow.setCurrentPage(trackedType)
+                applicationWindow.updateCoverList(trackedType,trackingModel)
+            }
+
+            if (trackedType === "artist") {
+                nextPageType = "concert"
+                applicationWindow.setCurrentPage(trackedType)
+                applicationWindow.updateCoverList(trackedType,trackingModel)
+            }
             if (!priv.optionsPage) {
                 if (nextPageType === "concert"){
                     priv.optionsPage = pageStack.pushAttached(Qt.resolvedUrl("PlansPage.qml"), {mainPage: root})
@@ -69,6 +77,7 @@ Page {
         }
         console.debug(trackedType + " loaded from DB")
         //sortModel()
+        applicationWindow.updateCoverList(trackedType,locationList)
     }
 
     property ListModel locationList : trackingModel
@@ -126,8 +135,8 @@ Page {
                 MenuItem {
                     text: qsTr("Manage")
                     onClicked: {
-                        if (trackedType == "location") pageStack.push(Qt.resolvedUrl("TrackedItemDetailsPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/metro_areas", songKickId: "no songKickId", titleOf: "no titleOf" })
-                        if (trackedType == "artist")   pageStack.push(Qt.resolvedUrl("TrackedItemDetailsPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/artists", songKickId: "no songKickId", titleOf: "no titleOf" })
+                        if (trackedType == "location") pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/metro_areas", songKickId: "no songKickId", titleOf: "no titleOf" })
+                        if (trackedType == "artist")   pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/artists", songKickId: "no songKickId", titleOf: "no titleOf" })
                     }
                 }
 

@@ -101,18 +101,18 @@ Dialog {
                 //anchors.left : entrySongKickUserName.left
                 //anchors.leftMargin: entrySongKickUserName.anchors.leftMargin
                 width: entrySongKickUserName.width - 100
-                text: "Username is needed to retrieve
-your tracked items
-from songkick.com.
-Password is currently not needed.
-If you do not have a
-Songkick account yet,
-please create one.
-When ever you modify your
-tracking items on songkick.com,
-sync them using
-'Get tracked items ..'
-pulldown menu"
+                text: qsTr("Username is needed to retrieve<br>\
+your tracked items<br>\
+from songkick.com.<br>\
+Password is currently not needed.<br>\
+If you do not have a <br>\
+Songkick account yet, <br>\
+please create one. <br>\
+When ever you modify your <br>\
+tracking items on songkick.com, <br>\
+sync them using<br>\
+'Get tracked items ..'<br>\
+pulldown menu")
             }
 
         }

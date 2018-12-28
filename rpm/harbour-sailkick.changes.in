@@ -8,6 +8,27 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Dec 27 2018 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.7-1
+- remove 'open in webview' from tracked item context menu
+
+* Thu Dec 27 2018 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.7-0
+- eventpage in qml
+
+* Tue Mai 01 2018 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.6-1
+- updated translations
+
+* Wed March 07 2018 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.6-0
+- cover page
+
+* Wed Feb 07 2018 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.5-5
+- dutch translation
+
+* Sun Jan 28 2018 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.5-4
+- updated translation
+
+* Sun Jan 28 2018 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.5-3
+- spanish translation
+
 * Sun Jan 28 2018 Pawel Spoon <pawel@ich-habe-fertig.com> 0.1.5-2
 - swedisch translation
 

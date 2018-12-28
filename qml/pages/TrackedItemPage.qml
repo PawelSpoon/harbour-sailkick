@@ -43,12 +43,15 @@ Page {
             if (pos > 1) shortTitle = shortTitle.substr(0,pos)
               upcommingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri })
         }
+        applicationWindow.updateCoverList(titleOf,upcommingModel)
     }
 
 
     Component.onCompleted:
     {
         reloadUpCommingModel()
+        applicationWindow.setCurrentPage(titleOf)
+        applicationWindow.updateCoverList(titleOf,upcommingModel)
     }
 
 
@@ -173,7 +176,8 @@ Page {
                     upcommingList.currentIndex = index
                     print(upcommingList.currentIndex)
                     var current = upcommingModel.get(upcommingList.currentIndex)
-                    pageStack.push(Qt.resolvedUrl("TrackedItemDetailsPage.qml"),{mainPage: root, uri: current.uri, songKickId: current.skid, titleOf: current.title })
+                     pageStack.push(Qt.resolvedUrl("EventPage.qml"),{mainPage: root, uri: current.uri})
+                    // pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: root, uri: current.uri, songKickId: current.skid, titleOf: current.title })
                 }
 
                 Image {
@@ -245,6 +249,14 @@ Page {
 
                     }
                 }
+                /*MenuItem {
+                    text: qsTr("Open in web view")
+                    onClicked: {
+                        print(upcommingList.currentIndex)
+                        var current = upcommingModel.get(upcommingList.currentIndex)
+                        pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: mainPage, uri: current.uri})
+                    }
+                }*/
                 MenuItem {
                     text: qsTr("Share")
                     onClicked: {
