@@ -7,7 +7,7 @@ CoverBackground {
 
     id: coverPage
 
-    property alias title: coverTitleLabel.text // .title // text
+    property alias title: coverTitleLabel.text
 
     function fillModel(events)
     {
@@ -103,9 +103,17 @@ CoverBackground {
     CoverActionList {
         id: coverAction
 
-        /*CoverAction {
+/*        CoverAction {
             iconSource: "image://theme/icon-cover-refresh"
         }*/
+
+        CoverAction {
+            iconSource: "image://theme/icon-cover-next"
+            onTriggered: {
+                console.log('nextPage triggered');
+                applicationWindow.moveToNextPage();
+            }
+        }
 
     }
 }

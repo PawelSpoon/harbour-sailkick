@@ -31,15 +31,13 @@ Page {
 
     function updateTrackingItemsInDb(type, page, username, items)
     {
-
         print('number of items: ' +  items.length)
-        //clearTrackingModel();
 
         var count = items.length
         for (var i = 0; i < count; i++) {
           var currentItem = items[i];
           print('storing: ' +  currentItem.title)
-          DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.uri)
+          DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.uri,currentItem.body)
         }
         print ('number of items: ' + items.length)
 
@@ -64,7 +62,7 @@ Page {
           trackedItems = DB.getTrackedItems("artist")
           for (i=0; i< trackedItems.length; i++)
           {
-             fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri)
+             fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri, trackedItems[i].body)
           }
           console.log("artist loaded")
 
@@ -95,11 +93,6 @@ Page {
         }
     }
 
-    function getEntryDetails(type, uid)
-    {
-        return DB.getTrackedItem(type,uid);
-    }
-
     // remove a single entry from trackingModel and db
     function removeEntry(title, type, uid, index)
     {
@@ -108,7 +101,8 @@ Page {
         trackingModel.remove(index) // this is nicer
     }
 
-    function cleanDb()
+   // seems obsolete
+    /*function cleanDb()
     {
         DB.removeAllTrackingEntries("Type") // just in case the dummy item was stored to db
         DB.removeAllTrackingEntries("location")
@@ -116,12 +110,12 @@ Page {
         DB.removeAllTrackingEntries("venue")
         trackingModel.clear()
         fillUpCommingModelForAllItemsInTrackingModel()
-    }
+    }*/
 
     function fillUpCommingModelForAllItemsInTrackingModel()
     {
         upcomingModel.clear()
-        API.getUsersUpcommingEvents("artist",DB.getUser().name,fillUpCommingModelForOneTrackingEntry)
+        API.getUsersUpcommingEvents("artist", DB.getUser().name, fillUpCommingModelForOneTrackingEntry)
     }
 
     function dateWithDay(datum)
@@ -142,16 +136,15 @@ Page {
             upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri })
         }
         sortModel()
-        applicationWindow.updateCoverList('Concerts', upcomingModel)
+        applicationWindow.updateCoverList('concerts', upcomingModel)
     }
-
 
     onStatusChanged: {
         if (status === PageStatus.Active) {
             pageStack.pushAttached(
                     Qt.resolvedUrl("TrackedItemsPage.qml"), {mainPage: root, trackedType: "location"})
-            applicationWindow.setCurrentPage('Concerts')
-            applicationWindow.updateCoverList('Concerts', upcomingModel)
+            applicationWindow.setCurrentPage('concerts')
+            applicationWindow.updateCoverList('concerts', upcomingModel)
         }
     }
 
@@ -159,23 +152,8 @@ Page {
     {
         clearTrackingModel();
         DB.initialize();
-        reloadTrackingItemsAndUpcomming()
-    }
-
-    function reloadTrackingItemsAndUpcomming()
-    {
-        clearTrackingModel();
-        console.debug("db initilized")
-        //DB.getLocations();
-        DB.getTrackedItems("location")
-        console.debug("locations loaded")
-        DB.getTrackedItems("venue")
-        console.log("venue loaded")
-        DB.getTrackedItems("artist")
-        console.log("artist loaded")
         fillUpCommingModelForAllItemsInTrackingModel()
     }
-
 
     function sortModel()
     {
@@ -318,7 +296,7 @@ Page {
                     upcommingList.currentIndex = index
                     print(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
-                    pageStack.push(Qt.resolvedUrl("EventPage.qml"),{mainPage: root, uri: current.uri})
+                    pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri })
                 }
 
                 onPressAndHold: {
@@ -403,7 +381,7 @@ Page {
                     onClicked: {
                         print(upcommingList.currentIndex)
                         var current = upcomingModel.get(upcommingList.currentIndex)
-                        pageStack.push(Qt.resolvedUrl("ShareWithPage.qml"), {destroyOnPop:true, mainPage: mainPage, sharedName: "My plans", sharedContent: current.uri, sharedType:"text/x-url" })
+                        pageStack.push(Qt.resolvedUrl("ShareWithPage.qml"), {destroyOnPop:true, sharedName: "My plans", sharedContent: current.uri, sharedType:"text/x-url" })
                     }
                 }
             }

@@ -6,7 +6,6 @@ import Sailfish.TransferEngine 1.0
 
 Dialog {
     id: shareWith
-    property Page mainPage
     property string sharedName
     property string sharedContent
     property string sharedType
@@ -44,16 +43,6 @@ Dialog {
     Component.onDestruction: {
 
     }
-
-/*    onAccepted: {
-        print("on accepted")
-        pageStack.pop()
-    }
-
-    onRejected: {
-      print("on rejected")
-      pageStack.pop()
-    }*/
 
     onVisibleChanged: {
         pageStack.pop()

@@ -13,8 +13,8 @@ Name:       harbour-sailkick
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Native Songkick Client
-Version:    1.7
-Release:    1
+Version:    2.5
+Release:    0
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/
@@ -28,7 +28,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Unofficial native SongKick client
+Short description of my Sailfish OS Application
 
 
 %prep

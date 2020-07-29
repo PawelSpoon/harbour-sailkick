@@ -11,10 +11,9 @@ import "../common"
 
 Page {
     id: plans
-    property Page mainPage
+
     property string im_going : qsTr("im_going")
     property string i_might_go : qsTr("i_might_go")
-
 
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
@@ -28,7 +27,18 @@ Page {
     function fillUpCommingModelForAllItemsInTrackingModel()
     {
         upcomingModel.clear()
-        API.getUsersUpcommingEvents("attendance",DB.getUser().name,fillUpCommingModelForOneTrackingEntry)
+        API.getUsersUpcommingEvents("attendance", DB.getUser().name, online, offline)
+    }
+
+    function offline(type, events)
+    {
+        //get from db and show
+    }
+
+    function online(type, events)
+    {
+        // save to db then show.
+        fillUpCommingModelForOneTrackingEntry(type, events);
     }
 
     function fillUpCommingModelForOneTrackingEntry(type, events)
@@ -42,20 +52,21 @@ Page {
             if (pos > 1) shortTitle = events[i].name.substr(0,pos)
             print(shortTitle + " " + events[i].attendance)
             upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri, "attendance": events[i].attendance })
+            //todo: store to db
         }
         sortModel()
-        applicationWindow.updateCoverList('Plans', upcomingModel)
+        applicationWindow.updateCoverList('plans', upcomingModel)
     }
 
 
     onStatusChanged: {
         if (status === PageStatus.Active) {
-            applicationWindow.setCurrentPage('Plans')
+            applicationWindow.setCurrentPage('plans')
             pageStack.pushAttached(Qt.resolvedUrl("MainPage.qml"))
             // during the inital startup the list won't be ready yet, but for a later swipe back to this page.
             // this location is correct. thats why i check for the count, assuming that this reflects
             // that list is ready
-            if (upcomingModel.count > 0) applicationWindow.updateCoverList('Plans', upcomingModel)
+            if (upcomingModel.count > 0) applicationWindow.updateCoverList('plans', upcomingModel)
         }
     }
 
@@ -115,16 +126,12 @@ Page {
         }
 
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
-        /*PullDownMenu {
-            MenuItem {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"), {mainPage: root})
-            }
+        PullDownMenu {
             MenuItem {
                 text: qsTr("Refresh")
                 onClicked: fillUpCommingModelForAllItemsInTrackingModel()
             }
-        }*/
+        }
 
         PushUpMenu {
             MenuItem {
@@ -181,7 +188,7 @@ Page {
                     print(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
                     // plans page does not have a link to mainpage yet, for that mainpage would need
-                    pageStack.push(Qt.resolvedUrl("EventPage.qml"),{mainPage: null, uri: current.uri}) // with mainPage null open in browser will not work
+                    pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri }) // with mainPage null open in browser will not work
                     //pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: mainPage, uri: current.uri})
                 }
 
@@ -286,7 +293,7 @@ Page {
                     onClicked: {
                         print(upcommingList.currentIndex)
                         var current = upcomingModel.get(upcommingList.currentIndex)
-                        pageStack.push(Qt.resolvedUrl("ShareWithPage.qml"), {destroyOnPop:true, mainPage: mainPage, sharedName: "My plans", sharedContent: current.uri, sharedType:"text/x-url" })
+                        pageStack.push(Qt.resolvedUrl("ShareWithPage.qml"), {destroyOnPop:true, sharedName: "My plans", sharedContent: current.uri, sharedType:"text/x-url" })
                     }
                 }
             }

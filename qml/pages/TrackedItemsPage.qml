@@ -4,6 +4,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
+import "../AppController.js" as AppController
 import "../common"
 
 // shows all tracked items of one type,
@@ -12,7 +13,8 @@ import "../common"
 Page {
     id: trackedItemsPage
     property string trackedType : "location"
-    property Page mainPage
+    property MainPage mainPage
+    // property AppController controller
 
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
@@ -59,12 +61,11 @@ Page {
         reloadTrackingItemsAndUpcomming()
     }
 
-    function fillTrackingModel(title, type, skid, uid, uri)
+    function fillTrackingModel(title, type, skid, uid, uri, body)
     {
         var contains = trackingModel.contains(uid)
         if (contains[0]) console.log("contains already " + title);
-//        print("adding to tracking model: " + title + ";type: " + type + ";skid: " + skid + ";uid: " + uid + "; uri:" + uri)
-        trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid, "uri": uri})
+        trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid, "uri": uri, "body": body})
     }
 
     function reloadTrackingItemsAndUpcomming()
@@ -73,10 +74,9 @@ Page {
         var trackedItems = DB.getTrackedItems(trackedType)
         for (var i=0; i< trackedItems.length; i++)
         {
-           fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri)
+           fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri, trackedItems[i].body)
         }
-        console.debug(trackedType + " loaded from DB")
-        //sortModel()
+        console.debug(trackedItems.length + " " + trackedType + " loaded from DB")
         applicationWindow.updateCoverList(trackedType,locationList)
     }
 
@@ -101,7 +101,6 @@ Page {
     // this is going to be populated from db
     ListModel {
         id: trackingModel
-        //ListElement {title: "Title"; type: "Type"; uid: "UID"; skid: "Skid"; uri: "Uri"}
 
         function contains(uid) {
             for (var i=0; i<count; i++) {
@@ -135,8 +134,15 @@ Page {
                 MenuItem {
                     text: qsTr("Manage")
                     onClicked: {
-                        if (trackedType == "location") pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/metro_areas", songKickId: "no songKickId", titleOf: "no titleOf" })
-                        if (trackedType == "artist")   pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/artists", songKickId: "no songKickId", titleOf: "no titleOf" })
+                        if (trackedType == "location") pageStack.push(Qt.resolvedUrl("WebViewPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/metro_areas", songKickId: "no songKickId", titleOf: "no titleOf" })
+                        if (trackedType == "artist")   pageStack.push(Qt.resolvedUrl("WebViewPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/artists", songKickId: "no songKickId", titleOf: "no titleOf" })
+                    }
+                }
+
+                MenuItem {
+                    text: qsTr("Refresh")
+                    onClicked: {
+                        AppController.updateTrackingItems(trackedType, reloadTrackingItemsAndUpcomming);
                     }
                 }
 
@@ -233,6 +239,26 @@ Page {
                     truncationMode: TruncationMode.Elide
                     elide: Text.ElideRight
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
+                }
+                
+                Label {
+                    id: onTour
+                    text: if (trackedType === "location") { " " } else
+                          { // artist
+                              if (body !== null && body.onTourUntil !== null) {
+                                  qsTr('on tour')
+                              }
+                              else
+                              { " "}
+                          }
+                    anchors.right: parent.right
+                    anchors.rightMargin: Theme.paddingMedium
+                    anchors.verticalCenter : parent.verticalCenter
+                    font.capitalization: Font.SmallCaps
+                    font.pixelSize: Theme.fontSizeMedium
+                    truncationMode: TruncationMode.Elide
+                    elide: Text.ElideRight
+                    color: Theme.highlightColor
                 }
             }
         }

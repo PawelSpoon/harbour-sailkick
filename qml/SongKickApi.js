@@ -11,16 +11,23 @@ var songKickUri = "https://api.songkick.com/api/3.0"
 // in: type: "artist" / "attendance"
 //     username: "username"
 //     callback: callback function that accepts string, event[]
-function getUsersUpcommingEvents(type,username, callback) {
-    var xhr = new XMLHttpRequest();
+function getUsersUpcommingEvents(type,username, onSuccess, onFailure) {
+  var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
             print('HEADERS_RECEIVED')
         } else if(xhr.readyState === XMLHttpRequest.DONE) {
-            print('DONE')
-            var json = JSON.parse(xhr.responseText.toString())
-            var events = convertCalendarResponse(json)
-            callback(type, events)
+          print('DONE')
+          if (xhr.status === 200) {
+             var json = JSON.parse(xhr.responseText.toString())
+             var events = convertCalendarResponse(json)
+             onSuccess(type, events)
+          }
+          else
+          {
+             onFailure(type)
+            // i.e. load the first page from db == failure callback
+          }
         }
     }
     var queryType
@@ -36,18 +43,23 @@ function getUsersUpcommingEvents(type,username, callback) {
 // in: type: "artist" / "area"
 //     username: "username"
 //     callback: callback function that accepts string, event[]
-function getUsersTrackedItems(type,page,username, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-            print('HEADERS_RECEIVED');
-        } else if(xhr.readyState === XMLHttpRequest.DONE) {
-            print('DONE')
-            var json = JSON.parse(xhr.responseText.toString())
-            var items = convertTrackedItemsResponse(type,json)
-            callback(type,page,username,items)
-        }
-    }
+function getUsersTrackedItems(type, page, username, onSuccess, onFailure) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
+          print('HEADERS_RECEIVED');
+      } else if(xhr.readyState === XMLHttpRequest.DONE) {
+          print('DONE')
+          if (xhr.status === 200) {
+             var json = JSON.parse(xhr.responseText.toString())
+             var items = convertTrackedItemsResponse(type,json)
+             onSuccess(type,page,username,items)
+          }
+          else {
+              onFailure(type)
+          }
+      }
+  }
     var queryType
     if (type === "artist") queryType = "artists"
     if (type === "location") queryType = "metro_areas"
@@ -112,6 +124,51 @@ function getEvent(id, callback)
 
     xhr.send();
 
+}
+
+// gets the tracking status of event
+function getEventTrackingInfo(id, callback)
+{
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        console.log('receiving')
+        //console.log(xhr);
+        if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
+            print('HEADERS_RECEIVED');
+        } else if(xhr.readyState === XMLHttpRequest.DONE) {
+            print('DONE')
+            console.log(xhr.responseText);
+            var json = JSON.parse(xhr.responseText.toString());
+            if (json.resultsPage.status === "ok" ) {
+                print(json.resultsPage.results.tracking.attendance)
+                callback(json.resultsPage.results.tracking.attendance)
+                return;
+            }
+            else
+            {
+                callback("");
+                return;
+            }
+        }
+    }
+    var userName = DB.getUser().name
+    // https://api.songkick.com/api/3.0/users/{username}/trackings/event:{event_id}.json?apikey={your_api_key}
+    print(songKickUri + "/users/" + userName + "/trackings/event:"+ id + ".json?" + apiKey + DB.getRandom());
+    xhr.open("GET", songKickUri + "/users/" + userName + "/trackings/event:"+ id + ".json?" + apiKey + DB.getRandom());
+    // if no tracking, it will return: {"resultsPage":{"status":"error","error":{"message":"Tracking not found"}}}
+    // if tracking, then it will return: "resultsPage":{"status":"ok","results":{"tracking":{"username":"spoonman72","id":"event:36081339","createdAt":"2019-02-27T01:18:50+0000","attendance":"i_might_go"}}}}
+    xhr.send();
+}
+
+function getArtistTrackingInfo(id, callback)
+{
+    //https://api.songkick.com/api/3.0/users/{username}/trackings/artist:{artist_id}.json?apikey={your_api_key}
+
+}
+
+function getVenueTrackingInfo(id, callback)
+{
+    // https://api.songkick.com/api/3.0/users/{username}/trackings/metro_area:{metro_area_id}.json?apikey={your_api_key}
 }
 
 // this function converts a calendar response (artist/metro-area/venue)
@@ -250,7 +307,7 @@ function convertUpcommingEventsResponse(resp) {
 //        "calendarEntry": [
 //          {"reason": {
 //              "trackedArtist": [ARTIST, ARTIST],
-//              "attendance": "i_might_go|im_goin"ù
+//              "attendance": "i_might_go|im_goin"ÔøΩ
 //           },
 //           "event": {EVENT}
 //          }]
@@ -344,13 +401,13 @@ function convertTrackedItemsResponse(type,resp) {
       if (type === "location") currentItem = resp.resultsPage.results.metroArea[i];
       if (type === "artist")  currentItem = resp.resultsPage.results.artist[i];
 
-      if (currentItem === null) break;
+      if (currentItem === null || currentItem === undefined) break;
       var trackId = currentItem.id;
       var trackName = currentItem.displayName;
-      var eventi = {type: type, uid: trackId + "-" + trackName, title: trackName, skid: trackId + "-" + trackName, txt: currentItem.uri, uri: currentItem.uri}
+      var eventi = {type: type, uid: trackId + "-" + trackName, title: trackName, skid: trackId + "-" + trackName, txt: currentItem.uri, uri: currentItem.uri, body: currentItem }
 
       trackedItems.push(eventi);
-      print('pushed ' + type + ": " +  eventi.title + "; uri: " + eventi.uri)
+      print('pushed ' + type + ": " +  eventi.title + "; uri: " + eventi.uri + ' body:' + eventi.body)
     }
     print ('number of ' + type + '(s): ' + trackedItems.length)
 
@@ -360,8 +417,6 @@ function convertTrackedItemsResponse(type,resp) {
 
 function convertEventResponse(resp)
 {
-    print('called')
-
     var eventi = {};
 
     if (resp.resultsPage.status !== "ok") {
@@ -373,12 +428,28 @@ function convertEventResponse(resp)
     eventi.displayName = resp.resultsPage.results.event.displayName;
     eventi.type = resp.resultsPage.results.event.type;
     eventi.dateTime = resp.resultsPage.results.event.start.date;
-    if (resp.resultsPage.results.event.start.datetime !== null) {
-       startTime.text = resp.resultsPage.results.event.start.datetime;
+    eventi.time = "";
+    if (resp.resultsPage.results.event.start.time !== null) {
+       eventi.time = resp.resultsPage.results.event.start.time;
     }
     eventi.venue = resp.resultsPage.results.event.venue.displayName;
-    eventi.city = resp.resultsPage.results.event.venue.metroArea.displayName
-    eventi.artist = resp.resultsPage.results.event.performance[0].displayName
-
+    eventi.venueWebSite = resp.resultsPage.results.event.venue.website;
+    eventi.street = resp.resultsPage.results.event.venue.street;
+    eventi.zip = resp.resultsPage.results.event.venue.zip;
+    eventi.city = resp.resultsPage.results.event.venue.metroArea.displayName;
+    eventi.country = resp.resultsPage.results.event.venue.city.country.displayName;
+    eventi.lat = resp.resultsPage.results.event.venue.lat;
+    eventi.lng = resp.resultsPage.results.event.venue.lng;
+    eventi.body = resp.resultsPage.results.event;
+    var artists = [];
+    print("length:" + resp.resultsPage.results.event.performance.length)
+    for (var aC = 0; aC < resp.resultsPage.results.event.performance.length; aC++)
+    {
+        var currAc = {};
+        currAc["displayName"] = resp.resultsPage.results.event.performance[aC].displayName;
+        // currAc["startTime"] = resp.resultsPage.results.event.performance[aC].startTime;
+        artists[aC] = currAc;
+    }
+    eventi.artists = artists;
     return eventi;
 }

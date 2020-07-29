@@ -11,9 +11,10 @@ import "../common"
 Dialog {
 
     id: eventPage
-    // property to pass root page
-    property MainPage mainPage: null
+
     property string uri
+    property string im_going : qsTr("im_going")
+    property string i_might_go : qsTr("i_might_go")
 
     allowedOrientations: applicationWindow.orientationSetting
 
@@ -35,13 +36,6 @@ Dialog {
         Column {
             id: column
             width: eventPage.width
-        /*Image {
-            anchors.horizontalCenter: parent.horizontalCenter
-            height: 240 * Theme.pixelRatio;
-            fillMode: Image.PreserveAspectFit
-            //antialiasing: true
-            // source: player.cover
-        }*/
 
         Label {
             id: dist
@@ -67,49 +61,6 @@ Dialog {
         }
 
         Label {
-            id: eventType
-            anchors.left: parent.left; anchors.right: parent.right // wrapping
-            anchors.leftMargin: 16; anchors.rightMargin: 16
-            horizontalAlignment: Text.AlignHCenter
-            wrapMode: Text.Wrap
-            font.pixelSize: Theme.fontSizeExtraSmall
-            text: "type"
-        }
-
-        Label {
-            id: city
-            anchors.left: parent.left; anchors.right: parent.right // wrapping
-            anchors.leftMargin: 16; anchors.rightMargin: 16
-            horizontalAlignment: Text.AlignHCenter
-            wrapMode: Text.Wrap
-            font.pixelSize: Theme.fontSizeMedium
-            text: "city"
-        }
-
-        Label {
-            id: venue
-            anchors.left: parent.left; anchors.right: parent.right // wrapping
-            anchors.leftMargin: 16; anchors.rightMargin: 16
-            horizontalAlignment: Text.AlignHCenter
-            wrapMode: Text.Wrap
-            font.pixelSize: Theme.fontSizeSmall
-            text: "venue"
-        }
-        Label {
-            id: dist2
-            height: 100
-            text: "  "
-        }
-        Label {
-            id: artist
-            anchors.left: parent.left; anchors.right: parent.right // wrapping
-            anchors.leftMargin: 16; anchors.rightMargin: 16
-            horizontalAlignment: Text.AlignHCenter
-            wrapMode: Text.Wrap
-            font.pixelSize: Theme.fontSizeLarge
-            text: "artist"
-        }
-        Label {
             id: dateTime
             anchors.left: parent.left; anchors.right: parent.right // wrapping
             anchors.leftMargin: 16; anchors.rightMargin: 16
@@ -120,23 +71,153 @@ Dialog {
         }
 
         Label {
-            id: startTime
+                id: startTime
+                anchors.left: parent.left; anchors.right: parent.right // wrapping
+                anchors.leftMargin: 16; anchors.rightMargin: 16
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                text: "start-time"
+        }
+
+        Label {
+                id: eventType
+                anchors.left: parent.left; anchors.right: parent.right // wrapping
+                anchors.leftMargin: 16; anchors.rightMargin: 16
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeExtraSmall
+                text: "type"
+        }
+
+        Label {
+            id: dist2
+            height: 100
+            text: "  "
+        }
+        
+            SectionHeader {
+                text: qsTr("Venue")
+                anchors.left: parent.left; anchors.right: parent.right // wrapping
+                anchors.leftMargin: 16; anchors.rightMargin: 16
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: Theme.fontSizeLarge
+            }
+
+            Button {
+                id: cpAddress
+                anchors.horizontalCenter: parent.horizontalCenter;
+                // text: qsTr('copy')
+                onClicked: {
+                    var clip = venue.text;
+                    if (street.text !== 'street') { clip += ", " + street.text };
+                    if (city.text !== 'city') { clip += ", " + city.text };
+                    Clipboard.text = clip;
+                }
+                width: 120
+                height: 120
+                // text: qsTr("copy")
+                Image {
+                    source: "image://theme/icon-s-clipboard";
+                    height: parent.height
+                    width: parent.height
+                }
+
+            }
+
+        Label {
+            id: venue
+            anchors.left: parent.left; anchors.right: parent.right // wrapping
+            anchors.leftMargin: 16; anchors.rightMargin: 16
+            horizontalAlignment: Text.AlignHCenter
+            wrapMode: Text.Wrap
+            font.pixelSize: Theme.fontSizeMedium
+            text: "venue"
+        }
+
+        Label {
+            id: street
             anchors.left: parent.left; anchors.right: parent.right // wrapping
             anchors.leftMargin: 16; anchors.rightMargin: 16
             horizontalAlignment: Text.AlignHCenter
             wrapMode: Text.Wrap
             font.pixelSize: Theme.fontSizeSmall
-            // text: "start-time"
-        }
+            text: "street"
         }
 
+        Label {
+              id: city
+                anchors.left: parent.left; anchors.right: parent.right // wrapping
+                anchors.leftMargin: 16; anchors.rightMargin: 16
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                text: "city"
+        }
 
-        /*PullDownMenu {
-            MenuItem {
-                text: qsTr("Open in browser")
-                onClicked: Qt.openUrlExternally(uri)
+            Label {
+                id: dist3
+                height: 100
+                text: "  "
             }
-        }*/
+
+            ListModel {
+                id: artistsModel
+
+            }
+
+            SectionHeader {
+                       id: allPerformer
+                       anchors.left: parent.left; anchors.right: parent.right // wrapping
+                       anchors.leftMargin: 16; anchors.rightMargin: 16
+                       horizontalAlignment: Text.AlignHCenter
+                       wrapMode: Text.Wrap
+                       font.pixelSize: Theme.fontSizeLarge
+                       text: qsTr("Performer(s)")
+            }
+
+            Button {
+               width: 120
+               height: 120
+               anchors.horizontalCenter: parent.horizontalCenter;
+               onClicked: {Clipboard.text = artistsModel.get(0).displayName; }
+               // text: qsTr("copy")
+               Image {
+                   source: "image://theme/icon-s-clipboard";
+                   height: parent.height
+                   width: parent.height
+               }
+            }
+
+
+            Repeater {
+                    model: artistsModel
+
+                    delegate: Label {
+                        text: displayName
+                        anchors.left: parent.left; anchors.right: parent.right // wrapping
+                        horizontalAlignment: Text.AlignHCenter
+                        wrapMode: Text.Wrap
+                    }
+            }
+
+            Label {
+                id: dist4
+                height: 100
+                text: "  "
+            }
+
+            Label {
+                id: attendance
+                anchors.left: parent.left; anchors.right: parent.right // wrapping
+                anchors.leftMargin: 16; anchors.rightMargin: 16
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeLarge
+                text: "attendance"
+                color: Theme.highlightColor
+            }
+        }
     }
 
 
@@ -165,22 +246,35 @@ Dialog {
         }
 
         API.getEvent(eventId,fillPage);
+        API.getEventTrackingInfo(eventId, setTrackingInfo);
     }
 
 
+    function setTrackingInfo(info)
+    {
+      attendance.text = qsTr(info);
+    }
+    
     function fillPage(event)
     {
         console.log('fillPage')
+        var s1 = event.displayName.lastIndexOf(" at ");
 
-        eventName.text = event.displayName;
+        eventName.text = event.displayName.substring(0,s1);
         eventType.text = event.type;
         dateTime.text = event.dateTime;
-            /*if (event.start.datetime !== null) {
-               startTime.text = event.start.datetime;
-            }*/
+        if (event.time !== "") {
+           startTime.text = event.time;
+        }
         venue.text = event.venue;
-        city.text = event.city;
-        artist.text = event.artist;
+        street.text = event.street
+        city.text = event.zip + ' ' + event.city;
+        artistsModel.clear();
+        for (var aC=0; aC < event.artists.length; aC++)
+        {
+            artistsModel.append(event.artists[aC]);
+        }
+        // artist.text = event.artists[0].displayName;
     }
 
     onAccepted: {
@@ -188,4 +282,3 @@ Dialog {
     }
 
 }
-
