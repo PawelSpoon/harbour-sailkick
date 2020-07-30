@@ -1,4 +1,4 @@
-﻿//Persistance.js
+//Persistance.js
 //originated from Noto
 //datamodel: one table to hold tracked artists, venues, metroareas, these can be differentiated by type column
 //one table to hold one entry: username
@@ -30,8 +30,13 @@ function initialize() {
     db.transaction(
                 function(tx) {
                     // Create the settings table if it doesn't already exist
-                    // If the table exists, this is skipped
-                    tx.executeSql('CREATE TABLE IF NOT EXISTS tracked(uid LONGVARCHAR UNIQUE, title TEXT, type TEXT, skid TEXT, txt TEXT)');
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS version(version TEXT)');
+                    var rs = tx.executeSql('SELECT DISTINCT version FROM version;');
+                    console.log (rs.rows.length)
+                    if (rs.rows.length === 0 || rs.rows.item(0).version !== "2.2") { console.log('drop and recreate tracked table'); tx.executeSql('DROP TABLE IF EXISTS tracked') };
+                    tx.executeSql('DELETE FROM version');
+                    tx.executeSql('INSERT OR REPLACE INTO version values (?);', '2.2');
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS tracked(uid LONGVARCHAR UNIQUE, title TEXT, type TEXT, skid TEXT, txt TEXT, body TEXT)');
                     tx.executeSql('CREATE TABLE IF NOT EXISTS user(uid LONGVARCHAR UNIQUE, title TEXT,pwd TEXT)');
                 });
 }
@@ -82,16 +87,14 @@ function getUser()
 }
 
 // This function is used to saved tracked entries into the database, new and existing ones
-function setTrackingEntry(type,uid,title,skid,uri) {
-    // title: name representing the title of the location
-    // txt: optional description
+function setTrackingEntry(type,uid,title,skid,uri,body) {
     var db = getDatabase();
     var res = "";
     db.transaction(function(tx) {
-        var rs = tx.executeSql('INSERT OR REPLACE INTO tracked VALUES (?,?,?,?,?);', [uid,title,type,skid,uri]);
+        var rs = tx.executeSql('INSERT OR REPLACE INTO tracked VALUES (?,?,?,?,?,?);', [uid,title,type,skid,uri,JSON.stringify(body)]);
         if (rs.rowsAffected > 0) {
             res = "OK";
-            console.log ("Saved to database: uid:" + uid + ", title:" + title + ", type:"+ type);
+            console.log ("Saved to database: uid:" + uid + ", title:" + title + ", type:"+ type); // + ", body: " + JSON.stringify(body));
         } else {
             res = "Error";
             console.log ("Error saving to database");
@@ -104,18 +107,18 @@ function setTrackingEntry(type,uid,title,skid,uri) {
 }
 
 // This function is used to retrieve a tracked items from the database
-function getTrackedItem(type,uid)
+/*function getTrackedItem(type,uid)
 {
     var db = getDatabase();
     var respath="";
-    var sql = "SELECT DISTINCT uid, title, type, skid, txt from tracked where type='" + type + "' and uid='" + uid + "' ;";
+    var sql = "SELECT DISTINCT uid, title, type, skid, txt, body from tracked where type='" + type + "' and uid='" + uid + "' ;";
     var detail;
     db.transaction(function(tx) {
         var rs = tx.executeSql(sql);
-        detail = [rs.rows.item(0).title,rs.rows.item(0).type,rs.rows.item(0).skid,rs.rows.item(0).uid]
+        detail = [rs.rows.item(0).title,rs.rows.item(0).type,rs.rows.item(0).skid,rs.rows.item(0).uid,JSON.parse(rs.rows.item(0).body)]
     })
     return detail;
-}
+}*/
 
 //this should return a list
 function getTrackedItems(type)
@@ -123,13 +126,12 @@ function getTrackedItems(type)
     var trackedItems = []
     var db = getDatabase();
     var respath="";
-    var sql = "SELECT DISTINCT uid, title, type, skid, txt from tracked where type='" + type + "' order by upper(title);";
+    var sql = "SELECT DISTINCT uid, title, type, skid, txt, body from tracked where type='" + type + "' order by upper(title);";
     db.transaction(function(tx) {
         var rs = tx.executeSql(sql);
         for (var i = 0; i < rs.rows.length; i++) {
-            //root.fillTrackingModel(rs.rows.item(i).title,rs.rows.item(i).type,rs.rows.item(i).skid,rs.rows.item(i).uid)
-            var trackedItem = {title: rs.rows.item(i).title, type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid, uri: rs.rows.item(i).txt}
-            console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid)
+            var trackedItem = {title: rs.rows.item(i).title, type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid, uri: rs.rows.item(i).txt, body: JSON.parse(rs.rows.item(i).body)}
+            console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid); //  + " and body: " + rs.rows.item(i).body);
             trackedItems.push(trackedItem)
         }
     })

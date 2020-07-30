@@ -240,7 +240,7 @@ Page {
                     elide: Text.ElideRight
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
                 }
-                
+
                 Label {
                     id: onTour
                     text: if (trackedType === "location") { " " } else

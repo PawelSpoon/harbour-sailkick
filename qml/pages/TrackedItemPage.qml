@@ -177,7 +177,7 @@ Page {
                     print(upcommingList.currentIndex)
                     var current = upcommingModel.get(upcommingList.currentIndex)
                      pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri })
-                     // pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: root, uri: current.uri, songKickId: current.skid, titleOf: current.title })
+                    // pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: root, uri: current.uri, songKickId: current.skid, titleOf: current.title })
                 }
 
                 Image {

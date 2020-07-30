@@ -12,22 +12,22 @@ var songKickUri = "https://api.songkick.com/api/3.0"
 //     username: "username"
 //     callback: callback function that accepts string, event[]
 function getUsersUpcommingEvents(type,username, onSuccess, onFailure) {
-  var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
             print('HEADERS_RECEIVED')
         } else if(xhr.readyState === XMLHttpRequest.DONE) {
-          print('DONE')
-          if (xhr.status === 200) {
-             var json = JSON.parse(xhr.responseText.toString())
-             var events = convertCalendarResponse(json)
-             onSuccess(type, events)
-          }
-          else
-          {
-             onFailure(type)
-            // i.e. load the first page from db == failure callback
-          }
+            print('DONE')
+            if (xhr.status === 200) {
+               var json = JSON.parse(xhr.responseText.toString())
+               var events = convertCalendarResponse(json)
+               onSuccess(type, events)
+            }
+            else
+            {
+               onFailure(type)
+              // i.e. load the first page from db == failure callback
+            }
         }
     }
     var queryType
@@ -44,22 +44,22 @@ function getUsersUpcommingEvents(type,username, onSuccess, onFailure) {
 //     username: "username"
 //     callback: callback function that accepts string, event[]
 function getUsersTrackedItems(type, page, username, onSuccess, onFailure) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-          print('HEADERS_RECEIVED');
-      } else if(xhr.readyState === XMLHttpRequest.DONE) {
-          print('DONE')
-          if (xhr.status === 200) {
-             var json = JSON.parse(xhr.responseText.toString())
-             var items = convertTrackedItemsResponse(type,json)
-             onSuccess(type,page,username,items)
-          }
-          else {
-              onFailure(type)
-          }
-      }
-  }
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
+            print('HEADERS_RECEIVED');
+        } else if(xhr.readyState === XMLHttpRequest.DONE) {
+            print('DONE')
+            if (xhr.status === 200) {
+               var json = JSON.parse(xhr.responseText.toString())
+               var items = convertTrackedItemsResponse(type,json)
+               onSuccess(type,page,username,items)
+            }
+            else {
+                onFailure(type)
+            }
+        }
+    }
     var queryType
     if (type === "artist") queryType = "artists"
     if (type === "location") queryType = "metro_areas"

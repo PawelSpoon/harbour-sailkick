@@ -16,7 +16,7 @@ Dialog {
     property string im_going : qsTr("im_going")
     property string i_might_go : qsTr("i_might_go")
 
-    allowedOrientations: applicationWindow.orientationSetting
+    allowedOrientations: Orientation.All
 
 
     SilicaFlickable {
@@ -37,40 +37,40 @@ Dialog {
             id: column
             width: eventPage.width
 
-        Label {
-            id: dist
-            anchors.left: parent.left; anchors.right: parent.right // wrapping
-            anchors.leftMargin: 16; anchors.rightMargin: 16
-            horizontalAlignment: Text.AlignHCenter
-            height: 200
-            wrapMode: Text.Wrap
-            font.pixelSize: Theme.fontSizeExtraLarge
-            text: qsTr("  ")
-            color: Theme.highlightColor
-        }
+            Label {
+                id: dist
+                anchors.left: parent.left; anchors.right: parent.right // wrapping
+                anchors.leftMargin: 16; anchors.rightMargin: 16
+                horizontalAlignment: Text.AlignHCenter
+                height: 200
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeExtraLarge
+                text: qsTr("  ")
+                color: Theme.highlightColor
+            }
 
-        Label {
-            id: eventName
-            anchors.left: parent.left; anchors.right: parent.right // wrapping
-            anchors.leftMargin: 16; anchors.rightMargin: 16
-            horizontalAlignment: Text.AlignHCenter
-            wrapMode: Text.Wrap
-            font.pixelSize: Theme.fontSizeLarge
-            text: qsTr("Event name")
-            color: Theme.highlightColor
-        }
+            Label {
+                id: eventName
+                anchors.left: parent.left; anchors.right: parent.right // wrapping
+                anchors.leftMargin: 16; anchors.rightMargin: 16
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeLarge
+                text: qsTr("Event name")
+                color: Theme.highlightColor
+            }
 
-        Label {
-            id: dateTime
-            anchors.left: parent.left; anchors.right: parent.right // wrapping
-            anchors.leftMargin: 16; anchors.rightMargin: 16
-            horizontalAlignment: Text.AlignHCenter
-            wrapMode: Text.Wrap
-            font.pixelSize: Theme.fontSizeSmall
-            text: "date-time"
-        }
+            Label {
+                id: dateTime
+                anchors.left: parent.left; anchors.right: parent.right // wrapping
+                anchors.leftMargin: 16; anchors.rightMargin: 16
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                text: "date-time"
+            }
 
-        Label {
+            Label {
                 id: startTime
                 anchors.left: parent.left; anchors.right: parent.right // wrapping
                 anchors.leftMargin: 16; anchors.rightMargin: 16
@@ -78,9 +78,9 @@ Dialog {
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
                 text: "start-time"
-        }
+            }
 
-        Label {
+            Label {
                 id: eventType
                 anchors.left: parent.left; anchors.right: parent.right // wrapping
                 anchors.leftMargin: 16; anchors.rightMargin: 16
@@ -88,14 +88,14 @@ Dialog {
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeExtraSmall
                 text: "type"
-        }
+            }
 
-        Label {
-            id: dist2
-            height: 100
-            text: "  "
-        }
-        
+            Label {
+                id: dist2
+                height: 100
+                text: "  "
+            }
+
             SectionHeader {
                 text: qsTr("Venue")
                 anchors.left: parent.left; anchors.right: parent.right // wrapping
@@ -125,35 +125,35 @@ Dialog {
 
             }
 
-        Label {
-            id: venue
-            anchors.left: parent.left; anchors.right: parent.right // wrapping
-            anchors.leftMargin: 16; anchors.rightMargin: 16
-            horizontalAlignment: Text.AlignHCenter
-            wrapMode: Text.Wrap
-            font.pixelSize: Theme.fontSizeMedium
-            text: "venue"
-        }
+            Label {
+                id: venue
+                anchors.left: parent.left; anchors.right: parent.right // wrapping
+                anchors.leftMargin: 16; anchors.rightMargin: 16
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeMedium
+                text: "venue"
+            }
 
-        Label {
-            id: street
-            anchors.left: parent.left; anchors.right: parent.right // wrapping
-            anchors.leftMargin: 16; anchors.rightMargin: 16
-            horizontalAlignment: Text.AlignHCenter
-            wrapMode: Text.Wrap
-            font.pixelSize: Theme.fontSizeSmall
-            text: "street"
-        }
+            Label {
+                id: street
+                anchors.left: parent.left; anchors.right: parent.right // wrapping
+                anchors.leftMargin: 16; anchors.rightMargin: 16
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                text: "street"
+            }
 
-        Label {
-              id: city
+            Label {
+                id: city
                 anchors.left: parent.left; anchors.right: parent.right // wrapping
                 anchors.leftMargin: 16; anchors.rightMargin: 16
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
                 text: "city"
-        }
+            }
 
             Label {
                 id: dist3
@@ -254,7 +254,7 @@ Dialog {
     {
       attendance.text = qsTr(info);
     }
-    
+
     function fillPage(event)
     {
         console.log('fillPage')
