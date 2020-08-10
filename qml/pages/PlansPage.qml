@@ -6,22 +6,28 @@ import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
 import "../common"
 
-
-
-
-Page {
+SilicaListView {
     id: plans
 
     property string im_going : qsTr("im_going")
     property string i_might_go : qsTr("i_might_go")
 
-    // The effective value will be restricted by ApplicationWindow.allowedOrientations
-    allowedOrientations: Orientation.All
-
     function dateWithDay(datum)
     {
         var date = new Date(datum);
         return date.toLocaleDateString();
+    }
+
+    // the interface method
+    function refresh()
+    {
+        console.log('refreshing plans page')
+        fillUpCommingModelForAllItemsInTrackingModel();
+    }
+
+    function getCoverPageModel()
+    {
+        return upcomingModel
     }
 
     function fillUpCommingModelForAllItemsInTrackingModel()
@@ -55,19 +61,6 @@ Page {
             //todo: store to db
         }
         sortModel()
-        applicationWindow.updateCoverList('plans', upcomingModel)
-    }
-
-
-    onStatusChanged: {
-        if (status === PageStatus.Active) {
-            applicationWindow.setCurrentPage('plans')
-            pageStack.pushAttached(Qt.resolvedUrl("MainPage.qml"))
-            // during the inital startup the list won't be ready yet, but for a later swipe back to this page.
-            // this location is correct. thats why i check for the count, assuming that this reflects
-            // that list is ready
-            if (upcomingModel.count > 0) applicationWindow.updateCoverList('plans', upcomingModel)
-        }
     }
 
     QtObject {
@@ -121,28 +114,6 @@ Page {
         anchors.fill: parent
         model: upcomingModel
 
-        header: PageHeader {
-            title: qsTr("Plans")
-        }
-
-        // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
-        PullDownMenu {
-            MenuItem {
-                text: qsTr("Refresh")
-                onClicked: fillUpCommingModelForAllItemsInTrackingModel()
-            }
-        }
-
-        PushUpMenu {
-            MenuItem {
-                text: qsTr("Help") // will show help page (could be on Settings page instead)
-                onClicked: pageStack.push(Qt.resolvedUrl("HelpMainPage.qml"))
-            }
-            /*MenuItem {
-                text: qsTr("About") // will show about page
-            }*/
-        }
-
         ViewPlaceholder {
             enabled: upcomingModel.count === 0 // show placeholder text when no locations/artists are tracked
             text: qsTr("You have no upcomming concerts in your calendar")
@@ -187,7 +158,6 @@ Page {
                     upcommingList.currentIndex = index
                     print(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
-                    // plans page does not have a link to mainpage yet, for that mainpage would need
                     pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri }) // with mainPage null open in browser will not work
                     //pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: mainPage, uri: current.uri})
                 }

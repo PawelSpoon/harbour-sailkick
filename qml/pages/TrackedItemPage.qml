@@ -43,15 +43,15 @@ Page {
             if (pos > 1) shortTitle = shortTitle.substr(0,pos)
               upcommingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri })
         }
-        applicationWindow.updateCoverList(titleOf,upcommingModel)
+        applicationWindow.controller.updateCoverList(titleOf,upcommingModel)
     }
 
 
     Component.onCompleted:
     {
         reloadUpCommingModel()
-        applicationWindow.setCurrentPage(titleOf)
-        applicationWindow.updateCoverList(titleOf,upcommingModel)
+        applicationWindow.controller.setCurrentPage(titleOf)
+        applicationWindow.controller.updateCoverList(titleOf,upcommingModel)
     }
 
 
@@ -98,7 +98,7 @@ Page {
         header: PageHeader {
             title: titleOf
         }
-
+        
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
 
@@ -117,10 +117,6 @@ Page {
                     upcommingList.currentIndex = ((page * 50) -1)
                     reloadUpCommingModel() // as page > 1, it will not empty view
                 }
-            }
-            MenuItem {
-                text: qsTr("Help") // will show help page (could be on Settings page instead)
-                onClicked: pageStack.push(Qt.resolvedUrl("HelpMainPage.qml"))
             }
         }
 
@@ -177,7 +173,7 @@ Page {
                     print(upcommingList.currentIndex)
                     var current = upcommingModel.get(upcommingList.currentIndex)
                      pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri })
-                    // pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: root, uri: current.uri, songKickId: current.skid, titleOf: current.title })
+                    // pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{ uri: current.uri, songKickId: current.skid, titleOf: current.title })
                 }
 
                 Image {

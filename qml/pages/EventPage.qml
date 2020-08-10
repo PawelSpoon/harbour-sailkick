@@ -25,6 +25,13 @@ Dialog {
         // Tell SilicaFlickable the height of its content.
         contentHeight: column.height
 
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Webview")
+                onClicked: pageStack.push(Qt.resolvedUrl("WebViewPage.qml"), {mainPage: root, uri: uri})
+            }
+        }
+
         DialogHeader {
             acceptText: qsTr("Open in browser")
             cancelText: qsTr(" ")

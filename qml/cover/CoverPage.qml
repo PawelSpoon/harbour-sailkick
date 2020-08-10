@@ -111,7 +111,7 @@ CoverBackground {
             iconSource: "image://theme/icon-cover-next"
             onTriggered: {
                 console.log('nextPage triggered');
-                applicationWindow.moveToNextPage();
+                applicationWindow.controller.moveToNextPage();
             }
         }
 

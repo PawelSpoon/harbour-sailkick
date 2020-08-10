@@ -9,8 +9,6 @@ import "../common"
 //Page
 Dialog {
     id: trackedItemDetailsPage
-    // property to pass root page
-    property MainPage mainPage: null
     property string uri
     property string agent: "Mozilla/5.0 (Linux; Android 4.4; Nexus 4 Build/KRT16H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36"
 

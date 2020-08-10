@@ -44,6 +44,8 @@ TRANSLATIONS += translations/harbour-sailkick-de.ts \
 DISTFILES += \
     qml/Persistance.js \
     qml/SongKickApi.js \
+    qml/pages/ConcertsPage.qml \
+    qml/pages/TabedMainPage.qml \
     qml/sk-badge-white.png \
     qml/sk-badge-black.png \
     qml/sk-badge-pink.png \
@@ -57,7 +59,6 @@ DISTFILES += \
     qml/common/ViewSearchPlaceholder.qml \
     qml/pages/HelpMainPage.qml \
     qml/pages/HelpPage.qml \
-    qml/pages/MainPage.qml \
     qml/pages/PlansPage.qml \
     qml/pages/SettingsPage.qml \
     qml/pages/TrackedItemPage.qml \

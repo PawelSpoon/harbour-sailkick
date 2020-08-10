@@ -2,24 +2,34 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+// DB should not be needed here !!
 import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
 import "../common"
 
 
-
-Page {
+SilicaListView {
     id: root
-
-    // The effective value will be restricted by ApplicationWindow.allowedOrientations
-    allowedOrientations: Orientation.All
+    anchors.fill: parent
 
     function clearTrackingModel()
     {
         trackingModel.clear(); // this deletes the dummy entry that i use to have a 'typed' model
     }
 
+    // the interface method
+    function refresh()
+    {
+        console.log('refreshing concerts page')
+        fillUpCommingModelForAllItemsInTrackingModel();
+    }
 
+    function getCoverPageModel()
+    {
+        return upcomingModel
+    }
+
+// obsolete ?
     function fillTrackingModel(title, type, skid, uid, uri)
     {
         var contains = trackingModel.contains(uid)
@@ -28,7 +38,7 @@ Page {
         trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid, "uri": uri})
     }
 
-
+//obsolete as moved
     function updateTrackingItemsInDb(type, page, username, items)
     {
         print('number of items: ' +  items.length)
@@ -101,17 +111,6 @@ Page {
         trackingModel.remove(index) // this is nicer
     }
 
-   // seems obsolete
-    /*function cleanDb()
-    {
-        DB.removeAllTrackingEntries("Type") // just in case the dummy item was stored to db
-        DB.removeAllTrackingEntries("location")
-        DB.removeAllTrackingEntries("artist")
-        DB.removeAllTrackingEntries("venue")
-        trackingModel.clear()
-        fillUpCommingModelForAllItemsInTrackingModel()
-    }*/
-
     function fillUpCommingModelForAllItemsInTrackingModel()
     {
         upcomingModel.clear()
@@ -136,22 +135,22 @@ Page {
             upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri })
         }
         sortModel()
-        applicationWindow.updateCoverList('concerts', upcomingModel)
+        applicationWindow.controller.setCurrentPage('concert')
+        applicationWindow.controller.updateCoverList('concert', upcomingModel)
     }
 
-    onStatusChanged: {
+/*    onStatusChanged: {
         if (status === PageStatus.Active) {
             pageStack.pushAttached(
                     Qt.resolvedUrl("TrackedItemsPage.qml"), {mainPage: root, trackedType: "location"})
             applicationWindow.setCurrentPage('concerts')
             applicationWindow.updateCoverList('concerts', upcomingModel)
         }
-    }
+    }*/
 
     Component.onCompleted:
     {
-        clearTrackingModel();
-        DB.initialize();
+        //DB.Initialize() -> moved to tabmainpage
         fillUpCommingModelForAllItemsInTrackingModel()
     }
 
@@ -208,49 +207,6 @@ Page {
         id: upcommingList
         anchors.fill: parent
         model: upcomingModel
-
-        header: PageHeader {
-            title: qsTr("Concerts")
-        }
-
-        // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
-        PullDownMenu {
-            MenuItem {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"), {mainPage: root})
-            }
-            MenuItem {
-                text: qsTr("Get tracked items from songkick")
-                onClicked:
-                {
-                    DB.removeAllTrackingEntries("Type")
-                    DB.removeAllTrackingEntries("artist")
-                    DB.removeAllTrackingEntries("location")
-                    var user = DB.getUser()
-                    API.getUsersTrackedItems("artist",1, user.name, updateTrackingItemsInDb)
-                    API.getUsersTrackedItems("location",1,user.name, updateTrackingItemsInDb)
-                    // does not work due to async behaviour of getUsersTrac...
-                    // would need to wait here, but how long ?
-                    /*pageStack.popAttached()
-                    pageStack.pushAttached(
-                            Qt.resolvedUrl("TrackedItemsPage.qml"), {mainPage: root, trackedType: "location"})*/
-                }
-            }
-            MenuItem {
-                text: qsTr("Refresh")
-                onClicked: fillUpCommingModelForAllItemsInTrackingModel()
-            }
-        }
-
-        PushUpMenu {
-            MenuItem {
-                text: qsTr("Help") // will show help page (could be on Settings page instead)
-                onClicked: pageStack.push(Qt.resolvedUrl("HelpMainPage.qml"))
-            }
-            /*MenuItem {
-                text: qsTr("About") // will show about page
-            }*/
-        }
 
         ViewPlaceholder {
             enabled: upcomingModel.count === 0 // show placeholder text when no locations/artists are tracked

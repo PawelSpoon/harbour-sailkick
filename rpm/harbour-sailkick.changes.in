@@ -8,6 +8,15 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Aug 10 2020 Pawel Spoon <pawel@ich-habe-fertig.com> 0.3.0-1
+- code clean up
+- manage menu
+
+* Wed Aug 6 2020 Pawel Spoon <pawel@ich-habe-fertig.com> 0.3.0-0
+- replace caroussel with tabs
+- share from event view
+- switch between native event view and webview
+
 * Wed Jul 29 2020 Pawel Spoon <pawel@ich-habe-fertig.com> 0.2.5-0
 - found my code, checked into github, a build with new sdk
 

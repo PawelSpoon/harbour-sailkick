@@ -10,42 +10,11 @@ import "../common"
 // shows all tracked items of one type,
 // click on one will open trackedItemPage
 
-Page {
+SilicaListView {
     id: trackedItemsPage
     property string trackedType : "location"
-    property MainPage mainPage
     // property AppController controller
-
-    // The effective value will be restricted by ApplicationWindow.allowedOrientations
-    allowedOrientations: Orientation.All
-
-    onStatusChanged: {
-        if (status === PageStatus.Active) {
-            var nextPageType
-            // it concerts == main -> plan -> location -> artist
-            if (trackedType === "location") {
-                nextPageType = "artist"
-                applicationWindow.setCurrentPage(trackedType)
-                applicationWindow.updateCoverList(trackedType,trackingModel)
-            }
-
-            if (trackedType === "artist") {
-                nextPageType = "concert"
-                applicationWindow.setCurrentPage(trackedType)
-                applicationWindow.updateCoverList(trackedType,trackingModel)
-            }
-            if (!priv.optionsPage) {
-                if (nextPageType === "concert"){
-                    priv.optionsPage = pageStack.pushAttached(Qt.resolvedUrl("PlansPage.qml"), {mainPage: root})
-                    // this is just a workaround
-                }
-                else {
-                priv.optionsPage = pageStack.pushAttached(
-                    Qt.resolvedUrl("TrackedItemsPage.qml"), {mainPage: mainPage, trackedType: nextPageType})
-                }
-            }
-        }
-    }
+    anchors.fill: parent
 
     QtObject {
         id: priv
@@ -58,7 +27,7 @@ Page {
 
     Component.onCompleted:
     {
-        reloadTrackingItemsAndUpcomming()
+        refresh()
     }
 
     function fillTrackingModel(title, type, skid, uid, uri, body)
@@ -68,8 +37,10 @@ Page {
         trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid, "uri": uri, "body": body})
     }
 
-    function reloadTrackingItemsAndUpcomming()
+    // the interface method
+    function refresh()
     {
+        console.log('refreshing tracing items page ' + trackedType)
         trackingModel.clear()
         var trackedItems = DB.getTrackedItems(trackedType)
         for (var i=0; i< trackedItems.length; i++)
@@ -77,8 +48,13 @@ Page {
            fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri, trackedItems[i].body)
         }
         console.debug(trackedItems.length + " " + trackedType + " loaded from DB")
-        applicationWindow.updateCoverList(trackedType,locationList)
     }
+
+    function getCoverPageModel()
+    {
+        return trackingModel
+    }
+
 
     property ListModel locationList : trackingModel
 
@@ -119,46 +95,14 @@ Page {
         anchors.fill: parent
         model: trackingModel
 
-        header: PageHeader {
-            title: {
-                //todo: if type then text for location / artist / venue
-                if (trackedType == "location") qsTr("Your locations")
-                if (trackedType == "artist") qsTr("Your artists")
-                if (trackedType == "venue") qsTr("Your venues")
-            }
-        }
-
-        // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
-        PullDownMenu {
-
-                MenuItem {
-                    text: qsTr("Manage")
-                    onClicked: {
-                        if (trackedType == "location") pageStack.push(Qt.resolvedUrl("WebViewPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/metro_areas", songKickId: "no songKickId", titleOf: "no titleOf" })
-                        if (trackedType == "artist")   pageStack.push(Qt.resolvedUrl("WebViewPage.qml"),{mainPage: root, uri: "https://www.songkick.com/tracker/artists", songKickId: "no songKickId", titleOf: "no titleOf" })
-                    }
-                }
-
-                MenuItem {
-                    text: qsTr("Refresh")
-                    onClicked: {
-                        AppController.updateTrackingItems(trackedType, reloadTrackingItemsAndUpcomming);
-                    }
-                }
-
-        }
-
+        /* hidden by menues of tabed-main-page and not a must
         PushUpMenu {
             MenuItem {
                 text: qsTr("Back to top")
                 onClicked: trackedItemsList.scrollToTop()
                 visible: (trackedType == "artist")
             }
-            MenuItem {
-                text: qsTr("Help") // will show help page (could be on Settings page instead)
-                onClicked: pageStack.push(Qt.resolvedUrl("HelpMainPage.qml"))
-            }
-        }
+        }*/
 
         ViewPlaceholder {
             enabled: trackingModel.count === 0 // show placeholder text when no locations/artists are tracked
@@ -203,7 +147,7 @@ Page {
                     trackedItemsList.currentIndex = index
                     print(trackingModel.currentIndex)
                     var current = trackingModel.get(trackedItemsList.currentIndex)
-                    pageStack.push(Qt.resolvedUrl("TrackedItemPage.qml"), {mainPage: root, type: current.type, songKickId: current.skid, titleOf: current.title })
+                    pageStack.push(Qt.resolvedUrl("TrackedItemPage.qml"), {mainPage: mainPage, type: current.type, songKickId: current.skid, titleOf: current.title })
                 }
 
                 onPressAndHold: {

@@ -14,8 +14,6 @@ Dialog {
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
 
-    property MainPage mainPage: null
-
     SilicaFlickable{
 
         id: settingsFlickable
@@ -31,11 +29,7 @@ Dialog {
             MenuItem {
                 text: qsTr("Get tracked items from songkick")
                 onClicked: {
-                    DB.removeAllTrackingEntries("Type")
-                    DB.removeAllTrackingEntries("artist")
-                    DB.removeAllTrackingEntries("location")
-                    API.getUsersTrackedItems("artist",1,entrySongKickUserName.text, settings.mainPage.updateTrackingItemsInDb)
-                    API.getUsersTrackedItems("location",1,entrySongKickUserName.text, settings.mainPage.updateTrackingItemsInDb)
+                    applicationWindow.controller.getTrackingItemsFromSongKick(entrySongKickUserName.text);
                 }
             }
         }
