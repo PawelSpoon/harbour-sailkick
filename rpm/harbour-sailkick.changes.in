@@ -8,6 +8,16 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Aug 10 2020 Pawel Spoon <pawel@ich-habe-fertig.com> 0.3.0-3
+- translation support for new pages
+- updated translation for english and german
+- transifex is not yet updated !
+
+* Wed Aug 10 2020 Pawel Spoon <pawel@ich-habe-fertig.com> 0.3.0-2
+- code clean up
+- slightly improved cover page handling
+- rotation support (not very usefull)
+
 * Wed Aug 10 2020 Pawel Spoon <pawel@ich-habe-fertig.com> 0.3.0-1
 - code clean up
 - manage menu

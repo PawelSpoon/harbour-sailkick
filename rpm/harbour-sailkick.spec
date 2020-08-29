@@ -14,7 +14,7 @@ Name:       harbour-sailkick
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Native Songkick Client
 Version:    3.0
-Release:    1
+Release:    3
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/

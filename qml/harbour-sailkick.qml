@@ -35,10 +35,11 @@ ApplicationWindow
 
     CoverPage {
         id: coverPage
-        title: ''
+        //title: ''
         Component.onCompleted:  {
             if (applicationWindow.controller === null)  {
-                console.log("null")}
+                console.log("controller is null")}
+            coverPage.setTitle('');
             applicationWindow.cover = coverPage
         }
     }

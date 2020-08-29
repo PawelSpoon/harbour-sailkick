@@ -7,14 +7,18 @@ CoverBackground {
 
     id: coverPage
 
-    property alias title: coverTitleLabel.text
+    // property alias title: coverTitleLabel.text
+
+    function setTitle(title1) {
+        coverTitleLabel.text = qsTr(title1);
+    }
 
     function fillModel(events)
     {
         print(events.count)
         var maxcount = 7
         if (events.count < maxcount) maxcount = events.count
-        if (maxcount == 0) return
+        if (maxcount === 0) return
         upcommingModel.clear()
         for (var i = 0; i < maxcount; i++)
         {

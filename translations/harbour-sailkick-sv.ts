@@ -170,27 +170,47 @@
 <context>
     <name>TabedMainPage</name>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="171"/>
+        <location filename="../qml/pages/TabedMainPage.qml" line="16"/>
+        <source>plan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPage.qml" line="17"/>
+        <source>concert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPage.qml" line="18"/>
+        <source>location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPage.qml" line="19"/>
+        <source>artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPage.qml" line="178"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="176"/>
+        <location filename="../qml/pages/TabedMainPage.qml" line="183"/>
         <source>Manage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="183"/>
+        <location filename="../qml/pages/TabedMainPage.qml" line="190"/>
         <source>Get tracked items from songkick</source>
         <translation type="unfinished">Hämta spårade objekt från Songkick</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="190"/>
+        <location filename="../qml/pages/TabedMainPage.qml" line="197"/>
         <source>Refresh</source>
         <translation type="unfinished">Uppdatera</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="200"/>
+        <location filename="../qml/pages/TabedMainPage.qml" line="207"/>
         <source>Help</source>
         <translation type="unfinished">Hjälp</translation>
     </message>

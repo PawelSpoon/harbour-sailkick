@@ -10,6 +10,13 @@ import "."
 Page  {
     id: tabsPage
     anchors.fill: parent
+    allowedOrientations: defaultAllowedOrientations
+
+    // these dummy translations are there to make cover title localized
+    property string transPlans : qsTr('plan');
+    property string transConcerts : qsTr('concert');
+    property string transLocations : qsTr('location');
+    property string transArtist : qsTr('artist');
 
     function menuManageVisible(visible) {
         menuManage.visible = visible

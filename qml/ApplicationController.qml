@@ -12,17 +12,77 @@ Item {
     id: applicationController
     property string currentPage: 'plan'
 
-    // array of pages
+    // array of registered pages
     property variant pages: []
+    // *********************************************************************
+    // this generic part could be moved to some class
+    // motication: all pages have same interface
+    // call i.e.refresh(), doAccept() etc on current page / on  all ..
+
+    // == registerPage with controller
+    // qt framework seems to destroy pages per need
+    // pages array does contain an 'null' / Type Error as page
+    // consequently page registers itself on each component.oncompleted
+    // and this method overrides the page pointer
     function addPage(name1, page1) {
-        pages.push( { name: name1, page: page1});
+        if (getCurrentPageView(name1) === null) {
+            console.log('addPage: ' + name1);
+            pages.push( { name: name1, page: page1});
+            return;
+        }
+        console.log('no need to push, already there, lets replace')
+        pages[getCurrentPageIndex(name1)].page = page1
     }
 
+    // get the index of page in pages[]
+    // returns -1 when not found
+    function getCurrentPageIndex(currentPage)
+    {
+        console.log("getCurrentPageView: " + currentPage)
+        var count = pages.length
+        console.log("number of pages: " + count)
+        for (var i = 0; i < count; i++) {
+            console.log(pages[i].name)
+            if (currentPage === pages[i].name) {
+                console.log('found at index: ' + i )
+                return i;
+            }
+        }
+        console.log("page not found: " + currentPage)
+        return -1;
+    }
+
+    // returns the page from pages[]
+    // returns null when not found
+    function getCurrentPageView(currentPage)
+    {
+        var index = getCurrentPageIndex(currentPage);
+        if (index === -1) {
+            console.log("page not found: " + currentPage)
+            return null;
+        }
+        return pages[index].page
+    }
+
+    // app specific
+    // updates cover page
+    // updates menues
+    function setCurrentPage(pageName) {
+        console.log("setCurrentPage: " + pageName)
+        currentPage = pageName
+        applicationWindow.cover.setTitle(pageName);
+        showMyMenues(pageName)
+        updateCoverList(pageName, getCurrentPageView(pageName).getCoverPageModel())
+    }
+
+    // app specific
+    // refreshes all pages
     function refreshAll()
     {
         var count = pages.length
         for (var i = 0; i < count; i++) {
           var currentItem = pages[i].page;
+          if (currentItem === null) return;
           currentItem.refresh();
         }
     }
@@ -38,28 +98,17 @@ Item {
         pageStack.push(Qt.resolvedUrl("pages/SettingsPage.qml"), { })
     }
 
-    function setCurrentPage(pageName) {
-        currentPage = pageName
-        applicationWindow.cover.title = qsTr(pageName)
-        showMyMenues(pageName)
-        updateCoverList(pageName, getCurrentPageView(pageName))
-    }
-
-    function getCurrentPageView(currentPage)
-    {
-        var count = pages.length
-        for (var i = 0; i < count; i++) {
-            if (currentPage === pages[i].name) return pages[i].page
-        }
-        return null;
-    }
-
     function updateCoverList(pageName, model) {
         if (currentPage !== pageName) return
-        if (model === null) return
+        if (model === null) {
+            console.log('try to reload model')
+            model = getCurrentPageView(pageName).getCoverPageModel()
+        }
         coverPage.fillModel(model)
     }
 
+    // app specific
+    // shows / hides menu based on current page
     function showMyMenues(page)
     {
         if (page==='location')
