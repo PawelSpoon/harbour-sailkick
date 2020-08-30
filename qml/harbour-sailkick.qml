@@ -5,6 +5,7 @@ import Sailfish.Silica 1.0
 import "pages"
 import "cover"
 import "common"
+import "sf-docked-tab-bar"
 
 // also servers a page-controller, all main page transitions are handled via this
 ApplicationWindow
@@ -13,23 +14,48 @@ ApplicationWindow
     property Item mainPage: null
     property ApplicationController controller: myController
 
-    // these dummy translations are there to make cover title localized
-    property string transPlans : qsTr('plan');
-    property string transConcerts : qsTr('concert');
-    property string transLocations : qsTr('location');
-    property string transArtist : qsTr('artist');
+    // from tab sample
+    property alias tabBar: _tabBar
+    readonly property string mainPageName: "TabedMainPageX"
 
     ApplicationController {
         id: myController
     }
 
     initialPage: Component {
-        TabedMainPage {
+        TabedMainPageX {
             id: tabedMainPage
             Component.onCompleted: {
                 applicationWindow.mainPage = tabedMainPage
                 myController.setCurrentPage('plan')
             }
+        }
+    }
+
+    DockedTabBar {
+        id: _tabBar
+        enabledOnPage: "TabedMainPageX"
+        currentSelection: 0
+
+        DockedTabButton {
+            icon.source: "image://theme/icon-m-favorite"
+            label: qsTr("Plan")
+            fontSize: Theme.fontSizeTiny
+        }
+        DockedTabButton {
+            icon.source: "image://theme/icon-m-file-audio"
+            label: qsTr("Concerts")
+            fontSize: Theme.fontSizeTiny
+        }
+        DockedTabButton {
+            icon.source: "image://theme/icon-m-whereami"
+            label: qsTr("Locations")
+            fontSize: Theme.fontSizeTiny
+        }
+        DockedTabButton {
+            icon.source: "image://theme/icon-m-media-artists"
+            label: qsTr("Artists")
+            fontSize: Theme.fontSizeTiny
         }
     }
 
@@ -44,18 +70,18 @@ ApplicationWindow
         }
     }
 
-    allowedOrientations: defaultAllowedOrientations
+    allowedOrientations: Orientation.All
 
     Component.onCompleted: {
     }
 
-    onApplicationActiveChanged: {
+    /*onApplicationActiveChanged: {
         // Application goes into background or returns to active focus again
         if (applicationActive) {
 
         } else {
 
         }
-    }
+    }*/
 }
 

@@ -6,29 +6,35 @@ import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
 import "../common"
 
-SilicaListView {
-    id: plans
+    SilicaListView {
 
-    property string im_going : qsTr("im_going")
-    property string i_might_go : qsTr("i_might_go")
 
-    function dateWithDay(datum)
-    {
-        var date = new Date(datum);
-        return date.toLocaleDateString();
-    }
+        property string im_going : qsTr("im_going")
+        property string i_might_go : qsTr("i_might_go")
 
-    // the interface method
-    function refresh()
-    {
-        console.log('refreshing plans page')
-        fillUpCommingModelForAllItemsInTrackingModel();
-    }
+        // the interface method
+        function refresh()
+        {
+            console.log('refreshing plans page')
+            fillUpCommingModelForAllItemsInTrackingModel();
+        }
 
-    function getCoverPageModel()
-    {
-        return upcomingModel
-    }
+        function getCoverPageModel()
+        {
+            return upcomingModel
+        }
+
+        id: plans
+        anchors.fill: parent
+        contentHeight: parent.height
+        contentWidth: parent.width
+
+        function dateWithDay(datum)
+        {
+            var date = new Date(datum);
+            return date.toLocaleDateString();
+        }
+
 
     function fillUpCommingModelForAllItemsInTrackingModel()
     {
@@ -228,9 +234,8 @@ SilicaListView {
                 }
                 Label {
                     id: planText
-                    text:  {
-                        if (attendance === "im_going") {im_going} else {i_might_go }
-                    }
+                    text:  (attendance === "im_going") ? im_going : i_might_go
+
                     anchors.right: parent.right//typeIcon.right
                     anchors.rightMargin: Theme.paddingMedium
                     anchors.top: dateText.bottom
@@ -260,6 +265,7 @@ SilicaListView {
                 }
                 MenuItem {
                     text: qsTr("Share")
+                    // icon: con-m-share
                     onClicked: {
                         print(upcommingList.currentIndex)
                         var current = upcomingModel.get(upcommingList.currentIndex)
@@ -270,4 +276,5 @@ SilicaListView {
         }
     }
 }
+
 

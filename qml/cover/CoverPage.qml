@@ -7,9 +7,8 @@ CoverBackground {
 
     id: coverPage
 
-    // property alias title: coverTitleLabel.text
-
     function setTitle(title1) {
+        console.log('just for: ' + qsTr(title1))
         coverTitleLabel.text = qsTr(title1);
     }
 
@@ -32,6 +31,7 @@ CoverBackground {
     Label {
         id: coverTitleLabel
         font.pixelSize: Theme.fontSizeMedium
+        font.capitalization: Font.Capitalize
         color: Theme.highlightColor
         anchors.top: parent.top
         anchors.right: parent.right

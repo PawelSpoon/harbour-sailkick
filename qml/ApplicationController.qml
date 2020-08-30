@@ -83,6 +83,7 @@ Item {
         for (var i = 0; i < count; i++) {
           var currentItem = pages[i].page;
           if (currentItem === null) return;
+          console.log(currentItem);
           currentItem.refresh();
         }
     }
@@ -127,27 +128,7 @@ Item {
     // the next function of cover of the caroussell
     function moveToNextPage()
     {
-        // something with currentIndex would be cooler
-       console.log('Controller::moveNextPage');
-       if (currentPage === "plan") {
-           applicationWindow.mainPage.moveToTab(1);
-           setCurrentPage('concert')
-       }
-       else if (currentPage === "concert") {
-           applicationWindow.mainPage.moveToTab(2);
-           setCurrentPage('location')
-       }
-       else if (currentPage === "location") {
-           applicationWindow.mainPage.moveToTab(3);
-           setCurrentPage('artist')
-       }
-       else if (currentPage === "artist") {
-           applicationWindow.mainPage.moveToTab(0);
-           setCurrentPage('plan')
-       }
-       else {
-           console.log("dont know where to naviage from here: " + currentPage);
-       }
+        applicationWindow.mainPage.moveToNext()
     }
 
     // clean stored tracking itmes and get fresh from songkick

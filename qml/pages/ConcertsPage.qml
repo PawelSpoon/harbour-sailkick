@@ -7,7 +7,6 @@ import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
 import "../common"
 
-
 SilicaListView {
     id: root
     anchors.fill: parent
@@ -344,4 +343,5 @@ SilicaListView {
         }
     }
 }
+
 

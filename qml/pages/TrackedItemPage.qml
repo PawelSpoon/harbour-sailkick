@@ -10,6 +10,7 @@ import "../common"
 // this can be artist / location / venue
 
 Page {
+
     id: trackedItemPage
     property string type : "location"
     property string songKickId
@@ -89,10 +90,11 @@ Page {
         property string date
     }
 
-    // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaListView {
+
         id: upcommingList
         anchors.fill: parent
+        anchors.topMargin: Theme.paddingSmall
         model: upcommingModel
 
         header: PageHeader {
@@ -100,13 +102,6 @@ Page {
         }
         
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
-        PullDownMenu {
-
-            MenuItem {
-                text: qsTr("Refresh")
-                onClicked: reloadUpCommingModel()
-            }
-        }
 
         PushUpMenu {
             MenuItem {

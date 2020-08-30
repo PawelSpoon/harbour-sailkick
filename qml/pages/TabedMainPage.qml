@@ -78,6 +78,8 @@ Page  {
     SilicaFlickable {
         id: flick
         anchors.fill: parent
+        contentHeight: parent.height
+        contentWidth: parent.width
 
         Component.onCompleted: {
             DB.initialize();
@@ -86,6 +88,7 @@ Page  {
         TabView {
             id: tabs
             anchors.fill: parent
+            width: parent.width
 
             header: Column {
                 width: parent.width
@@ -116,12 +119,6 @@ Page  {
             }
 
             model: [plansTab, concertsTab, locationsTab, artistsTab]
-
-            //property variant plansRefresh // can not assign to a read-only property wenn als function definiert
-            /*property variant toBeRefreshed: []
-            function addRefresh(r) {
-                toBeRefreshed.push(r);
-            }*/
 
             Component {
                 id: plansTab

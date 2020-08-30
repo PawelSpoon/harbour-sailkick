@@ -9,33 +9,18 @@ import "../common"
 
 // shows all tracked items of one type,
 // click on one will open trackedItemPage
+SilicaFlickable {
 
-SilicaListView {
-    id: trackedItemsPage
+    id: page
     property string trackedType : "location"
-    // property AppController controller
+
     anchors.fill: parent
 
-    QtObject {
-        id: priv
-        property Item optionsPage
-        property string nextPageToken: ""
-        property variant searchParams: ({})
-        property bool ignoreNextAtYBeginning: false
-        property real autoLoadThreshold: 0.8
-    }
+    // anchors.topMargin: Theme.paddingMedium
 
-    Component.onCompleted:
-    {
-        refresh()
-    }
-
-    function fillTrackingModel(title, type, skid, uid, uri, body)
-    {
-        var contains = trackingModel.contains(uid)
-        if (contains[0]) console.log("contains already " + title);
-        trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid, "uri": uri, "body": body})
-    }
+    // value of search..
+    property string searchString
+     // onSearchStringChanged: filterPage(searchString) //listModel.update()
 
     // the interface method
     function refresh()
@@ -55,6 +40,44 @@ SilicaListView {
         return trackingModel
     }
 
+    Column {
+        id: headerContainer
+        width: parent.width
+
+        SearchField {
+            id: searchField
+            width: parent.width
+            opacity: 1
+
+            Binding {
+                target: page
+                property: "searchString"
+                value: searchField.text.toLowerCase().trim()
+            }
+        }
+    }
+
+
+/*    QtObject {
+        id: priv
+        property Item optionsPage
+        property string nextPageToken: ""
+        property variant searchParams: ({})
+        property bool ignoreNextAtYBeginning: false
+        property real autoLoadThreshold: 0.8
+    }*/
+
+    Component.onCompleted:
+    {
+        refresh()
+    }
+
+    function fillTrackingModel(title, type, skid, uid, uri, body)
+    {
+        var contains = trackingModel.contains(uid)
+        if (contains[0]) console.log("contains already " + title);
+        trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid, "uri": uri, "body": body})
+    }
 
     property ListModel locationList : trackingModel
 
@@ -88,21 +111,15 @@ SilicaListView {
         }
     }
 
-
-    // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaListView {
+
         id: trackedItemsList
         anchors.fill: parent
-        model: trackingModel
+        contentHeight: parent.height
+        contentWidth: parent.width
+        anchors.topMargin: headerContainer.height
 
-        /* hidden by menues of tabed-main-page and not a must
-        PushUpMenu {
-            MenuItem {
-                text: qsTr("Back to top")
-                onClicked: trackedItemsList.scrollToTop()
-                visible: (trackedType == "artist")
-            }
-        }*/
+        model: trackingModel
 
         ViewPlaceholder {
             enabled: trackingModel.count === 0 // show placeholder text when no locations/artists are tracked
@@ -147,7 +164,7 @@ SilicaListView {
                     trackedItemsList.currentIndex = index
                     print(trackingModel.currentIndex)
                     var current = trackingModel.get(trackedItemsList.currentIndex)
-                    pageStack.push(Qt.resolvedUrl("TrackedItemPage.qml"), {mainPage: mainPage, type: current.type, songKickId: current.skid, titleOf: current.title })
+                    pageStack.push(Qt.resolvedUrl("TrackedItemPage.qml"), { type: current.type, songKickId: current.skid, titleOf: current.title })
                 }
 
                 onPressAndHold: {
@@ -224,4 +241,3 @@ SilicaListView {
         }
     }
 }
-
