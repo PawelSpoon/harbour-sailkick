@@ -20,24 +20,41 @@ SilicaFlickable {
 
     // value of search..
     property string searchString
-     // onSearchStringChanged: filterPage(searchString) //listModel.update()
+    onSearchStringChanged: {
+        if (searchField === '') {
+           refresh();
+        }
+        filterPage(searchString)
+    }
 
     // the interface method
     function refresh()
     {
         console.log('refreshing tracing items page ' + trackedType)
+        searchString = '';
         trackingModel.clear()
         var trackedItems = DB.getTrackedItems(trackedType)
         for (var i=0; i< trackedItems.length; i++)
         {
            fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri, trackedItems[i].body)
         }
-        console.debug(trackedItems.length + " " + trackedType + " loaded from DB")
+        // console.debug(trackedItems.length + " " + trackedType + " loaded from DB")
     }
 
     function getCoverPageModel()
     {
         return trackingModel
+    }
+
+    function filterPage(nameLike)
+    {
+        trackingModel.clear()
+        var trackedItems = DB.getFilteredTrackedItems(trackedType, nameLike)
+        for (var i=0; i< trackedItems.length; i++)
+        {
+           fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri, trackedItems[i].body)
+        }
+        console.debug(trackedItems.length + " " + trackedType + " loaded from DB")
     }
 
     Column {

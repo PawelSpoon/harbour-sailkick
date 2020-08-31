@@ -4,17 +4,17 @@
 <context>
     <name>ConcertsPage</name>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="212"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="139"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>You have no upcomming concerts in your calendar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="326"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="254"/>
         <source>Open in browser</source>
         <translation>Open in browser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="335"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="263"/>
         <source>Share</source>
         <translation>Share</translation>
     </message>
@@ -91,27 +91,27 @@
 <context>
     <name>PlansPage</name>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="12"/>
+        <location filename="../qml/pages/PlansPage.qml" line="15"/>
         <source>im_going</source>
-        <translation>im_going</translation>
+        <translation>i&apos;m going</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="13"/>
+        <location filename="../qml/pages/PlansPage.qml" line="16"/>
         <source>i_might_go</source>
-        <translation>i_might_go</translation>
+        <translation>maybe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="125"/>
+        <location filename="../qml/pages/PlansPage.qml" line="136"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>You have no upcomming concerts in your calendar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="258"/>
+        <location filename="../qml/pages/PlansPage.qml" line="270"/>
         <source>Open in browser</source>
         <translation>Open in browser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="267"/>
+        <location filename="../qml/pages/PlansPage.qml" line="279"/>
         <source>Share</source>
         <translation>Share</translation>
     </message>
@@ -168,99 +168,51 @@
     </message>
 </context>
 <context>
-    <name>TabedMainPage</name>
+    <name>TabedMainPageX</name>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="16"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="17"/>
         <source>plan</source>
         <translation>Plans</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="17"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="18"/>
         <source>concert</source>
         <translation>Concerts</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="18"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="19"/>
         <source>location</source>
         <translation>Locations</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="19"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="20"/>
         <source>artist</source>
         <translation>Artists</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="175"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="96"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="180"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="101"/>
         <source>Manage</source>
         <translation>Manage</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="187"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="109"/>
         <source>Get tracked items from songkick</source>
         <translation>Get tracked items from songkick</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="194"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="117"/>
         <source>Refresh</source>
         <translation>Refresh</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="204"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="127"/>
         <source>Help</source>
         <translation>Help</translation>
-    </message>
-</context>
-<context>
-    <name>TabedMainPageX</name>
-    <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="18"/>
-        <source>plan</source>
-        <translation type="unfinished">Plans</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="19"/>
-        <source>concert</source>
-        <translation type="unfinished">Concerts</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="20"/>
-        <source>location</source>
-        <translation type="unfinished">Locations</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="21"/>
-        <source>artist</source>
-        <translation type="unfinished">Artists</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="97"/>
-        <source>Settings</source>
-        <translation type="unfinished">Settings</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="102"/>
-        <source>Manage</source>
-        <translation type="unfinished">Manage</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="110"/>
-        <source>Get tracked items from songkick</source>
-        <translation type="unfinished">Get tracked items from songkick</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="118"/>
-        <source>Refresh</source>
-        <translation type="unfinished">Refresh</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="128"/>
-        <source>Help</source>
-        <translation type="unfinished">Help</translation>
     </message>
 </context>
 <context>
@@ -276,12 +228,12 @@
         <translation>Seems there are no events planed</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="237"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="238"/>
         <source>Open in browser</source>
         <translation>Open in browser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="252"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="253"/>
         <source>Share</source>
         <translation>Share</translation>
     </message>
@@ -289,17 +241,17 @@
 <context>
     <name>TrackedItemsPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="126"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="143"/>
         <source>You are not tracking any ...</source>
         <translation>You are not tracking any ...</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="210"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="227"/>
         <source>on tour</source>
         <translation>on tour</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="232"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="249"/>
         <source>Open in browser</source>
         <translation>Open in browser</translation>
     </message>
@@ -307,24 +259,34 @@
 <context>
     <name>harbour-sailkick</name>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="42"/>
+        <location filename="../qml/harbour-sailkick.qml" line="21"/>
+        <source>im_going</source>
+        <translation>i&apos;m going</translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="20"/>
+        <source>i_might_go</source>
+        <translation>maybe</translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="44"/>
         <source>Plan</source>
-        <translation type="unfinished"></translation>
+        <translation>Plans</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="47"/>
+        <location filename="../qml/harbour-sailkick.qml" line="49"/>
         <source>Concerts</source>
-        <translation type="unfinished"></translation>
+        <translation>Concerts</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="52"/>
+        <location filename="../qml/harbour-sailkick.qml" line="54"/>
         <source>Locations</source>
-        <translation type="unfinished"></translation>
+        <translation>Locations</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="57"/>
+        <location filename="../qml/harbour-sailkick.qml" line="59"/>
         <source>Artists</source>
-        <translation type="unfinished"></translation>
+        <translation>Artists</translation>
     </message>
 </context>
 </TS>

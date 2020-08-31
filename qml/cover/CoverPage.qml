@@ -8,6 +8,7 @@ CoverBackground {
     id: coverPage
 
     function setTitle(title1) {
+        console.log('just for: ' + title1);
         console.log('just for: ' + qsTr(title1))
         coverTitleLabel.text = qsTr(title1);
     }

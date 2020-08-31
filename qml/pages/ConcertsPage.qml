@@ -37,78 +37,6 @@ SilicaListView {
         trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid, "uri": uri})
     }
 
-//obsolete as moved
-    function updateTrackingItemsInDb(type, page, username, items)
-    {
-        print('number of items: ' +  items.length)
-
-        var count = items.length
-        for (var i = 0; i < count; i++) {
-          var currentItem = items[i];
-          print('storing: ' +  currentItem.title)
-          DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.uri,currentItem.body)
-        }
-        print ('number of items: ' + items.length)
-
-        if (items.length === 50) {
-            API.getUsersTrackedItems(type,page+1,username, updateTrackingItemsInDb)
-        }
-        else
-        {
-          //clearTrackingModel()
-          var trackedItems = DB.getTrackedItems("location")
-          for (i=0; i< trackedItems.length; i++)
-          {
-             fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri)
-          }
-          console.debug("locations loaded")
-          trackedItems = DB.getTrackedItems("venue")
-          for (i=0; i< trackedItems.length; i++)
-          {
-             fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri)
-          }
-          console.log("venue loaded")
-          trackedItems = DB.getTrackedItems("artist")
-          for (i=0; i< trackedItems.length; i++)
-          {
-             fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri, trackedItems[i].body)
-          }
-          console.log("artist loaded")
-
-        }
-    }
-
-    // adds one entry into trackingModel and persists it in db
-    // location and artist are planned to be supported, currently in two separated tables (join? them)
-    function addEntry(title, type, skid, uid)
-    {
-        var contains = trackingModel.contains(uid)
-        if (!contains[0]) {
-          var newUid = DB.getUniqueId();
-          trackingModel.append({"title": title, "type": type, "uid": newUid, "skid": skid})
-          DB.setTrackingEntry(type,newUid,title,skid,"some text")
-          console.log("added to list")
-          fillUpCommingModelForAllItemsInTrackingModel()
-        }
-    }
-
-    function updateEntry(title, type, skid, uid)
-    {
-        var contains = trackingModel.contains(uid)
-        if (contains[0]) {
-          DB.setTrackingEntry(type,uid,title,skid,"some text")
-          console.log("added to list")
-          fillUpCommingModelForAllItemsInTrackingModel()
-        }
-    }
-
-    // remove a single entry from trackingModel and db
-    function removeEntry(title, type, uid, index)
-    {
-        DB.removeTrackingEntry(type,title,uid)
-        //mainPage.locationList.remove(index) //this works
-        trackingModel.remove(index) // this is nicer
-    }
 
     function fillUpCommingModelForAllItemsInTrackingModel()
     {
@@ -149,7 +77,6 @@ SilicaListView {
 
     Component.onCompleted:
     {
-        //DB.Initialize() -> moved to tabmainpage
         fillUpCommingModelForAllItemsInTrackingModel()
     }
 
@@ -286,6 +213,7 @@ SilicaListView {
                     font.pixelSize: Theme.fontSizeSmall
                     truncationMode: TruncationMode.Elide
                     elide: Text.ElideRight
+                    width: parent.width - typeIcon.width
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
                 }
                 Label {

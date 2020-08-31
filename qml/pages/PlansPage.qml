@@ -6,15 +6,20 @@ import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
 import "../common"
 
-    SilicaListView {
+SilicaListView {
+    id: plans
+    anchors.fill: parent
+    contentHeight: parent.height
+    contentWidth: parent.width
 
-
-        property string im_going : qsTr("im_going")
-        property string i_might_go : qsTr("i_might_go")
+    property string im_going : qsTr("im_going")
+    property string i_might_go : qsTr("i_might_go")
 
         // the interface method
         function refresh()
         {
+            console.log(im_going);
+            console.log(i_might_go);
             console.log('refreshing plans page')
             fillUpCommingModelForAllItemsInTrackingModel();
         }
@@ -23,11 +28,6 @@ import "../common"
         {
             return upcomingModel
         }
-
-        id: plans
-        anchors.fill: parent
-        contentHeight: parent.height
-        contentWidth: parent.width
 
         function dateWithDay(datum)
         {
@@ -112,6 +112,17 @@ import "../common"
         property string skid
         property string date
         property string attendance
+    }
+
+    // yet another try to get that multilingual but failing
+    function setTrackingInfo(info)
+    {
+        console.log(info);
+        if (info === 'im_going') {
+            console.log('here')
+            return applicationWindow.imgoing
+       }
+        return applicationWindow.imightgo
     }
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
@@ -202,6 +213,8 @@ import "../common"
                     font.capitalization: Font.Capitalize
                     font.pixelSize: Theme.fontSizeSmall
                     truncationMode: TruncationMode.Elide
+                    // wrapMode: Text.WordWrap
+                    width: parent.width - typeIcon.width
                     elide: Text.ElideRight
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
                 }
@@ -234,8 +247,7 @@ import "../common"
                 }
                 Label {
                     id: planText
-                    text:  (attendance === "im_going") ? im_going : i_might_go
-
+                    text:  setTrackingInfo(attendance)
                     anchors.right: parent.right//typeIcon.right
                     anchors.rightMargin: Theme.paddingMedium
                     anchors.top: dateText.bottom

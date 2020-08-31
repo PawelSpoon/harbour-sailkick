@@ -195,6 +195,7 @@ Page {
                     font.pixelSize: Theme.fontSizeSmall
                     truncationMode: TruncationMode.Elide
                     elide: Text.ElideRight
+                    width: parent.width - typeIcon.width
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
                 }
                 Label {

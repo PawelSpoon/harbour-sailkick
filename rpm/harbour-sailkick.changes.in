@@ -11,6 +11,8 @@
 * Wed Aug 10 2020 Pawel Spoon <pawel@ich-habe-fertig.com> 0.3.1-0
 - new tab control
 - add search to artists and locations
+- fix plans page tracking info (was switched)
+- elide title on all pages
 
 * Wed Aug 10 2020 Pawel Spoon <pawel@ich-habe-fertig.com> 0.3.0-3
 - translation support for new pages

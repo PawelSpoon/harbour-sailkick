@@ -2,7 +2,6 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import Sailfish.Silica.private 1.0
 import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
 import "."
