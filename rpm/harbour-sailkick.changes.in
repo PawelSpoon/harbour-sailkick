@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Aug 10 2020 Pawel Spoon <pawel@ich-habe-fertig.com> 0.3.2-0
+- updated german / swedisch translations
+
 * Wed Aug 10 2020 Pawel Spoon <pawel@ich-habe-fertig.com> 0.3.1-0
 - new tab control
 - add search to artists and locations

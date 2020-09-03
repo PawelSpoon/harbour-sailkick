@@ -1,20 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="de">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" version="2.1">
 <context>
     <name>ConcertsPage</name>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="213"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="139"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation>Kalendar ist leer</translation>
+        <translation>Noch keine passenden Konzerte. </translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="327"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="254"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="336"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="263"/>
         <source>Share</source>
         <translation>Teilen</translation>
     </message>
@@ -34,7 +32,7 @@
     <message>
         <location filename="../qml/pages/EventPage.qml" line="30"/>
         <source>Webview</source>
-        <translation>Webansicht</translation>
+        <translation>In Webansicht öffnen</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="36"/>
@@ -54,12 +52,12 @@
     <message>
         <location filename="../qml/pages/EventPage.qml" line="66"/>
         <source>Event name</source>
-        <translation>Event name</translation>
+        <translation>Veranstaltung</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="107"/>
         <source>Venue</source>
-        <translation>Ort</translation>
+        <translation>Veranstaltungsort</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="183"/>
@@ -92,27 +90,27 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>PlansPage</name>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="12"/>
+        <location filename="../qml/pages/PlansPage.qml" line="15"/>
         <source>im_going</source>
         <translation>Ich gehe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="13"/>
+        <location filename="../qml/pages/PlansPage.qml" line="16"/>
         <source>i_might_go</source>
         <translation>Eventuell</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="119"/>
+        <location filename="../qml/pages/PlansPage.qml" line="136"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation>Kalendar ist leer</translation>
+        <translation>Noch keine Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="253"/>
+        <location filename="../qml/pages/PlansPage.qml" line="270"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="262"/>
+        <location filename="../qml/pages/PlansPage.qml" line="279"/>
         <source>Share</source>
         <translation>Teilen</translation>
     </message>
@@ -122,7 +120,7 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="30"/>
         <source>Get tracked items from songkick</source>
-        <translation>Lade deine Städte / Artisten von songkick.com</translation>
+        <translation>Lade deine Orte / Artisten von songkick.com</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="44"/>
@@ -169,49 +167,49 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
     </message>
 </context>
 <context>
-    <name>TabedMainPage</name>
+    <name>TabedMainPageX</name>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="16"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="17"/>
         <source>plan</source>
         <translation>Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="17"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="18"/>
         <source>concert</source>
         <translation>Konzerte</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="18"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="19"/>
         <source>location</source>
         <translation>Orte</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="19"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="20"/>
         <source>artist</source>
-        <translation">Künstler</translation>
+        <translation>Künstler</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="178"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="96"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="183"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="101"/>
         <source>Manage</source>
         <translation>Verwalten</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="190"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="109"/>
         <source>Get tracked items from songkick</source>
-        <translation>Lade deine Städte & Künstler von songkick.com</translation>
+        <translation>Lade deine Orte / Artisten von songkick.com</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="197"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="117"/>
         <source>Refresh</source>
         <translation>Neu Laden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPage.qml" line="207"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="127"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
@@ -219,27 +217,22 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="106"/>
-        <source>Refresh</source>
-        <translation>Neu Laden</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="113"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="108"/>
         <source>Load more</source>
         <translation>Weitere Laden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="125"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="120"/>
         <source>Seems there are no events planed</source>
         <translation>Anscheinend sind keine Konzerte geplant</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="242"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="238"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="257"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="253"/>
         <source>Share</source>
         <translation>Teilen</translation>
     </message>
@@ -247,17 +240,17 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>TrackedItemsPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="109"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="143"/>
         <source>You are not tracking any ...</source>
         <translation>Du folgst Niemandem ..</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="193"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="227"/>
         <source>on tour</source>
-        <translation>on tour</translation>
+        <translation>auf Tour</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="215"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="249"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
@@ -265,23 +258,33 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>harbour-sailkick</name>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="17"/>
-        <source>plan</source>
-        <translation>Pläne</translation>
-    </message>
-    <message>
-        <location filename="../qml/harbour-sailkick.qml" line="18"/>
-        <source>concert</source>
-        <translation>Konzerte</translation>
-    </message>
-    <message>
-        <location filename="../qml/harbour-sailkick.qml" line="19"/>
-        <source>location</source>
-        <translation>Orte</translation>
+        <location filename="../qml/harbour-sailkick.qml" line="21"/>
+        <source>im_going</source>
+        <translation>Ich gehe</translation>
     </message>
     <message>
         <location filename="../qml/harbour-sailkick.qml" line="20"/>
-        <source>artist</source>
+        <source>i_might_go</source>
+        <translation>Eventuell</translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="44"/>
+        <source>Plan</source>
+        <translation>Pläne</translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="49"/>
+        <source>Concerts</source>
+        <translation>Konzerte</translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="54"/>
+        <source>Locations</source>
+        <translation>Orte</translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="59"/>
+        <source>Artists</source>
         <translation>Künstler</translation>
     </message>
 </context>

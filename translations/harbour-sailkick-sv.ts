@@ -1,22 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sv">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" version="2.1">
 <context>
     <name>ConcertsPage</name>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="139"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">Du har inga kommande konserter i din kalender</translation>
+        <translation>Du har inga kommande konserter i din kalender</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="254"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Öppna i webbläsaren</translation>
+        <translation>Öppna i webbläsaren</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="263"/>
         <source>Share</source>
-        <translation type="unfinished">Dela</translation>
+        <translation>Dela</translation>
     </message>
 </context>
 <context>
@@ -24,47 +22,47 @@
     <message>
         <location filename="../qml/pages/EventPage.qml" line="16"/>
         <source>im_going</source>
-        <translation type="unfinished">Jag skall gå</translation>
+        <translation>Jag skall gå</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="17"/>
         <source>i_might_go</source>
-        <translation type="unfinished">Jag kanske går</translation>
+        <translation>Jag kanske går</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="30"/>
         <source>Webview</source>
-        <translation type="unfinished"></translation>
+        <translation>Webbvy</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="36"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Öppna i webbläsaren</translation>
+        <translation>Öppna i webbläsaren</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="37"/>
         <source> </source>
-        <translation type="unfinished"></translation>
+        <translation> </translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="55"/>
         <source>  </source>
-        <translation type="unfinished"></translation>
+        <translation>  </translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="66"/>
         <source>Event name</source>
-        <translation type="unfinished"></translation>
+        <translation>Händelsenamn</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="107"/>
         <source>Venue</source>
-        <translation type="unfinished"></translation>
+        <translation>Plats</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="183"/>
         <source>Performer(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktör(er)</translation>
     </message>
 </context>
 <context>
@@ -172,47 +170,47 @@
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="17"/>
         <source>plan</source>
-        <translation type="unfinished"></translation>
+        <translation>plan</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="18"/>
         <source>concert</source>
-        <translation type="unfinished"></translation>
+        <translation>konsert</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="19"/>
         <source>location</source>
-        <translation type="unfinished"></translation>
+        <translation>plats</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="20"/>
         <source>artist</source>
-        <translation type="unfinished"></translation>
+        <translation>artist</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="96"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="101"/>
         <source>Manage</source>
-        <translation type="unfinished"></translation>
+        <translation>Hantera</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="109"/>
         <source>Get tracked items from songkick</source>
-        <translation type="unfinished">Hämta spårade objekt från Songkick</translation>
+        <translation>Hämta spårade objekt från songkick</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="117"/>
         <source>Refresh</source>
-        <translation type="unfinished">Uppdatera</translation>
+        <translation>Uppdatera</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="127"/>
         <source>Help</source>
-        <translation type="unfinished">Hjälp</translation>
+        <translation>Hjälp</translation>
     </message>
 </context>
 <context>
@@ -248,7 +246,7 @@
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="227"/>
         <source>on tour</source>
-        <translation type="unfinished"></translation>
+        <translation>på turné</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="249"/>
@@ -261,32 +259,32 @@
     <message>
         <location filename="../qml/harbour-sailkick.qml" line="21"/>
         <source>im_going</source>
-        <translation type="unfinished">Jag skall gå</translation>
+        <translation>Jag skall gå</translation>
     </message>
     <message>
         <location filename="../qml/harbour-sailkick.qml" line="20"/>
         <source>i_might_go</source>
-        <translation type="unfinished">Jag kanske går</translation>
+        <translation>Jag kanske går</translation>
     </message>
     <message>
         <location filename="../qml/harbour-sailkick.qml" line="44"/>
         <source>Plan</source>
-        <translation type="unfinished"></translation>
+        <translation>Plan</translation>
     </message>
     <message>
         <location filename="../qml/harbour-sailkick.qml" line="49"/>
         <source>Concerts</source>
-        <translation type="unfinished"></translation>
+        <translation>Konserter</translation>
     </message>
     <message>
         <location filename="../qml/harbour-sailkick.qml" line="54"/>
         <source>Locations</source>
-        <translation type="unfinished"></translation>
+        <translation>Platser</translation>
     </message>
     <message>
         <location filename="../qml/harbour-sailkick.qml" line="59"/>
         <source>Artists</source>
-        <translation type="unfinished"></translation>
+        <translation>Artister</translation>
     </message>
 </context>
 </TS>
