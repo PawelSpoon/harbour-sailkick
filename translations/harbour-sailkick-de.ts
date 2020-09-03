@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="de">
 <context>
     <name>ConcertsPage</name>
     <message>
@@ -258,32 +260,32 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>harbour-sailkick</name>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="21"/>
+        <location filename="../qml/harbour-sailkick.qml" line="22"/>
         <source>im_going</source>
         <translation>Ich gehe</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="20"/>
+        <location filename="../qml/harbour-sailkick.qml" line="21"/>
         <source>i_might_go</source>
         <translation>Eventuell</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="44"/>
+        <location filename="../qml/harbour-sailkick.qml" line="45"/>
         <source>Plan</source>
         <translation>Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="49"/>
+        <location filename="../qml/harbour-sailkick.qml" line="50"/>
         <source>Concerts</source>
         <translation>Konzerte</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="54"/>
+        <location filename="../qml/harbour-sailkick.qml" line="55"/>
         <source>Locations</source>
         <translation>Orte</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="59"/>
+        <location filename="../qml/harbour-sailkick.qml" line="60"/>
         <source>Artists</source>
         <translation>Künstler</translation>
     </message>

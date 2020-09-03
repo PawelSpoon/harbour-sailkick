@@ -259,32 +259,32 @@
 <context>
     <name>harbour-sailkick</name>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="21"/>
+        <location filename="../qml/harbour-sailkick.qml" line="22"/>
         <source>im_going</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="20"/>
+        <location filename="../qml/harbour-sailkick.qml" line="21"/>
         <source>i_might_go</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="44"/>
+        <location filename="../qml/harbour-sailkick.qml" line="45"/>
         <source>Plan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="49"/>
+        <location filename="../qml/harbour-sailkick.qml" line="50"/>
         <source>Concerts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="54"/>
+        <location filename="../qml/harbour-sailkick.qml" line="55"/>
         <source>Locations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/harbour-sailkick.qml" line="59"/>
+        <location filename="../qml/harbour-sailkick.qml" line="60"/>
         <source>Artists</source>
         <translation type="unfinished"></translation>
     </message>
