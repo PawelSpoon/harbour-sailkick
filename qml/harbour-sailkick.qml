@@ -16,7 +16,7 @@ ApplicationWindow
 
     // from tab sample
     property alias tabBar: _tabBar
-    readonly property string mainPageName: "TabedMainPageX"
+    //readonly property string mainPageName: "TabedMainPageX"
     readonly property string imightgo : qsTr('i_might_go')
     readonly property string imgoing : qsTr('im_going')
 
