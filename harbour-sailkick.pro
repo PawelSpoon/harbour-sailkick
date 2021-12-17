@@ -64,7 +64,6 @@ DISTFILES += \
     qml/pages/SettingsPage.qml \
     qml/pages/TrackedItemPage.qml \
     qml/pages/TrackedItemsPage.qml \
-    qml/pages/ShareWithPage.qml \
     translations/harbour-sailkick-es.ts \
     qml/pages/EventWebViewPage.qml \
     qml/pages/EventPage.qml

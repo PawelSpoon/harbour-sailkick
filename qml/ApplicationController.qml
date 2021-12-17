@@ -61,6 +61,8 @@ Item {
             console.log("page not found: " + currentPage)
             return null;
         }
+        var pg = pages[index].page;
+        if (pg === null) console.error('page attribute is null')
         return pages[index].page
     }
 
@@ -72,7 +74,12 @@ Item {
         currentPage = pageName
         applicationWindow.cover.setTitle(pageName);
         showMyMenues(pageName)
-        updateCoverList(pageName, getCurrentPageView(pageName).getCoverPageModel())
+        var page = getCurrentPageView(pageName)
+        if (page === null) {
+            console.error('no page found for: ' + pageName)
+            return
+        }
+        updateCoverList(pageName, page.getCoverPageModel())
     }
 
     // app specific

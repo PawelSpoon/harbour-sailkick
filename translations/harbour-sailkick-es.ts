@@ -4,19 +4,24 @@
 <context>
     <name>ConcertsPage</name>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="139"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="141"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation type="unfinished">No tienes próximos conciertos anotados en el calendario</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="254"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="256"/>
         <source>Open in browser</source>
         <translation type="unfinished">Abrir en el navegador</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="263"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="265"/>
         <source>Share</source>
         <translation type="unfinished">Compartir</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="268"/>
+        <source>Share event</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -91,29 +96,34 @@
 <context>
     <name>PlansPage</name>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="15"/>
+        <location filename="../qml/pages/PlansPage.qml" line="16"/>
         <source>im_going</source>
         <translation>voy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="16"/>
+        <location filename="../qml/pages/PlansPage.qml" line="17"/>
         <source>i_might_go</source>
         <translation>podría_ir</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="136"/>
+        <location filename="../qml/pages/PlansPage.qml" line="137"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>No tienes próximos conciertos anotados en el calendario</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="270"/>
+        <location filename="../qml/pages/PlansPage.qml" line="271"/>
         <source>Open in browser</source>
         <translation>Abrir en el navegador</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="279"/>
+        <location filename="../qml/pages/PlansPage.qml" line="280"/>
         <source>Share</source>
         <translation>Compartir</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PlansPage.qml" line="283"/>
+        <source>Share event</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -152,19 +162,6 @@
         <location filename="../qml/pages/SettingsPage.qml" line="98"/>
         <source>Username is needed to retrieve&lt;br&gt;your tracked items&lt;br&gt;from songkick.com.&lt;br&gt;Password is currently not needed.&lt;br&gt;If you do not have a &lt;br&gt;Songkick account yet, &lt;br&gt;please create one. &lt;br&gt;When ever you modify your &lt;br&gt;tracking items on songkick.com, &lt;br&gt;sync them using&lt;br&gt;&apos;Get tracked items ..&apos;&lt;br&gt;pulldown menu</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ShareWithPage</name>
-    <message>
-        <location filename="../qml/pages/ShareWithPage.qml" line="16"/>
-        <source>Done</source>
-        <translation>Hecho</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ShareWithPage.qml" line="17"/>
-        <source>Discard</source>
-        <translation>Descartar</translation>
     </message>
 </context>
 <context>

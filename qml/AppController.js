@@ -74,4 +74,3 @@ function updateTrackingItemsInDb(type, page, username, items)
         cb1();
     }
 }
-

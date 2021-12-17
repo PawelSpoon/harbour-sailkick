@@ -2,6 +2,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Sailfish.Share 1.0
 import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
 import "../common"
@@ -277,11 +278,19 @@ SilicaListView {
                 }
                 MenuItem {
                     text: qsTr("Share")
+                    ShareAction { id:share
+                         mimeType: "text/*"
+                         title: qsTr("Share event")
+                    }
                     // icon: con-m-share
                     onClicked: {
                         print(upcommingList.currentIndex)
                         var current = upcomingModel.get(upcommingList.currentIndex)
-                        pageStack.push(Qt.resolvedUrl("ShareWithPage.qml"), {destroyOnPop:true, sharedName: "My plans", sharedContent: current.uri, sharedType:"text/x-url" })
+                        var he = {}
+                        he.data = current.uri
+                        he.name = "Hey, check this out"
+                        share.resources = [he]
+                        share.trigger()
                     }
                 }
             }

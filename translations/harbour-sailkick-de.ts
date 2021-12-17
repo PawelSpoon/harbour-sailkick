@@ -4,19 +4,24 @@
 <context>
     <name>ConcertsPage</name>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="139"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="141"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation>Noch keine passenden Konzerte. </translation>
+        <translation type="unfinished">Noch keine Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="254"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="256"/>
         <source>Open in browser</source>
-        <translation>Im Browser öffnen</translation>
+        <translation type="unfinished">Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="263"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="265"/>
         <source>Share</source>
-        <translation>Teilen</translation>
+        <translation type="unfinished">Teilen</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="268"/>
+        <source>Share event</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -92,29 +97,34 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>PlansPage</name>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="15"/>
+        <location filename="../qml/pages/PlansPage.qml" line="16"/>
         <source>im_going</source>
         <translation>Ich gehe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="16"/>
+        <location filename="../qml/pages/PlansPage.qml" line="17"/>
         <source>i_might_go</source>
         <translation>Eventuell</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="136"/>
+        <location filename="../qml/pages/PlansPage.qml" line="137"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>Noch keine Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="270"/>
+        <location filename="../qml/pages/PlansPage.qml" line="271"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="279"/>
+        <location filename="../qml/pages/PlansPage.qml" line="280"/>
         <source>Share</source>
         <translation>Teilen</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PlansPage.qml" line="283"/>
+        <source>Share event</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -153,19 +163,6 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
         <location filename="../qml/pages/SettingsPage.qml" line="98"/>
         <source>Username is needed to retrieve&lt;br&gt;your tracked items&lt;br&gt;from songkick.com.&lt;br&gt;Password is currently not needed.&lt;br&gt;If you do not have a &lt;br&gt;Songkick account yet, &lt;br&gt;please create one. &lt;br&gt;When ever you modify your &lt;br&gt;tracking items on songkick.com, &lt;br&gt;sync them using&lt;br&gt;&apos;Get tracked items ..&apos;&lt;br&gt;pulldown menu</source>
         <translation>Username wird benötigt um &lt;br&gt;jene Orte und Artisten zu laden, &lt;br&gt;welchen du folgst. &lt;br&gt;Passwort wird nicht benötigt. &lt;br&gt;Falls du noch keinen Songkick account hast,&lt;br&gt; lege bitte einen an. &lt;br&gt;Immer wenn du deine Orte oder Artisten &lt;br&gt;auf songkick.com veränderst,&lt;br&gt; synchronisiere diese mit &apos;Get tracked items&apos; .. </translation>
-    </message>
-</context>
-<context>
-    <name>ShareWithPage</name>
-    <message>
-        <location filename="../qml/pages/ShareWithPage.qml" line="16"/>
-        <source>Done</source>
-        <translation>Fertig</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ShareWithPage.qml" line="17"/>
-        <source>Discard</source>
-        <translation>Verwerfen</translation>
     </message>
 </context>
 <context>
