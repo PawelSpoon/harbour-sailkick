@@ -43,7 +43,7 @@ function initialize() {
 
 function getRandom()
 {
-    return "io09K9l3ebJxmxe2"; //"12345678"
+    return "12345678"
 }
 
 function setUser(title,txt)
