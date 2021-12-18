@@ -6,12 +6,12 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="141"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">You have no upcomming concerts in your calendar</translation>
+        <translation>You have no upcomming concerts in your calendar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="256"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Open in browser</translation>
+        <translation>Open in browser</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="265"/>

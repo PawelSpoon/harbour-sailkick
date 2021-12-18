@@ -6,22 +6,22 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="141"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">Noch keine Pläne</translation>
+        <translation>Noch keine Pläne</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="256"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Im Browser öffnen</translation>
+        <translation>Im Browser öffnen</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="265"/>
         <source>Share</source>
-        <translation type="unfinished">Teilen</translation>
+        <translation>Teilen</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="268"/>
         <source>Share event</source>
-        <translation type="unfinished"></translation>
+        <translation>Ereignis teilen</translation>
     </message>
 </context>
 <context>
@@ -124,7 +124,7 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="283"/>
         <source>Share event</source>
-        <translation type="unfinished"></translation>
+        <translation>Ereignis teilen</translation>
     </message>
 </context>
 <context>

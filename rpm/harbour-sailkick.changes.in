@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fr Dez 17 2021 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.3-1
+- updated swedish, fixed german and czech (a little)
+
 * Fr Dez 17 2021 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.3-0
 - build for sfos 4.3 all targets - plus very simple sharing
 
