@@ -264,15 +264,19 @@ SilicaListView {
                 MenuItem {
                     text: qsTr("Share")
                     ShareAction { id:share
-                        mimeType: "text/*"
+                        mimeType: "text/x-"
                         title: qsTr("Share event")
                     }
                     onClicked: {
                         print(upcommingList.currentIndex)
+                        var mimeType = "text/x-url";
                         var current = upcomingModel.get(upcommingList.currentIndex)
                         var he = {}
                         he.data = current.uri
                         he.name = "Hey, check this out"
+                        he.type = mimeType
+                        he["linkTitle"] = current.uri // works in email body
+                        share.mimeType = "text/x-url";
                         share.resources = [he]
                         share.trigger()
                     }

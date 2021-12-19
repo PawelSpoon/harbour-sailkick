@@ -278,19 +278,24 @@ SilicaListView {
                 }
                 MenuItem {
                     text: qsTr("Share")
-                    ShareAction { id:share
-                         mimeType: "text/*"
+                    ShareAction {
+                         id:shareAction
+                         mimeType: "text/xml"
                          title: qsTr("Share event")
                     }
                     // icon: con-m-share
                     onClicked: {
                         print(upcommingList.currentIndex)
+                        var mimeType = "text/x-url";
                         var current = upcomingModel.get(upcommingList.currentIndex)
                         var he = {}
                         he.data = current.uri
-                        he.name = "Hey, check this out"
-                        share.resources = [he]
-                        share.trigger()
+                        he.type = mimeType
+                        he["linkTitle"] = current.uri // works in email body
+                        //he["shareText"] = current.uri // does not work
+                        shareAction.mimeType = mimeType
+                        shareAction.resources = [he]
+                        shareAction.trigger()
                     }
                 }
             }

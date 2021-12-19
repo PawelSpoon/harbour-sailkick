@@ -121,7 +121,7 @@
         <translation>Share</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="283"/>
+        <location filename="../qml/pages/PlansPage.qml" line="284"/>
         <source>Share event</source>
         <translation type="unfinished"></translation>
     </message>
