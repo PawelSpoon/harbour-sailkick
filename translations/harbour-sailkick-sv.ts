@@ -4,22 +4,32 @@
 <context>
     <name>ConcertsPage</name>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="141"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="142"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>Du har inga kommande konserter i din kalender</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="256"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="258"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="261"/>
         <source>Open in browser</source>
         <translation>Öppna i webbläsaren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="265"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="269"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="278"/>
         <source>Share</source>
         <translation>Dela</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="268"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="281"/>
         <source>Share event</source>
         <translation>Dela händelsen</translation>
     </message>
@@ -27,47 +37,52 @@
 <context>
     <name>EventPage</name>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="16"/>
+        <location filename="../qml/pages/EventPage.qml" line="17"/>
         <source>im_going</source>
         <translation>Jag skall gå</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="17"/>
+        <location filename="../qml/pages/EventPage.qml" line="18"/>
         <source>i_might_go</source>
         <translation>Jag kanske går</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="30"/>
+        <location filename="../qml/pages/EventPage.qml" line="31"/>
         <source>Webview</source>
         <translation>Webbvy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="36"/>
+        <location filename="../qml/pages/EventPage.qml" line="37"/>
         <source>Open in browser</source>
         <translation>Öppna i webbläsaren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="37"/>
+        <location filename="../qml/pages/EventPage.qml" line="38"/>
         <source> </source>
         <translation> </translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="55"/>
+        <location filename="../qml/pages/EventPage.qml" line="45"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="60"/>
         <source>  </source>
         <translation>  </translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="66"/>
+        <location filename="../qml/pages/EventPage.qml" line="71"/>
         <source>Event name</source>
         <translation>Händelsenamn</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="107"/>
+        <location filename="../qml/pages/EventPage.qml" line="112"/>
         <source>Venue</source>
         <translation>Plats</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="183"/>
+        <location filename="../qml/pages/EventPage.qml" line="190"/>
         <source>Performer(s)</source>
         <translation>Aktör(er)</translation>
     </message>
@@ -96,32 +111,42 @@
 <context>
     <name>PlansPage</name>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="16"/>
+        <location filename="../qml/pages/PlansPage.qml" line="17"/>
         <source>im_going</source>
         <translation>Jag skall gå</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="17"/>
+        <location filename="../qml/pages/PlansPage.qml" line="18"/>
         <source>i_might_go</source>
         <translation>Jag kanske går</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="137"/>
+        <location filename="../qml/pages/PlansPage.qml" line="138"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>Du har inga kommande konserter i din kalender</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="271"/>
+        <location filename="../qml/pages/PlansPage.qml" line="276"/>
         <source>Open in browser</source>
         <translation>Öppna i webbläsaren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="280"/>
+        <location filename="../qml/pages/PlansPage.qml" line="284"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PlansPage.qml" line="273"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PlansPage.qml" line="293"/>
         <source>Share</source>
         <translation>Dela</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="284"/>
+        <location filename="../qml/pages/PlansPage.qml" line="297"/>
         <source>Share event</source>
         <translation>Dela händelsen</translation>
     </message>

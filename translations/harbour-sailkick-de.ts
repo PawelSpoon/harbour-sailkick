@@ -4,22 +4,32 @@
 <context>
     <name>ConcertsPage</name>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="141"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="142"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>Noch keine Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="256"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="258"/>
+        <source>Copied to clipboard</source>
+        <translation>In Zwischenablage kopiert</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="261"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="265"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="269"/>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="278"/>
         <source>Share</source>
         <translation>Teilen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="268"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="281"/>
         <source>Share event</source>
         <translation>Ereignis teilen</translation>
     </message>
@@ -27,47 +37,52 @@
 <context>
     <name>EventPage</name>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="16"/>
+        <location filename="../qml/pages/EventPage.qml" line="17"/>
         <source>im_going</source>
         <translation>Ich gehe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="17"/>
+        <location filename="../qml/pages/EventPage.qml" line="18"/>
         <source>i_might_go</source>
         <translation>Eventuell</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="30"/>
+        <location filename="../qml/pages/EventPage.qml" line="31"/>
         <source>Webview</source>
         <translation>In Webansicht öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="36"/>
+        <location filename="../qml/pages/EventPage.qml" line="37"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="37"/>
+        <location filename="../qml/pages/EventPage.qml" line="38"/>
         <source> </source>
         <translation> </translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="55"/>
+        <location filename="../qml/pages/EventPage.qml" line="45"/>
+        <source>Copied to clipboard</source>
+        <translation>In Zwischenablage kopiert</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="60"/>
         <source>  </source>
         <translation>  </translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="66"/>
+        <location filename="../qml/pages/EventPage.qml" line="71"/>
         <source>Event name</source>
         <translation>Veranstaltung</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="107"/>
+        <location filename="../qml/pages/EventPage.qml" line="112"/>
         <source>Venue</source>
         <translation>Veranstaltungsort</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="183"/>
+        <location filename="../qml/pages/EventPage.qml" line="190"/>
         <source>Performer(s)</source>
         <translation>Künstler</translation>
     </message>
@@ -97,32 +112,42 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>PlansPage</name>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="16"/>
+        <location filename="../qml/pages/PlansPage.qml" line="17"/>
         <source>im_going</source>
         <translation>Ich gehe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="17"/>
+        <location filename="../qml/pages/PlansPage.qml" line="18"/>
         <source>i_might_go</source>
         <translation>Eventuell</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="137"/>
+        <location filename="../qml/pages/PlansPage.qml" line="138"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>Noch keine Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="271"/>
+        <location filename="../qml/pages/PlansPage.qml" line="276"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="280"/>
+        <location filename="../qml/pages/PlansPage.qml" line="284"/>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PlansPage.qml" line="273"/>
+        <source>Copied to clipboard</source>
+        <translation>In Zwischenablage kopiert</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PlansPage.qml" line="293"/>
         <source>Share</source>
         <translation>Teilen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="284"/>
+        <location filename="../qml/pages/PlansPage.qml" line="297"/>
         <source>Share event</source>
         <translation>Ereignis teilen</translation>
     </message>

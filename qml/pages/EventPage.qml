@@ -3,6 +3,7 @@
 import QtWebKit 3.0
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Nemo.Notifications 1.0
 import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
 
@@ -39,6 +40,10 @@ Dialog {
 
         // Place our content in a Column.  The PageHeader is always placed at the top
         // of the page, followed by our content.
+        Notification {
+            id: notification
+            summary: qsTr("Copied to clipboard")
+        }
 
         Column {
             id: column
@@ -120,6 +125,8 @@ Dialog {
                     if (street.text !== 'street') { clip += ", " + street.text };
                     if (city.text !== 'city') { clip += ", " + city.text };
                     Clipboard.text = clip;
+                    notification.body = clip;
+                    notification.publish()
                 }
                 width: 120
                 height: 120
@@ -187,7 +194,11 @@ Dialog {
                width: 120
                height: 120
                anchors.horizontalCenter: parent.horizontalCenter;
-               onClicked: {Clipboard.text = artistsModel.get(0).displayName; }
+               onClicked: {
+                   Clipboard.text = artistsModel.get(0).displayName;
+                   notification.body = artistsModel.get(0).displayName;
+                   notification.publish()
+               }
                // text: qsTr("copy")
                Image {
                    source: "image://theme/icon-s-clipboard";

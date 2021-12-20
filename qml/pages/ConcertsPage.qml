@@ -2,6 +2,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Nemo.Notifications 1.0
 import Sailfish.Share 1.0
 // DB should not be needed here !!
 import "../Persistance.js" as DB
@@ -252,13 +253,25 @@ SilicaListView {
             id: contextMenuComponent
             ContextMenu {
                 id: menu
+                Notification {
+                    id: notification
+                    summary: qsTr("Copied to clipboard")
+                }
                 MenuItem {
                     text: qsTr("Open in browser")
                     onClicked: {
                         print ('')
                         print(upcommingList.currentIndex)
                         Qt.openUrlExternally(upcomingModel.get(upcommingList.currentIndex).uri)
-
+                    }
+                }
+                MenuItem {
+                    text: qsTr("Copy");
+                    onClicked: {
+                        var clip = upcomingModel.get(upcommingList.currentIndex).uri;
+                        Clipboard.text = clip;
+                        notification.body = clip;
+                        notification.publish()
                     }
                 }
                 MenuItem {
