@@ -241,23 +241,38 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="108"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="110"/>
         <source>Load more</source>
         <translation>Weitere Laden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="120"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="122"/>
         <source>Seems there are no events planed</source>
         <translation>Anscheinend sind keine Konzerte geplant</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="238"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="241"/>
+        <source>Copied to clipboard</source>
+        <translation>In Zwischenablage kopiert</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="244"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="253"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="259"/>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="268"/>
         <source>Share</source>
+        <translation>Teilen</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="272"/>
+        <source>Share event</source>
         <translation>Teilen</translation>
     </message>
 </context>

@@ -240,24 +240,39 @@
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="108"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="110"/>
         <source>Load more</source>
         <translation>Cargar más</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="120"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="122"/>
         <source>Seems there are no events planed</source>
         <translation>Parece que no hay eventos planeados</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="238"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="241"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="244"/>
         <source>Open in browser</source>
         <translation>Abrir en el navegador</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="253"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="259"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="268"/>
         <source>Share</source>
         <translation>Compartir</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="272"/>
+        <source>Share event</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

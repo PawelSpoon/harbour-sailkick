@@ -1,7 +1,9 @@
 //<license>
 
 import QtQuick 2.0
+import Nemo.Notifications 1.0
 import Sailfish.Silica 1.0
+import Sailfish.Share 1.0
 import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
 import "../common"
@@ -234,6 +236,10 @@ Page {
             id: contextMenuComponent
             ContextMenu {
                 id: menu
+                Notification {
+                    id: notification
+                    summary: qsTr("Copied to clipboard")
+                }
                 MenuItem {
                     text: qsTr("Open in browser")
                     onClicked: {
@@ -250,11 +256,34 @@ Page {
                     }
                 }*/
                 MenuItem {
+                    text: qsTr("Copy")
+                    onClicked: {
+                        var clip = upcommingModel.get(upcommingList.currentIndex).uri;
+                        Clipboard.text = clip;
+                        notification.body = clip;
+                        notification.publish()
+                    }
+                }
+                MenuItem {
                     text: qsTr("Share")
+                    ShareAction {
+                         id:shareAction
+                         mimeType: "text/xml"
+                         title: qsTr("Share event")
+                    }
+                    // icon: con-m-share
                     onClicked: {
                         print(upcommingList.currentIndex)
-                        var current = upcommingModel.get(upcommingList.currentIndex)
-                        pageStack.push(Qt.resolvedUrl("ShareWithPage.qml"), {destroyOnPop:true, sharedName: "My plans", sharedContent: current.uri, sharedType:"text/x-url" })
+                        var mimeType = "text/x-url";
+                        var current = upcomingModel.get(upcommingList.currentIndex)
+                        var he = {}
+                        he.data = current.uri
+                        he.type = mimeType
+                        he["linkTitle"] = current.uri // works in email body
+                        //he["shareText"] = current.uri // does not work
+                        shareAction.mimeType = mimeType
+                        shareAction.resources = [he]
+                        shareAction.trigger()
                     }
                 }
             }

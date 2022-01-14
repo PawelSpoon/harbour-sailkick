@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="258"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="261"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="269"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="278"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="281"/>
         <source>Share event</source>
-        <translation></translation>
+        <translation>Podíl</translation>
     </message>
 </context>
 <context>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../qml/pages/EventPage.qml" line="45"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="60"/>
@@ -240,24 +240,39 @@
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="108"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="110"/>
         <source>Load more</source>
         <translation>Načíst další</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="120"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="122"/>
         <source>Seems there are no events planed</source>
         <translation>Zdá se, že nejsou plánovány žádné události</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="238"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="241"/>
+        <source>Copied to clipboard</source>
+        <translation>Kopírovat</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="244"/>
         <source>Open in browser</source>
         <translation>Otevřít v prohlížeči</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="253"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="259"/>
+        <source>Copy</source>
+        <translation>Kopírovat</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="268"/>
         <source>Share</source>
         <translation>Podíl</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="272"/>
+        <source>Share event</source>
+        <translation>Podíl akcy</translation>
     </message>
 </context>
 <context>
