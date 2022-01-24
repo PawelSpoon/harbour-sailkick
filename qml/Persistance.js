@@ -27,18 +27,87 @@ function getUniqueId()
 // At the start of the application, this creates tables if not already there
 function initialize() {
     var db = getDatabase();
+    var dbVersion = getDBVersion(db);
+    console.log("db version: " + version);
+    v_2_0(db);
+    v_2_2(db);
+    v_2_3(db);
+}
+
+// creates version table if not there and returns the dbversion
+// 0 if fresh install
+function getDBVersion()
+{
+    var rs;
     db.transaction(
-                function(tx) {
-                    // Create the settings table if it doesn't already exist
-                    tx.executeSql('CREATE TABLE IF NOT EXISTS version(version TEXT)');
-                    var rs = tx.executeSql('SELECT DISTINCT version FROM version;');
-                    console.log (rs.rows.length)
-                    if (rs.rows.length === 0 || rs.rows.item(0).version !== "2.2") { console.log('drop and recreate tracked table'); tx.executeSql('DROP TABLE IF EXISTS tracked') };
-                    tx.executeSql('DELETE FROM version');
-                    tx.executeSql('INSERT OR REPLACE INTO version values (?);', '2.2');
-                    tx.executeSql('CREATE TABLE IF NOT EXISTS tracked(uid LONGVARCHAR UNIQUE, title TEXT, type TEXT, skid TEXT, txt TEXT, body TEXT)');
-                    tx.executeSql('CREATE TABLE IF NOT EXISTS user(uid LONGVARCHAR UNIQUE, title TEXT,pwd TEXT)');
-                });
+        function(tx) {
+            // Create the version table if it doesn't already exist
+            tx.executeSql('CREATE TABLE IF NOT EXISTS version(version dec(5,2) DEFAULT 0.0)');
+            rs = tx.executeSql('SELECT DISTINCT version FROM version;');
+        });
+    // not records => fresh install
+    if (rs.rows.length === 0 ) {
+        console.log("no version record -> fresh install, return 0");
+        return 0;
+    }
+    // record but a string => pre
+    // recreate version table with 2.2 as decimal
+    console.log("found version: " + rs.rows.item(0).version);
+    if (rs.rows.item(0).version === "2.2") {
+        console.log("found version: 2.2 as string -> recreate table as 2.2");
+        db.transaction(
+            function(tx) {
+                tx.executeSql('DROP TABLE IF EXISTS version');
+                tx.executeSql('CREATE TABLE IF NOT EXISTS version(version dec(5,2) DEFAULT 0.0)');
+                tx.executeSql('INSERT OR REPLACE INTO version values (?);', 2.2 );             
+            });
+        return 2.2;
+    }
+    // final model with version as decimal and incremental intalls
+    return rs.rows.item(0).version;
+}
+
+function v_2_0(db, version)
+{
+    if (version < 2.0) {
+        console.log("installing version 2.0");
+        db.transaction(
+        function(tx) {
+            tx.executeSql('DELETE FROM version');
+            tx.executeSql('INSERT OR REPLACE INTO version values (?);', 2.0);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS tracked(uid LONGVARCHAR UNIQUE, title TEXT, type TEXT, skid TEXT, txt TEXT, body TEXT)');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS user(uid LONGVARCHAR UNIQUE, title TEXT,pwd TEXT)');
+        });
+    }
+}
+
+// persistance 2.2:
+// recreate 
+function v_2_2(db, version)
+{
+  if (version === 2.0) {
+    console.log("installing version 2.2");
+    db.transaction(
+        function(tx) {
+            tx.executeSql('DELETE FROM version');
+            tx.executeSql('INSERT OR REPLACE INTO version values (?);', 2.2);
+        });      
+  }
+}
+
+// persistance 2.3:
+// add table for api-calls
+function v_2_3(db, version)
+{
+    if (version === 2.2) {
+    console.log("installing version 2.3");
+    db.transaction(
+        function(tx) {
+            tx.executeSql('DELETE FROM version');
+            tx.executeSql('INSERT OR REPLACE INTO version values (?);', 2.3);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS response(uri TEXT, page TEXT, skid TEXT, body TEXT)');
+        });
+    }
 }
 
 function getRandom()
