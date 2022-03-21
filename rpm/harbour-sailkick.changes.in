@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mo Mar 21 2022 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.6-0
+- fix copy event on area and artist page
+
 * Fr Jan 14 2022 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.5-0
 - fix copy event on area and artist page
 
