@@ -133,12 +133,12 @@
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="284"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="273"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="293"/>

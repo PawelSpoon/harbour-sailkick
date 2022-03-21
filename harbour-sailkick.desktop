@@ -14,3 +14,8 @@ Name[de]=Sailkick
 Name[en]=Sailkick
 Name[cs]=Sailkick
 Name[sv]=Sailkick
+
+[X-Sailjail]
+Permissions=Internet
+OrganizationName=oarg.pawelspoon
+ApplicationName=harbour-sailkick
