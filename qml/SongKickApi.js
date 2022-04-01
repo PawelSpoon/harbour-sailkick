@@ -286,8 +286,8 @@ function convertUpcommingEventsResponse(resp) {
     var venueName = currentEvent.venue.displayName;
     var metroAreaId = currentEvent.venue.metroArea.id;
     var metroAreaName = currentEvent.venue.metroArea.displayName;
-    var artistId = currentEvent.performance[0].id;
-    var artistName = currentEvent.performance[0].displayName;
+ //   var artistId = currentEvent.performance[0].id;
+  //  var artistName = currentEvent.performance[0].displayName;
     var eventi = {id:eventId, uri:eventUri, name:eventName, date: eventDate, time: eventTime, venueId: venueId, venueName: venueName, metroAreaId:metroAreaId, metroAreaName: metroAreaName}
 
     events.push(eventi);
