@@ -28,15 +28,15 @@ function getUniqueId()
 function initialize() {
     var db = getDatabase();
     var dbVersion = getDBVersion(db);
-    console.log("db version: " + version);
-    v_2_0(db);
-    v_2_2(db);
-    v_2_3(db);
+    console.log("db version: " + dbVersion);
+    dbVersion = v_2_0(db,dbVersion);
+    dbVersion = v_2_2(db,dbVersion);
+    dbVersion = v_2_3(db,dbVersion);
 }
 
 // creates version table if not there and returns the dbversion
 // 0 if fresh install
-function getDBVersion()
+function getDBVersion(db)
 {
     var rs;
     db.transaction(
@@ -79,6 +79,7 @@ function v_2_0(db, version)
             tx.executeSql('CREATE TABLE IF NOT EXISTS user(uid LONGVARCHAR UNIQUE, title TEXT,pwd TEXT)');
         });
     }
+    return 2.0;
 }
 
 // persistance 2.2:
@@ -93,6 +94,7 @@ function v_2_2(db, version)
             tx.executeSql('INSERT OR REPLACE INTO version values (?);', 2.2);
         });      
   }
+  return 2.2;
 }
 
 // persistance 2.3:
@@ -108,6 +110,7 @@ function v_2_3(db, version)
             tx.executeSql('CREATE TABLE IF NOT EXISTS response(uri TEXT, page TEXT, skid TEXT, body TEXT)');
         });
     }
+    return 2.3;
 }
 
 function getRandom()
