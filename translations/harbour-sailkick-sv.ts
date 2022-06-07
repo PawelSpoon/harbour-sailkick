@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="258"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopierat till urklipp</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="261"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="269"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="278"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../qml/pages/EventPage.qml" line="45"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopierat till urklipp</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="60"/>
@@ -133,12 +133,12 @@
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="284"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="273"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopierat till urklipp</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="293"/>
@@ -252,7 +252,7 @@
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="241"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopierat till urklipp</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="244"/>
@@ -262,7 +262,7 @@
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="259"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="268"/>
@@ -272,7 +272,7 @@
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="272"/>
         <source>Share event</source>
-        <translation type="unfinished">Dela händelsen</translation>
+        <translation>Dela händelsen</translation>
     </message>
 </context>
 <context>
