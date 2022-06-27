@@ -231,8 +231,11 @@ function convertCalendarResponse(resp) {
     var venueName = event.venue.displayName;
     var metroAreaId = event.venue.metroArea.id;
     var metroAreaName = event.venue.metroArea.displayName;
-    var artistId = event.performance[0].id;
-    var artistName = event.performance[0].displayName;
+    if (event.performance[0] !== undefined)
+    {
+      var artistId = event.performance[0].id;
+      var artistName = event.performance[0].displayName;
+    }
 
     //todo: correct class etc.
     var eventi = {id:eventId, uri:eventUri, name:eventName, artist: artist, metroAreaName: metroAreaName, date: eventDate, time: eventTime, venueId: venueId, venueName: venueName, attendance: attendance}

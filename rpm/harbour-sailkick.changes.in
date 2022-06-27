@@ -8,6 +8,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+
+* Fr Jun 010 2022 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.10-0
+- updated swedish translation
+
+* Fr Jun 010 2022 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.9-0
+- fix when event has no performers defined (in my case plans page did fail)
+
 * Fr Jun 01 2022 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.8-0
 - init fix
 
