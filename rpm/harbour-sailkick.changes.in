@@ -8,7 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Mo Mar 21 2024 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.7-0
+* Mo Mar 21 2024 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.12-0
+- fixed clean db installation
+- replaced QtWebKit with QtWebEngine
 - minnor tweaks
 - allow to jump from plans and concerts to artis page
 

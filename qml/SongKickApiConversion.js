@@ -1,7 +1,7 @@
 .pragma library
 
 // constant for undefined, used in conversions to avoid nulls
-const undefined = "undefined"
+var undefined = "undefined"
 
 // convert a SongKick event to a SailKick event
 // https://www.songkick.com/developer/response-objects#event-object

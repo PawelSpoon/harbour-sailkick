@@ -1,14 +1,14 @@
-.import "Persistance.js" as DB;
-.import "SongKickApiConversion.js" as Conv;
+.import "Persistance.js" as DB
+.import "SongKickApiConversion.js" as Conv
 
 // encapsulates songkick api
 // all get methods do require a callback method
 
 var apiKey = "apikey="
 var songKickUri = "https://api.songkick.com/api/3.0"
-const HEADERS_RECEIVED = 2;
-const DONE = 4;
-const OK = 200;
+var HEADERS_RECEIVED = 2;
+var DONE = 4;
+var OK = 200;
 
 // sends a upcomming events to songkick (tracked artists in users metro areas) == users calendar
 // returns paginated areas
@@ -364,6 +364,6 @@ function convertEventResponse(resp)
     return eventi;
   }
 
-  return Conv.ConvertEvent(resp.resultsPage.results.event)
+  return Conv.convertEvent(resp.resultsPage.results.event)
 
 }

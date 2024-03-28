@@ -68,8 +68,8 @@ function copyFiles() {
 
         // Replace the lines
         //let result = data.replace(/\.import "Persistance.js" as DB;"/g, "const Conv = require('./SongKickApiConversion.js');");
-        let result = data.replace(/\.import "Persistance\.js" as DB;/g, "const DB = require('./Persistance.js');");
-        result = result.replace(/\.import "SongKickApiConversion\.js" as Conv;/g, "const Conv = require('./SongKickApiConversion.js');");
+        let result = data.replace(/\.import "Persistance\.js" as DB/g, "const DB = require('./Persistance.js');");
+        result = result.replace(/\.import "SongKickApiConversion\.js" as Conv/g, "const Conv = require('./SongKickApiConversion.js');");
         result = result + '\n module.exports = { getUsersUpcommingEvents, getUsersTrackedItems } ;';
         // Write the result to a new file
         fs.writeFileSync('./dist/' + filename, result, 'utf8', function(err) {
