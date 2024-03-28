@@ -15,7 +15,7 @@ CoverBackground {
 
     function fillModel(events)
     {
-        print(events.count)
+        console.log(events.count)
         var maxcount = 7
         if (events.count < maxcount) maxcount = events.count
         if (maxcount === 0) return

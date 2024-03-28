@@ -57,14 +57,14 @@ SilicaListView {
 
     function fillUpCommingModelForOneTrackingEntry(type, events)
     {
-        print('number of events: ' +  events.length)
+        console.log('number of events: ' +  events.length)
         for (var i = 0; i < events.length; i++)
         {
             //artistName           
             var shortTitle = events[i].name
             var pos = shortTitle.indexOf(" at ");
             if (pos > 1) shortTitle = events[i].name.substr(0,pos)
-            print(shortTitle + " " + events[i].attendance)
+            console.log(shortTitle + " " + events[i].attendance)
             upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri, "attendance": events[i].attendance })
             //todo: store to db
         }
@@ -88,7 +88,7 @@ SilicaListView {
 
     function sortModel()
     {
-        print("sorting")
+        console.log("sorting")
         for(var i=0; i<upcomingModel.count; i++)
         {
             for(var j=0; j<i; j++)
@@ -175,7 +175,7 @@ SilicaListView {
                 height: titleText.height + locationText.height + dateText.height + Theme.paddingMedium
                 onClicked: {
                     upcommingList.currentIndex = index
-                    print(upcommingList.currentIndex)
+                    console.log(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
                     pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri }) // with mainPage null open in browser will not work
                     //pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: mainPage, uri: current.uri})
@@ -275,8 +275,8 @@ SilicaListView {
                 MenuItem {
                     text: qsTr("Open in browser")
                     onClicked: {
-                        print ('')
-                        print(upcommingList.currentIndex)
+                        console.log('')
+                        console.log(upcommingList.currentIndex)
                         Qt.openUrlExternally(upcomingModel.get(upcommingList.currentIndex).uri)
                     }
                 }
@@ -298,7 +298,7 @@ SilicaListView {
                     }
                     // icon: con-m-share
                     onClicked: {
-                        print(upcommingList.currentIndex)
+                        console.log(upcommingList.currentIndex)
                         var mimeType = "text/x-url";
                         var current = upcomingModel.get(upcommingList.currentIndex)
                         var he = {}

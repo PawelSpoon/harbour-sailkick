@@ -36,7 +36,7 @@ SilicaListView {
     {
         var contains = trackingModel.contains(uid)
         if (contains[0]) console.log("contains already " + title);
-        print("adding to tracking model: " + title + " " + type + " " + skid + " " + uid + " " + uri)
+        console.log("adding to tracking model: " + title + " " + type + " " + skid + " " + uid + " " + uri)
         trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid, "uri": uri})
     }
 
@@ -55,7 +55,7 @@ SilicaListView {
 
     function fillUpCommingModelForOneTrackingEntry(type, events)
     {
-        print('number of events: ' +  events.length)
+        console.log('number of events: ' +  events.length)
         for (var i = 0; i < events.length; i++)
         {
             //artistName           
@@ -85,7 +85,7 @@ SilicaListView {
 
     function sortModel()
     {
-        print("sorting")
+        console.log("sorting")
         for(var i=0; i<upcomingModel.count; i++)
         {
             for(var j=0; j<i; j++)
@@ -179,7 +179,7 @@ SilicaListView {
                 height: titleText.height + locationText.height + dateText.height + Theme.paddingMedium
                 onClicked: {
                     upcommingList.currentIndex = index
-                    print(upcommingList.currentIndex)
+                    console.log(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
                     pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri })
                 }
@@ -260,8 +260,8 @@ SilicaListView {
                 MenuItem {
                     text: qsTr("Open in browser")
                     onClicked: {
-                        print ('')
-                        print(upcommingList.currentIndex)
+                        console.log('')
+                        console.log(upcommingList.currentIndex)
                         Qt.openUrlExternally(upcomingModel.get(upcommingList.currentIndex).uri)
                     }
                 }
@@ -281,7 +281,7 @@ SilicaListView {
                         title: qsTr("Share event")
                     }
                     onClicked: {
-                        print(upcommingList.currentIndex)
+                        console.log(upcommingList.currentIndex)
                         var mimeType = "text/x-url";
                         var current = upcomingModel.get(upcommingList.currentIndex)
                         var he = {}

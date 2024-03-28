@@ -1,0 +1,17 @@
+{
+  "jest": {
+    "testMatch": ["<rootDir>/dist/**/*Test.js"]
+  },
+  "scripts": {
+    "pre-test": "node ./test/pre-test.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.3",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}

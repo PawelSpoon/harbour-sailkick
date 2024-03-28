@@ -55,12 +55,12 @@ function updateTrackingItemsInDb(type, page, username, items)
 {
     // i am cleaning now as i do expect a successfull
     if (page === 1) {DB.removeAllTrackingEntries(type)};
-    print('number of items: ' +  items.length)
+    console.log('number of items: ' +  items.length)
 
     var count = items.length
     for (var i = 0; i < count; i++) {
       var currentItem = items[i];
-      print('storing: ' +  currentItem.title)
+      console.log('storing: ' +  currentItem.title)
       DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.uri,currentItem.body)
     }
 
