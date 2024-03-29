@@ -1,2 +1,6 @@
 harbour-sailkick.pro.user
 harbour-sailkick.pro.user.*
+node_modules
+dist
+
+babel.config.js

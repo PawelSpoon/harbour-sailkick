@@ -38,7 +38,7 @@ Page {
 
     function fillUpCommingModelForOneTrackingEntry(type, events)
     {
-        print('number of events: ' +  events.length)
+        console.log('number of events: ' +  events.length)
         for (var i = 0; i < events.length; i++)
         {
             var shortTitle = events[i].name
@@ -167,7 +167,7 @@ Page {
 
                 onClicked: {
                     upcommingList.currentIndex = index
-                    print(upcommingList.currentIndex)
+                    console.log(upcommingList.currentIndex)
                     var current = upcommingModel.get(upcommingList.currentIndex)
                      pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri })
                     // pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{ uri: current.uri, songKickId: current.skid, titleOf: current.title })
@@ -250,7 +250,7 @@ Page {
                 /*MenuItem {
                     text: qsTr("Open in web view")
                     onClicked: {
-                        print(upcommingList.currentIndex)
+                        console.log(upcommingList.currentIndex)
                         var current = upcommingModel.get(upcommingList.currentIndex)
                         pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: mainPage, uri: current.uri})
                     }
@@ -273,7 +273,7 @@ Page {
                     }
                     // icon: con-m-share
                     onClicked: {
-                        print(upcommingList.currentIndex)
+                        console.log(upcommingList.currentIndex)
                         var mimeType = "text/x-url";
                         var current = upcomingModel.get(upcommingList.currentIndex)
                         var he = {}

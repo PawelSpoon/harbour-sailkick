@@ -28,15 +28,15 @@ function getUniqueId()
 function initialize() {
     var db = getDatabase();
     var dbVersion = getDBVersion(db);
-    console.log("db version: " + version);
-    v_2_0(db);
-    v_2_2(db);
-    v_2_3(db);
+    console.log("db version: " + dbVersion);
+    v_2_0(db,dbVersion);
+    v_2_2(db,dbVersion);
+    v_2_3(db,dbVersion);
 }
 
 // creates version table if not there and returns the dbversion
 // 0 if fresh install
-function getDBVersion()
+function getDBVersion(db)
 {
     var rs;
     db.transaction(

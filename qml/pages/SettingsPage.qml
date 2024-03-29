@@ -17,7 +17,7 @@ Dialog {
     SilicaFlickable{
 
         id: settingsFlickable
-        onActiveFocusChanged: print(activeFocus)
+        onActiveFocusChanged: console.log(activeFocus)
         anchors.fill: parent
         contentWidth: parent.width
         contentHeight: col.height

@@ -13,10 +13,10 @@ Name:       harbour-sailkick
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Native Songkick Client
-Version:    4.6
+Version:    4.12
 Release:    0
 Group:      Qt/Qt
-License:    LICENSE
+License:    MIT
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-sailkick.yaml

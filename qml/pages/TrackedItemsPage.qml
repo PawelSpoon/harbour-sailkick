@@ -179,7 +179,7 @@ SilicaFlickable {
 
                 onClicked: {
                     trackedItemsList.currentIndex = index
-                    print(trackingModel.currentIndex)
+                    console.log(trackingModel.currentIndex)
                     var current = trackingModel.get(trackedItemsList.currentIndex)
                     pageStack.push(Qt.resolvedUrl("TrackedItemPage.qml"), { type: current.type, songKickId: current.skid, titleOf: current.title })
                 }
@@ -187,8 +187,8 @@ SilicaFlickable {
                 onPressAndHold: {
                     trackedItemsList.currentIndex = index
 
-                    print("on press: trackendItemsList " + trackedItemsList.currentIndex)
-                    print("on press: trackingModel.objectName  " + trackingModel.objectName)
+                    console.log("on press: trackendItemsList " + trackedItemsList.currentIndex)
+                    console.log("on press: trackingModel.objectName  " + trackingModel.objectName)
                     if (!contextMenu)
                         contextMenu = contextMenuComponent.createObject(mainPage.locationList)
                     contextMenu.show(myListItem)
@@ -248,8 +248,8 @@ SilicaFlickable {
                 MenuItem {
                     text: qsTr("Open in browser")
                     onClicked: {
-                        print ('')
-                        print(trackingModel.currentIndex)
+                        console.log('')
+                        console.log(trackingModel.currentIndex)
                         Qt.openUrlExternally(trackingModel.get(trackedItemsList.currentIndex).uri)
 
                     }

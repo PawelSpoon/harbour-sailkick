@@ -1,9 +1,10 @@
 //<license>
 
-import QtWebKit 3.0
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-
+import Sailfish.WebView 1.0
+import Sailfish.WebEngine 1.0
+import Sailfish.WebView.Popups 1.0
 import "../common"
 
 //Page
@@ -19,7 +20,7 @@ Dialog {
 //        contentWidth: parent.width
 //        contentHeight: parent.height
 
-        SilicaWebView {
+        WebView {
             id: webView
             anchors.fill: parent
             opacity: 1
@@ -27,7 +28,8 @@ Dialog {
             //settings.defaultFontSize: Theme.fontSizeMedium
             url: "http://www.google.com"
             //scale: 1.5 // does scale but that is not good
-            experimental.userAgent: trackedItemDetailsPage.agent
+            httpUserAgent: "Mozilla/5.0 (Mobile; rv:78.0) Gecko/78.0"
+                        + " Firefox/78.0"
 
             property variant devicePixelRatio: {//1.5
                 console.log(Screen.width)
@@ -36,12 +38,12 @@ Dialog {
                 else if (Screen.width > 768) return 3.0;
             }
 
-            experimental.customLayoutWidth: trackedItemDetailsPage.width / devicePixelRatio
+            /*experimental.customLayoutWidth: trackedItemDetailsPage.width / devicePixelRatio
             experimental.deviceWidth: trackedItemDetailsPage.width / devicePixelRatio
             experimental.overview: true
 
             // Helps rendering websites that are only optimized for desktop
-            experimental.preferredMinimumContentsWidth: 980
+            experimental.preferredMinimumContentsWidth: 980*/
         }
     }
 

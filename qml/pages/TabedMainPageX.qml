@@ -45,15 +45,15 @@ Page  {
     // should be moved to db or api, is api callback ..
     function updateTrackingItemsInDb(type, page, username, items)
     {
-        print('number of items: ' +  items.length)
+        console.log('number of items: ' +  items.length)
 
         var count = items.length
         for (var i = 0; i < count; i++) {
           var currentItem = items[i];
-          print('storing: ' +  currentItem.title)
+          console.log('storing: ' +  currentItem.title)
           DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.uri,currentItem.body)
         }
-        print ('number of items: ' + items.length)
+        console.log('number of items: ' + items.length)
 
         if (items.length === 50) {
             API.getUsersTrackedItems(type,page+1,username, tabsPage.updateTrackingItemsInDb)

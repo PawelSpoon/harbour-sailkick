@@ -1,24 +1,29 @@
 .import "Persistance.js" as DB
+.import "SongKickApiConversion.js" as Conv
 
 // encapsulates songkick api
 // all get methods do require a callback method
 
 var apiKey = "apikey="
 var songKickUri = "https://api.songkick.com/api/3.0"
+var HEADERS_RECEIVED = 2;
+var DONE = 4;
+var OK = 200;
 
 // sends a upcomming events to songkick (tracked artists in users metro areas) == users calendar
 // returns paginated areas
 // in: type: "artist" / "attendance"
 //     username: "username"
 //     callback: callback function that accepts string, event[]
-function getUsersUpcommingEvents(type,username, onSuccess, onFailure) {
-    var xhr = new XMLHttpRequest();
+// used in: ConcertsPage.qml, PlansPage.qml
+function getUsersUpcommingEvents(type,username, onSuccess, onFailure, xhr) {
+    if (!xhr) xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-            print('HEADERS_RECEIVED')
-        } else if(xhr.readyState === XMLHttpRequest.DONE) {
-            print('DONE')
-            if (xhr.status === 200) {
+        if (xhr.readyState === HEADERS_RECEIVED) {
+            console.log('HEADERS_RECEIVED')
+        } else if(xhr.readyState === DONE) {
+            console.log('DONE')
+            if (xhr.status === OK) {
                var json = JSON.parse(xhr.responseText.toString())
                var events = convertCalendarResponse(json)
                onSuccess(type, events)
@@ -33,7 +38,7 @@ function getUsersUpcommingEvents(type,username, onSuccess, onFailure) {
     var queryType
     if (type === "artist") queryType = "tracked_artist"
     if (type === "attendance") queryType = "attendance"
-    print(songKickUri + "/users/" + username + "/calendar.json?reason=" + queryType + "&" + apiKey + DB.getRandom())
+    console.log(songKickUri + "/users/" + username + "/calendar.json?reason=" + queryType + "&" + apiKey + DB.getRandom())
     xhr.open("GET", songKickUri + "/users/" + username + "/calendar.json?reason=" + queryType + "&" + apiKey + DB.getRandom());
     xhr.send();
 }
@@ -43,13 +48,14 @@ function getUsersUpcommingEvents(type,username, onSuccess, onFailure) {
 // in: type: "artist" / "area"
 //     username: "username"
 //     callback: callback function that accepts string, event[]
-function getUsersTrackedItems(type, page, username, onSuccess, onFailure) {
-    var xhr = new XMLHttpRequest();
+// used in: AppController.qml, ApplicationContent.qml, TabedMainPage.qml
+function getUsersTrackedItems(type, page, username, onSuccess, onFailure, xhr) {
+    if (!xhr) xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-            print('HEADERS_RECEIVED');
-        } else if(xhr.readyState === XMLHttpRequest.DONE) {
-            print('DONE')
+        if (xhr.readyState === HEADERS_RECEIVED) {
+            console.log('HEADERS_RECEIVED');
+        } else if(xhr.readyState === DONE) {
+            console.log('DONE')
             if (xhr.status === 200) {
                var json = JSON.parse(xhr.responseText.toString())
                var items = convertTrackedItemsResponse(type,json)
@@ -63,7 +69,7 @@ function getUsersTrackedItems(type, page, username, onSuccess, onFailure) {
     var queryType
     if (type === "artist") queryType = "artists"
     if (type === "location") queryType = "metro_areas"
-    print(songKickUri + "/users/" + username + "/" + queryType +  "/tracked.json?" + apiKey + DB.getRandom())
+    console.log(songKickUri + "/users/" + username + "/" + queryType +  "/tracked.json?" + apiKey + DB.getRandom())
     xhr.open("GET", songKickUri + "/users/" + username + "/" + queryType +  "/tracked.json?" + apiKey + DB.getRandom() + "&page=" + page);
 
     xhr.send();
@@ -76,13 +82,14 @@ function getUsersTrackedItems(type, page, username, onSuccess, onFailure) {
 // in: type: "artist" / "area" / "venue"
 //     id: id of artist / area.. "23355-radiohead"
 //     callback: callback function that accepts string, event[]
+// used in: TrackedItemsPage.qml
 function getUpcommingEventsForTrackedItem(type,id,page,callback) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-            print('HEADERS_RECEIVED')
+            console.log('HEADERS_RECEIVED')
         } else if(xhr.readyState === XMLHttpRequest.DONE) {
-            print('DONE')
+            console.log('DONE')
             var json = JSON.parse(xhr.responseText.toString())
             var events = convertUpcommingEventsResponse(json)
             callback(type,events)
@@ -95,7 +102,7 @@ function getUpcommingEventsForTrackedItem(type,id,page,callback) {
     var query = "/" + queryType + "/" + id
     var url = songKickUri + query + "/calendar.json?" + apiKey + DB.getRandom();
     if (page > 0) url = url + "&page=" + (page + 1)
-    print(url)
+    console.log(url)
     xhr.open("GET", url);
 
     xhr.send();
@@ -103,6 +110,7 @@ function getUpcommingEventsForTrackedItem(type,id,page,callback) {
 
 // gets the details for one event
 // https://api.songkick.com/api/3.0/events/{event_id}.json?apikey={your_api_key}
+// used in: EventPage.qml
 function getEvent(id, callback)
 {
     var xhr = new XMLHttpRequest();
@@ -110,16 +118,16 @@ function getEvent(id, callback)
         console.log('receiving')
         //console.log(xhr);
         if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-            print('HEADERS_RECEIVED');
+            console.log('HEADERS_RECEIVED');
         } else if(xhr.readyState === XMLHttpRequest.DONE) {
-            print('DONE')
+            console.log('DONE')
             console.log(xhr.responseText);
             var json = JSON.parse(xhr.responseText.toString());
             var event = convertEventResponse(json);
             callback(event);
         }
     }
-    print(songKickUri + "/events/" + id + ".json?" + apiKey + DB.getRandom());
+    console.log(songKickUri + "/events/" + id + ".json?" + apiKey + DB.getRandom());
     xhr.open("GET", songKickUri + "/events/" + id + ".json?" + apiKey + DB.getRandom());
 
     xhr.send();
@@ -127,6 +135,7 @@ function getEvent(id, callback)
 }
 
 // gets the tracking status of event
+// used in: EventPage.qml
 function getEventTrackingInfo(id, callback)
 {
     var xhr = new XMLHttpRequest();
@@ -134,13 +143,13 @@ function getEventTrackingInfo(id, callback)
         console.log('receiving')
         //console.log(xhr);
         if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-            print('HEADERS_RECEIVED');
+            console.log('HEADERS_RECEIVED');
         } else if(xhr.readyState === XMLHttpRequest.DONE) {
-            print('DONE')
+            console.log('DONE')
             console.log(xhr.responseText);
             var json = JSON.parse(xhr.responseText.toString());
             if (json.resultsPage.status === "ok" ) {
-                print(json.resultsPage.results.tracking.attendance)
+                console.log(json.resultsPage.results.tracking.attendance)
                 callback(json.resultsPage.results.tracking.attendance)
                 return;
             }
@@ -153,19 +162,21 @@ function getEventTrackingInfo(id, callback)
     }
     var userName = DB.getUser().name
     // https://api.songkick.com/api/3.0/users/{username}/trackings/event:{event_id}.json?apikey={your_api_key}
-    print(songKickUri + "/users/" + userName + "/trackings/event:"+ id + ".json?" + apiKey + DB.getRandom());
+    console.log(songKickUri + "/users/" + userName + "/trackings/event:"+ id + ".json?" + apiKey + DB.getRandom());
     xhr.open("GET", songKickUri + "/users/" + userName + "/trackings/event:"+ id + ".json?" + apiKey + DB.getRandom());
     // if no tracking, it will return: {"resultsPage":{"status":"error","error":{"message":"Tracking not found"}}}
     // if tracking, then it will return: "resultsPage":{"status":"ok","results":{"tracking":{"username":"spoonman72","id":"event:36081339","createdAt":"2019-02-27T01:18:50+0000","attendance":"i_might_go"}}}}
     xhr.send();
 }
 
+// not implemented
 function getArtistTrackingInfo(id, callback)
 {
     //https://api.songkick.com/api/3.0/users/{username}/trackings/artist:{artist_id}.json?apikey={your_api_key}
 
 }
 
+// not implemented
 function getVenueTrackingInfo(id, callback)
 {
     // https://api.songkick.com/api/3.0/users/{username}/trackings/metro_area:{metro_area_id}.json?apikey={your_api_key}
@@ -194,6 +205,7 @@ function getVenueTrackingInfo(id, callback)
       }
   } }
   */
+// used in: SongKicApi.js-> getUsersUpcommingEvents
 function convertCalendarResponse(resp) {
 
   var calendarEntries = [];
@@ -216,18 +228,9 @@ function convertCalendarResponse(resp) {
   if (items > resp.resultsPage.perPage) { items = resp.resultsPage.perPage; }
 
   for (var i = 0; i < items; i++) {
-    var currentCalEntry = resp.resultsPage.results.calendarEntry[i];
-    var reason = currentCalEntry.reason; //
-    var artist = reason.trackedArtist // an array ?
-    var attendance = reason.attendance;
-    var event = currentCalEntry.event; // is an event
-    var eventId = event.id;
-    var eventUri = event.uri;
-    var eventName = event.displayName;
-    var eventDate = event.start.date;
-    var eventTime = event.start.time;
-
-    var venueId = event.venue.id;
+    var eventi = Conv.convertCalendarEntry(resp.resultsPage.results.calendarEntry[i])
+ 
+    /*var venueId = event.venue.id;
     var venueName = event.venue.displayName;
     var metroAreaId = event.venue.metroArea.id;
     var metroAreaName = event.venue.metroArea.displayName;
@@ -236,11 +239,10 @@ function convertCalendarResponse(resp) {
 
     //todo: correct class etc.
     var eventi = {id:eventId, uri:eventUri, name:eventName, artist: artist, metroAreaName: metroAreaName, date: eventDate, time: eventTime, venueId: venueId, venueName: venueName, attendance: attendance}
-
+*/
     calendarEntries.push(eventi);
-    print('pushed: ' +  eventi.name)
   }
-  print ('number of items: ' + calendarEntries.length)
+  console.log('number of items: ' + calendarEntries.length)
   return calendarEntries
 }
 
@@ -250,6 +252,7 @@ function convertCalendarResponse(resp) {
 // out: array of events
 // failure: will return one event with message in case of failure
 //          will return empty array when no results found
+// used in: SongKicApi.js-> getUpcommingEventsForTrackedItem
 function convertUpcommingEventsResponse(resp) {
 
   var events = [];
@@ -291,79 +294,13 @@ function convertUpcommingEventsResponse(resp) {
     var eventi = {id:eventId, uri:eventUri, name:eventName, date: eventDate, time: eventTime, venueId: venueId, venueName: venueName, metroAreaId:metroAreaId, metroAreaName: metroAreaName}
 
     events.push(eventi);
-    print('pushed: ' +  eventi.name)
+    console.log('pushed: ' +  eventi.name)
 
   }
-  print ('number of items: ' + events.length)
+  console.log('number of items: ' + events.length)
   return events
 }
 
-//{ "resultsPage": {
-//      "status": "ok",
-//      "page": 1,
-//      "totalEntries": 1,
-//      "perPage": 50,
-//      "results": {
-//        "calendarEntry": [
-//          {"reason": {
-//              "trackedArtist": [ARTIST, ARTIST],
-//              "attendance": "i_might_go|im_goin"�
-//           },
-//           "event": {EVENT}
-//          }]
-//      }
-//  } }
-
-/*// this function converts a users upcomming calendar
-// into event model
-// in: json response
-// out: array of events
-// failure: will return one event with message in case of failure
-//          will return empty array when no results found
-function convertUsersCalendarResponse(resp) {
-
-  var events = [];
-  var errorEvent
-
-  if (resp.resultsPage.status !== "ok") {
-    console.log("return value is not ok");
-    errorEvent = {id:0, uri:"", name:"resultPage.status not ok", date: "", time: "", venueId: 1, venueName: "undefined"}
-    events.push(errorEvent)
-    return events
-  }
-
-  if (resp.resultsPage.totalEntries === 0) {
-    console.log("0 values found");
-    return events
-  }
-
-  var items = resp.resultsPage.totalEntries;
-
-  if (items > resp.resultsPage.perPage) { items = resp.resultsPage.perPage; }
-
-  for (var i = 0; i < items; i++) {
-    var currentEvent = resp.resultsPage.results.event[i];
-    var eventId = currentEvent.id;
-    var eventUri = currentEvent.uri;
-    var eventName = currentEvent.displayName;
-    var eventDate = currentEvent.start.date;
-    var eventTime = currentEvent.start.time;
-
-    var venueId = currentEvent.venue.id;
-    var venueName = currentEvent.venue.displayName;
-    var metroAreaId = currentEvent.venue.metroArea.id;
-    var metroAreaName = currentEvent.venue.metroArea.displayName;
-    var artistId = currentEvent.performance[0].id;
-    var artistName = currentEvent.performance[0].displayName;
-    var eventi = {id:eventId, uri:eventUri, name:eventName, date: eventDate, time: eventTime, venueId: venueId, venueName: venueName, metroAreaId:metroAreaId, metroAreaName: metroAreaName}
-
-    events.push(eventi);
-    print('pushed: ' +  eventi.name)
-
-  }
-  print ('number of items: ' + events.length)
-  return events
-}*/
 
 //{"resultsPage":
 //{"status":"ok",
@@ -373,9 +310,10 @@ function convertUsersCalendarResponse(resp) {
 //{"lat":48.2,"lng":16.3667,"country":{"displayName":"Austria"},"uri":"http://www.songkick.com/metro_areas/26771-austria-vienna?utm_source=14198&utm_medium=partner","displayName":"Vienna","id":26771}
 //]},
 //"perPage":50,"page":1,"totalEntries":3}}
+// used in: getUsersTrackedItems
 function convertTrackedItemsResponse(type,resp) {
 
-    print('called for type: ' + type)
+    console.log('called for type: ' + type)
 
     var trackedItems = [];
     var errorEvent;
@@ -407,49 +345,25 @@ function convertTrackedItemsResponse(type,resp) {
       var eventi = {type: type, uid: trackId + "-" + trackName, title: trackName, skid: trackId + "-" + trackName, txt: currentItem.uri, uri: currentItem.uri, body: currentItem }
 
       trackedItems.push(eventi);
-      print('pushed ' + type + ": " +  eventi.title + "; uri: " + eventi.uri + ' body:' + eventi.body)
+      // console.log('pushed ' + type + ": " +  eventi.title + "; uri: " + eventi.uri + ' body:' + eventi.body)
     }
-    print ('number of ' + type + '(s): ' + trackedItems.length)
+    console.log('number of ' + type + '(s): ' + trackedItems.length)
 
     return trackedItems
 }
 
 
+// used in: SongKickApi.js-> getEvent
 function convertEventResponse(resp)
 {
-    var eventi = {};
+  var eventi = {};
 
-    if (resp.resultsPage.status !== "ok") {
-      console.log("return value is not ok");
-      eventi = {id:0, uri:"", name:"resultPage.status not ok", date: "", time: "", venueId: 1, venueName: "undefined"}
-      return eventi;
-    }
-
-    eventi.displayName = resp.resultsPage.results.event.displayName;
-    eventi.type = resp.resultsPage.results.event.type;
-    eventi.dateTime = resp.resultsPage.results.event.start.date;
-    eventi.time = "";
-    if (resp.resultsPage.results.event.start.time !== null) {
-       eventi.time = resp.resultsPage.results.event.start.time;
-    }
-    eventi.venue = resp.resultsPage.results.event.venue.displayName;
-    eventi.venueWebSite = resp.resultsPage.results.event.venue.website;
-    eventi.street = resp.resultsPage.results.event.venue.street;
-    eventi.zip = resp.resultsPage.results.event.venue.zip;
-    eventi.city = resp.resultsPage.results.event.venue.metroArea.displayName;
-    eventi.country = resp.resultsPage.results.event.venue.city.country.displayName;
-    eventi.lat = resp.resultsPage.results.event.venue.lat;
-    eventi.lng = resp.resultsPage.results.event.venue.lng;
-    eventi.body = resp.resultsPage.results.event;
-    var artists = [];
-    print("length:" + resp.resultsPage.results.event.performance.length)
-    for (var aC = 0; aC < resp.resultsPage.results.event.performance.length; aC++)
-    {
-        var currAc = {};
-        currAc["displayName"] = resp.resultsPage.results.event.performance[aC].displayName;
-        // currAc["startTime"] = resp.resultsPage.results.event.performance[aC].startTime;
-        artists[aC] = currAc;
-    }
-    eventi.artists = artists;
+  if (resp.resultsPage.status !== "ok") {
+    console.log("return value is not ok");
+    eventi = {id:0, uri:"", name:"resultPage.status not ok", date: "", time: "", venueId: 1, venueName: "undefined"}
     return eventi;
+  }
+
+  return Conv.convertEvent(resp.resultsPage.results.event)
+
 }
