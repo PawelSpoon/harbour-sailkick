@@ -198,8 +198,8 @@ SilicaListView {
                     anchors.topMargin: Theme.paddingMedium
                     anchors.leftMargin: Theme.paddingSmall
                     source: {
-                        if (attendance === "im_going")
-                            "../sk-badge-white.png"  // -pink not working
+                        if (attendance === 'im_going')
+                            "../sk-badge-pink.png"  // -pink not working
                         else
                             "../sk-badge-white.png"
                     }
