@@ -109,14 +109,25 @@ sync them using<br>\
 pulldown menu")
             }
 
+            TextSwitch {
+                id: logging
+                anchors.horizontalCenter: parent.horizontalCenter
+                description: qsTr("Enable verbose logging")
+                checked: logEnabled
+                onClicked: {
+                    applicationWindow.controller.logEnabled = logEnabled;
+                    //todo: store logEnabled in DB
+                }
+            }
+
         }
     }
 
     Component.onCompleted: {
         var user = DB.getUser();
         entrySongKickUserName.text = user.name;
+        //todo: load logEnabled from DB
         //entrySongKickPassWord.text = user.pwd;
-        //entryTitleTextField.focus = true
     }
 
     Component.onDestruction: {

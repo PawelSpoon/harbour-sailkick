@@ -1,0 +1,710 @@
+{
+    "resultsPage": {
+        "status": "ok",
+        "results": {
+            "artist": [
+                {
+                    "id": 173964,
+                    "displayName": "The Base",
+                    "uri": "https://www.songkick.com/artists/173964-base?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "4ff32c46-8542-420e-8e15-6c77b70adfe5",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:4ff32c46-8542-420e-8e15-6c77b70adfe5.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:4ff32c46-8542-420e-8e15-6c77b70adfe5/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:4ff32c46-8542-420e-8e15-6c77b70adfe5/setlists.json"
+                        },
+                        {
+                            "mbid": "d88d2662-ed58-4ee9-ba7e-bcca3a189f28",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:d88d2662-ed58-4ee9-ba7e-bcca3a189f28.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:d88d2662-ed58-4ee9-ba7e-bcca3a189f28/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:d88d2662-ed58-4ee9-ba7e-bcca3a189f28/setlists.json"
+                        },
+                        {
+                            "mbid": "656dcf07-dabf-4370-b6ca-4b7c1f49f831",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:656dcf07-dabf-4370-b6ca-4b7c1f49f831.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:656dcf07-dabf-4370-b6ca-4b7c1f49f831/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:656dcf07-dabf-4370-b6ca-4b7c1f49f831/setlists.json"
+                        },
+                        {
+                            "mbid": "1dcb6658-5c1a-43b9-bf2e-c5c8e45f9140",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:1dcb6658-5c1a-43b9-bf2e-c5c8e45f9140.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:1dcb6658-5c1a-43b9-bf2e-c5c8e45f9140/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:1dcb6658-5c1a-43b9-bf2e-c5c8e45f9140/setlists.json"
+                        },
+                        {
+                            "mbid": "c419e33d-5c42-4bd0-ba69-5829d772a6ef",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:c419e33d-5c42-4bd0-ba69-5829d772a6ef.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:c419e33d-5c42-4bd0-ba69-5829d772a6ef/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:c419e33d-5c42-4bd0-ba69-5829d772a6ef/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 184416,
+                    "displayName": "The Breeders",
+                    "uri": "https://www.songkick.com/artists/184416-breeders?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "667e856e-f3a7-42e9-8244-95422ef31321",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:667e856e-f3a7-42e9-8244-95422ef31321.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:667e856e-f3a7-42e9-8244-95422ef31321/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:667e856e-f3a7-42e9-8244-95422ef31321/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-09-21"
+                },
+                {
+                    "id": 107413,
+                    "displayName": "The Cardigans",
+                    "uri": "https://www.songkick.com/artists/107413-cardigans?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "3e55d51d-687f-4a9d-af96-2fabccf802e5",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:3e55d51d-687f-4a9d-af96-2fabccf802e5.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:3e55d51d-687f-4a9d-af96-2fabccf802e5/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:3e55d51d-687f-4a9d-af96-2fabccf802e5/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-08-23"
+                },
+                {
+                    "id": 8747989,
+                    "displayName": "The Claypool Lennon Delirium",
+                    "uri": "http://www.songkick.com/artists/8747989-claypool-lennon-delirium?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "c8d60780-4293-43e2-8e9e-3532a430d748",
+                            "href": "http://api.songkick.com/api/3.0/artists/mbid:c8d60780-4293-43e2-8e9e-3532a430d748.json",
+                            "eventsHref": "http://api.songkick.com/api/3.0/artists/mbid:c8d60780-4293-43e2-8e9e-3532a430d748/calendar.json",
+                            "setlistsHref": "http://api.songkick.com/api/3.0/artists/mbid:c8d60780-4293-43e2-8e9e-3532a430d748/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 10244501,
+                    "displayName": "The Concert: A Tribute to ABBA",
+                    "uri": "https://www.songkick.com/artists/10244501-concert-a-tribute-to-abba?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "5b6b6df6-4ef3-4c2a-84e2-96f8b358d076",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:5b6b6df6-4ef3-4c2a-84e2-96f8b358d076.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:5b6b6df6-4ef3-4c2a-84e2-96f8b358d076/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:5b6b6df6-4ef3-4c2a-84e2-96f8b358d076/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-09-28"
+                },
+                {
+                    "id": 397363,
+                    "displayName": "The Cult",
+                    "uri": "https://www.songkick.com/artists/397363-cult?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "8846e4ff-0c19-4af2-872b-7a8dc7497f68",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:8846e4ff-0c19-4af2-872b-7a8dc7497f68.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:8846e4ff-0c19-4af2-872b-7a8dc7497f68/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:8846e4ff-0c19-4af2-872b-7a8dc7497f68/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-07-14"
+                },
+                {
+                    "id": 474439,
+                    "displayName": "The Cure",
+                    "uri": "https://www.songkick.com/artists/474439-cure?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "69ee3720-a7cb-4402-b48d-a02c366f2bcf",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:69ee3720-a7cb-4402-b48d-a02c366f2bcf.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:69ee3720-a7cb-4402-b48d-a02c366f2bcf/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:69ee3720-a7cb-4402-b48d-a02c366f2bcf/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 381837,
+                    "displayName": "The Damned",
+                    "uri": "https://www.songkick.com/artists/381837-damned?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "73c6cc6f-e300-42b4-8689-298fa2b29028",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:73c6cc6f-e300-42b4-8689-298fa2b29028.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:73c6cc6f-e300-42b4-8689-298fa2b29028/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:73c6cc6f-e300-42b4-8689-298fa2b29028/setlists.json"
+                        },
+                        {
+                            "mbid": "77d21c13-846f-4f48-9546-873949eff6ae",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:77d21c13-846f-4f48-9546-873949eff6ae.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:77d21c13-846f-4f48-9546-873949eff6ae/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:77d21c13-846f-4f48-9546-873949eff6ae/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-12-19"
+                },
+                {
+                    "id": 6410229,
+                    "displayName": "The Dead Daisies",
+                    "uri": "https://www.songkick.com/artists/6410229-dead-daisies?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "e935d070-004d-405a-8b9d-1d9e51590b55",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:e935d070-004d-405a-8b9d-1d9e51590b55.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:e935d070-004d-405a-8b9d-1d9e51590b55/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:e935d070-004d-405a-8b9d-1d9e51590b55/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-06-22"
+                },
+                {
+                    "onTourUntil": null,
+                    "identifier": [
+                        {
+                            "setlistsHref": "http://api.songkick.com/api/3.0/artists/mbid:334bd887-9044-4c38-aebd-4baab851efb4/setlists.json",
+                            "href": "http://api.songkick.com/api/3.0/artists/mbid:334bd887-9044-4c38-aebd-4baab851efb4.json",
+                            "mbid": "334bd887-9044-4c38-aebd-4baab851efb4",
+                            "eventsHref": "http://api.songkick.com/api/3.0/artists/mbid:334bd887-9044-4c38-aebd-4baab851efb4/calendar.json"
+                        }
+                    ],
+                    "displayName": "The Dead Weather",
+                    "uri": "http://www.songkick.com/artists/2395848-dead-weather?utm_source=14198&utm_medium=partner",
+                    "id": 2395848
+                },
+                {
+                    "id": 135321,
+                    "displayName": "The Dears",
+                    "uri": "https://www.songkick.com/artists/135321-dears?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "ca7ce20f-c735-4ad9-b664-d8d83b3c7948",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:ca7ce20f-c735-4ad9-b664-d8d83b3c7948.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:ca7ce20f-c735-4ad9-b664-d8d83b3c7948/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:ca7ce20f-c735-4ad9-b664-d8d83b3c7948/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 239992,
+                    "displayName": "The Distillers",
+                    "uri": "https://www.songkick.com/artists/239992-distillers?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "d25fa5a6-92bf-46a3-8bf7-31149b62eb84",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:d25fa5a6-92bf-46a3-8bf7-31149b62eb84.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:d25fa5a6-92bf-46a3-8bf7-31149b62eb84/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:d25fa5a6-92bf-46a3-8bf7-31149b62eb84/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-10-19"
+                },
+                {
+                    "onTourUntil": null,
+                    "displayName": "The Dubrovniks",
+                    "uri": "http://www.songkick.com/artists/535493-dubrovniks?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "href": "http://api.songkick.com/api/3.0/artists/mbid:70aaf6d5-717f-4d70-ab4e-74528251ff47.json",
+                            "eventsHref": "http://api.songkick.com/api/3.0/artists/mbid:70aaf6d5-717f-4d70-ab4e-74528251ff47/calendar.json",
+                            "setlistsHref": "http://api.songkick.com/api/3.0/artists/mbid:70aaf6d5-717f-4d70-ab4e-74528251ff47/setlists.json",
+                            "mbid": "70aaf6d5-717f-4d70-ab4e-74528251ff47"
+                        }
+                    ],
+                    "id": 535493
+                },
+                {
+                    "id": 7453,
+                    "displayName": "The Flaming Lips",
+                    "uri": "https://www.songkick.com/artists/7453-flaming-lips?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "1f43d76f-8edf-44f6-aaf1-b65f05ad9402",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:1f43d76f-8edf-44f6-aaf1-b65f05ad9402.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:1f43d76f-8edf-44f6-aaf1-b65f05ad9402/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:1f43d76f-8edf-44f6-aaf1-b65f05ad9402/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-10-11"
+                },
+                {
+                    "id": 330426,
+                    "displayName": "The Godfathers",
+                    "uri": "https://www.songkick.com/artists/330426-godfathers?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "de288aa4-b753-490d-af0e-62bbe63e8411",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:de288aa4-b753-490d-af0e-62bbe63e8411.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:de288aa4-b753-490d-af0e-62bbe63e8411/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:de288aa4-b753-490d-af0e-62bbe63e8411/setlists.json"
+                        },
+                        {
+                            "mbid": "3e43d74e-1e46-4f65-8369-70c7d3b7945e",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:3e43d74e-1e46-4f65-8369-70c7d3b7945e.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:3e43d74e-1e46-4f65-8369-70c7d3b7945e/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:3e43d74e-1e46-4f65-8369-70c7d3b7945e/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 8946604,
+                    "displayName": "The Hooters (US)",
+                    "uri": "https://www.songkick.com/artists/8946604-hooters-us?utm_source=14198&utm_medium=partner",
+                    "identifier": [],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 129156,
+                    "displayName": "The Jesus and Mary Chain",
+                    "uri": "https://www.songkick.com/artists/129156-jesus-and-mary-chain?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:e938a15c-b17e-4e7a-9f68-ff0d536cab44.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:e938a15c-b17e-4e7a-9f68-ff0d536cab44/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:e938a15c-b17e-4e7a-9f68-ff0d536cab44/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-08-14"
+                },
+                {
+                    "id": 236059,
+                    "displayName": "The Kills",
+                    "uri": "https://www.songkick.com/artists/236059-kills?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "2c629b8c-d751-4131-b785-5690bb5e0fd7",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:2c629b8c-d751-4131-b785-5690bb5e0fd7.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:2c629b8c-d751-4131-b785-5690bb5e0fd7/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:2c629b8c-d751-4131-b785-5690bb5e0fd7/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-08-29"
+                },
+                {
+                    "id": 459044,
+                    "displayName": "The Libertines",
+                    "uri": "https://www.songkick.com/artists/459044-libertines?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "e6e64ac4-9233-4bb6-92f3-1392f8b018f3",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:e6e64ac4-9233-4bb6-92f3-1392f8b018f3.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:e6e64ac4-9233-4bb6-92f3-1392f8b018f3/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:e6e64ac4-9233-4bb6-92f3-1392f8b018f3/setlists.json"
+                        },
+                        {
+                            "mbid": "82b304c0-7da4-45d3-896a-0767c7ae1141",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:82b304c0-7da4-45d3-896a-0767c7ae1141.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:82b304c0-7da4-45d3-896a-0767c7ae1141/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:82b304c0-7da4-45d3-896a-0767c7ae1141/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-11-21"
+                },
+                {
+                    "id": 405285,
+                    "displayName": "The National",
+                    "uri": "https://www.songkick.com/artists/405285-national?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "664c3e0e-42d8-48c1-b209-1efca19c0325",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:664c3e0e-42d8-48c1-b209-1efca19c0325.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:664c3e0e-42d8-48c1-b209-1efca19c0325/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:664c3e0e-42d8-48c1-b209-1efca19c0325/setlists.json"
+                        },
+                        {
+                            "mbid": "66f6302d-d3ed-486d-9499-da2a12670bf3",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:66f6302d-d3ed-486d-9499-da2a12670bf3.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:66f6302d-d3ed-486d-9499-da2a12670bf3/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:66f6302d-d3ed-486d-9499-da2a12670bf3/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-10-10"
+                },
+                {
+                    "id": 422558,
+                    "displayName": "The Offspring",
+                    "uri": "https://www.songkick.com/artists/422558-offspring?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "23a03e33-a603-404e-bcbf-2c00159d7067",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:23a03e33-a603-404e-bcbf-2c00159d7067.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:23a03e33-a603-404e-bcbf-2c00159d7067/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:23a03e33-a603-404e-bcbf-2c00159d7067/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2025-01-23"
+                },
+                {
+                    "id": 233074,
+                    "displayName": "The Smashing Pumpkins",
+                    "uri": "https://www.songkick.com/artists/233074-smashing-pumpkins?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "ba0d6274-db14-4ef5-b28d-657ebde1a396",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:ba0d6274-db14-4ef5-b28d-657ebde1a396.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:ba0d6274-db14-4ef5-b28d-657ebde1a396/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:ba0d6274-db14-4ef5-b28d-657ebde1a396/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-09-28"
+                },
+                {
+                    "id": 34230,
+                    "displayName": "The Strokes",
+                    "uri": "https://www.songkick.com/artists/34230-strokes?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "f181961b-20f7-459e-89de-920ef03c7ed0",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:f181961b-20f7-459e-89de-920ef03c7ed0.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:f181961b-20f7-459e-89de-920ef03c7ed0/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:f181961b-20f7-459e-89de-920ef03c7ed0/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 414991,
+                    "displayName": "The Sweet",
+                    "uri": "https://www.songkick.com/artists/414991-sweet?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "dc73bb40-b697-4df9-a2ec-0555bebdba75",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:dc73bb40-b697-4df9-a2ec-0555bebdba75.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:dc73bb40-b697-4df9-a2ec-0555bebdba75/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:dc73bb40-b697-4df9-a2ec-0555bebdba75/setlists.json"
+                        },
+                        {
+                            "mbid": "8a4826e1-41b6-4c4c-b39f-7a8398a6a030",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:8a4826e1-41b6-4c4c-b39f-7a8398a6a030.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:8a4826e1-41b6-4c4c-b39f-7a8398a6a030/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:8a4826e1-41b6-4c4c-b39f-7a8398a6a030/setlists.json"
+                        },
+                        {
+                            "mbid": "09879af7-8d48-485d-8cd0-61a29d626e06",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:09879af7-8d48-485d-8cd0-61a29d626e06.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:09879af7-8d48-485d-8cd0-61a29d626e06/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:09879af7-8d48-485d-8cd0-61a29d626e06/setlists.json"
+                        },
+                        {
+                            "mbid": "b0083d51-ff0a-4c1e-b6b0-498bd02372e5",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:b0083d51-ff0a-4c1e-b6b0-498bd02372e5.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:b0083d51-ff0a-4c1e-b6b0-498bd02372e5/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:b0083d51-ff0a-4c1e-b6b0-498bd02372e5/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 2753466,
+                    "displayName": "The Toten Crackhuren Im Kofferraum",
+                    "uri": "https://www.songkick.com/artists/2753466-toten-crackhuren-im-kofferraum?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "eb820d3d-a3e0-4144-838d-8143021dc3dc",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:eb820d3d-a3e0-4144-838d-8143021dc3dc.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:eb820d3d-a3e0-4144-838d-8143021dc3dc/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:eb820d3d-a3e0-4144-838d-8143021dc3dc/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-12-21"
+                },
+                {
+                    "id": 108521,
+                    "displayName": "Therapy?",
+                    "uri": "https://www.songkick.com/artists/108521-therapy?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "85226286-349a-4046-8dcf-f75b32baa6b1",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:85226286-349a-4046-8dcf-f75b32baa6b1.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:85226286-349a-4046-8dcf-f75b32baa6b1/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:85226286-349a-4046-8dcf-f75b32baa6b1/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-12-10"
+                },
+                {
+                    "id": 180435,
+                    "displayName": "Tocotronic",
+                    "uri": "https://www.songkick.com/artists/180435-tocotronic?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "7717539b-33aa-45d5-b88d-9e627172db19",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:7717539b-33aa-45d5-b88d-9e627172db19.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:7717539b-33aa-45d5-b88d-9e627172db19/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:7717539b-33aa-45d5-b88d-9e627172db19/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 9769084,
+                    "displayName": "Tom Legenstein",
+                    "uri": "http://www.songkick.com/artists/9769084-tom-legenstein?utm_source=14198&utm_medium=partner",
+                    "identifier": [],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 253438,
+                    "displayName": "Tom Petty",
+                    "uri": "https://www.songkick.com/artists/253438-tom-petty?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "5ca3f318-d028-4151-ac73-78e2b2d6cdcc",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:5ca3f318-d028-4151-ac73-78e2b2d6cdcc.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:5ca3f318-d028-4151-ac73-78e2b2d6cdcc/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:5ca3f318-d028-4151-ac73-78e2b2d6cdcc/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 521019,
+                    "displayName": "Tool",
+                    "uri": "https://www.songkick.com/artists/521019-tool?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "bbfa1e12-8b61-4ed8-bc6e-52d2298f41a2",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:bbfa1e12-8b61-4ed8-bc6e-52d2298f41a2.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:bbfa1e12-8b61-4ed8-bc6e-52d2298f41a2/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:bbfa1e12-8b61-4ed8-bc6e-52d2298f41a2/setlists.json"
+                        },
+                        {
+                            "mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:66fc5bf8-daa4-4241-b378-9bc9077939d2.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:66fc5bf8-daa4-4241-b378-9bc9077939d2/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:66fc5bf8-daa4-4241-b378-9bc9077939d2/setlists.json"
+                        },
+                        {
+                            "mbid": "22c94bce-544f-49ba-afdc-026beac4fd3e",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:22c94bce-544f-49ba-afdc-026beac4fd3e.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:22c94bce-544f-49ba-afdc-026beac4fd3e/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:22c94bce-544f-49ba-afdc-026beac4fd3e/setlists.json"
+                        },
+                        {
+                            "mbid": "62926c7a-d855-4805-918d-d7e2ab924076",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:62926c7a-d855-4805-918d-d7e2ab924076.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:62926c7a-d855-4805-918d-d7e2ab924076/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:62926c7a-d855-4805-918d-d7e2ab924076/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-06-27"
+                },
+                {
+                    "id": 5767534,
+                    "displayName": "Torres",
+                    "uri": "https://www.songkick.com/artists/5767534-torres?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "9b422c81-017c-4f8f-a7a9-ba6229c29343",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:9b422c81-017c-4f8f-a7a9-ba6229c29343.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:9b422c81-017c-4f8f-a7a9-ba6229c29343/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:9b422c81-017c-4f8f-a7a9-ba6229c29343/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-04-06"
+                },
+                {
+                    "id": 132241,
+                    "displayName": "Turbonegro",
+                    "uri": "https://www.songkick.com/artists/132241-turbonegro?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "6ee1ab2b-885c-4c91-b9a5-46b3f6769812",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:6ee1ab2b-885c-4c91-b9a5-46b3f6769812.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:6ee1ab2b-885c-4c91-b9a5-46b3f6769812/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:6ee1ab2b-885c-4c91-b9a5-46b3f6769812/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 964551,
+                    "displayName": "Ty Segall",
+                    "uri": "https://www.songkick.com/artists/964551-ty-segall?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "07a17571-81fc-4cf8-a634-98f0d926d313",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:07a17571-81fc-4cf8-a634-98f0d926d313.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:07a17571-81fc-4cf8-a634-98f0d926d313/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:07a17571-81fc-4cf8-a634-98f0d926d313/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-09-02"
+                },
+                {
+                    "id": 185559,
+                    "displayName": "Van Halen",
+                    "uri": "https://www.songkick.com/artists/185559-van-halen?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "b665b768-0d83-4363-950c-31ed39317c15",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:b665b768-0d83-4363-950c-31ed39317c15.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:b665b768-0d83-4363-950c-31ed39317c15/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:b665b768-0d83-4363-950c-31ed39317c15/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 8806779,
+                    "displayName": "Voodoo Jürgens",
+                    "uri": "https://www.songkick.com/artists/8806779-voodoo-jurgens?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "e0675fe9-0288-45cd-a7aa-ba5941a8a052",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:e0675fe9-0288-45cd-a7aa-ba5941a8a052.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:e0675fe9-0288-45cd-a7aa-ba5941a8a052/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:e0675fe9-0288-45cd-a7aa-ba5941a8a052/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-09-28"
+                },
+                {
+                    "id": 4181401,
+                    "displayName": "Waxahatchee",
+                    "uri": "https://www.songkick.com/artists/4181401-waxahatchee?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "42321e24-42b6-4f08-b0d9-8325ee887a20",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:42321e24-42b6-4f08-b0d9-8325ee887a20.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:42321e24-42b6-4f08-b0d9-8325ee887a20/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:42321e24-42b6-4f08-b0d9-8325ee887a20/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-09-08"
+                },
+                {
+                    "id": 515856,
+                    "displayName": "Ween",
+                    "uri": "https://www.songkick.com/artists/515856-ween?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "c0eee88b-47f2-4cd2-ac48-a045e902a432",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:c0eee88b-47f2-4cd2-ac48-a045e902a432.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:c0eee88b-47f2-4cd2-ac48-a045e902a432/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:c0eee88b-47f2-4cd2-ac48-a045e902a432/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-09-27"
+                },
+                {
+                    "id": 544909,
+                    "displayName": "Weezer",
+                    "uri": "https://www.songkick.com/artists/544909-weezer?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "6fe07aa5-fec0-4eca-a456-f29bff451b04",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:6fe07aa5-fec0-4eca-a456-f29bff451b04.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:6fe07aa5-fec0-4eca-a456-f29bff451b04/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:6fe07aa5-fec0-4eca-a456-f29bff451b04/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-10-11"
+                },
+                {
+                    "id": 478883,
+                    "displayName": "Wheel",
+                    "uri": "https://www.songkick.com/artists/478883-wheel?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "a4fb1f0e-5df6-41b3-ac09-e719a61a9b55",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:a4fb1f0e-5df6-41b3-ac09-e719a61a9b55.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:a4fb1f0e-5df6-41b3-ac09-e719a61a9b55/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:a4fb1f0e-5df6-41b3-ac09-e719a61a9b55/setlists.json"
+                        },
+                        {
+                            "mbid": "84e4841e-9cd0-478b-a986-5949e97928ca",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:84e4841e-9cd0-478b-a986-5949e97928ca.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:84e4841e-9cd0-478b-a986-5949e97928ca/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:84e4841e-9cd0-478b-a986-5949e97928ca/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-12-13"
+                },
+                {
+                    "id": 505217,
+                    "displayName": "Whitesnake",
+                    "uri": "https://www.songkick.com/artists/505217-whitesnake?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "5dedf5cf-a598-4408-9556-3bf3f149f3ba",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:5dedf5cf-a598-4408-9556-3bf3f149f3ba.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:5dedf5cf-a598-4408-9556-3bf3f149f3ba/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:5dedf5cf-a598-4408-9556-3bf3f149f3ba/setlists.json"
+                        },
+                        {
+                            "mbid": "88d5923c-cfb7-488d-955c-0650a17ab5e5",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:88d5923c-cfb7-488d-955c-0650a17ab5e5.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:88d5923c-cfb7-488d-955c-0650a17ab5e5/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:88d5923c-cfb7-488d-955c-0650a17ab5e5/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 61494,
+                    "displayName": "Wilco",
+                    "uri": "https://www.songkick.com/artists/61494-wilco?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "9e53f84d-ef44-4c16-9677-5fd4d78cbd7d",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:9e53f84d-ef44-4c16-9677-5fd4d78cbd7d.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:9e53f84d-ef44-4c16-9677-5fd4d78cbd7d/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:9e53f84d-ef44-4c16-9677-5fd4d78cbd7d/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-07-03"
+                },
+                {
+                    "id": 59934,
+                    "displayName": "Yeah Yeah Yeahs",
+                    "uri": "https://www.songkick.com/artists/59934-yeah-yeah-yeahs?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "584c04d2-4acc-491b-8a0a-e63133f4bfc4",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:584c04d2-4acc-491b-8a0a-e63133f4bfc4.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:584c04d2-4acc-491b-8a0a-e63133f4bfc4/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:584c04d2-4acc-491b-8a0a-e63133f4bfc4/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                },
+                {
+                    "id": 307157,
+                    "displayName": "ZZ Top",
+                    "uri": "https://www.songkick.com/artists/307157-zz-top?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "a81259a0-a2f5-464b-866e-71220f2739f1",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:a81259a0-a2f5-464b-866e-71220f2739f1.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:a81259a0-a2f5-464b-866e-71220f2739f1/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:a81259a0-a2f5-464b-866e-71220f2739f1/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": "2024-09-28"
+                },
+                {
+                    "id": 4301,
+                    "displayName": "…And You Will Know Us by the Trail of Dead",
+                    "uri": "https://www.songkick.com/artists/4301-and-you-will-know-us-by-the-trail-of-dead?utm_source=14198&utm_medium=partner",
+                    "identifier": [
+                        {
+                            "mbid": "9c1ff574-2ae4-4fea-881f-83293d0d5881",
+                            "href": "https://api.songkick.com/api/3.0/artists/mbid:9c1ff574-2ae4-4fea-881f-83293d0d5881.json",
+                            "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:9c1ff574-2ae4-4fea-881f-83293d0d5881/calendar.json",
+                            "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:9c1ff574-2ae4-4fea-881f-83293d0d5881/setlists.json"
+                        }
+                    ],
+                    "onTourUntil": null
+                }
+            ]
+        },
+        "perPage": 50,
+        "page": 4,
+        "totalEntries": 194
+    }
+}

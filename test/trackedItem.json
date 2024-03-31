@@ -1,0 +1,28 @@
+{
+    "type": "artist",
+    "uid": "549892-A Perfect Circle",
+    "title": "A Perfect Circle",
+    "skid": "549892-A Perfect Circle",
+    "txt": "https://www.songkick.com/artists/549892-a-perfect-circle?utm_source=14198&utm_medium=partner",
+    "uri": "https://www.songkick.com/artists/549892-a-perfect-circle?utm_source=14198&utm_medium=partner",
+    "body": {
+        "id": 549892,
+        "displayName": "A Perfect Circle",
+        "uri": "https://www.songkick.com/artists/549892-a-perfect-circle?utm_source=14198&utm_medium=partner",
+        "identifier": [
+            {
+                "mbid": "0cfbb549-a080-4613-b2ee-66416a38a4f2",
+                "href": "https://api.songkick.com/api/3.0/artists/mbid:0cfbb549-a080-4613-b2ee-66416a38a4f2.json",
+                "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:0cfbb549-a080-4613-b2ee-66416a38a4f2/calendar.json",
+                "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:0cfbb549-a080-4613-b2ee-66416a38a4f2/setlists.json"
+            },
+            {
+                "mbid": "078a9376-3c04-4280-b7d7-b20e158f345d",
+                "href": "https://api.songkick.com/api/3.0/artists/mbid:078a9376-3c04-4280-b7d7-b20e158f345d.json",
+                "eventsHref": "https://api.songkick.com/api/3.0/artists/mbid:078a9376-3c04-4280-b7d7-b20e158f345d/calendar.json",
+                "setlistsHref": "https://api.songkick.com/api/3.0/artists/mbid:078a9376-3c04-4280-b7d7-b20e158f345d/setlists.json"
+            }
+        ],
+        "onTourUntil": "2024-05-04"
+    }
+}
