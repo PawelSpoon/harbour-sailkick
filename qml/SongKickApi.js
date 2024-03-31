@@ -287,31 +287,23 @@ function convertUpcommingEventsResponse(resp) {
   }
 
   for (var i = 0; i < itemCount; i++) {
-    var currentEvent = resp.resultsPage.results.event[i]; // error here, solved
+    var currentEvent = resp.resultsPage.results.event[i];
     if (currentEvent === null && currentEvent === undefined) {
       console.log("currentEvent is empty json");
       break;
     }
-    var eventId = currentEvent.id;
-    var eventUri = currentEvent.uri;
-    var eventName = currentEvent.displayName;
-    var eventDate = currentEvent.start.date;
-    var eventTime = currentEvent.start.time;
-
-    var venueId = currentEvent.venue.id;
-    var venueName = currentEvent.venue.displayName;
-    var metroAreaId = currentEvent.venue.metroArea.id;
-    var metroAreaName = currentEvent.venue.metroArea.displayName;
-    var artistId = currentEvent.performance[0].id;
-    var artistName = currentEvent.performance[0].displayName;
-    var eventi = {id:eventId, uri:eventUri, name:eventName, date: eventDate, 
-      time: eventTime, venueId: venueId, venueName: venueName, 
-      metroAreaId:metroAreaId, metroAreaName: metroAreaName,
+    var skEvent = Conv.convertEvent(currentEvent);
+    var artistId = "undefined", artistName = "undefined";
+    if (Array.isArray(skEvent.artists) && skEvent.artists.length > 0) {
+        artistId = skEvent.artists[0].id;
+        artistName = skEvent.artists[0].name;
+    }
+    var eventi = {id:skEvent.id, uri:skEvent.uri, name:skEvent.name, date: skEvent.date, 
+      time: skEvent.time, venueId: skEvent.venueId, venueName: skEvent.venueName, 
+      metroAreaId:skEvent.metroAreaId, metroAreaName: skEvent.metroAreaName,
       artistId: artistId, artistName: artistName}
 
     events.push(eventi);
-    // console.log('pushed: ' +  eventi.name)
-
   }
   console.log('number of items: ' + events.length)
   return events
@@ -325,7 +317,7 @@ function convertEventResponse(resp)
 
   if (resp.resultsPage.status !== "ok") {
     console.log("return value is not ok");
-    eventi = {id:0, uri:"", name:"resultPage.status not ok", date: "", time: "", venueId: 1, venueName: "undefined"}
+    eventi = {id:0, uri:"", name:"resultPage.status not ok", date: "", time: "", venueId: 1, venueName: "undefined", artistId: 1, artistName: "undefined"}
     return eventi;
   }
 

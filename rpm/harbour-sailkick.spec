@@ -13,7 +13,7 @@ Name:       harbour-sailkick
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Native Songkick Client
-Version:    4.14
+Version:    4.15
 Release:    0
 Group:      Qt/Qt
 License:    MIT
@@ -39,7 +39,7 @@ Screenshots:
 Categories:
   - Network
   - Others
-
+  
 %prep
 %setup -q -n %{name}-%{version}
 
@@ -72,7 +72,7 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}
+%{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png

@@ -67,7 +67,7 @@ function convertCalendarEntry(apiCalEntry) {
     // copy events to calendar entry
     // todo: it might be better to return the event object + the reason
     // would simplify the rest of code incl. ui
-    console.log(JSON.stringify(skEvent));
+    // console.log(JSON.stringify(skEvent));
     skCalEntry.id = skEvent.id || undefined;
     skCalEntry.name = skEvent.name || undefined;
     skCalEntry.uri = skEvent.uri || undefined;
