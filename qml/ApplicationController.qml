@@ -6,11 +6,11 @@ import "pages"
 import "Persistance.js" as DB
 import "SongKickApi.js" as API
 
-
 Item {
 
     id: applicationController
     property string currentPage: 'plan'
+    property bool logEnabled : false
 
     // array of registered pages
     property variant pages: []
@@ -26,11 +26,11 @@ Item {
     // and this method overrides the page pointer
     function addPage(name1, page1) {
         if (getCurrentPageView(name1) === null) {
-            console.log('addPage: ' + name1);
+            log('addPage: ' + name1);
             pages.push( { name: name1, page: page1});
             return;
         }
-        console.log('no need to push, already there, lets replace')
+        log('no need to push, already there, lets replace')
         pages[getCurrentPageIndex(name1)].page = page1
     }
 
@@ -38,18 +38,29 @@ Item {
     // returns -1 when not found
     function getCurrentPageIndex(currentPage)
     {
-        console.log("getCurrentPageView: " + currentPage)
+        //todo: this should work only for plans, concerts, locations, artists
+        //      whenever i pass a city or an artist or an event it will show page not found
+        log("getCurrentPageView: " + currentPage)
         var count = pages.length
-        console.log("number of pages: " + count)
+        log("number of pages: " + count)
         for (var i = 0; i < count; i++) {
-            console.log(pages[i].name)
+            log(pages[i].name)
             if (currentPage === pages[i].name) {
-                console.log('found at index: ' + i )
+                log('found at index: ' + i )
                 return i;
             }
         }
-        console.log("page not found: " + currentPage)
+        error("page not found: " + currentPage)
         return -1;
+    }
+
+    function error(message) {
+        console.error(message)
+    }
+
+    function log(messsage)
+    {
+        if (logEnabled) console.log(messsage)
     }
 
     // returns the page from pages[]
@@ -58,11 +69,11 @@ Item {
     {
         var index = getCurrentPageIndex(currentPage);
         if (index === -1) {
-            console.log("page not found: " + currentPage)
+            error("page not found: " + currentPage)
             return null;
         }
         var pg = pages[index].page;
-        if (pg === null) console.error('page attribute is null')
+        if (pg === null) error('page attribute is null')
         return pages[index].page
     }
 
@@ -70,16 +81,22 @@ Item {
     // updates cover page
     // updates menues
     function setCurrentPage(pageName) {
-        console.log("setCurrentPage: " + pageName)
+        log("setCurrentPage: " + pageName)
         currentPage = pageName
         applicationWindow.cover.setTitle(pageName);
         showMyMenues(pageName)
         var page = getCurrentPageView(pageName)
         if (page === null) {
-            console.error('no page found for: ' + pageName)
+            error('no page found for: ' + pageName)
             return
         }
         updateCoverList(pageName, page.getCoverPageModel())
+    }
+
+    // opens the artist or location page on top of the carousell
+    function openTrackedItemPageOnTop(type, trackedItemId, trackedItemName) {
+        log(type, trackedItemId)
+        pageStack.push(Qt.resolvedUrl("pages/TrackedItemPage.qml"), { type: type, songKickId: trackedItemId, titleOf: trackedItemName })
     }
 
     // app specific
@@ -90,7 +107,7 @@ Item {
         for (var i = 0; i < count; i++) {
           var currentItem = pages[i].page;
           if (currentItem === null) return;
-          console.log(currentItem);
+          log(currentItem);
           currentItem.refresh();
         }
     }
@@ -109,7 +126,7 @@ Item {
     function updateCoverList(pageName, model) {
         if (currentPage !== pageName) return
         if (model === null) {
-            console.log('try to reload model')
+            log('try to reload model')
             model = getCurrentPageView(pageName).getCoverPageModel()
         }
         coverPage.fillModel(model)
@@ -155,20 +172,18 @@ Item {
     // callback of getUsersTrackedItems
     function updateTrackingItemsInDb(type, page, username, items)
     {
-        console.log('number of items: ' +  items.length)
+        log('number of items: ' +  items.length)
 
         var count = items.length
         for (var i = 0; i < count; i++) {
           var currentItem = items[i];
-          console.log('storing: ' +  currentItem.title)
+          log('storing: ' +  currentItem.title)
           DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.uri,currentItem.body)
         }
-        console.log('number of items: ' + items.length)
+        log('number of items: ' + items.length)
 
         if (items.length === 50) {
             API.getUsersTrackedItems(type,page+1,username, updateTrackingItemsInDb)
         }
-
     }
-
 }

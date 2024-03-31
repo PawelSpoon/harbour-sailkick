@@ -70,7 +70,7 @@ function copyFiles() {
         //let result = data.replace(/\.import "Persistance.js" as DB;"/g, "const Conv = require('./SongKickApiConversion.js');");
         let result = data.replace(/\.import "Persistance\.js" as DB/g, "const DB = require('./Persistance.js');");
         result = result.replace(/\.import "SongKickApiConversion\.js" as Conv/g, "const Conv = require('./SongKickApiConversion.js');");
-        result = result + '\n module.exports = { getUsersUpcommingEvents, getUsersTrackedItems } ;';
+        result = result + '\n module.exports = { getUsersUpcommingEvents, getUsersTrackedItems, getUpcommingEventsForTrackedItem } ;';
         // Write the result to a new file
         fs.writeFileSync('./dist/' + filename, result, 'utf8', function(err) {
             if (err) return console.log(err);
@@ -83,7 +83,7 @@ function copyFiles() {
 
         // Replace the lines
         result = data.replace(/\.pragma library/g, '');
-        result = result + '\n module.exports.convertEvent = convertEvent; \n module.exports.convertCalendarEntry = convertCalendarEntry;';
+        result = result + '\n module.exports.convertEvent = convertEvent; \n module.exports.convertCalendarEntry = convertCalendarEntry; \n module.exports.convertTrackedItemsResponse = convertTrackedItemsResponse;';
         // Write the result to a new file
         fs.writeFileSync('./dist/' + filename2, result, 'utf8');
         
@@ -95,12 +95,22 @@ function copyFiles() {
         // copy test starter script
         fs.copyFileSync('./test/run-tests.js', './dist/run-tests.js');
         console.log('test starter was copied to destination.txt');
+
+        // copy test responses
+        fs.copyFileSync('./test/eventResponse.json', './dist/eventResponse.json');
+        fs.copyFileSync('./test/calendarResponse.json', './dist/calendarResponse.json');
+        fs.copyFileSync('./test/trackedArtistsResponse.json', './dist/trackedArtistsResponse.json');
+        fs.copyFileSync('./test/trackedMetroAreasResponse.json', './dist/trackedMetroAreasResponse.json');
+        console.log('test responses were copied to destination.txt');
+        
         // copy test files to dist folder
         // fs.copyFileSync('./../test/SongKickApiTest.js', './../dist/SongKickApiTest.js');
         fs.copyFileSync('./test/SongKickApiJestTest.js', './dist/SongKickApiJestTest.js');
+        fs.copyFileSync('./test/SongKickApiConversionJestTest.js', './dist/SongKickApiConversionJestTest.js');
         console.log('test was copied to destination.txt');
 
     } catch (err) {
+        console.error(err);
     };
 }
 

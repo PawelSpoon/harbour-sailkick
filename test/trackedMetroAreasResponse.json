@@ -1,0 +1,42 @@
+{
+    "resultsPage": {
+        "status": "ok",
+        "results": {
+            "metroArea": [
+                {
+                    "lat": 47.0667,
+                    "lng": 15.45,
+                    "country": {
+                        "displayName": "Austria"
+                    },
+                    "uri": "http://www.songkick.com/metro_areas/26766-austria-graz?utm_source=14198&utm_medium=partner",
+                    "displayName": "Graz",
+                    "id": 26766
+                },
+                {
+                    "lat": 50.0833,
+                    "lng": 14.4667,
+                    "country": {
+                        "displayName": "Czech Republic"
+                    },
+                    "uri": "http://www.songkick.com/metro_areas/28425-czech-republic-prague?utm_source=14198&utm_medium=partner",
+                    "displayName": "Prague",
+                    "id": 28425
+                },
+                {
+                    "lat": 48.2,
+                    "lng": 16.3667,
+                    "country": {
+                        "displayName": "Austria"
+                    },
+                    "uri": "http://www.songkick.com/metro_areas/26771-austria-vienna?utm_source=14198&utm_medium=partner",
+                    "displayName": "Vienna",
+                    "id": 26771
+                }
+            ]
+        },
+        "perPage": 50,
+        "page": 1,
+        "totalEntries": 3
+    }
+}

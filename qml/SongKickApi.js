@@ -56,9 +56,10 @@ function getUsersTrackedItems(type, page, username, onSuccess, onFailure, xhr) {
             console.log('HEADERS_RECEIVED');
         } else if(xhr.readyState === DONE) {
             console.log('DONE')
-            if (xhr.status === 200) {
+            if (xhr.status === OK) {
                var json = JSON.parse(xhr.responseText.toString())
-               var items = convertTrackedItemsResponse(type,json)
+//             console.log(xhr.responseText.toString())
+               var items = Conv.convertTrackedItemsResponse(type,json)
                onSuccess(type,page,username,items)
             }
             else {
@@ -81,18 +82,22 @@ function getUsersTrackedItems(type, page, username, onSuccess, onFailure, xhr) {
 // returns events
 // in: type: "artist" / "area" / "venue"
 //     id: id of artist / area.. "23355-radiohead"
+//     page: page number (0 based, but songkick will have it 1 based)
 //     callback: callback function that accepts string, event[]
 // used in: TrackedItemsPage.qml
-function getUpcommingEventsForTrackedItem(type,id,page,callback) {
-    var xhr = new XMLHttpRequest();
+function getUpcommingEventsForTrackedItem(type,id,page,onSuccess, onFailure, xhr) {
+    if (!xhr) xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
+        if (xhr.readyState === HEADERS_RECEIVED) {
             console.log('HEADERS_RECEIVED')
-        } else if(xhr.readyState === XMLHttpRequest.DONE) {
+        } else if(xhr.readyState === DONE) {
             console.log('DONE')
-            var json = JSON.parse(xhr.responseText.toString())
-            var events = convertUpcommingEventsResponse(json)
-            callback(type,events)
+            if (xhr.status === OK) {
+              var json = JSON.parse(xhr.responseText.toString())
+              var events = convertUpcommingEventsResponse(json)
+              onSuccess(type,events)
+            }
+            else { onFailure(type)}
         }
     }
     var queryType
@@ -121,13 +126,13 @@ function getEvent(id, callback)
             console.log('HEADERS_RECEIVED');
         } else if(xhr.readyState === XMLHttpRequest.DONE) {
             console.log('DONE')
-            console.log(xhr.responseText);
+            //bconsole.log(xhr.responseText);
             var json = JSON.parse(xhr.responseText.toString());
             var event = convertEventResponse(json);
             callback(event);
         }
     }
-    console.log(songKickUri + "/events/" + id + ".json?" + apiKey + DB.getRandom());
+    // console.log(songKickUri + "/events/" + id + ".json?" + apiKey + DB.getRandom());
     xhr.open("GET", songKickUri + "/events/" + id + ".json?" + apiKey + DB.getRandom());
 
     xhr.send();
@@ -270,14 +275,22 @@ function convertUpcommingEventsResponse(resp) {
     return events
   }
 
-  var items = resp.resultsPage.totalEntries;
+  var itemCount = resp.resultsPage.totalEntries;
 
-  if (items > resp.resultsPage.perPage) { items = resp.resultsPage.perPage; }
+  // reset to perPage if totalEntries more then perPage
+  if (itemCount > resp.resultsPage.perPage) { itemCount = resp.resultsPage.perPage; }
+  
+  // this can happen when requested page points to an empty one cause there are not enough totalEntries
+  if (resp.resultsPage.results.event === null || resp.resultsPage.results.event === undefined) {
+    console.log("results is empty json");
+    return events
+  }
 
-  for (var i = 0; i < items; i++) {
-    var currentEvent = resp.resultsPage.results.event[i];
+  for (var i = 0; i < itemCount; i++) {
+    var currentEvent = resp.resultsPage.results.event[i]; // error here, solved
     if (currentEvent === null && currentEvent === undefined) {
-         break;
+      console.log("currentEvent is empty json");
+      break;
     }
     var eventId = currentEvent.id;
     var eventUri = currentEvent.uri;
@@ -291,65 +304,17 @@ function convertUpcommingEventsResponse(resp) {
     var metroAreaName = currentEvent.venue.metroArea.displayName;
     var artistId = currentEvent.performance[0].id;
     var artistName = currentEvent.performance[0].displayName;
-    var eventi = {id:eventId, uri:eventUri, name:eventName, date: eventDate, time: eventTime, venueId: venueId, venueName: venueName, metroAreaId:metroAreaId, metroAreaName: metroAreaName}
+    var eventi = {id:eventId, uri:eventUri, name:eventName, date: eventDate, 
+      time: eventTime, venueId: venueId, venueName: venueName, 
+      metroAreaId:metroAreaId, metroAreaName: metroAreaName,
+      artistId: artistId, artistName: artistName}
 
     events.push(eventi);
-    console.log('pushed: ' +  eventi.name)
+    // console.log('pushed: ' +  eventi.name)
 
   }
   console.log('number of items: ' + events.length)
   return events
-}
-
-
-//{"resultsPage":
-//{"status":"ok",
-//"results":{"metroArea":[
-//{"lat":47.0667,"lng":15.45,"country":{"displayName":"Austria"},"uri":"http://www.songkick.com/metro_areas/26766-austria-graz?utm_source=14198&utm_medium=partner","displayName":"Graz","id":26766},
-//{"lat":50.0833,"lng":14.4667,"country":{"displayName":"Czech Republic"},"uri":"http://www.songkick.com/metro_areas/28425-czech-republic-prague?utm_source=14198&utm_medium=partner","displayName":"Prague","id":28425},
-//{"lat":48.2,"lng":16.3667,"country":{"displayName":"Austria"},"uri":"http://www.songkick.com/metro_areas/26771-austria-vienna?utm_source=14198&utm_medium=partner","displayName":"Vienna","id":26771}
-//]},
-//"perPage":50,"page":1,"totalEntries":3}}
-// used in: getUsersTrackedItems
-function convertTrackedItemsResponse(type,resp) {
-
-    console.log('called for type: ' + type)
-
-    var trackedItems = [];
-    var errorEvent;
-
-    if (resp.resultsPage.status !== "ok") {
-      console.log("return value is not ok");
-      errorEvent = {id:0, uri:"", name:"resultPage.status not ok", date: "", time: "", venueId: 1, venueName: "undefined"}
-      trackedItems.push(errorEvent)
-      return trackedItems
-    }
-
-    if (resp.resultsPage.totalEntries === 0) {
-      console.log("0 values found");
-      return trackedItems
-    }
-
-    var items = resp.resultsPage.totalEntries;
-
-    if (items > resp.resultsPage.perPage) { items = resp.resultsPage.perPage; }
-
-    for (var i = 0; i < items; i++) {
-      var currentItem
-      if (type === "location") currentItem = resp.resultsPage.results.metroArea[i];
-      if (type === "artist")  currentItem = resp.resultsPage.results.artist[i];
-
-      if (currentItem === null || currentItem === undefined) break;
-      var trackId = currentItem.id;
-      var trackName = currentItem.displayName;
-      var eventi = {type: type, uid: trackId + "-" + trackName, title: trackName, skid: trackId + "-" + trackName, txt: currentItem.uri, uri: currentItem.uri, body: currentItem }
-
-      trackedItems.push(eventi);
-      // console.log('pushed ' + type + ": " +  eventi.title + "; uri: " + eventi.uri + ' body:' + eventi.body)
-    }
-    console.log('number of ' + type + '(s): ' + trackedItems.length)
-
-    return trackedItems
 }
 
 

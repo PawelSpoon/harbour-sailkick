@@ -8,6 +8,7 @@ import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
 import "../common"
 
+
 SilicaListView {
     id: plans
     anchors.fill: parent
@@ -20,8 +21,6 @@ SilicaListView {
         // the interface method
         function refresh()
         {
-            console.log(im_going);
-            console.log(i_might_go);
             console.log('refreshing plans page')
             fillUpCommingModelForAllItemsInTrackingModel();
         }
@@ -64,11 +63,14 @@ SilicaListView {
             var shortTitle = events[i].name
             var pos = shortTitle.indexOf(" at ");
             if (pos > 1) shortTitle = events[i].name.substr(0,pos)
-            console.log(shortTitle + " " + events[i].attendance)
-            upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri, "attendance": events[i].attendance })
-            //todo: store to db
+            var strArtistId = ''
+            if (events[i].artistId) strArtistId = events[i].artistId.toString()
+            upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri, "attendance": events[i].attendance, "artist": events[i].artistName, "artistId": strArtistId, "skid": events[i].skid})
+            //todo: store to db, wrong appcontroler should store
         }
         sortModel()
+        applicationWindow.controller.setCurrentPage('plans')
+        applicationWindow.controller.updateCoverList('plans', upcomingModel)
     }
 
     QtObject {
@@ -104,7 +106,7 @@ SilicaListView {
     // this list is going to be populated from songkick webpage
     ListModel {
         id: upcomingModel
-        ListElement { title : "Title"; type : "Type"; date: "Date"; venue: "Venue"; uri: "uri"; attendance:"attendance"}
+        ListElement { title : "Title"; type : "Type"; date: "Date"; venue: "Venue"; uri: "uri"; attendance:"attendance"; artist: "artist"; artistId: "artistId"}
     }
 
     ListElement {
@@ -175,7 +177,7 @@ SilicaListView {
                 height: titleText.height + locationText.height + dateText.height + Theme.paddingMedium
                 onClicked: {
                     upcommingList.currentIndex = index
-                    console.log(upcommingList.currentIndex)
+                    // console.log(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
                     pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri }) // with mainPage null open in browser will not work
                     //pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: mainPage, uri: current.uri})
@@ -187,7 +189,6 @@ SilicaListView {
                         contextMenu = contextMenuComponent.createObject(upcommingList)
                     contextMenu.show(myListItem)
                 }
-
 
                 Image {
                     id: typeIcon
@@ -215,9 +216,8 @@ SilicaListView {
                     font.capitalization: Font.Capitalize
                     font.pixelSize: Theme.fontSizeSmall
                     truncationMode: TruncationMode.Elide
-                    // wrapMode: Text.WordWrap
-                    width: parent.width - typeIcon.width
                     elide: Text.ElideRight
+                    width: parent.width - typeIcon.width
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
                 }
                 Label {
@@ -273,23 +273,32 @@ SilicaListView {
                     summary: qsTr("Copied to clipboard")
                 }
                 MenuItem {
+                    text: qsTr("Open artists page")
+                    onClicked: {
+                        var item = upcomingModel.get(upcommingList.currentIndex);
+                        console.log(JSON.stringify(item))
+                        if (item.artistId) 
+                           applicationWindow.controller.openTrackedItemPageOnTop('artist', item.artistId, item.title)
+                        else
+                            console.log("no artist id")
+                    }
+                }  
+                MenuItem {
                     text: qsTr("Open in browser")
                     onClicked: {
-                        console.log('')
-                        console.log(upcommingList.currentIndex)
                         Qt.openUrlExternally(upcomingModel.get(upcommingList.currentIndex).uri)
                     }
                 }
                 MenuItem {
-                    text: qsTr("Copy")
+                    text: qsTr("Copy");
                     onClicked: {
                         var clip = upcomingModel.get(upcommingList.currentIndex).uri;
                         Clipboard.text = clip;
                         notification.body = clip;
-                        notification.publish()
+                        notification.publish();
                     }
                 }
-                MenuItem {
+                /*MenuItem {
                     text: qsTr("Share")
                     ShareAction {
                          id:shareAction
@@ -310,7 +319,7 @@ SilicaListView {
                         shareAction.resources = [he]
                         shareAction.trigger()
                     }
-                }
+                }*/
             }
         }
     }

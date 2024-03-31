@@ -1,0 +1,75 @@
+{
+    "resultsPage": {
+        "status": "ok",
+        "results": {
+            "event": {
+                "id": 41566426,
+                "displayName": "Godspeed You! Black Emperor at Orpheum (April 24, 2024)",
+                "type": "Concert",
+                "uri": "https://www.songkick.com/concerts/41566426-godspeed-you-black-emperor-at-orpheum?utm_source=14198&utm_medium=partner",
+                "status": "ok",
+                "popularity": 0.025136,
+                "start": {
+                    "date": "2024-04-24",
+                    "datetime": null,
+                    "time": null
+                },
+                "performance": [
+                    {
+                        "id": 78286450,
+                        "displayName": "Godspeed You! Black Emperor",
+                        "billing": "headline",
+                        "billingIndex": 1,
+                        "artist": {
+                            "id": 182957,
+                            "displayName": "Godspeed You! Black Emperor",
+                            "uri": "https://www.songkick.com/artists/182957-godspeed-you-black-emperor?utm_source=14198&utm_medium=partner",
+                            "identifier": [
+                                {
+                                    "mbid": "3648db01-b29d-4ab9-835c-83f6a5068fe4",
+                                    "href": "https://api.songkick.com/api/3.0/artists/mbid:3648db01-b29d-4ab9-835c-83f6a5068fe4.json"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "ageRestriction": null,
+                "flaggedAsEnded": false,
+                "venue": {
+                    "id": 47598,
+                    "displayName": "Orpheum",
+                    "uri": "http://www.songkick.com/venues/47598-orpheum?utm_source=14198&utm_medium=partner",
+                    "metroArea": {
+                        "displayName": "Graz",
+                        "country": {
+                            "displayName": "Austria"
+                        },
+                        "id": 26766,
+                        "uri": "http://www.songkick.com/metro-areas/26766-austria-graz?utm_source=14198&utm_medium=partner"
+                    },
+                    "lat": 47.07194,
+                    "lng": 15.43017,
+                    "street": "Orpheumgasse 6",
+                    "zip": "8020",
+                    "phone": null,
+                    "website": null,
+                    "description": "",
+                    "capacity": null,
+                    "city": {
+                        "displayName": "Graz",
+                        "country": {
+                            "displayName": "Austria"
+                        },
+                        "id": 26766,
+                        "uri": "http://www.songkick.com/metro-areas/26766-austria-graz?utm_source=14198&utm_medium=partner"
+                    }
+                },
+                "location": {
+                    "city": "Graz, Austria",
+                    "lat": 47.07194,
+                    "lng": 15.43017
+                }
+            }
+        }
+    }
+}

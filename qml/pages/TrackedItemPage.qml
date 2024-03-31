@@ -23,11 +23,17 @@ Page {
     allowedOrientations: Orientation.All
 
 
+    function onError()
+    {
+        console.log("Error in loading upcomming events")
+    }
+
     function reloadUpCommingModel()
     {
         if (page == 0)
           upcommingModel.clear()
-        API.getUpcommingEventsForTrackedItem(type, songKickId, page, fillUpCommingModelForOneTrackingEntry)
+        console.log(type, songKickId, page)
+        API.getUpcommingEventsForTrackedItem(type, songKickId, page, fillUpCommingModelForOneTrackingEntry, onError)
     }
 
     function dateWithDay(datum)
@@ -81,7 +87,7 @@ Page {
     // this list is going to be populated from songkick webpage
     ListModel {
         id: upcommingModel
-        ListElement { title : "Title"; type : "Type"; date: "Date"; venue: "Venue"; uri: "uri"}
+        ListElement { title : "Title"; type : "Type"; date: "Date"; venue: "Venue"; uri: "uri"; artistId: "artistId"; skid: "Skid"}
     }
 
     ListElement {
@@ -90,6 +96,7 @@ Page {
         property string type
         property string skid
         property string date
+        property string artistId
     }
 
     SilicaListView {
@@ -264,7 +271,7 @@ Page {
                         notification.publish()
                     }
                 }
-                MenuItem {
+                /*MenuItem {
                     text: qsTr("Share")
                     ShareAction {
                          id:shareAction
@@ -285,7 +292,7 @@ Page {
                         shareAction.resources = [he]
                         shareAction.trigger()
                     }
-                }
+                }*/
             }
         }
     }

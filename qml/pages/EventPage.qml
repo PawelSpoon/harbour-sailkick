@@ -72,13 +72,13 @@ Dialog {
             }
 
             Label {
-                id: dateTime
+                id: date
                 anchors.left: parent.left; anchors.right: parent.right // wrapping
                 anchors.leftMargin: 16; anchors.rightMargin: 16
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
-                text: "date-time"
+                text: qsTr("Date unknown")
             }
 
             Label {
@@ -88,7 +88,7 @@ Dialog {
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
-                text: "start-time"
+                text: qsTr("Start time unknown")
             }
 
             Label {
@@ -98,7 +98,7 @@ Dialog {
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: "type"
+                text: "" // Concert, Festival, etc.
             }
 
             Label {
@@ -279,11 +279,11 @@ Dialog {
 
         eventName.text = event.displayName.substring(0,s1);
         eventType.text = event.type;
-        dateTime.text = event.dateTime;
-        if (event.time !== "") {
+        date.text = event.date;
+        if (event.time) {
            startTime.text = event.time;
         }
-        venue.text = event.venue;
+        venue.text = event.venueName;
         street.text = event.street
         city.text = event.zip + ' ' + event.city;
         artistsModel.clear();

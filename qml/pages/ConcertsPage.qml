@@ -31,6 +31,12 @@ SilicaListView {
         return upcomingModel
     }
 
+    function dateWithDay(datum)
+    {
+        var date = new Date(datum);
+        return date.toLocaleDateString();
+    }
+
 // obsolete ?
     function fillTrackingModel(title, type, skid, uid, uri)
     {
@@ -47,11 +53,7 @@ SilicaListView {
         API.getUsersUpcommingEvents("artist", DB.getUser().name, fillUpCommingModelForOneTrackingEntry)
     }
 
-    function dateWithDay(datum)
-    {
-        var date = new Date(datum);
-        return date.toLocaleDateString();
-    }
+
 
     function fillUpCommingModelForOneTrackingEntry(type, events)
     {
@@ -62,26 +64,22 @@ SilicaListView {
             var shortTitle = events[i].name
             var pos = shortTitle.indexOf(" at ");
             if (pos > 1) shortTitle = events[i].name.substr(0,pos)
-            upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri })
+            var strArtistId = ''
+            if (events[i].artistId) strArtistId = events[i].artistId.toString()
+            upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri , "attendance": events[i].attendance, "artist": events[i].artistName, "artistId": strArtistId, "skid": events[i].skid})
         }
         sortModel()
         applicationWindow.controller.setCurrentPage('concert')
         applicationWindow.controller.updateCoverList('concert', upcomingModel)
     }
 
-/*    onStatusChanged: {
-        if (status === PageStatus.Active) {
-            pageStack.pushAttached(
-                    Qt.resolvedUrl("TrackedItemsPage.qml"), {mainPage: root, trackedType: "location"})
-            applicationWindow.setCurrentPage('concerts')
-            applicationWindow.updateCoverList('concerts', upcomingModel)
-        }
-    }*/
+
 
     Component.onCompleted:
     {
         fillUpCommingModelForAllItemsInTrackingModel()
     }
+
 
     function sortModel()
     {
@@ -120,7 +118,7 @@ SilicaListView {
     // this list is going to be populated from songkick webpage
     ListModel {
         id: upcomingModel
-        ListElement { title : "Title"; type : "Type"; date: "Date"; venue: "Venue"; uri: "uri"}
+        ListElement { title : "Title"; type : "Type"; date: "Date"; venue: "Venue"; uri: "uri"; attendance:"attendance"; artist: "artist"; artistId: "artistId"}
     }
 
     ListElement {
@@ -129,6 +127,7 @@ SilicaListView {
         property string type
         property string skid
         property string date
+        property string attendance
     }
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
@@ -179,7 +178,7 @@ SilicaListView {
                 height: titleText.height + locationText.height + dateText.height + Theme.paddingMedium
                 onClicked: {
                     upcommingList.currentIndex = index
-                    console.log(upcommingList.currentIndex)
+                    // console.log(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
                     pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri })
                 }
@@ -191,7 +190,6 @@ SilicaListView {
                     contextMenu.show(myListItem)
                 }
 
-
                 Image {
                     id: typeIcon
                     anchors.left: parent.left
@@ -200,6 +198,9 @@ SilicaListView {
                     anchors.topMargin: Theme.paddingMedium
                     anchors.leftMargin: Theme.paddingSmall
                     source: {
+                        if (attendance === "im_going")
+                            "../sk-badge-white.png"  // -pink not working
+                        else
                         "../sk-badge-white.png"
                     }
                     height: 0.8 * (titleText.height + locationText.height + dateText.height)
@@ -258,10 +259,19 @@ SilicaListView {
                     summary: qsTr("Copied to clipboard")
                 }
                 MenuItem {
+                    text: qsTr("Open artists page")
+                    onClicked: {
+                        var item = upcomingModel.get(upcommingList.currentIndex);
+                        console.log(JSON.stringify(item))
+                        if (item.artistId) 
+                           applicationWindow.controller.openTrackedItemPageOnTop('artist', item.artistId, item.title)
+                        else
+                            console.log("no artist id")
+                    }
+                }                
+                MenuItem {
                     text: qsTr("Open in browser")
                     onClicked: {
-                        console.log('')
-                        console.log(upcommingList.currentIndex)
                         Qt.openUrlExternally(upcomingModel.get(upcommingList.currentIndex).uri)
                     }
                 }
@@ -271,10 +281,10 @@ SilicaListView {
                         var clip = upcomingModel.get(upcommingList.currentIndex).uri;
                         Clipboard.text = clip;
                         notification.body = clip;
-                        notification.publish()
+                        notification.publish();
                     }
                 }
-                MenuItem {
+                /*MenuItem {
                     text: qsTr("Share")
                     ShareAction { id:share
                         mimeType: "text/x-"
@@ -293,7 +303,7 @@ SilicaListView {
                         share.resources = [he]
                         share.trigger()
                     }
-                }
+                }*/
             }
         }
     }
