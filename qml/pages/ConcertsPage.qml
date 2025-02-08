@@ -80,7 +80,6 @@ SilicaListView {
         fillUpCommingModelForAllItemsInTrackingModel()
     }
 
-
     function sortModel()
     {
         console.log("sorting")

@@ -345,17 +345,28 @@ function getUpcommingEventsForDateRecursive(min_date, max_date, overAllSuccess, 
               // you need a new request as each request can be sent only once ! recursion will not work in test, had to remove xhr)
               getUpcommingEventsForDateRecursive(min_date,max_date,overAllSuccess, metroAreas, metroAreaIndex, resultingEvents, onFailure)
             }
-            console.log("calling overAllSuccess")   
-            overAllSuccess(resultingEvents)
+            else {
+                console.log("calling overAllSuccess")
+                overAllSuccess(resultingEvents)
+            }
           }
-          else { onFailure(type)}
+          else {
+              console.log("calling on failure")
+              overAllSuccess(resultingEvents)
+          } // war onFailure
       }
   }
   var queryType = "metro_areas"
-  var metroAreaId = metroAreas[metroAreaIndex].uri
+  var metroAreaId = metroAreas[metroAreaIndex].skid// did work in test .uri
   var query = "/" + queryType + "/" + metroAreaId
-  var url = songKickUri + query + "/calendar.json?" + apiKey + DB.getRandom() + "&min_date=" + min_date + "&max_date=" + max_date;
-  // if (page > 0) url = url + "&page=" + (page + 1)
+  var url = songKickUri + query + "/calendar.json?" + apiKey + DB.getRandom()
+  if (min_date !== "") {
+     url = url + "&min_date=" + min_date;
+  }
+  if (max_date !== "") {
+      url = url + "&max_date=" + max_date;
+  }
+
   console.log(url)
   xhr.open("GET", url);
 
@@ -374,7 +385,7 @@ function getEventsInUsersAreasForDate(min_date,max_date,finalCallback,onFailure,
   var metroAreaIndex = 0
   var metroAreas = DB.getTrackedItems(type)
   var metroAreaLength = metroAreas.length
-  if (metroAreaLength == 0) {
+  if (metroAreaLength === 0) {
     // return home with nothing
     console.log('no tracked items, returning')
     finalCallback(resultingEvents)
