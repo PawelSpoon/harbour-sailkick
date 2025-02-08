@@ -70,7 +70,7 @@ function copyFiles() {
         //let result = data.replace(/\.import "Persistance.js" as DB;"/g, "const Conv = require('./SongKickApiConversion.js');");
         let result = data.replace(/\.import "Persistance\.js" as DB/g, "const DB = require('./Persistance.js');");
         result = result.replace(/\.import "SongKickApiConversion\.js" as Conv/g, "const Conv = require('./SongKickApiConversion.js');");
-        result = result + '\n module.exports = { getUsersUpcommingEvents, getUsersTrackedItems, getUpcommingEventsForTrackedItem } ;';
+        result = result + '\n module.exports = { getUsersUpcommingEvents, getUsersTrackedItems, getUpcommingEventsForTrackedItem, getEventsInUsersAreasForDate } ;';
         // Write the result to a new file
         fs.writeFileSync('./dist/' + filename, result, 'utf8', function(err) {
             if (err) return console.log(err);
@@ -89,7 +89,13 @@ function copyFiles() {
         
         // create dummy Persistance file
         let result3 = 'function getRandom()   {  return "io09K9l3ebJxmxe2"  }'
-        result3 = result3 + '\n module.exports.getRandom = getRandom;';
+        // add result for areas
+        result3 = result3 + '\n function getTrackedItems(type) {'
+        result3 = result3 + '\n return [{uid:10, title:"Graz", skid:26766, uri:"26766-austria-graz", body: {}}]}'
+        // test does not work with two items, due to httrequest that is unknown as class in test
+        // result3 = result3 + '\n         {uid:11, title:"Linz", skid:26769, uri:"26769-austria-linz", body: {}}'
+        result3 = result3 + '\n module.exports = { getRandom, getTrackedItems } ;';
+
         fs.writeFileSync('./dist/Persistance.js', result3, 'utf8');
 
         // copy test starter script

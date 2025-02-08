@@ -13,10 +13,16 @@ but i was not a real test, just a method execution, see SongKickApiTest.js
 then i reworked the test for jest: SongKickApiJestTest.js
 
 ## how to execute
-from \test execute 'node .\run-node-test.js'
-this will convert the source files and store them into dist
-will copy the test files into dist (and maybe still execute a method)
-*then run* npm test
+#from \test execute 'node .\run-node-test.js'
+#this will convert the source files and store them into dist
+#will copy the test files into dist (and maybe still execute a method)
+#*then run* npm test
+
+## how to execute in 2025 :)
+npm pre-test   should create a dist folder and copy files into it
+npm test       should execute the tests
+- after each change in source you need to run pre-test to copy the files there
+
 
 ## installation
 install npm

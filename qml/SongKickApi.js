@@ -324,3 +324,61 @@ function convertEventResponse(resp)
   return Conv.convertEvent(resp.resultsPage.results.event)
 
 }
+
+
+// region for new method to return all events in a date
+// xhr is just a di for test purposes
+function getUpcommingEventsForDateRecursive(min_date, max_date, overAllSuccess, metroAreas, metroAreaIndex, resultingEvents, onFailure,xhr) {
+  if (!xhr) xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === HEADERS_RECEIVED) {
+          console.log('HEADERS_RECEIVED')
+      } else if(xhr.readyState === DONE) {
+          console.log('DONE')
+          if (xhr.status === OK) {
+            var json = JSON.parse(xhr.responseText.toString())
+            var events = convertUpcommingEventsResponse(json)
+            // increase by one
+            resultingEvents = resultingEvents.concat(events)
+            metroAreaIndex++;
+            if (metroAreaIndex < metroAreas.length) {
+              // you need a new request as each request can be sent only once ! recursion will not work in test, had to remove xhr)
+              getUpcommingEventsForDateRecursive(min_date,max_date,overAllSuccess, metroAreas, metroAreaIndex, resultingEvents, onFailure)
+            }
+            console.log("calling overAllSuccess")   
+            overAllSuccess(resultingEvents)
+          }
+          else { onFailure(type)}
+      }
+  }
+  var queryType = "metro_areas"
+  var metroAreaId = metroAreas[metroAreaIndex].uri
+  var query = "/" + queryType + "/" + metroAreaId
+  var url = songKickUri + query + "/calendar.json?" + apiKey + DB.getRandom() + "&min_date=" + min_date + "&max_date=" + max_date;
+  // if (page > 0) url = url + "&page=" + (page + 1)
+  console.log(url)
+  xhr.open("GET", url);
+
+  xhr.send();
+}
+
+// this is the public to-be-called method
+// min_date	Optional	A date in the form YYYY-MM-DD.
+// max_date	Optional	A date in the form YYYY-MM-DD.
+// xhr is just di for testing, will not be passed in production
+function getEventsInUsersAreasForDate(min_date,max_date,finalCallback,onFailure,xhr)
+{
+  var resultingEvents = []
+  // get areas
+  var type = "location"
+  var metroAreaIndex = 0
+  var metroAreas = DB.getTrackedItems(type)
+  var metroAreaLength = metroAreas.length
+  if (metroAreaLength == 0) {
+    // return home with nothing
+    console.log('no tracked items, returning')
+    finalCallback(resultingEvents)
+  }
+  // already converts the result to event, xhr is just for test
+  getUpcommingEventsForDateRecursive(min_date, max_date, finalCallback, metroAreas, metroAreaIndex, resultingEvents, onFailure,xhr)
+}
