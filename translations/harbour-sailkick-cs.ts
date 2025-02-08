@@ -2,29 +2,72 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="cs">
 <context>
-    <name>ConcertsPage</name>
+    <name>Concerts4DatePage</name>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="141"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="37"/>
+        <source>Refresh</source>
+        <translation type="unfinished">Obnovit</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="140"/>
+        <source>Min. Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="143"/>
+        <source>YYYY-MM-DD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="159"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation>V kalendáři nemáte žádné nadcházející koncerty</translation>
+        <translation type="unfinished">V kalendáři nemáte žádné nadcházející koncerty</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="259"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="277"/>
         <source>Copied to clipboard</source>
-        <translation>Kopírovat</translation>
+        <translation type="unfinished">Kopírovat</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="262"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="280"/>
         <source>Open artists page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="273"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="291"/>
+        <source>Open in browser</source>
+        <translation type="unfinished">Otevřít v prohlížeči</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="297"/>
+        <source>Copy</source>
+        <translation type="unfinished">Kopírovat</translation>
+    </message>
+</context>
+<context>
+    <name>ConcertsPage</name>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="140"/>
+        <source>You have no upcomming concerts in your calendar</source>
+        <translation>V kalendáři nemáte žádné nadcházející koncerty</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="258"/>
+        <source>Copied to clipboard</source>
+        <translation>Kopírovat</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="261"/>
+        <source>Open artists page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="272"/>
         <source>Open in browser</source>
         <translation>Otevřít v prohlížeči</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="279"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="278"/>
         <source>Copy</source>
         <translation>Kopírovat</translation>
     </message>
@@ -217,27 +260,32 @@
         <translation>Artisti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="96"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="100"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="101"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="105"/>
         <source>Manage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="109"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="113"/>
         <source>Get tracked items from songkick</source>
         <translation>Získejte sledované položky od songkick.com</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="117"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="121"/>
+        <source>Go to date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="129"/>
         <source>Refresh</source>
         <translation>Obnovit</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TabedMainPageX.qml" line="127"/>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="139"/>
         <source>Help</source>
         <translation>Pomoc</translation>
     </message>
