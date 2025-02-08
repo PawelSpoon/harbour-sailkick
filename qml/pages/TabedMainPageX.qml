@@ -119,7 +119,7 @@ Page  {
             MenuItem {
                 id: menuConcertsGoToDate
                 text: qsTr("Go to date")
-                //todo: call this on the correct tab
+                visible: false
                 onClicked: {
                     applicationWindow.controller.openConcertsForDatePage();
                 }
