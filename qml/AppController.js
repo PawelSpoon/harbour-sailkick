@@ -4,6 +4,7 @@
 // should be the controller for the whole app
 // so all the code from MainPage that is related to data should go here in sooner or later
 // no page should access DB nor API directly
+// but i think currently its pretty obsolete
 
 var cb1
 

@@ -4,6 +4,8 @@ const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 const username = "spoonman72"
 const type = "artist"
 const page = 1
+const min_date = "2025-10-10"
+const max_date = "2025-10-11"
 
 var xhr = new XMLHttpRequest();
 
@@ -58,5 +60,20 @@ test('getUpCommingEventsForTrackedItem returns expected items', done => {
 
     xhr = new XMLHttpRequest();
     SongKickApi.getUsersTrackedItems(type, 0, username, getIdAndCallUpcommingEventsForTrackedItem, onFailure, xhr);//todo: get first tracked item and put it hereinto as id
+});
+
+test('getEventsInMyAreas returns expected events', done => {
+    function onEventSuccess(events) {
+        //expect(type).toBe('artist');
+        expect(events.length).toBeGreaterThanOrEqual(10);
+        expect(events[0]).toBeDefined();
+        done();
+    }
+
+    function onFailure(error) {
+        done(error);
+    }
+
+    SongKickApi.getEventsInUsersAreasForDate(min_date,max_date, onEventSuccess, onFailure, xhr);
 });
 
