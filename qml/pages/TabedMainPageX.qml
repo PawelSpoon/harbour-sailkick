@@ -24,6 +24,10 @@ Page  {
         menuGetTracked.visible = visible
     }
 
+    function menuGotoDateVisible(visible) {
+        menuConcertsGoToDate.visible = visible
+    }
+
     function moveToNext()
     {
         console.log(viewsSlideshow.currentIndex)
@@ -110,6 +114,14 @@ Page  {
                 onClicked:
                 {
                     applicationWindow.controller.getTrackingItemsFromSongKick(null)
+                }
+            }
+            MenuItem {
+                id: menuConcertsGoToDate
+                text: qsTr("Go to date")
+                //todo: call this on the correct tab
+                onClicked: {
+                    applicationWindow.controller.openConcertsForDatePage();
                 }
             }
             MenuItem {

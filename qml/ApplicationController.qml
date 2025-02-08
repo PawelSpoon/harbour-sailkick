@@ -123,6 +123,11 @@ Item {
         pageStack.push(Qt.resolvedUrl("pages/SettingsPage.qml"), { })
     }
 
+    function openConcertsForDatePage()
+    {
+        pageStack.push(Qt.resolvedUrl("pages/Concerts4DatePage.qml"), { minDate: ""})
+    }
+
     function updateCoverList(pageName, model) {
         if (currentPage !== pageName) return
         if (model === null) {
@@ -136,16 +141,19 @@ Item {
     // shows / hides menu based on current page
     function showMyMenues(page)
     {
+        applicationWindow.mainPage.menuGotoDateVisible(false);
+        applicationWindow.mainPage.menuManageVisible(false);
         if (page==='location')
         {
             applicationWindow.mainPage.menuManageVisible(true);
         }
-        else if (page === 'artist')
+        if (page === 'artist')
         {
             applicationWindow.mainPage.menuManageVisible(true);
         }
-        else {
-            applicationWindow.mainPage.menuManageVisible(false);
+        if (page==='concert')
+        {
+            applicationWindow.mainPage.menuGotoDateVisible(true);
         }
     }
 

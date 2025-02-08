@@ -43,6 +43,7 @@ TRANSLATIONS += translations/harbour-sailkick-de.ts \
 
 DISTFILES += \
     qml/SongKickApiConversion.js \
+    qml/pages/Concerts4DatePage.qml \
     qml/pages/TabedMainPageX.qml \
     qml/sf-docked-tab-bar/*.qml \
     qml/Persistance.js \
