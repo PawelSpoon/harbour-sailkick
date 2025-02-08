@@ -4,42 +4,37 @@
 <context>
     <name>Concerts4DatePage</name>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="37"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="36"/>
         <source>Refresh</source>
         <translation type="unfinished">Uppdatera</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="140"/>
-        <source>Min. Date</source>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="130"/>
+        <source>Choose from date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="143"/>
-        <source>YYYY-MM-DD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="159"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="173"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation type="unfinished">Du har inga kommande konserter i din kalender</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="277"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="291"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished">Kopierat till urklipp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="280"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="294"/>
         <source>Open artists page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="291"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="305"/>
         <source>Open in browser</source>
         <translation type="unfinished">Öppna i webbläsaren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="297"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="311"/>
         <source>Copy</source>
         <translation type="unfinished">Kopiera</translation>
     </message>

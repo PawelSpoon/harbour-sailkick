@@ -4,42 +4,37 @@
 <context>
     <name>Concerts4DatePage</name>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="37"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="36"/>
         <source>Refresh</source>
         <translation>Neu Laden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="140"/>
-        <source>Min. Date</source>
-        <translation>Min. Datum</translation>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="130"/>
+        <source>Choose from date</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="143"/>
-        <source>YYYY-MM-DD</source>
-        <translation>JJJJ-MM-TT</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="159"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="173"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation type="unfinished">Noch keine Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="277"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="291"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished">In Zwischenablage kopiert</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="280"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="294"/>
         <source>Open artists page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="291"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="305"/>
         <source>Open in browser</source>
         <translation type="unfinished">Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="297"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="311"/>
         <source>Copy</source>
         <translation type="unfinished">Kopieren</translation>
     </message>
