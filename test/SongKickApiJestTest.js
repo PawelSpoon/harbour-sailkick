@@ -55,7 +55,7 @@ test('getUpCommingEventsForTrackedItem returns expected items', done => {
     function getIdAndCallUpcommingEventsForTrackedItem(type, page, username, items) {
         // expect(items[0]).toBe('[]')
         console.log(JSON.stringify(items[1]));
-        SongKickApi.getUpcommingEventsForTrackedItem(type,items[1].skid,0,onUpcommingEventsForTrackedItemSuccess, onFailure, new XMLHttpRequest());        
+        SongKickApi.getUpcommingEventsForTrackedItem(type,items[1].skid,0,onUpcommingEventsForTrackedItemSuccess, onFailure, "", new XMLHttpRequest());        
     }
 
     xhr = new XMLHttpRequest();
@@ -75,5 +75,5 @@ test('getEventsInMyAreas returns expected events', done => {
     }
 
     SongKickApi.getEventsInUsersAreasForDate(min_date,max_date, onEventSuccess, onFailure, xhr);
-});
+},10000);
 
