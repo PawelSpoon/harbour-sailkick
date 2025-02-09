@@ -289,32 +289,32 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="113"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="108"/>
         <source>Choose from date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="147"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="142"/>
         <source>Load more</source>
         <translation>Weitere Laden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="177"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="172"/>
         <source>Seems there are no events planed</source>
         <translation>Anscheinend sind keine Konzerte geplant</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="296"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="291"/>
         <source>Copied to clipboard</source>
         <translation>In Zwischenablage kopiert</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="299"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="294"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="314"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="309"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
