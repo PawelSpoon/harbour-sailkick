@@ -28,12 +28,12 @@ Page {
         console.log("Error in loading upcomming events")
     }
 
-    function reloadUpCommingModel()
+    function reloadUpCommingModel(minDate)
     {
         if (page == 0)
           upcommingModel.clear()
         console.log(type, songKickId, page)
-        API.getUpcommingEventsForTrackedItem(type, songKickId, page, fillUpCommingModelForOneTrackingEntry, onError)
+        API.getUpcommingEventsForTrackedItem(type, songKickId, page, fillUpCommingModelForOneTrackingEntry, onError, minDate)
     }
 
     function dateWithDay(datum)
@@ -58,11 +58,10 @@ Page {
 
     Component.onCompleted:
     {
-        reloadUpCommingModel()
+        reloadUpCommingModel("")
         applicationWindow.controller.setCurrentPage(titleOf)
         applicationWindow.controller.updateCoverList(titleOf,upcommingModel)
     }
-
 
     property ListModel locationList : trackingModel
 
@@ -99,18 +98,44 @@ Page {
         property string artistId
     }
 
-    SilicaListView {
-
-        id: upcommingList
+    SilicaFlickable {
         anchors.fill: parent
-        anchors.topMargin: Theme.paddingSmall
-        model: upcommingModel
+        contentHeight: col.height
 
-        header: PageHeader {
-            title: titleOf
+        PullDownMenu {
+            MenuItem {
+                id: minDateButton
+                text: qsTr("Choose from date")
+
+                onClicked: {
+                    //todo: if text already set put it to new Date()
+                    var dialog = pageStack.push(pickerComponent, {
+                        date: new Date( )
+                    })
+                    dialog.accepted.connect(function() {
+                        minDateButton.text = dialog.dateText
+                        var skDateText = dialog.year
+                        var month = dialog.month
+                        if (month < 10) {
+                            skDateText = skDateText + "-0" + month
+                        } else {
+                            skDateText = skDateText + "-" + month
+                        }
+                        var day = dialog.day
+                        if (day < 10) {
+                            skDateText = skDateText + "-0" + day
+                        } else {
+                            skDateText = skDateText + "-" +day
+                        }
+                        reloadUpCommingModel(skDateText)
+                    })
+                }
+                Component {
+                    id: pickerComponent
+                    DatePickerDialog {}
+                }
+            }
         }
-        
-        // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
 
         PushUpMenu {
             MenuItem {
@@ -124,10 +149,28 @@ Page {
             }
         }
 
-        ViewPlaceholder {
-            enabled: upcommingModel.count === 0 // show placeholder when no items in ...
-            text: qsTr("Seems there are no events planed")
-        }
+        Column {
+            id: col
+            width: trackedItemPage.width
+
+            PageHeader {
+                id: header
+                title: titleOf
+            }
+
+        // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
+        SilicaListView {
+
+            id: upcommingList
+            width: parent.width
+            height: trackedItemPage.height - header.height
+
+            model: upcommingModel
+
+            ViewPlaceholder {
+                enabled: upcommingModel.count === 0 // show placeholder when no items in ...
+                text: qsTr("Seems there are no events planed")
+            }
 
         // try to have sections by date
         section {
@@ -271,30 +314,9 @@ Page {
                         notification.publish()
                     }
                 }
-                /*MenuItem {
-                    text: qsTr("Share")
-                    ShareAction {
-                         id:shareAction
-                         mimeType: "text/xml"
-                         title: qsTr("Share event")
-                    }
-                    // icon: con-m-share
-                    onClicked: {
-                        console.log(upcommingList.currentIndex)
-                        var mimeType = "text/x-url";
-                        var current = upcomingModel.get(upcommingList.currentIndex)
-                        var he = {}
-                        he.data = current.uri
-                        he.type = mimeType
-                        he["linkTitle"] = current.uri // works in email body
-                        //he["shareText"] = current.uri // does not work
-                        shareAction.mimeType = mimeType
-                        shareAction.resources = [he]
-                        shareAction.trigger()
-                    }
-                }*/
             }
         }
+        }
+    }
     }
 }
-

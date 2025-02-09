@@ -30,11 +30,51 @@ Page {
             fillUpCommingModelForAllItemsInTrackingModel();
         }
 
+        function fillUpCommingModelForAllItemsInTrackingModel(minDate,maxDate)
+        {
+            upcomingModel.clear()
+            console.log("minDate:" + minDate)
+            API.getEventsInUsersAreasForDate(minDate,"",fillUpCommingModelForOneTrackingEntry)
+            //API.getUsersUpcommingEvents("artist", DB.getUser().name, fillUpCommingModelForOneTrackingEntry)
+        }
+
         PullDownMenu {
             MenuItem {
                 id: refreshMenuItem
                 text: qsTr("Refresh")
                 onClicked: flick.refresh()
+            }
+            MenuItem {
+                id: minDateMenuItem
+                text: qsTr("Choose from date")
+
+                onClicked: {
+                    //todo: if text already set put it to new Date()
+                    var dialog = pageStack.push(pickerComponent, {
+                        date: new Date( )
+                    })
+                    dialog.accepted.connect(function() {
+                        minDateMenuItem.text = dialog.dateText
+                        var skDateText = dialog.year
+                        var month = dialog.month
+                        if (month < 10) {
+                            skDateText = skDateText + "-0" + month
+                        } else {
+                            skDateText = skDateText + "-" + month
+                        }
+                        var day = dialog.day
+                        if (day < 10) {
+                            skDateText = skDateText + "-0" + day
+                        } else {
+                            skDateText = skDateText + "-" +day
+                        }
+                        flick.fillUpCommingModelForAllItemsInTrackingModel(skDateText)
+                    })
+                }
+                Component {
+                    id: pickerComponent
+                    DatePickerDialog {}
+                }
             }
         }
 
@@ -123,49 +163,10 @@ Page {
             property string attendance
         }
 
-        Button {
-            id: minDateButton
-            anchors.topMargin:  Theme.paddingLarge * 2
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Choose from date")
-
-            onClicked: {
-                var dialog = pageStack.push(pickerComponent, {
-                    date: new Date( )
-                })
-                dialog.accepted.connect(function() {
-                    minDateButton.text = dialog.dateText
-                    var skDateText = dialog.year
-                    var month = dialog.month
-                    if (month < 10) {
-                        skDateText = skDateText + "-0" + month
-                    } else {
-                        skDateText = skDateText + "-" + month
-                    }
-                    var day = dialog.day
-                    if (day < 10) {
-                        skDateText = skDateText + "-0" + day
-                    } else {
-                        skDateText = skDateText + "-" +day
-                    }
-                    flick.fillUpCommingModelForAllItemsInTrackingModel(skDateText)
-                })
-            }
-
-            Component {
-                id: pickerComponent
-                DatePickerDialog {}
-            }
-        }
-
         // To enable PullDownMenu, place our content in a SilicaFlickable
         SilicaListView {
             id: upcommingList
-            anchors.top: minDateButton.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
-            //anchors.fill: parent
+            anchors.fill: parent
             model: upcomingModel
 
             ViewPlaceholder {
@@ -318,15 +319,6 @@ Page {
                     }
                 }
             }
-        }
-
- 
-        function fillUpCommingModelForAllItemsInTrackingModel(minDate,maxDate)
-        {
-            upcomingModel.clear()
-            console.log("minDate:" + minDate)
-            API.getEventsInUsersAreasForDate(minDate,"",fillUpCommingModelForOneTrackingEntry)
-            //API.getUsersUpcommingEvents("artist", DB.getUser().name, fillUpCommingModelForOneTrackingEntry)
         }
     }
 }

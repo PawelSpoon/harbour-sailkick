@@ -125,7 +125,7 @@ Item {
 
     function openConcertsForDatePage()
     {
-        pageStack.push(Qt.resolvedUrl("pages/Concerts4DatePage.qml"), { minDate: ""})
+        pageStack.push(Qt.resolvedUrl("pages/Concerts4DatePage.qml"), { })
     }
 
     function updateCoverList(pageName, model) {
