@@ -108,7 +108,7 @@ function getUpcommingEventsForTrackedItem(type,id,page,onSuccess, onFailure, min
     var query = "/" + queryType + "/" + id
     var url = songKickUri + query + "/calendar.json?" + apiKey + DB.getRandom();
     if (page > 0) url = url + "&page=" + (page + 1)
-    if (minDate != undefined && minDate !== "") url = url + "&min_date=" + minDate;
+    if (minDate !== undefined && minDate !== "") url = url + "&min_date=" + minDate;
     console.log(url)
     xhr.open("GET", url);
 

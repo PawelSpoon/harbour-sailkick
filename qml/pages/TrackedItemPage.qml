@@ -109,6 +109,8 @@ Page {
 
                 onClicked: {
                     //todo: if text already set put it to new Date()
+                    // a previous load more might have increased the page
+                    page = 0
                     var dialog = pageStack.push(pickerComponent, {
                         date: new Date( )
                     })

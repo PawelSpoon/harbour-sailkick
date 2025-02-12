@@ -271,7 +271,7 @@
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="121"/>
-        <source>Go to date</source>
+        <source>Open concerts in my areas page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -293,27 +293,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="142"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="144"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="172"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="174"/>
         <source>Seems there are no events planed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="291"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="293"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="294"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="296"/>
         <source>Open in browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="309"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="311"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>

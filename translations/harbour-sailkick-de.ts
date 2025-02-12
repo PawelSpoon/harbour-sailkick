@@ -272,8 +272,8 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="121"/>
-        <source>Go to date</source>
-        <translation type="unfinished"></translation>
+        <source>Open concerts in my areas page</source>
+        <translation>Öffne 'Konzerte in meinen Städten' - Seite</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="129"/>
@@ -291,30 +291,30 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="108"/>
         <source>Choose from date</source>
-        <translation type="unfinished"></translation>
+        <translation>Wähle Datum</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="142"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="144"/>
         <source>Load more</source>
         <translation>Weitere Laden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="172"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="174"/>
         <source>Seems there are no events planed</source>
         <translation>Anscheinend sind keine Konzerte geplant</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="291"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="293"/>
         <source>Copied to clipboard</source>
         <translation>In Zwischenablage kopiert</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="294"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="296"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="309"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="311"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>

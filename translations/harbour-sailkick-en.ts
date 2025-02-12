@@ -6,37 +6,37 @@
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="44"/>
         <source>Refresh</source>
-        <translation type="unfinished">Refresh</translation>
+        <translation>Refresh</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="49"/>
         <source>Choose from date</source>
-        <translation type="unfinished"></translation>
+        <translation>Choose from date</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="174"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">You have no upcomming concerts in your calendar</translation>
+        <translation>You have no upcomming concerts in your calendar</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="292"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">Copied to clipboard</translation>
+        <translation>Copied to clipboard</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="295"/>
         <source>Open artists page</source>
-        <translation type="unfinished"></translation>
+        <translation>Open artists page</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="306"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Open in browser</translation>
+        <translation>Open in browser</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="312"/>
         <source>Copy</source>
-        <translation type="unfinished">Copy</translation>
+        <translation>Copy</translation>
     </message>
 </context>
 <context>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="261"/>
         <source>Open artists page</source>
-        <translation type="unfinished"></translation>
+        <translation>Open artists page</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="272"/>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../qml/pages/EventPage.qml" line="44"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">Copied to clipboard</translation>
+        <translation>Copied to clipboard</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="59"/>
@@ -112,12 +112,12 @@
     <message>
         <location filename="../qml/pages/EventPage.qml" line="81"/>
         <source>Date unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>??-??-????</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="91"/>
         <source>Start time unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>??:??</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="111"/>
@@ -156,37 +156,37 @@
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="18"/>
         <source>im_going</source>
-        <translation type="unfinished">i&apos;m going</translation>
+        <translation>i&apos;m going</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="19"/>
         <source>i_might_go</source>
-        <translation type="unfinished">maybe</translation>
+        <translation>maybe</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="140"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">You have no upcomming concerts in your calendar</translation>
+        <translation>You have no upcomming concerts in your calendar</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="273"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">Copied to clipboard</translation>
+        <translation>Copied to clipboard</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="287"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Open in browser</translation>
+        <translation>Open in browser</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="276"/>
         <source>Open artists page</source>
-        <translation type="unfinished"></translation>
+        <translation>Open artists page</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="293"/>
         <source>Copy</source>
-        <translation type="unfinished">Copy</translation>
+        <translation>Copy</translation>
     </message>
 </context>
 <context>
@@ -229,7 +229,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>Enable verbose logging</source>
-        <translation type="unfinished"></translation>
+        <translation>Enable verbose logging - n.a.</translation>
     </message>
 </context>
 <context>
@@ -271,8 +271,8 @@
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="121"/>
-        <source>Go to date</source>
-        <translation type="unfinished"></translation>
+        <source>Open concerts in my areas page</source>
+        <translation>Open concerts in my areas page</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="129"/>
@@ -290,32 +290,32 @@
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="108"/>
         <source>Choose from date</source>
-        <translation type="unfinished"></translation>
+        <translation>Choose from date</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="142"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="144"/>
         <source>Load more</source>
         <translation>Load more</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="172"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="174"/>
         <source>Seems there are no events planed</source>
         <translation>Seems there are no events planed</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="291"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="293"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">Copied to clipboard</translation>
+        <translation>Copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="294"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="296"/>
         <source>Open in browser</source>
         <translation>Open in browser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="309"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="311"/>
         <source>Copy</source>
-        <translation type="unfinished">Copy</translation>
+        <translation>Copy</translation>
     </message>
 </context>
 <context>

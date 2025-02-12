@@ -271,8 +271,8 @@
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="121"/>
-        <source>Go to date</source>
-        <translation type="unfinished"></translation>
+        <source>Open concerts in my areas page</source>
+        <translation>Otevři stránku 'koncerty na mých míst'</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="129"/>
@@ -290,30 +290,30 @@
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="108"/>
         <source>Choose from date</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyber si datum</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="142"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="144"/>
         <source>Load more</source>
         <translation>Načíst další</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="172"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="174"/>
         <source>Seems there are no events planed</source>
         <translation>Zdá se, že nejsou plánovány žádné události</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="291"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="293"/>
         <source>Copied to clipboard</source>
         <translation>Kopírovat</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="294"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="296"/>
         <source>Open in browser</source>
         <translation>Otevřít v prohlížeči</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="309"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="311"/>
         <source>Copy</source>
         <translation>Kopírovat</translation>
     </message>
