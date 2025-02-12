@@ -13,7 +13,7 @@ Name:       harbour-sailkick
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Native Songkick Client
-Version:    4.16
+Version:    4.18
 Release:    0
 Group:      Qt/Qt
 License:    MIT
@@ -28,17 +28,8 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-sailKick is a native Sailfish OS app for songkick.com.
-Songkick.com helps you to stay up to date with concert dates of your favorite artists.
+Short description of my Sailfish OS Application
 
-PackageName: harbour-sailkick
-Type: desktop-application
-Icon: https://raw.githubusercontent.com/PawelSpoon/harbour-sailkick/master/icons/256x256/harbour-sailkick.png
-Screenshots:
-  - https://raw.githubusercontent.com/sailfishos-chum/ownkeepass/master/screenshots/screenshot-ownkeepass1.png
-Categories:
-  - Network
-  - Others
 
 %prep
 %setup -q -n %{name}-%{version}

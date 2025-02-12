@@ -4,42 +4,37 @@
 <context>
     <name>Concerts4DatePage</name>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="37"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="44"/>
         <source>Refresh</source>
         <translation type="unfinished">Obnovit</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="140"/>
-        <source>Min. Date</source>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="49"/>
+        <source>Choose from date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="143"/>
-        <source>YYYY-MM-DD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="159"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="174"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation type="unfinished">V kalendáři nemáte žádné nadcházející koncerty</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="277"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="292"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished">Kopírovat</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="280"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="295"/>
         <source>Open artists page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="291"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="306"/>
         <source>Open in browser</source>
         <translation type="unfinished">Otevřít v prohlížeči</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="297"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="312"/>
         <source>Copy</source>
         <translation type="unfinished">Kopírovat</translation>
     </message>
@@ -276,8 +271,8 @@
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="121"/>
-        <source>Go to date</source>
-        <translation type="unfinished"></translation>
+        <source>Open concerts in my areas page</source>
+        <translation>Otevři stránku 'koncerty na mých míst'</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="129"/>
@@ -293,27 +288,32 @@
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="117"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="108"/>
+        <source>Choose from date</source>
+        <translation>Vyber si datum</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="144"/>
         <source>Load more</source>
         <translation>Načíst další</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="129"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="174"/>
         <source>Seems there are no events planed</source>
         <translation>Zdá se, že nejsou plánovány žádné události</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="248"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="293"/>
         <source>Copied to clipboard</source>
         <translation>Kopírovat</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="251"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="296"/>
         <source>Open in browser</source>
         <translation>Otevřít v prohlížeči</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="266"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="311"/>
         <source>Copy</source>
         <translation>Kopírovat</translation>
     </message>

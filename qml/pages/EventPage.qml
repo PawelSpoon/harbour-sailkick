@@ -284,7 +284,9 @@ Dialog {
            startTime.text = event.time;
         }
         venue.text = event.venueName;
-        street.text = event.street
+        if (event.street) {
+            street.text = event.street
+        }
         city.text = event.zip + ' ' + event.city;
         artistsModel.clear();
         for (var aC=0; aC < event.artists.length; aC++)

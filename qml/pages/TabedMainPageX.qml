@@ -118,7 +118,7 @@ Page  {
             }
             MenuItem {
                 id: menuConcertsGoToDate
-                text: qsTr("Go to date")
+                text: qsTr("Open concerts in my areas page")
                 visible: false
                 onClicked: {
                     applicationWindow.controller.openConcertsForDatePage();

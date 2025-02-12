@@ -84,8 +84,9 @@ function getUsersTrackedItems(type, page, username, onSuccess, onFailure, xhr) {
 //     id: id of artist / area.. "23355-radiohead"
 //     page: page number (0 based, but songkick will have it 1 based)
 //     callback: callback function that accepts string, event[]
-// used in: TrackedItemsPage.qml
-function getUpcommingEventsForTrackedItem(type,id,page,onSuccess, onFailure, xhr) {
+//     minDate: min_Date (from date to show events)
+// used in: TrackedItemPage.qml
+function getUpcommingEventsForTrackedItem(type,id,page,onSuccess, onFailure, minDate, xhr) {
     if (!xhr) xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === HEADERS_RECEIVED) {
@@ -107,6 +108,7 @@ function getUpcommingEventsForTrackedItem(type,id,page,onSuccess, onFailure, xhr
     var query = "/" + queryType + "/" + id
     var url = songKickUri + query + "/calendar.json?" + apiKey + DB.getRandom();
     if (page > 0) url = url + "&page=" + (page + 1)
+    if (minDate !== undefined && minDate !== "") url = url + "&min_date=" + minDate;
     console.log(url)
     xhr.open("GET", url);
 
@@ -351,8 +353,17 @@ function getUpcommingEventsForDateRecursive(min_date, max_date, overAllSuccess, 
             }
           }
           else {
-              console.log("calling on failure")
-              overAllSuccess(resultingEvents)
+            // as this is a rec method an error on a area should not stop the rest
+            // only diff should be: no push to resultarray
+            console.log("failed for metroAreaIndex: ", metroAreaIndex) 
+            metroAreaIndex++;
+            if (metroAreaIndex < metroAreas.length) {
+              // you need a new request as each request can be sent only once ! recursion will not work in test, had to remove xhr)
+              getUpcommingEventsForDateRecursive(min_date,max_date,overAllSuccess, metroAreas, metroAreaIndex, resultingEvents, onFailure)
+            }
+            // i think its wrong to call callback on last send
+            console.log("calling overAllSuccess from failed path")   
+            overAllSuccess(resultingEvents)
           } // war onFailure
       }
   }

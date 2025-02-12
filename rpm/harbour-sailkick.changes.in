@@ -8,9 +8,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Sat Feb 08 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.16-0
+* Sat Feb 08 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.18-0
 - might have fixed db migration on start
 - concerts page can now return events in all your locations from a date
+- .17 with date-time-picker
+- .18 improved receiving of messages, adding picker also to metro areas and artist pages
+-     fixed load more
 
 * Mo Apr 01 2024 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.15-0
 - fixed failure of loading festivals, where no artist is defined

@@ -13,7 +13,6 @@ import "../common"
 Page {
     id: root
     anchors.fill: parent
-    property string minDate: ""
 
     SilicaFlickable {
         id: flick
@@ -31,11 +30,51 @@ Page {
             fillUpCommingModelForAllItemsInTrackingModel();
         }
 
+        function fillUpCommingModelForAllItemsInTrackingModel(minDate,maxDate)
+        {
+            upcomingModel.clear()
+            console.log("minDate:" + minDate)
+            API.getEventsInUsersAreasForDate(minDate,"",fillUpCommingModelForOneTrackingEntry)
+            //API.getUsersUpcommingEvents("artist", DB.getUser().name, fillUpCommingModelForOneTrackingEntry)
+        }
+
         PullDownMenu {
             MenuItem {
                 id: refreshMenuItem
                 text: qsTr("Refresh")
                 onClicked: flick.refresh()
+            }
+            MenuItem {
+                id: minDateMenuItem
+                text: qsTr("Choose from date")
+
+                onClicked: {
+                    //todo: if text already set put it to new Date()
+                    var dialog = pageStack.push(pickerComponent, {
+                        date: new Date( )
+                    })
+                    dialog.accepted.connect(function() {
+                        minDateMenuItem.text = dialog.dateText
+                        var skDateText = dialog.year
+                        var month = dialog.month
+                        if (month < 10) {
+                            skDateText = skDateText + "-0" + month
+                        } else {
+                            skDateText = skDateText + "-" + month
+                        }
+                        var day = dialog.day
+                        if (day < 10) {
+                            skDateText = skDateText + "-0" + day
+                        } else {
+                            skDateText = skDateText + "-" +day
+                        }
+                        flick.fillUpCommingModelForAllItemsInTrackingModel(skDateText)
+                    })
+                }
+                Component {
+                    id: pickerComponent
+                    DatePickerDialog {}
+                }
             }
         }
 
@@ -50,14 +89,6 @@ Page {
             return date.toLocaleDateString();
         }
 
-        // obsolete ?
-        /*function fillTrackingModel(title, type, skid, uid, uri)
-        {
-            var contains = trackingModel.contains(uid)
-            if (contains[0]) console.log("contains already " + title);
-            console.log("adding to tracking model: " + title + " " + type + " " + skid + " " + uid + " " + uri)
-            trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid, "uri": uri})
-        }*/
 
         function fillUpCommingModelForOneTrackingEntry(events)
         {
@@ -80,7 +111,7 @@ Page {
 
         Component.onCompleted:
         {
-            fillUpCommingModelForAllItemsInTrackingModel()
+            fillUpCommingModelForAllItemsInTrackingModel("")
         }
 
         function sortModel()
@@ -132,26 +163,10 @@ Page {
             property string attendance
         }
 
-        TextField {
-            id: minDateTextField
-            anchors.topMargin: Theme.paddingMedium
-            width: parent.width
-            inputMethodHints: Qt.ImhSensitiveData
-            label: qsTr("Min. Date")
-            //text: "2025-10-10"
-            enabled: true
-            placeholderText: qsTr("YYYY-MM-DD")
-            onTextChanged: { root.minDate = minDateTextField.text }
-        }
-
         // To enable PullDownMenu, place our content in a SilicaFlickable
         SilicaListView {
             id: upcommingList
-            anchors.top: minDateTextField.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
-            //anchors.fill: parent
+            anchors.fill: parent
             model: upcomingModel
 
             ViewPlaceholder {
@@ -302,43 +317,8 @@ Page {
                             notification.publish();
                         }
                     }
-                    /*MenuItem {
-                        text: qsTr("Share")
-                        ShareAction { id:share
-                            mimeType: "text/x-"
-                            title: qsTr("Share event")
-                        }
-                        onClicked: {
-                            console.log(upcommingList.currentIndex)
-                            var mimeType = "text/x-url";
-                            var current = upcomingModel.get(upcommingList.currentIndex)
-                            var he = {}
-                            he.data = current.uri
-                            he.name = "Hey, check this out"
-                            he.type = mimeType
-                            he["linkTitle"] = current.uri // works in email body
-                            share.mimeType = "text/x-url";
-                            share.resources = [he]
-                            share.trigger()
-                        }
-                    }*/
                 }
             }
-        }
-
- 
-        function fillUpCommingModelForAllItemsInTrackingModel(minDate,maxDate)
-        {
-            upcomingModel.clear()
-            console.log("minDate:" + root.minDate)
-            /*var today = new Date()
-            var yyyy = today.getFullYear()
-            var mm = today.getMonth()
-            var dd = today.getDay()
-            var test = yyyy + "-" + mm + "-" + dd
-            console.log(test)*/
-            API.getEventsInUsersAreasForDate(root.minDate,"",fillUpCommingModelForOneTrackingEntry)
-            //API.getUsersUpcommingEvents("artist", DB.getUser().name, fillUpCommingModelForOneTrackingEntry)
         }
     }
 }
