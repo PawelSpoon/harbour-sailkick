@@ -1,4 +1,135 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="hu" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="hu">
+<context>
+    <name>Concerts4DatePage</name>
+    <message>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="44"/>
+        <source>Refresh</source>
+        <translation type="unfinished">Frissítés</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="49"/>
+        <source>Choose from date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="174"/>
+        <source>You have no upcomming concerts in your calendar</source>
+        <translation type="unfinished">Nincsenek közelgő koncertek a naptáradban</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="292"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="295"/>
+        <source>Open artists page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="306"/>
+        <source>Open in browser</source>
+        <translation type="unfinished">Megnyitás böngészőben</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="312"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConcertsPage</name>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="140"/>
+        <source>You have no upcomming concerts in your calendar</source>
+        <translation type="unfinished">Nincsenek közelgő koncertek a naptáradban</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="258"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="261"/>
+        <source>Open artists page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="272"/>
+        <source>Open in browser</source>
+        <translation type="unfinished">Megnyitás böngészőben</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="278"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>EventPage</name>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="16"/>
+        <source>im_going</source>
+        <translation type="unfinished">megyek</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="17"/>
+        <source>i_might_go</source>
+        <translation type="unfinished">talán megyek</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="30"/>
+        <source>Webview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="36"/>
+        <source>Open in browser</source>
+        <translation type="unfinished">Megnyitás böngészőben</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="37"/>
+        <source> </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="44"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="59"/>
+        <source>  </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="70"/>
+        <source>Event name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="81"/>
+        <source>Date unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="91"/>
+        <source>Start time unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="111"/>
+        <source>Venue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="189"/>
+        <source>Performer(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <context>
     <name>HelpMainPage</name>
     <message>
@@ -10,222 +141,232 @@
 <context>
     <name>HelpPage</name>
     <message>
-        <location filename="../qml/pages/HelpPage.qml" line="29"/>
+        <location filename="../qml/pages/HelpPage.qml" line="30"/>
         <source>a native SongKick client</source>
         <translation>egy natív SongKick kliens</translation>
     </message>
     <message>
-        <location filename="../qml/pages/HelpPage.qml" line="37"/>
+        <location filename="../qml/pages/HelpPage.qml" line="38"/>
         <source>Help</source>
         <translation>Súgó</translation>
-    </message>
-</context>
-<context>
-    <name>MainPage</name>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="232"/>
-        <source>Concerts</source>
-        <translation>Koncertek</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="238"/>
-        <source>Settings</source>
-        <translation>Beállítások</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="242"/>
-        <source>Get tracked items from songkick</source>
-        <translation>Követett elemek letöltése a songkickről</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="259"/>
-        <source>Refresh</source>
-        <translation>Frissítés</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="266"/>
-        <source>Help</source>
-        <translation>Súgó</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="276"/>
-        <source>You have no upcomming concerts in your calendar</source>
-        <translation>Nincsenek közelgő koncertek a naptáradban</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="390"/>
-        <source>Open in browser</source>
-        <translation>Megnyitás böngészőben</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="399"/>
-        <source>Share</source>
-        <translation>Megosztás</translation>
     </message>
 </context>
 <context>
     <name>PlansPage</name>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="14"/>
+        <location filename="../qml/pages/PlansPage.qml" line="18"/>
         <source>im_going</source>
         <translation>megyek</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="15"/>
+        <location filename="../qml/pages/PlansPage.qml" line="19"/>
         <source>i_might_go</source>
         <translation>talán megyek</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="107"/>
-        <source>Plans</source>
-        <translation>Tervek</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/PlansPage.qml" line="124"/>
-        <source>Help</source>
-        <translation>Súgó</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/PlansPage.qml" line="134"/>
+        <location filename="../qml/pages/PlansPage.qml" line="140"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>Nincsenek közelgő koncertek a naptáradban</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="269"/>
+        <location filename="../qml/pages/PlansPage.qml" line="273"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PlansPage.qml" line="276"/>
+        <source>Open artists page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PlansPage.qml" line="287"/>
         <source>Open in browser</source>
         <translation>Megnyitás böngészőben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="278"/>
-        <source>Share</source>
-        <translation>Megosztás</translation>
+        <location filename="../qml/pages/PlansPage.qml" line="293"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="32"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="30"/>
         <source>Get tracked items from songkick</source>
         <translation>Követett elemek letöltése a songkickről</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="50"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="44"/>
         <source>Save</source>
         <translation>Mentés</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="51"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="45"/>
         <source>Discard</source>
         <translation>Elvetés</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="55"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="49"/>
         <source>Songkick credentials</source>
         <translation>Songkick hitelesítő adatok</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="63"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>Songkick Username</source>
         <translation>Songkick felhasználónév</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="65"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="59"/>
         <source>set username (mandatory)</source>
         <translation>felhasználónév beállítása (kötelező)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="104"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
         <source>Username is needed to retrieve&lt;br&gt;your tracked items&lt;br&gt;from songkick.com.&lt;br&gt;Password is currently not needed.&lt;br&gt;If you do not have a &lt;br&gt;Songkick account yet, &lt;br&gt;please create one. &lt;br&gt;When ever you modify your &lt;br&gt;tracking items on songkick.com, &lt;br&gt;sync them using&lt;br&gt;&apos;Get tracked items ..&apos;&lt;br&gt;pulldown menu</source>
         <translation>A flhasználónévre azért van szükség, hogy a &lt;br&gt;követett elemeid&lt;br&gt;a songkick.com-ról kinyerhető legyen.&lt;br&gt;Jelenleg nincs szükség jelszóra.&lt;br&gt;Ha még nincs &lt;br&gt;Songkick fiókod, &lt;br&gt;kérlek hozz létre egyet. &lt;br&gt;Ha befejezted a követett elemek &lt;br&gt;módosítását a songkick.com-on, &lt;br&gt;szinkronizáld a lehúzható menü&lt;br&gt;&apos;Követett elemek letöltése ..&apos;&lt;br&gt;paranccsal.</translation>
     </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="115"/>
+        <source>Enable verbose logging</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
-    <name>ShareWithPage</name>
+    <name>TabedMainPageX</name>
     <message>
-        <location filename="../qml/pages/ShareWithPage.qml" line="17"/>
-        <source>Done</source>
-        <translation>Kész</translation>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="17"/>
+        <source>plan</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ShareWithPage.qml" line="18"/>
-        <source>Discard</source>
-        <translation>Elvetés</translation>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="18"/>
+        <source>concert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="19"/>
+        <source>location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="20"/>
+        <source>artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="100"/>
+        <source>Settings</source>
+        <translation type="unfinished">Beállítások</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="105"/>
+        <source>Manage</source>
+        <translation type="unfinished">Kezelés</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="113"/>
+        <source>Get tracked items from songkick</source>
+        <translation type="unfinished">Követett elemek letöltése a songkickről</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="121"/>
+        <source>Open concerts in my areas page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="129"/>
+        <source>Refresh</source>
+        <translation type="unfinished">Frissítés</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TabedMainPageX.qml" line="139"/>
+        <source>Help</source>
+        <translation type="unfinished">Súgó</translation>
     </message>
 </context>
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="103"/>
-        <source>Refresh</source>
-        <translation>Frissítés</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="110"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="144"/>
         <source>Load more</source>
         <translation>Több betöltése</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="119"/>
-        <source>Help</source>
-        <translation>Súgó</translation>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="108"/>
+        <source>Choose from date</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="126"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="174"/>
         <source>Seems there are no events planed</source>
         <translation>Úgy tűnik, nincsenek tervezett események</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="242"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="293"/>
+        <source>Copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="296"/>
         <source>Open in browser</source>
         <translation>Megnyitás böngészőben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="249"/>
-        <source>Share</source>
-        <translation>Megosztás</translation>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="311"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TrackedItemsPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="117"/>
-        <source>Your locations</source>
-        <translation>Helyszíneid</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="118"/>
-        <source>Your artists</source>
-        <translation>Előadóid</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="119"/>
-        <source>Your venues</source>
-        <translation>Helyszíneid</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="127"/>
-        <source>Manage</source>
-        <translation>Kezelés</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="138"/>
-        <source>Back to top</source>
-        <translation>Vissza az elejére</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="143"/>
-        <source>Help</source>
-        <translation>Súgó</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="150"/>
         <source>You are not tracking any ...</source>
         <translation>Nem követsz semmilyen ...</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="236"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="227"/>
+        <source>on tour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="249"/>
         <source>Open in browser</source>
         <translation>Megnyitás böngészőben</translation>
+    </message>
+</context>
+<context>
+    <name>harbour-sailkick</name>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="21"/>
+        <source>i_might_go</source>
+        <translation type="unfinished">talán megyek</translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="22"/>
+        <source>im_going</source>
+        <translation type="unfinished">megyek</translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="45"/>
+        <source>Plan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="50"/>
+        <source>Concerts</source>
+        <translation type="unfinished">Koncertek</translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="55"/>
+        <source>Locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-sailkick.qml" line="60"/>
+        <source>Artists</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

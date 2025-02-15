@@ -349,6 +349,7 @@ function getUpcommingEventsForDateRecursive(min_date, max_date, overAllSuccess, 
             }
             else {
                 console.log("calling overAllSuccess")
+                resultingEvents = resultingEvents.sort(sortEvents)
                 overAllSuccess(resultingEvents)
             }
           }
@@ -362,8 +363,9 @@ function getUpcommingEventsForDateRecursive(min_date, max_date, overAllSuccess, 
               getUpcommingEventsForDateRecursive(min_date,max_date,overAllSuccess, metroAreas, metroAreaIndex, resultingEvents, onFailure)
             }
             // i think its wrong to call callback on last send
-            console.log("calling overAllSuccess from failed path")   
-            overAllSuccess(resultingEvents)
+            // console.log("calling overAllSuccess from failed path")
+            // resultingEvents = resultingEvents.sort(sortEvents)
+            //overAllSuccess(resultingEvents)
           } // war onFailure
       }
   }
@@ -383,6 +385,15 @@ function getUpcommingEventsForDateRecursive(min_date, max_date, overAllSuccess, 
 
   xhr.send();
 }
+
+function sortEvents(a,b) {
+  if (a.date === undefined) console.log("undefined date a")
+  if (b.date == undefined) console.log("undefined date b")
+  if (a.date < b.date) return -1
+  if (a.date === b.date) return 0
+  return 1
+}
+
 
 // this is the public to-be-called method
 // min_date	Optional	A date in the form YYYY-MM-DD.

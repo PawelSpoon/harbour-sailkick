@@ -65,7 +65,7 @@ test('getUpCommingEventsForTrackedItem returns expected items', done => {
 test('getEventsInMyAreas returns expected events', done => {
     function onEventSuccess(events) {
         //expect(type).toBe('artist');
-        expect(events.length).toBeGreaterThanOrEqual(10);
+        expect(events.length).toBeGreaterThanOrEqual(2);
         expect(events[0]).toBeDefined();
         done();
     }

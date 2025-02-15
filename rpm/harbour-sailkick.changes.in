@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Feb 15 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.19-0
+- fix sorting per date in concerts in all areas page
+
 * Sat Feb 08 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.18-0
 - might have fixed db migration on start
 - concerts page can now return events in all your locations from a date

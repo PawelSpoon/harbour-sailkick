@@ -16,7 +16,7 @@
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="174"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">No tienes próximos conciertos anotados en el calendario</translation>
+        <translation>No tienes próximos conciertos anotados en el calendario</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="292"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="306"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Abrir en el navegador</translation>
+        <translation>Abrir en el navegador</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="312"/>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="140"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">No tienes próximos conciertos anotados en el calendario</translation>
+        <translation>No tienes próximos conciertos anotados en el calendario</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="258"/>
@@ -59,7 +59,7 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="272"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Abrir en el navegador</translation>
+        <translation>Abrir en el navegador</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="278"/>
@@ -72,12 +72,12 @@
     <message>
         <location filename="../qml/pages/EventPage.qml" line="16"/>
         <source>im_going</source>
-        <translation type="unfinished">voy</translation>
+        <translation>voy</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="17"/>
         <source>i_might_go</source>
-        <translation type="unfinished">podría_ir</translation>
+        <translation>podría_ir</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="30"/>
@@ -87,7 +87,7 @@
     <message>
         <location filename="../qml/pages/EventPage.qml" line="36"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Abrir en el navegador</translation>
+        <translation>Abrir en el navegador</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="37"/>

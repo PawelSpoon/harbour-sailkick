@@ -11,17 +11,17 @@
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="49"/>
         <source>Choose from date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vyber si datum</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="174"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">V kalendáři nemáte žádné nadcházející koncerty</translation>
+        <translation>V kalendáři nemáte žádné nadcházející koncerty</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="292"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">Kopírovat</translation>
+        <translation>Kopírovat</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="295"/>
@@ -31,12 +31,12 @@
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="306"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Otevřít v prohlížeči</translation>
+        <translation>Otevřít v prohlížeči</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="312"/>
         <source>Copy</source>
-        <translation type="unfinished">Kopírovat</translation>
+        <translation>Kopírovat</translation>
     </message>
 </context>
 <context>
@@ -272,7 +272,7 @@
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="121"/>
         <source>Open concerts in my areas page</source>
-        <translation>Otevři stránku 'koncerty na mých míst'</translation>
+        <translation>Otevři stránku &apos;koncerty na mých míst&apos;</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="129"/>

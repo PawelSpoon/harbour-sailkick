@@ -11,32 +11,32 @@
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="49"/>
         <source>Choose from date</source>
-        <translation type="unfinished"></translation>
+        <translation>Wähle Datum</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="174"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">Noch keine Pläne</translation>
+        <translation>Noch keine Pläne</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="292"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">In Zwischenablage kopiert</translation>
+        <translation>In Zwischenablage kopiert</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="295"/>
         <source>Open artists page</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehe zum Künstler</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="306"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Im Browser öffnen</translation>
+        <translation>Im Browser öffnen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="312"/>
         <source>Copy</source>
-        <translation type="unfinished">Kopieren</translation>
+        <translation>Kopieren</translation>
     </message>
 </context>
 <context>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="261"/>
         <source>Open artists page</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehe zum Künstler</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="272"/>
@@ -182,7 +182,7 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="276"/>
         <source>Open artists page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gehe zum Künstler</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="293"/>
@@ -273,7 +273,7 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="121"/>
         <source>Open concerts in my areas page</source>
-        <translation>Öffne 'Konzerte in meinen Städten' - Seite</translation>
+        <translation>Öffne &apos;Konzerte in meinen Städten&apos; - Seite</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="129"/>

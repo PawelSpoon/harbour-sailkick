@@ -39,7 +39,9 @@ TRANSLATIONS += translations/harbour-sailkick-de.ts \
                 translations/harbour-sailkick-en.ts \
                 translations/harbour-sailkick-cs.ts \
                 translations/harbour-sailkick-sv.ts \
-                translations/harbour-sailkick-es.ts
+                translations/harbour-sailkick-es.ts \
+                translations/harbour-sailkick-hu.ts \
+                translations/harbour-sailkick-nl.ts
 
 DISTFILES += \
     qml/SongKickApiConversion.js \
