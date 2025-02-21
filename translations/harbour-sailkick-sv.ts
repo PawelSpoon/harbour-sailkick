@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="49"/>
         <source>Choose from date</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj från datum</translation>
     </message>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="174"/>
@@ -272,7 +272,7 @@
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="121"/>
         <source>Open concerts in my areas page</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna konserter i min områdessida</translation>
     </message>
     <message>
         <location filename="../qml/pages/TabedMainPageX.qml" line="129"/>
@@ -290,7 +290,7 @@
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="108"/>
         <source>Choose from date</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj från datum</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="144"/>
