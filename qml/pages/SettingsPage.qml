@@ -61,16 +61,16 @@ Dialog {
                 EnterKey.enabled: !errorHighlight
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
                 font.capitalization: Font.MixedCase
-                /*EnterKey.onClicked: entrySongKickPassWord.focus = true
+                EnterKey.onClicked: entrySongKickPassWord.focus = true
                 onTextChanged: {
                 editEntryDialog.titleChanged =
                         (editEntryDialog.origTitle !== text ? true : false)
                 editEntryDialog.updateCoverState()
             }
-                //focusOutBehavior: -1 // This doesn't let the eye button steal focus*/
+                //focusOutBehavior: -1 // This doesn't let the eye button steal focus
             }
 
-            /*TextField {
+            TextField {
                 id: entrySongKickPassWord
                 width: parent.width
                 inputMethodHints: Qt.ImhSensitiveData
@@ -81,13 +81,13 @@ Dialog {
                 EnterKey.enabled: !errorHighlight
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
                 EnterKey.onClicked: entryUsernameTextField.focus = true
-                /*onTextChanged: {
-                editEntryDialog.songKickIdChanged =
-                        (editEntryDialog.origSongKickId !== text ? true : false)
-                editEntryDialog.updateCoverState()
-            }
+                onTextChanged: {
+                    editEntryDialog.songKickIdChanged =
+                            (editEntryDialog.origSongKickId !== text ? true : false)
+                    editEntryDialog.updateCoverState()
+                }
                 //focusOutBehavior: -1
-            }*/
+            }
 
             Label {
                 id: helpText
@@ -95,11 +95,7 @@ Dialog {
                 //anchors.left : entrySongKickUserName.left
                 //anchors.leftMargin: entrySongKickUserName.anchors.leftMargin
                 width: entrySongKickUserName.width - 100
-                text: qsTr("Username is needed to retrieve<br>\
-your tracked items<br>\
-from songkick.com.<br>\
-Password is currently not needed.<br>\
-If you do not have a <br>\
+                text: qsTr("If you do not have a <br>\
 Songkick account yet, <br>\
 please create one. <br>\
 When ever you modify your <br>\
@@ -126,8 +122,7 @@ pulldown menu")
     Component.onCompleted: {
         var user = DB.getUser();
         entrySongKickUserName.text = user.name;
-        //todo: load logEnabled from DB
-        //entrySongKickPassWord.text = user.pwd;
+        entrySongKickPassWord.text = user.pwd; // not sure if i should really show
     }
 
     Component.onDestruction: {
@@ -137,7 +132,7 @@ pulldown menu")
     // tracking items get saved via EditEntryDialog
     // this will only save user and password
     onAccepted: {
-        DB.setUser(entrySongKickUserName.text, "");
+        DB.setUser(entrySongKickUserName.text, entrySongKickPassWord.text);
     }
     // user has rejected editing entry data, check if there are unsaved details
     onRejected: {
