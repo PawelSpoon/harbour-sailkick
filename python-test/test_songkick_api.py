@@ -82,14 +82,12 @@ class TestSongkickApi(unittest.TestCase):
 
     def test_get_user_artists(self):
         """Test getting tracked artists for logged-in user"""
-        # Use A Perfect Circle as test case
         results = self.api.get_user_artists()
         self.assertIsNotNone(results)
         self.assertIsInstance(results, list)
 
     def test_get_user_locations(self):
         """Test getting tracked artists for logged-in user"""
-        # Use A Perfect Circle as test case
         results = self.api.get_user_locations()
         self.assertIsNotNone(results)
         self.assertIsInstance(results, list)        
