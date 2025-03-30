@@ -385,6 +385,7 @@ class SongkickApi:
         print(f"Found {len(results)} events")
         return results
     
+    #https://www.songkick.com/tracker/artists
     def get_user_artists(self):
         """Get tracked artists of current user
         Args:
@@ -393,6 +394,7 @@ class SongkickApi:
         """        
         return[]
     
+    #
     def get_user_locations(self):
         """Get tracked locations of current user
         Args:

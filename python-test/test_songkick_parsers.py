@@ -4,7 +4,9 @@ from python.songkick_api import SongkickApi
 from python.parse_location_events import parse_location_events
 from python.parse_artist_events import parse_artist_events
 from python.parse_user_plans import parse_user_plans
-#from python.parse_user_concerts import parse_user_concerts
+from python.parse_user_concerts import parse_user_concerts
+from python.parse_user_artists import parse_user_artists
+from python.parse_user_locations import parse_user_locations
 
 
 class TestSongkickParsers(unittest.TestCase):
@@ -154,7 +156,7 @@ class TestSongkickParsers(unittest.TestCase):
             html_content = f.read()
             
         # Parse test data
-        results = parse_user_plans(html_content,"https://www.songkick.com")
+        results = parse_user_concerts(html_content,"https://www.songkick.com")
 
         # Save results to file for debugging
         debug_file = os.path.join(self.test_data_dir, 'parse_user_concerts_results.txt')
@@ -183,4 +185,78 @@ class TestSongkickParsers(unittest.TestCase):
         # Verify some known test data
         self.assertIsInstance(first_event['artists'], list)
         self.assertIsInstance(first_event['venue'], str)
-        self.assertIsInstance(first_event['date'], str)          
+        self.assertIsInstance(first_event['date'], str)   
+
+    def test_parse_user_artists(self):
+        """Test parsing of users tracked artists"""
+        # Load test data
+        test_file = os.path.join(self.test_data_dir, 'get_user_artists_response.html')
+        
+        # Ensure test data directory exists
+        os.makedirs(self.test_data_dir, exist_ok=True)
+
+        with open(test_file, 'r', encoding='utf-8') as f:
+            html_content = f.read()
+            
+        # Parse test data
+        results = parse_user_artists(html_content,"https://www.songkick.com")
+
+        # Save results to file for debugging
+        debug_file = os.path.join(self.test_data_dir, 'parse_user_artists_results.txt')
+        with open(debug_file, 'w', encoding='utf-8') as f:
+            f.write(f"Found {len(results)} tracked artists\n\n")
+            for i, artist in enumerate(results, 1):
+                f.write(f"Artist {i}:\n")
+                f.write(f"Name: {artist['name']}\n")
+                f.write(f"URL: {artist['url']}\n")
+                f.write(f"Image: {artist['image_url']}\n")
+                f.write(f"ID: {artist['id']}\n")
+                f.write("-" * 50 + "\n")
+
+        # Verify structure
+        self.assertTrue(results)
+        self.assertIsInstance(results, list)
+        
+        # Check first artist data
+        if results:
+            artist = results[0]
+            self.assertIn('name', artist)
+            self.assertIn('url', artist)
+            self.assertIn('image_url', artist)
+            self.assertIn('id', artist)
+ 
+    def test_parse_user_locations(self):
+        """Test parsing of users tracked locations"""
+        # Load test data
+        test_file = os.path.join(self.test_data_dir, 'get_user_locations_response.html')
+        
+        # Ensure test data directory exists
+        os.makedirs(self.test_data_dir, exist_ok=True)
+
+        with open(test_file, 'r', encoding='utf-8') as f:
+            html_content = f.read()
+            
+        # Parse test data
+        results = parse_user_locations(html_content,"https://www.songkick.com")
+
+        # Save results to file for debugging
+        debug_file = os.path.join(self.test_data_dir, 'parse_user_locations_results.txt')
+        with open(debug_file, 'w', encoding='utf-8') as f:
+            f.write(f"Found {len(results)} tracked locations\n\n")
+            for i, artist in enumerate(results, 1):
+                f.write(f"Name: {artist['name']}\n")
+                f.write(f"URL: {artist['url']}\n")
+                f.write(f"ID: {artist['id']}\n")
+                f.write("-" * 50 + "\n")
+
+        # Verify structure
+        self.assertTrue(results)
+        self.assertIsInstance(results, list)
+        
+        # Check first artist data
+        if results:
+            artist = results[0]
+            self.assertIn('name', artist)
+            self.assertIn('url', artist)
+            self.assertIn('id', artist)
+ 
