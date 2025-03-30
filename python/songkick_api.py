@@ -6,6 +6,9 @@ from .parse_location_events import parse_location_events
 from .parse_artist_events import parse_artist_events
 from .parse_user_concerts import parse_user_concerts
 from .parse_user_plans import parse_user_plans
+from .parse_user_artists import parse_user_artists
+from .parse_user_locations import parse_user_locations
+
 
 class SongkickApi:
     def __init__(self):
@@ -392,13 +395,47 @@ class SongkickApi:
         Returns:
             list: List of events for the current user
         """        
-        return[]
+        events_url = f"https://www.songkick.com/tracker/artists"
+        print(f"Fetching tracked artists for current user")
+        
+        response = self.session.get(events_url, headers=self.headers)
+        print(f"Response status: {response.status_code}")
+        print(f"URL: {response.url}")
+        
+        if not response.ok:
+            print("Failed to fetch events!")
+            return []
+
+        # Save response for debugging
+        with open("get_user_artists_response.html", "w", encoding="utf-8") as f:
+            f.write(response.text)
+
+        results = parse_user_artists(response.text, self.base_url)
+        print(f"Found {len(results)} tracked artists")
+        return results
     
-    #
+    #https://www.songkick.com/tracker/metro_areas
     def get_user_locations(self):
         """Get tracked locations of current user
         Args:
         Returns:
             list: List of events for the current user
-        """        
-        return[]
+        """
+        events_url = f"https://www.songkick.com/tracker/metro_areas"
+        print(f"Fetching tracked locations for current user")
+        
+        response = self.session.get(events_url, headers=self.headers)
+        print(f"Response status: {response.status_code}")
+        print(f"URL: {response.url}")
+        
+        if not response.ok:
+            print("Failed to fetch locations!")
+            return []
+
+        # Save response for debugging
+        with open("get_user_locations_response.html", "w", encoding="utf-8") as f:
+            f.write(response.text)
+
+        results = parse_user_locations(response.text, self.base_url)
+        print(f"Found {len(results)} tracked locations")
+        return results
