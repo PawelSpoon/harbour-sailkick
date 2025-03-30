@@ -34,6 +34,21 @@ class TestSongkickApi(unittest.TestCase):
         results = self.api.get_location_events(location_id)
         self.assertIsNotNone(results, "Get events returned None")
         self.assertGreater(len(results), 0, "No location events found")
+
+    def test_get_artist_events(self):
+        """Test getting events for a specific artist"""
+        # Use A Perfect Circle as test case
+        results = self.api.get_artist_events("549892-a-perfect-circle")
+        self.assertIsNotNone(results)
+        self.assertIsInstance(results, list)
         
+        # If any events found, check their structure
+        if results:
+            event = results[0]
+            self.assertIn('artists', event)
+            self.assertIn('venue', event)
+            self.assertIn('date', event)
+            self.assertIn('url', event)
+            
 if __name__ == '__main__':
     unittest.main()

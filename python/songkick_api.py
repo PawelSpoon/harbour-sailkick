@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pickle
 import os
 from .parse_location_events import parse_location_events
+from .parse_artist_events import parse_artist_events
 
 class SongkickApi:
     def __init__(self):
@@ -270,6 +271,8 @@ class SongkickApi:
                 
         return results
     
+    # this page has min and max date and filters for genre etc.
+    # could be extended
     def get_location_events(self, location_id):
         """Get events for a specific location
         Args:
@@ -293,3 +296,44 @@ class SongkickApi:
         results = parse_location_events(response.text, self.base_url)
         print(f"Found {len(results)} events")
         return results
+
+    # on tour yes/no
+    # tracking on/off
+    # upcoming events but no date filtering
+    def get_artist_events(self, artist_id):
+        """Get events for a specific artist
+        Args:
+            artist_id (str): Artist ID like '549892-a-perfect-circle'
+        Returns:
+            list: List of events for the artist
+        """
+        events_url = f"{self.base_url}/artists/{artist_id}"
+        print(f"Fetching events for artist: {artist_id}")
+        
+        response = self.session.get(events_url, headers=self.headers)
+        print(f"Response status: {response.status_code}")
+        print(f"URL: {response.url}")
+        
+        if not response.ok:
+            print("Failed to fetch events!")
+            return []
+
+        # Save response for debugging
+        with open("get_artist_events_response.html", "w", encoding="utf-8") as f:
+            f.write(response.text)
+
+        results = parse_artist_events(response.text, self.base_url)
+        print(f"Found {len(results)} events")
+        return results
+    
+    # shows events I am going to / or am interested in
+    # probably paged but no date filtering is possible
+    def get_plans(self):
+        return []
+    # https://www.songkick.com/calendar?filter=attendance
+    
+    # shows events in my areas
+    # paged but no date filtering is possible
+    def get_concerts(self):
+        # https://www.songkick.com/calendar?filter=tracked_artist
+        return []
