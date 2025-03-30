@@ -49,6 +49,50 @@ class TestSongkickApi(unittest.TestCase):
             self.assertIn('venue', event)
             self.assertIn('date', event)
             self.assertIn('url', event)
-            
+
+    def test_get_user_plans(self):
+        """Test getting plans for logged in user"""
+        # Use A Perfect Circle as test case
+        results = self.api.get_user_plans()
+        self.assertIsNotNone(results)
+        self.assertIsInstance(results, list)
+        
+        # If any events found, check their structure
+        if results:
+            event = results[0]
+            self.assertIn('artists', event)
+            self.assertIn('venue', event)
+            self.assertIn('date', event)
+            self.assertIn('url', event)   
+
+    def test_get_user_concerts(self):
+        """Test getting concerts for logged-in user"""
+        # Use A Perfect Circle as test case
+        results = self.api.get_user_concerts()
+        self.assertIsNotNone(results)
+        self.assertIsInstance(results, list)
+        
+        # If any events found, check their structure
+        if results:
+            event = results[0]
+            self.assertIn('artists', event)
+            self.assertIn('venue', event)
+            self.assertIn('date', event)
+            self.assertIn('url', event)  
+
+    def test_get_user_artists(self):
+        """Test getting tracked artists for logged-in user"""
+        # Use A Perfect Circle as test case
+        results = self.api.get_user_artists()
+        self.assertIsNotNone(results)
+        self.assertIsInstance(results, list)
+
+    def test_get_user_locations(self):
+        """Test getting tracked artists for logged-in user"""
+        # Use A Perfect Circle as test case
+        results = self.api.get_user_locations()
+        self.assertIsNotNone(results)
+        self.assertIsInstance(results, list)        
+
 if __name__ == '__main__':
     unittest.main()

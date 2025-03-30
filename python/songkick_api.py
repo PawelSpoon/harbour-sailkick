@@ -4,6 +4,8 @@ import pickle
 import os
 from .parse_location_events import parse_location_events
 from .parse_artist_events import parse_artist_events
+from .parse_user_concerts import parse_user_concerts
+from .parse_user_plans import parse_user_plans
 
 class SongkickApi:
     def __init__(self):
@@ -328,12 +330,73 @@ class SongkickApi:
     
     # shows events I am going to / or am interested in
     # probably paged but no date filtering is possible
-    def get_plans(self):
-        return []
     # https://www.songkick.com/calendar?filter=attendance
-    
+    def get_user_plans(self):
+        """Get events users plans
+        Args:
+        Returns:
+            list: List of events for the current user
+        """
+        events_url = f"https://www.songkick.com/calendar?filter=attendance"
+        print(f"Fetching plans for current user")
+        
+        response = self.session.get(events_url, headers=self.headers)
+        print(f"Response status: {response.status_code}")
+        print(f"URL: {response.url}")
+        
+        if not response.ok:
+            print("Failed to fetch events!")
+            return []
+
+        # Save response for debugging
+        with open("get_user_plans_response.html", "w", encoding="utf-8") as f:
+            f.write(response.text)
+
+        results = parse_user_plans(response.text, self.base_url)
+        print(f"Found {len(results)} events")
+        return results
+
+
     # shows events in my areas
     # paged but no date filtering is possible
-    def get_concerts(self):
-        # https://www.songkick.com/calendar?filter=tracked_artist
-        return []
+    # https://www.songkick.com/calendar?filter=tracked_artist
+    def get_user_concerts(self):
+        """Get events users concerts
+        Args:
+        Returns:
+            list: List of events for the current user
+        """
+        events_url = f"https://www.songkick.com/calendar?filter=tracked_artist"
+        print(f"Fetching plans for current user")
+        
+        response = self.session.get(events_url, headers=self.headers)
+        print(f"Response status: {response.status_code}")
+        print(f"URL: {response.url}")
+        
+        if not response.ok:
+            print("Failed to fetch events!")
+            return []
+
+        # Save response for debugging
+        with open("get_user_concerts_response.html", "w", encoding="utf-8") as f:
+            f.write(response.text)
+
+        results = parse_user_concerts(response.text, self.base_url)
+        print(f"Found {len(results)} events")
+        return results
+    
+    def get_user_artists(self):
+        """Get tracked artists of current user
+        Args:
+        Returns:
+            list: List of events for the current user
+        """        
+        return[]
+    
+    def get_user_locations(self):
+        """Get tracked locations of current user
+        Args:
+        Returns:
+            list: List of events for the current user
+        """        
+        return[]
