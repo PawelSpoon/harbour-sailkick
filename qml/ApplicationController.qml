@@ -1,10 +1,12 @@
 import QtQuick 2.0
 // import Sailfish.Silica 1.0
+import io.thp.pyotherside 1.5
 
 import "AppController.js" as Helper
 import "pages"
 import "Persistance.js" as DB
 import "SongKickApi.js" as API
+
 
 Item {
 
@@ -194,4 +196,12 @@ Item {
             API.getUsersTrackedItems(type,page+1,username, updateTrackingItemsInDb)
         }
     }
+
+    function logIn()
+    {
+        var userName = DB.getUser()
+        var pwd = "spoonman" //todo: fix password
+        skApi.logIn(userName,pwd)
+    }
+
 }
