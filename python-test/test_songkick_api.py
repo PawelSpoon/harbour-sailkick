@@ -1,6 +1,7 @@
 import unittest
 import os
 import sys
+import tempfile
 
 # Add project root to path
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -13,14 +14,39 @@ sys.modules['pyotherside'] = MagicMock()
 
 from skapi.songkickapi import SongkickApi
 
+# Setup test environment
+test_dir = os.path.dirname(os.path.abspath(__file__))
+test_data_dir = os.path.join(test_dir, 'test_data')
+os.makedirs(test_data_dir, exist_ok=True)
+
 class TestSongkickApi(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        """Set up test fixtures once for all tests."""
+        cls.test_dir = os.path.dirname(os.path.abspath(__file__))
+        cls.test_data_dir = os.path.join(cls.test_dir, 'test_data')
+        cls.test_session_dir = os.path.join(cls.test_data_dir, 'session')
+        os.makedirs(cls.test_session_dir, exist_ok=True)
+        print(f"Using temporary directory: {cls.test_data_dir}")
+    
     def setUp(self):
         """Set up test fixtures before each test method."""
-        self.api = SongkickApi()
+        self.api = SongkickApi(base_dir=self.test_session_dir)
         self.email = "pawel@ich-habe-fertig.com"
         self.password = "spoonman"
         # Ensure we're logged in for tests
         self.assertTrue(self.api.login(self.email, self.password), "Login failed")
+
+    @classmethod
+    def tearDownClass(cls):
+        """Clean up after all tests are done."""
+        session_file = os.path.join(cls.test_session_dir, "songkick_session.pkl")
+        if os.path.exists(session_file):
+            os.remove(session_file)
+        if os.path.exists(cls.test_data_dir):
+            import shutil
+            shutil.rmtree(cls.test_data_dir)
+
 
     def test_location_search(self):
         """Test searching for locations"""
@@ -47,6 +73,8 @@ class TestSongkickApi(unittest.TestCase):
         results = self.api.get_artist_events("549892-a-perfect-circle")
         self.assertIsNotNone(results)
         self.assertIsInstance(results, list)
+        self.assertGreater(len(results), 0, "No artist events")
+
         
         # If any events found, check their structure
         if results:
@@ -91,12 +119,15 @@ class TestSongkickApi(unittest.TestCase):
         results = self.api.get_user_artists()
         self.assertIsNotNone(results)
         self.assertIsInstance(results, list)
+        self.assertGreater(len(results), 0, "No tracked artists for user found")
 
     def test_get_user_locations(self):
         """Test getting tracked artists for logged-in user"""
         results = self.api.get_user_locations()
         self.assertIsNotNone(results)
-        self.assertIsInstance(results, list)        
+        self.assertIsInstance(results, list)
+        self.assertGreater(len(results), 0, "No tracked locations for user found")
+
 
 if __name__ == '__main__':
     unittest.main()

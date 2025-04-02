@@ -18,9 +18,14 @@ from .parse_user_locations import parse_user_locations
 
 
 class SongkickApi:
-    def __init__(self):
+    def __init__(self, base_dir=None):
+        # Use provided base_dir or default to user's home
+        if base_dir is None:
+            base_dir = os.path.join(os.path.expanduser('~'), '.local', 'share', 'harbour-sailkick')
+ 
         # Create debug and session directories in user's home
-        self.app_dir = os.path.join(os.path.expanduser('~'), '.local', 'share', 'harbour-sailkick')
+        pyotherside.send('debug', f"Base dir: {base_dir}")
+        self.app_dir = base_dir
         self.session_dir = os.path.join(self.app_dir, 'session')
         self.debug_dir = os.path.join(self.app_dir, 'debug')
         
@@ -46,6 +51,7 @@ class SongkickApi:
         with open(self.session_file, 'wb') as f:
             pickle.dump(self.session.cookies, f)
         print(f"Session saved to {self.session_file}")
+        pyotherside.send('debug', f"Session saved to {self.session_file}")
 
     def load_session(self):
         """Load session from file if it exists"""
@@ -61,6 +67,9 @@ class SongkickApi:
                 print(f"Error loading session: {e}")
                 pyotherside.send('debug', f"Error loading session: {e}")
                 return None
+        else:
+            print(f"No session file found at {self.session_file}")
+            pyotherside.send('debug', f"No session file found at {self.session_file}")
         return None
     
     def login(self, email, password):
@@ -386,7 +395,8 @@ class SongkickApi:
             return []
         
         events_url = f"https://www.songkick.com/calendar?filter=attendance"
-        pyotherside.send('debug', f"Fetching plans for current user")
+        print(f"Fetching plans for current user: {events_url}")
+        pyotherside.send('debug', f"Fetching plans for current user: {events_url}")
         
         response = self.session.get(events_url, headers=self.headers)
         pyotherside.send('debug', f"Response status: {response.status_code}")
