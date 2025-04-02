@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import pyotherside
 
 def parse_user_plans(html_content, base_url):
     """Parse user events from HTML content
@@ -8,13 +9,18 @@ def parse_user_plans(html_content, base_url):
     Returns:
         list: List of parsed events
     """
+    pyotherside.send('debug', f"parse_user_plans")
+
+   # Log first part of HTML for debugging
+    pyotherside.send('debug', f"HTML content preview: {html_content[:200]}")
+        
     soup = BeautifulSoup(html_content, 'html.parser')
     results = []
 
     # Find events container
     events_container = soup.find('ul', class_='event-listings')
     if not events_container:
-        print("No calendar listings found.")
+        pyotherside.send('debug', f"No calendar listings found.")
         return results
 
     # Process each event
@@ -81,7 +87,7 @@ def parse_user_plans(html_content, base_url):
             results.append(event_data)
 
         except Exception as e:
-            print(f"Error parsing event: {str(e)}")
+            pyotherside.send('debug', f"Error parsing event: {str(e)}")
             continue
 
     return results

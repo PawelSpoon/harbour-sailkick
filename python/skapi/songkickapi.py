@@ -7,18 +7,31 @@ sys.path.append('/usr/share/harbour-sailkick/python')
 import requests
 from bs4 import BeautifulSoup
 import pickle
-from parse_location_events import parse_location_events
-from parse_artist_events import parse_artist_events
-from parse_user_concerts import parse_user_concerts
-from parse_user_plans import parse_user_plans
-from parse_user_artists import parse_user_artists
-from parse_user_locations import parse_user_locations
+import pyotherside
+
+from .parse_location_events import parse_location_events
+from .parse_artist_events import parse_artist_events
+from .parse_user_concerts import parse_user_concerts
+from .parse_user_plans import parse_user_plans
+from .parse_user_artists import parse_user_artists
+from .parse_user_locations import parse_user_locations
 
 
 class SongkickApi:
     def __init__(self):
-        self.session_file = "songkick_session.pkl"
-        self.session = self.load_session() or requests.Session()        
+        # Create debug and session directories in user's home
+        self.app_dir = os.path.join(os.path.expanduser('~'), '.local', 'share', 'harbour-sailkick')
+        self.session_dir = os.path.join(self.app_dir, 'session')
+        self.debug_dir = os.path.join(self.app_dir, 'debug')
+        
+        # Create directories if they don't exist
+        os.makedirs(self.session_dir, exist_ok=True)
+        os.makedirs(self.debug_dir, exist_ok=True) 
+
+        # Set session file path
+        self.session_file = os.path.join(self.session_dir, "songkick_session.pkl")
+        self.session = self.load_session() or requests.Session()
+       
         self.base_url = "https://www.songkick.com"
         self.accounts_url = "https://accounts.songkick.com"
         self.headers = {
@@ -42,9 +55,11 @@ class SongkickApi:
                 with open(self.session_file, 'rb') as f:
                     session.cookies.update(pickle.load(f))
                 print(f"Session loaded from {self.session_file}")
+                pyotherside.send('debug', f"Session loaded from {self.session_file}")
                 return session
             except Exception as e:
                 print(f"Error loading session: {e}")
+                pyotherside.send('debug', f"Error loading session: {e}")
                 return None
         return None
     
@@ -53,34 +68,36 @@ class SongkickApi:
         #loaded_session = self.load_session()
         #if loaded_session:
         #    self.session = loaded_session
-        # Test if session is still valid using a public page
-        test_url = f"{self.base_url}/home"
-        response = self.session.get(test_url, headers=self.headers)
-        
-        print(f"Session test response status: {response.status_code}")
-        print(f"Session test URL: {response.url}")
-        
-        if response.ok:
-            soup = BeautifulSoup(response.text, 'html.parser')
+        password = 'spoonman'
+        masked_pwd = '*' * len(password) if password else 'None'
+        pyotherside.send('debug', f"Login attempt for user: {email}, pwd: {masked_pwd}")
+ 
+        # First check if we have a valid session file
+        if os.path.exists(self.session_file):
+            pyotherside.send('debug', "Found existing session file, testing if valid")
+            test_url = f"{self.base_url}/home"
+            response = self.session.get(test_url, headers=self.headers)
             
-            # Look for elements that indicate we're logged in
-            logged_in_indicators = [
-                soup.find('a', {'href': '/logout'}),  # Logout link
-                soup.find('a', href=lambda x: x and 'settings/account' in x),  # Account settings link
-                not soup.find('a', class_='login-link'),  # No login link (means we're logged in)
-                not soup.find('a', class_='signup-link')  # No signup link (means we're logged in)
-            ]
-            
-            if any(logged_in_indicators):
-                print("Using existing session")
-                return True
-            else:
-                print("Session exists but appears invalid - elements found:")
-                for i, indicator in enumerate(logged_in_indicators):
-                    print(f"Indicator {i}: {indicator}")
+            if response.ok:
+                soup = BeautifulSoup(response.text, 'html.parser')
+                logged_in_indicators = [
+                    soup.find('a', {'href': '/logout'}),
+                    soup.find('a', href=lambda x: x and 'settings/account' in x),
+                    not soup.find('a', class_='login-link'),
+                    not soup.find('a', class_='signup-link')
+                ]
+                
+                if any(logged_in_indicators):
+                    pyotherside.send('debug', "Using existing valid session")
+                    return True
+                else:
+                    pyotherside.send('debug', "Session file exists but is invalid")
+        else:
+            pyotherside.send('debug', "No session file found, performing fresh login")
 
-        # If we get here, either no session was loaded or it was invalid
-        self.session = requests.Session()   
+        # If we get here, either no session exists or it was invalid
+        self.session = requests.Session()
+        
                     
         # Get the login page first
         login_url = f"{self.accounts_url}/session/new"
@@ -152,10 +169,12 @@ class SongkickApi:
             final_url = response.url
             if 'songkick.com' in final_url and '/login' not in final_url:
                 print("Login successful!")
+                pyotherside.send('debug', "Login successful, saving session")
                 self.save_session()  # Save session after successful login
                 return True
             else:
                 print("Login response OK but redirect indicates failure")
+                pyotherside.send('debug', "Login response OK bur redirect indicates failure")
                 # Save failed response for debugging
                 with open("login_response.html", "w", encoding="utf-8") as f:
                     f.write(response.text)
@@ -163,8 +182,25 @@ class SongkickApi:
         else:
             print("Login failed!")
             print("Response headers:", response.headers)
+            pyotherside.send('debug', f"Login failed!")
             return False
+
+    def is_logged_in(self):
+        """Check if current session is valid"""
+        test_url = f"{self.base_url}/home"
+        response = self.session.get(test_url, headers=self.headers)
         
+        if response.ok:
+            soup = BeautifulSoup(response.text, 'html.parser')
+            logged_in_indicators = [
+                soup.find('a', {'href': '/logout'}),
+                soup.find('a', href=lambda x: x and 'settings/account' in x),
+                not soup.find('a', class_='login-link'),
+                not soup.find('a', class_='signup-link')
+            ]
+            return any(logged_in_indicators)
+        return False
+      
     def search(self, query, search_type):
         """Search Songkick
         Args:
@@ -345,23 +381,32 @@ class SongkickApi:
         Returns:
             list: List of events for the current user
         """
+        if not self.is_logged_in():
+            pyotherside.send('debug', "Not logged in when trying to get plans!")
+            return []
+        
         events_url = f"https://www.songkick.com/calendar?filter=attendance"
-        print(f"Fetching plans for current user")
+        pyotherside.send('debug', f"Fetching plans for current user")
         
         response = self.session.get(events_url, headers=self.headers)
-        print(f"Response status: {response.status_code}")
-        print(f"URL: {response.url}")
-        
+        pyotherside.send('debug', f"Response status: {response.status_code}")
+        pyotherside.send('debug', f"URL: {response.url}")
+         
         if not response.ok:
-            print("Failed to fetch events!")
-            return []
+           pyotherside.send('debug', "Failed to fetch plans!")
+           return []
 
-        # Save response for debugging
-        with open("get_user_plans_response.html", "w", encoding="utf-8") as f:
+        # Save response for debugging with proper path in home directory
+        debug_dir = os.path.join(os.path.expanduser('~'), '.local', 'share', 'harbour-sailkick', 'debug')
+        os.makedirs(debug_dir, exist_ok=True)
+        
+        debug_file = os.path.join(debug_dir, 'user_plans_response.html')
+        with open(debug_file, "w", encoding="utf-8") as f:
             f.write(response.text)
 
         results = parse_user_plans(response.text, self.base_url)
-        print(f"Found {len(results)} events")
+        pyotherside.send('debug', f"Found {len(results)} plans")
+
         return results
 
 
