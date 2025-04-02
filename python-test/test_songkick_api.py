@@ -2,10 +2,16 @@ import unittest
 import os
 import sys
 
-# Add parent directory to Python path for imports
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add project root to path
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+python_dir = os.path.join(project_root, 'python')
+sys.path.insert(0, python_dir)  # Insert at beginning of path
 
-from python.songkick_api import SongkickApi
+# Mock pyotherside before any imports that might use it
+from unittest.mock import MagicMock
+sys.modules['pyotherside'] = MagicMock()
+
+from skapi.songkickapi import SongkickApi
 
 class TestSongkickApi(unittest.TestCase):
     def setUp(self):

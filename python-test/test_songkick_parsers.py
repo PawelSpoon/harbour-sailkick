@@ -1,13 +1,35 @@
 import unittest
 import os
-from python.songkick_api import SongkickApi
-from python.parse_location_events import parse_location_events
-from python.parse_artist_events import parse_artist_events
-from python.parse_user_plans import parse_user_plans
-from python.parse_user_concerts import parse_user_concerts
-from python.parse_user_artists import parse_user_artists
-from python.parse_user_locations import parse_user_locations
+import sys
 
+# how to runL $env:PYTHONPATH = "python;$env:PYTHONPATH" before running tests
+#tests from project root
+#cd c:\Users\janst\Source\SailfishOS\PawelSpoon\harbour-sailkick
+#python -m unittest python-test/test_songkick_parsers.py -v
+
+# Add project root to path
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+python_dir = os.path.join(project_root, 'python')
+sys.path.insert(0, python_dir)  # Insert at beginning of path
+
+
+# Mock pyotherside before any imports that might use it
+from unittest.mock import MagicMock
+sys.modules['pyotherside'] = MagicMock()
+
+# Import skapi modules
+try:
+    from skapi.songkickapi import SongkickApi
+    from skapi.parse_location_events import parse_location_events
+    from skapi.parse_artist_events import parse_artist_events
+    from skapi.parse_user_plans import parse_user_plans
+    from skapi.parse_user_concerts import parse_user_concerts
+    from skapi.parse_user_artists import parse_user_artists
+    from skapi.parse_user_locations import parse_user_locations
+except ImportError as e:
+    print(f"Import error: {e}")
+    print(f"Python path: {sys.path}")
+    raise
 
 class TestSongkickParsers(unittest.TestCase):
     def setUp(self):
