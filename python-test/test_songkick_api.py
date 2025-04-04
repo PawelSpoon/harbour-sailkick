@@ -10,7 +10,18 @@ sys.path.insert(0, python_dir)  # Insert at beginning of path
 
 # Mock pyotherside before any imports that might use it
 from unittest.mock import MagicMock
-sys.modules['pyotherside'] = MagicMock()
+
+# Create a mock that prints debug messages
+class DebugMock:
+    def __init__(self):
+        self.messages = []    
+    def send(self, type, message):
+        if type == 'debug':
+            print(f"DEBUG: {message}", file=sys.stderr, flush=True)
+          
+# Create singleton instance
+debug_mock = DebugMock()
+sys.modules['pyotherside'] = debug_mock
 
 from skapi.songkickapi import SongkickApi
 
@@ -28,11 +39,12 @@ class TestSongkickApi(unittest.TestCase):
         cls.test_session_dir = os.path.join(cls.test_data_dir, 'session')
         os.makedirs(cls.test_session_dir, exist_ok=True)
         print(f"Using temporary directory: {cls.test_data_dir}")
+        cls.api = SongkickApi(base_dir=cls.test_session_dir)
     
     def setUp(self):
         """Set up test fixtures before each test method."""
         self.api = SongkickApi(base_dir=self.test_session_dir)
-        self.email = "pawel@ich-habe-fertig.com"
+        self.email = "talk@ich-habe-fertig.com"
         self.password = "spoonman"
         # Ensure we're logged in for tests
         self.assertTrue(self.api.login(self.email, self.password), "Login failed")
@@ -50,6 +62,7 @@ class TestSongkickApi(unittest.TestCase):
 
     def test_location_search(self):
         """Test searching for locations"""
+        self.api.login(self.email, self.password)
         results = self.api.search("Graz", "locations")
         self.assertIsNotNone(results, "Search returned None")
         self.assertGreater(len(results), 0, "No locations found")
@@ -74,8 +87,7 @@ class TestSongkickApi(unittest.TestCase):
         self.assertIsNotNone(results)
         self.assertIsInstance(results, list)
         self.assertGreater(len(results), 0, "No artist events")
-
-        
+     
         # If any events found, check their structure
         if results:
             event = results[0]
@@ -90,6 +102,7 @@ class TestSongkickApi(unittest.TestCase):
         results = self.api.get_user_plans()
         self.assertIsNotNone(results)
         self.assertIsInstance(results, list)
+        self.assertGreater(len(results), 0, "No tracked artists for user found")
         
         # If any events found, check their structure
         if results:
