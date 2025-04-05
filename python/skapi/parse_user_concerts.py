@@ -1,4 +1,7 @@
 from bs4 import BeautifulSoup
+from .event import Event
+import json
+import pyotherside
 
 def parse_user_concerts(html_content, base_url):
     """Parse user concerts from HTML content
@@ -14,7 +17,7 @@ def parse_user_concerts(html_content, base_url):
     # Find events container
     events_container = soup.find('ul', class_='event-listings')
     if not events_container:
-        print("No calendar listings found.")
+        pyotherside.send('debug', f"No calendar listings found.")
         return results
 
     # Process each event
@@ -36,11 +39,17 @@ def parse_user_concerts(html_content, base_url):
 
             # Get artist info
             artists = []
+            _skid = 'N/A'
             artists_elem = item.find('p', class_='artists')
             if artists_elem:
-                artist_strong = artists_elem.find('strong')
+                artist_strong = artists_elem.find('strong')   
+                artist_href = artists_elem.find('a')
+                _skid = artist_href.get('href') if artist_href else 'N/A'
+                _skid = _skid.replace('/concerts/', '')
+
                 if artist_strong:
                     artists.append(artist_strong.text.strip())
+
                 # Get additional artists if present
                 artist_span = artists_elem.find('span')
                 if artist_span and artist_span.text and ',' in artist_span.text:
@@ -48,12 +57,14 @@ def parse_user_concerts(html_content, base_url):
                     artists.extend(additional_artists)
 
             # Get venue info
-            venue = 'N/A'
+            _venueName = 'N/A'
+            _venueId = 'N/A'
             venue_elem = item.find('span', class_='venue-name')
             if venue_elem:
                 venue_link = venue_elem.find('a')
                 if venue_link:
-                    venue = venue_link.text.strip()
+                    _venueName = venue_link.text.strip()
+                    _venueId = venue_link.get('href') if venue_link else 'N/A'
 
             # Get URL
             url = None
@@ -71,17 +82,45 @@ def parse_user_concerts(html_content, base_url):
                 if selected_button:
                     status = selected_button.get('value')
 
-            event_data = {
-                'artists': artists,
-                'venue': venue,
-                'date': current_date,
-                'url': url,
-                'status': status
-            }
-            results.append(event_data)
+            # New approach using microformat
+            event = Event()
+            mf = item.find('div', class_='microformat')
+            if mf:
+                scrpt = mf.find('script', type='application/ld+json')
+            if scrpt:
+                try:
+                    mfdata = scrpt.string.strip()
+                    json_data = json.loads(mfdata)
+                    event['name'] = json_data[0]['name']
+                    event['date'] = json_data[0]['startDate'] if 'startDate' in json_data[0] else current_date 
+                    event['artistUrl'] = json_data[0]['performer'][0]['sameAs'].split('?')[0] if 'performer' in json_data[0] else None
+                    event['artistImageUrl'] = json_data[0]['image'] if 'image' in json_data[0] else None
+                    event['metroAreaName'] = json_data[0]['location']['address']['addressLocality'] if 'location' in json_data[0] else None
+                    event['venueCity'] = json_data[0]['location']['address']['addressLocality'] if 'location' in json_data[0] else None 
+                    event['venueCountry'] = json_data[0]['location']['address']['addressCountry'] if 'location' in json_data[0] else None
+                    event['venuePostalCode'] = json_data[0]['location']['address']['postalCode'] if 'location' in json_data[0] else None    
+                    event['venueStreetAddress'] = json_data[0]['location']['address']['streetAddress'] if 'location' in json_data[0] else None
+                except json.JSONDecodeError as e:
+                    pyotherside.send('debug', f"JSON decode error: {str(e)}")           
+            starttime = None
+            if current_date.__contains__('T'):
+                starttime = current_date.split('T')[1]
+            event['skid'] = _skid
+            event['eventUrl'] = url
+            event['eventType'] = 'concert'  # Placeholder for event type
+            event['date'] = current_date
+            event['startTime'] = starttime
+            event['attendance'] = status
+            event['artists'] = artists
+            event['artistName'] = artists[0] if artists else 'N/A'
+            event['artistId'] = event['artistUrl'].replace('https://www.songkick.com/artists/', '') if event['artistImageUrl'] else 'N/A'
+            event['venueName'] = _venueName
+            event['venueId'] = _venueId.replace('/venues/', '') if _venueId else 'N/A'
+            # metro area could be searched in these areas at bottom of page using microformat data
+            results.append(event)
 
         except Exception as e:
-            print(f"Error parsing event: {str(e)}")
+            pyotherside.send('debug', f"Error parsing event: {str(e)}")
             continue
 
     return results

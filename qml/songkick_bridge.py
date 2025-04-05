@@ -18,6 +18,7 @@ class SongkickBridge:
         pyotherside.send('debug', 'SongkickBridge instance created')
 
     def logIn(self, email, password):
+        pyotherside.send('loadingStarted')
         try:
             success = self.api.login(email, password)
             if success:
@@ -29,6 +30,8 @@ class SongkickBridge:
             pyotherside.send('debug', f"Login error: {e}")
             pyotherside.send('login_error', str(e))
             return False
+        finally:
+            pyotherside.send('loadingFinished')
 
     def getUserPlans(self):
         action = 'getUserPlans'
@@ -43,6 +46,24 @@ class SongkickBridge:
             return plans
         except Exception as e:
             pyotherside.send('debug', f"exception in getUserPlans: {e}")
+            pyotherside.send('action_error', action, str(e))
+            return []  
+        finally:
+            pyotherside.send('loadingFinished') 
+
+    def getUserConcerts(self):
+        action = 'getUserConcerts'
+        pyotherside.send('loadingStarted')
+        try:
+            plans = self.api.get_user_concerts()
+            if plans:
+                pyotherside.send('concerts_success', plans)
+            else:
+                pyotherside.send('debug', f"failed in getUserConcerts")
+                pyotherside.send('action_failed', action)
+            return plans
+        except Exception as e:
+            pyotherside.send('debug', f"exception in getUserConcerts: {e}")
             pyotherside.send('action_error', action, str(e))
             return []  
         finally:

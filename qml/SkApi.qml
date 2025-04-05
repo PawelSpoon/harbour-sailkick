@@ -12,12 +12,15 @@ Item {
     // generic signal for failures
     signal actionFailed(string action)
     signal actionError(string action, string error)
-    // signal for plans repsonse 
+    // signal for data loading success
     signal plansSuccess()
+    signal concertsSuccess()
 
     property bool logedIn: false
-    property string artistsResults
+    //property string artistsResults
     property var userPlansResults
+    property var userConcertsResults
+    
 
     Python {
         id: pythonSkApi
@@ -62,10 +65,16 @@ Item {
                 console.log("plans_success")
                 userPlansResults = plans
                 console.log(plans.length)
-                console.log(plans[0])
-                console.log(plans[0].name)                
                 root.plansSuccess()
-            })        
+            })
+            setHandler('concerts_success', function(events) {
+                console.log("concerts_success")
+                userConcertsResults = events
+                console.log(events.length)
+                root.concertsSuccess()
+            })   
+
+
 
             importModule('songkick_bridge', function() {
                 console.log("songkick bridge module imported successfully")
@@ -96,6 +105,11 @@ Item {
     function getUserPlansAsync() {
         console.log("getUserPlans")
         pythonSkApi.call('songkick_bridge.Bridge.getUserPlans', [])
+    }
+    // Function to get user plans
+    function getUserConcertsAsync() {
+        console.log("getUserConcerts")
+        pythonSkApi.call('songkick_bridge.Bridge.getUserConcerts', [])
     }
 
 

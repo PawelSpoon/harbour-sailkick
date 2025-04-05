@@ -6,78 +6,86 @@ import Nemo.Notifications 1.0
 import Sailfish.Share 1.0
 // DB should not be needed here !!
 import "../Persistance.js" as DB
-import "../SongKickApi.js" as API
 import "../common"
 
 
 SilicaListView {
     id: root
     anchors.fill: parent
+    property string im_going : qsTr("Going")
+    property string i_might_go : qsTr("Interested")
+    property string listType : 'concert'
 
-    function clearTrackingModel()
-    {
-        trackingModel.clear(); // this deletes the dummy entry that i use to have a 'typed' model
-    }
 
     // the interface method
     function refresh()
     {
-        console.log('refreshing concerts page')
-        fillUpCommingModelForAllItemsInTrackingModel();
+		skApi.getUserConcertsAsync();
     }
 
+    // to show plans on cover
     function getCoverPageModel()
     {
         return upcomingModel
     }
 
+    //todo: move to helper and reuse
+    // adds day in week to date
+    // or i do concert the whole page to a component
     function dateWithDay(datum)
     {
         var date = new Date(datum);
         return date.toLocaleDateString();
     }
 
-// obsolete ?
-    function fillTrackingModel(title, type, skid, uid, uri)
-    {
-        var contains = trackingModel.contains(uid)
-        if (contains[0]) console.log("contains already " + title);
-        console.log("adding to tracking model: " + title + " " + type + " " + skid + " " + uid + " " + uri)
-        trackingModel.append({"title": title, "type": type, "uid": uid, "skid": skid, "uri": uri})
-    }
-
-
-    function fillUpCommingModelForAllItemsInTrackingModel()
-    {
-        upcomingModel.clear()
-        API.getUsersUpcommingEvents("artist", DB.getUser().name, fillUpCommingModelForOneTrackingEntry)
-    }
-
-
-
     function fillUpCommingModelForOneTrackingEntry(type, events)
     {
         console.log('number of events: ' +  events.length)
         for (var i = 0; i < events.length; i++)
         {
+            console.log(JSON.stringify(events[i]))
             //artistName           
             var shortTitle = events[i].name
             var pos = shortTitle.indexOf(" at ");
             if (pos > 1) shortTitle = events[i].name.substr(0,pos)
             var strArtistId = ''
             if (events[i].artistId) strArtistId = events[i].artistId.toString()
-            upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri , "attendance": events[i].attendance, "artist": events[i].artistName, "artistId": strArtistId, "skid": events[i].skid})
+            upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), 
+            "startTime": events[i].startTime , "uri" : events[i].eventUrl, "attendance": events[i].attendance,
+             "artist": events[i].artistName, "artistId": strArtistId, "artists": events[i].artists, "skid": events[i].skid,
+             "street": events[i].venueStreetAddress, "city": events[i].venueCity, "postalCode": events[i].venuePostalCode})
+            console.log("added to model: " + JSON.stringify(upcomingModel.get(upcomingModel.count-1)))
         }
         sortModel()
-        applicationWindow.controller.setCurrentPage('concert')
-        applicationWindow.controller.updateCoverList('concert', upcomingModel)
+        applicationWindow.controller.setCurrentPage(listType)
+        applicationWindow.controller.updateCoverList(listType, upcomingModel)
     }
-
 
 
     Component.onCompleted:
     {
-        fillUpCommingModelForAllItemsInTrackingModel()
+       skApi.getUserConcertsAsync();
+    }
+
+    Connections {
+        target: skApi
+        onConcertsSuccess: {
+            // Handle received plans
+            console.log("Concerts received, filling model")
+            upcomingModel.clear()
+            fillUpCommingModelForOneTrackingEntry(listType, skApi.userConcertsResults)
+        }
+        onActionFailed: {
+            if (action === "concerts") {
+                // Handle plans failure
+                console.log("Failed to get " + action)
+            }
+        }
+        onActionError: {
+            if (action === "concerts") {
+                console.error("Error during " + action + " :", error)
+            }
+        }        
     }
 
     function sortModel()
@@ -127,6 +135,21 @@ SilicaListView {
         property string skid
         property string date
         property string attendance
+        property string venue
+        property string street
+        property string city
+        property string uri
+    }
+
+    // yet another try to get that multilingual but failing
+    function setTrackingInfo(info)
+    {
+        console.log(info);
+        if (info === 'im_going') {
+            console.log('here')
+            return applicationWindow.imgoing
+       }
+        return applicationWindow.imightgo
     }
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
@@ -179,7 +202,18 @@ SilicaListView {
                     upcommingList.currentIndex = index
                     // console.log(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
-                    pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri })
+                    pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri ,
+                                       name: current.title ,
+                                       type: current.type ,
+                                       date: current.date ,
+                                       startTime: current.startTime ,
+                                       artists: current.artists ,
+                                       venue: current.venue ,
+                                       street: current.street ,
+                                       city: current.city ,
+                                       postalCode: current.postalCode,
+                                       attendance: current.attendance })
+                    //pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{mainPage: mainPage, uri: current.uri})
                 }
 
                 onPressAndHold: {

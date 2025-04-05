@@ -73,7 +73,7 @@ SilicaListView {
 
     Component.onCompleted:
     {
-       skApi.getUserPlansAsync();
+       //skApi.getUserPlansAsync();
     }
 
     Connections {

@@ -69,6 +69,7 @@ DISTFILES += \
     qml/Persistance.js \
     qml/SongKickApi.js \
     qml/pages/ConcertsPage.qml \
+    qml/pages/EventListView.qml \
     qml/sk-badge-white.png \
     qml/sk-badge-black.png \
     qml/sk-badge-pink.png \

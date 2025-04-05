@@ -8,6 +8,8 @@ class Event(dict):
         self['artists'] = []
         self['metroAreaName'] = None
         self['metroAreaId'] = None
+        self['venueId'] = None
+        self['venueName'] = None
         self['venueCity'] = None
         self['venueCountry'] = None
         self['venuePostalCode'] = None
@@ -18,6 +20,8 @@ class Event(dict):
         self['startTime'] = None
         self['attendance'] = None
         self['artistId'] = None
+        self['artistUrl'] = None
+        self['artistName'] = None
  
 
     def __repr__(self):
