@@ -4,7 +4,6 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Nemo.Notifications 1.0
 import "../Persistance.js" as DB
-import "../SongKickApi.js" as API
 
 import "../common"
 
@@ -12,9 +11,19 @@ Dialog {
 
     id: eventPage
 
+    property alias name: eventName.text
+    property alias type: eventType.text
+    property alias date: date.text
+    property alias startTime: startTime.text
+    property alias venue: venueLabel.text
+    property alias street: street.text
+    property alias city: city.text
+    property string attendance
+    property string postalCode
     property string uri
-    property string im_going : qsTr("im_going")
-    property string i_might_go : qsTr("i_might_go")
+    property var artists
+    property string im_going : qsTr("Going")
+    property string i_might_go : qsTr("Interested")
 
     allowedOrientations: Orientation.All
 
@@ -139,7 +148,7 @@ Dialog {
             }
 
             Label {
-                id: venue
+                id: venueLabel
                 anchors.left: parent.left; anchors.right: parent.right // wrapping
                 anchors.leftMargin: 16; anchors.rightMargin: 16
                 horizontalAlignment: Text.AlignHCenter
@@ -225,7 +234,7 @@ Dialog {
             }
 
             Label {
-                id: attendance
+                id: attendanceLabel
                 anchors.left: parent.left; anchors.right: parent.right // wrapping
                 anchors.leftMargin: 16; anchors.rightMargin: 16
                 horizontalAlignment: Text.AlignHCenter
@@ -239,61 +248,12 @@ Dialog {
 
 
     Component.onCompleted: {
-
-        console.log(uri);
-        var eventId;
-        var startPos;
-        var endPos;
-        if (uri.indexOf('/festivals/') > 0) {
-          // extract id between which is located between /id/ and ?something
-          // http://www.songkick.com/festivals/288543-synergy/id/36362974-synergy-festival-2018?utm_
-          startPos = uri.lastIndexOf("/id/");
-          endPos = uri.lastIndexOf("?");
-          console.log(startPos+4)
-          console.log(endPos)
-          eventId = uri.substring(startPos+4,endPos)
-          console.log(eventId);
-        } else {
-            // extract id between which is located between /id/ and ?something
-            // http://www.songkick.com/concerts/33520769-john-garcia-at-juz-explosiv?utm_source=141
-            startPos = uri.lastIndexOf("/concerts/");
-            endPos = uri.lastIndexOf("?");
-            eventId = uri.substring(startPos+10,endPos)
-            console.log(eventId);
-        }
-
-        API.getEvent(eventId,fillPage);
-        API.getEventTrackingInfo(eventId, setTrackingInfo);
+        setTrackingInfo()
     }
 
-
-    function setTrackingInfo(info)
+    function setTrackingInfo()
     {
-      attendance.text = qsTr(info);
-    }
-
-    function fillPage(event)
-    {
-        console.log('fillPage')
-        var s1 = event.displayName.lastIndexOf(" at ");
-
-        eventName.text = event.displayName.substring(0,s1);
-        eventType.text = event.type;
-        date.text = event.date;
-        if (event.time) {
-           startTime.text = event.time;
-        }
-        venue.text = event.venueName;
-        if (event.street) {
-            street.text = event.street
-        }
-        city.text = event.zip + ' ' + event.city;
-        artistsModel.clear();
-        for (var aC=0; aC < event.artists.length; aC++)
-        {
-            artistsModel.append(event.artists[aC]);
-        }
-        // artist.text = event.artists[0].displayName;
+      attendanceLabel.text = qsTr(attendance);
     }
 
     onAccepted: {

@@ -178,19 +178,6 @@ function setTrackingEntry(type,uid,title,skid,uri,body) {
     return res;
 }
 
-// This function is used to retrieve a tracked items from the database
-/*function getTrackedItem(type,uid)
-{
-    var db = getDatabase();
-    var respath="";
-    var sql = "SELECT DISTINCT uid, title, type, skid, txt, body from tracked where type='" + type + "' and uid='" + uid + "' ;";
-    var detail;
-    db.transaction(function(tx) {
-        var rs = tx.executeSql(sql);
-        detail = [rs.rows.item(0).title,rs.rows.item(0).type,rs.rows.item(0).skid,rs.rows.item(0).uid,JSON.parse(rs.rows.item(0).body)]
-    })
-    return detail;
-}*/
 
 //this should return a list
 function getTrackedItems(type)

@@ -199,8 +199,13 @@ Item {
 
     function logIn()
     {
-        var userName = DB.getUser()
-        var pwd = "spoonman" //todo: fix password
+        var user = DB.getUser()
+        if (user === null) {
+            error("no user found")
+            return
+        }
+        var userName = user.name
+        var pwd = DB.getUser().password
         skApi.logIn(userName,pwd)
     }
 

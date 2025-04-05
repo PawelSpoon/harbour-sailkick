@@ -39,13 +39,17 @@ ApplicationWindow
         id: _skApi
         onLoginSuccess: {
             console.log("Login success")
-            myController.loginSuccess()
         }
         onLoginFailed: {
             console.log("Login failed")
-            myController.loginFailed()
         }
 
+    }
+
+    BusyIndicator {
+        size: BusyIndicatorSize.Large
+        anchors.centerIn: parent
+        running: skApi.loading
     }
 
     initialPage: Component {

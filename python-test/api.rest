@@ -1,0 +1,111 @@
+
+
+GET https://www.songkick.com/calendar?filter=attendance
+
+###
+
+// works
+GET https://songkick.com HTTP/1.1
+authority:www.songkick.com
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+accept-encoding:gzip, deflate, br, zstd
+accept-language:en-US,en;q=0.9
+cache-control:no-cache
+
+###
+
+// works
+GET https://songkick.com HTTP/1.1
+User-Agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36',
+Accept-Language: 'en-US,en;q=0.9',
+Accept-Encoding: 'gzip, deflate, br',
+Cache-Control: 'max-age=0',
+Upgrade-Insecure-Requests: '1'
+Authority: 'www.songkick.com',
+Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+Referer: 'https://www.songkick.com/',
+
+###
+
+// try to check session status
+// returns 404
+GET https://accounts.songkick.com/session
+
+###
+
+// authentication
+// in py i had also params
+GET https://accounts.songkick.com/session/new?locale=en&login_success_url=https%3A%2F%2Fwww.songkick.com%2Fcalendar%3Ffilter%3Dattendance&source_product=skweb HTTP/1.1
+
+
+https://accounts.songkick.com/session/new?source_product=skweb&login_success_url=https%3A%2F%2Fwww.songkick.com%2F&locale=en
+###
+POST https://accounts.songkick.com/session
+Content-Type: application/x-www-form-urlencoded
+
+user[email]=talk@ich-habe-fertig.com&user[password]=spoonman&source_product=skweb&login_success_url=https%3A%2F%2Fwww.songkick.com%2Fcalendar%3Ffilter%3Dattendance&locale=en&
+
+###
+{
+                         s8SYEKZqVJQ/SxMsPSkvBRco+fhB06KQmGJdnKnTth4DfTFMhgcOGsVXHUdvhQvwoXM8motOs/w7GWvOT/MbDw==
+  'authenticity_token': 'nNvLSVZUDbf0pd0H1672SO2vjc9UDPrAcvRk06cB7AcsYmIVdjlXOQ6502yFAtK9W/RIrZ6R66zRj1KBQSFBFg==',
+  'login_success_url': 'https://www.songkick.com/',
+  'source_product': 'skweb',
+  'locale': 'en', 
+  'expires_in': None,
+  'user[email]': 'talk@ich-habe-fertig.com',
+  'user[password]': 'spoonman'
+}
+
+
+###
+
+"/session/new?locale=en&amp;login_success_url=https%3A%2F%2Fwww.songkick.com%2Fcalendar%3Ffilter%3Dattendance&amp;source_product=skweb
+
+        login_data.update({
+            'user[email]': email,
+            'user[password]': password,
+            'source_product': 'skweb',
+            'login_success_url': 'https://www.songkick.com/'
+        })
+etag: w/"1f1ce258263e261e74f0607e8d228f8e"
+set-cookie: split_test_identifier=fa38faec995211bc1270305fa3bfb4349adc4da7; domain=.songkick.com; path=/; expires=Sat, 04 Apr 2026 05:17:46 GMT,_accounts-frontend_session=MnpMVVByeW1MWHRIdm90Y0ZsRXJaVEh0czFVYjV2eGtlc0pPWVFRUzhweUd3Zkd1ZGV2ZEVMSS9lZFFpS3oxanFINmtOY2NSV3BKbjBTd2xGRVY5djFOUk1uTXhQbzZtUThtNDBVNlByQUNIZW1ybUJyZHh4d0NYU0ZIQWtWbGd2L2hXNmY4b1UyY1NORnBRa3VjVGtVZHlBbkg2V1RIN25abU5EbEdVcXl4Qlh3TGF2WkJYSThsL3RiM1NYQnh3LS1BWFpGYjNSZnROSFRJZjJnZ2lqY01RPT0%3D--dfee6039bd737301e7433120f432caf75fc69cd6; path=/; HttpOnly
+
+sec-fetch-site: 'same-origin'
+
+
+###
+        self.accounts_headers = {
+            **self.base_headers,
+            'authority': 'accounts.songkick.com',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+            'content-type': 'application/x-www-form-urlencoded',
+            'origin': 'https://accounts.songkick.com',
+            'sec-fetch-site': 'same-origin'
+        }
+
+        login_headers = {
+            'authority': 'accounts.songkick.com',
+            'method': 'POST',
+            'scheme': 'https',
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+            'accept-encoding': 'gzip, deflate, br',
+            'accept-language': 'en-US,en;q=0.9',
+            'cache-control': 'max-age=0',
+            'content-type': 'application/x-www-form-urlencoded',
+            'origin': 'https://accounts.songkick.com',
+            'referer': login_url,
+            'sec-ch-ua': '"Chromium";v="132", "Google Chrome";v="132", "Not A(Brand";v="8"',
+            'sec-ch-ua-mobile': '?0',
+            'sec-ch-ua-platform': '"Windows"',
+            'sec-fetch-dest': 'document',
+            'sec-fetch-mode': 'navigate',
+            'sec-fetch-site': 'same-origin',
+            'sec-fetch-user': '?1',
+            'upgrade-insecure-requests': '1',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36'
+        }
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}

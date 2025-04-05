@@ -10,6 +10,12 @@ a native sailfish os client for www.songkick.com
 # python deployment
 - at best check with ssh that all files get deployed into /usr/share/harbour-sailkick/python
 
+# plan
+- async loading 
+- chached in api 
+- persisted on exit ?
+- loaded at app start ?
+
 # next steps
 - search concert by date
 - create weblate translation page
