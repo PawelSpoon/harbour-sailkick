@@ -126,7 +126,7 @@ def parse_user_plans(html_content, base_url):
             results.append(event)
 
         except Exception as e:
-            pyotherside.send('debug', f"Error parsing event: {str(e)}")
+            pyotherside.send('debug', f"Error parsing plans event: {str(e)}")
             continue
 
     return results

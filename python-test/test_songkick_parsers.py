@@ -114,13 +114,13 @@ class TestSongkickParsers(unittest.TestCase):
         # Check first event structure
         first_event = results[0]
         self.assertIn('artists', first_event)
-        self.assertIn('venue', first_event)
+        self.assertIn('venueName', first_event)
         self.assertIn('date', first_event)
         self.assertIn('url', first_event)
         
         # Verify some known test data
         self.assertIsInstance(first_event['artists'], list)
-        self.assertIsInstance(first_event['venue'], str)
+        self.assertIsInstance(first_event['venueName'], str)
         self.assertIsInstance(first_event['date'], str)     
 
     def test_parse_user_plans(self):

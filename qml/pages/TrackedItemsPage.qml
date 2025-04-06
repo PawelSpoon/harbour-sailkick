@@ -4,7 +4,6 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Persistance.js" as DB
 import "../SongKickApi.js" as API
-import "../AppController.js" as AppController
 import "../common"
 
 // shows all tracked items of one type,
@@ -85,6 +84,7 @@ SilicaFlickable {
 
     Component.onCompleted:
     {
+        console.log("trackeditemspage onCompleted")
         refresh()
     }
 
@@ -178,9 +178,10 @@ SilicaFlickable {
 
                 onClicked: {
                     trackedItemsList.currentIndex = index
-                    console.log(trackingModel.currentIndex)
+                    console.log("onClicked:"+ trackingModel.currentIndex)
                     var current = trackingModel.get(trackedItemsList.currentIndex)
-                    pageStack.push(Qt.resolvedUrl("TrackedItemPage.qml"), { type: current.type, songKickId: current.skid, titleOf: current.title })
+                    console.log(current.title + " " + current.type + " " + current.skid)
+                    pageStack.push(Qt.resolvedUrl("TrackedItemPage.qml"), { type: current.type, songKickId: current.uri, titleOf: current.title })
                 }
 
                 onPressAndHold: {
@@ -220,14 +221,7 @@ SilicaFlickable {
 
                 Label {
                     id: onTour
-                    text: if (trackedType === "location") { " " } else
-                          { // artist
-                              if (body !== null && body.onTourUntil !== null) {
-                                  qsTr('on tour')
-                              }
-                              else
-                              { " "}
-                          }
+                    text: "" // not available
                     anchors.right: parent.right
                     anchors.rightMargin: Theme.paddingMedium
                     anchors.verticalCenter : parent.verticalCenter

@@ -95,11 +95,19 @@ def parse_user_concerts(html_content, base_url):
                     event['date'] = json_data[0]['startDate'] if 'startDate' in json_data[0] else current_date 
                     event['artistUrl'] = json_data[0]['performer'][0]['sameAs'].split('?')[0] if 'performer' in json_data[0] else None
                     event['artistImageUrl'] = json_data[0]['image'] if 'image' in json_data[0] else None
-                    event['metroAreaName'] = json_data[0]['location']['address']['addressLocality'] if 'location' in json_data[0] else None
-                    event['venueCity'] = json_data[0]['location']['address']['addressLocality'] if 'location' in json_data[0] else None 
-                    event['venueCountry'] = json_data[0]['location']['address']['addressCountry'] if 'location' in json_data[0] else None
-                    event['venuePostalCode'] = json_data[0]['location']['address']['postalCode'] if 'location' in json_data[0] else None    
-                    event['venueStreetAddress'] = json_data[0]['location']['address']['streetAddress'] if 'location' in json_data[0] else None
+                    adress = json_data[0]['location']['address'] if 'location' in json_data[0] else None
+                    if adress:
+                        #event['metroAreaId'] = adress.get('addressLocality')
+                        event['metroAreaName'] = adress.get('addressLocality')
+                        event['venueCity'] = adress.get('addressLocality')  
+                        event['venueCountry'] = adress.get('addressCountry')
+                        event['venuePostalCode'] = adress.get('postalCode')
+                        event['venueStreetAddress'] = adress.get('streetAddress')
+                    #event['metroAreaName'] = json_data[0]['location']['address']['addressLocality'] if 'location' in json_data[0] else None
+                    #event['venueCity'] = json_data[0]['location']['address']['addressLocality'] if 'location' in json_data[0] else None 
+                    #event['venueCountry'] = json_data[0]['location']['address']['addressCountry'] if 'location' in json_data[0] else None
+                    #event['venuePostalCode'] = json_data[0]['location']['address']['postalCode'] if 'location' in json_data[0] else None    
+                    #event['venueStreetAddress'] = json_data[0]['location']['address']['streetAddress'] if 'location' in json_data[0] else None
                 except json.JSONDecodeError as e:
                     pyotherside.send('debug', f"JSON decode error: {str(e)}")           
             starttime = None
@@ -120,7 +128,7 @@ def parse_user_concerts(html_content, base_url):
             results.append(event)
 
         except Exception as e:
-            pyotherside.send('debug', f"Error parsing event: {str(e)}")
+            pyotherside.send('debug', f"Error parsing concerts event: {str(e)}")
             continue
 
     return results

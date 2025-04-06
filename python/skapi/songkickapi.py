@@ -377,7 +377,7 @@ class SongkickApi:
                 }
                 results.append(event_data)
             except AttributeError as e:
-                print(f"Error parsing event: {e}")
+                print(f"Error parsing search event: {e}")
                 continue
         return results
 
@@ -551,13 +551,16 @@ class SongkickApi:
         return results
     
     #https://www.songkick.com/tracker/artists
-    def get_user_artists(self):
+    #https://www.songkick.com/tracker/artists?page=2
+    def get_user_artists(self,page=None):
         """Get tracked artists of current user
         Args:
         Returns:
             list: List of events for the current user
         """        
         events_url = f"https://www.songkick.com/tracker/artists"
+        if page:
+            events_url += f"?page={page}"
 
         pyotherside.send('debug', f"Fetching tracked artists for current user: {events_url},{self.sk_headers}")
         response = self.session.get(events_url, headers=self.sk_headers)

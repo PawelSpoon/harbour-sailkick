@@ -1,8 +1,6 @@
 import QtQuick 2.0
 // import Sailfish.Silica 1.0
 import io.thp.pyotherside 1.5
-
-import "AppController.js" as Helper
 import "pages"
 import "Persistance.js" as DB
 
@@ -85,7 +83,7 @@ Item {
     // updates cover page
     // updates menues
     function setCurrentPage(pageName) {
-        log("setCurrentPage: " + pageName)
+        console.log("setCurrentPage: " + pageName)
         currentPage = pageName
         applicationWindow.cover.setTitle(pageName);
         showMyMenues(pageName)
@@ -107,6 +105,7 @@ Item {
     // refreshes all pages
     function refreshAll()
     {
+        console.log("refreshAll")
         var count = pages.length
         for (var i = 0; i < count; i++) {
           var currentItem = pages[i].page;
@@ -170,14 +169,13 @@ Item {
     // clean stored tracking itmes and get fresh from songkick
     // all views do not pass user, only in settings dialog, before you store the user back to db
     // you can already trigger an get-items-call
-    function getTrackingItemsFromSongKick(user) {
-        if (user === null)
-            user = DB.getUser().name
+    function getTrackingItemsFromSongKick() {
+
         DB.removeAllTrackingEntries("Type")
         DB.removeAllTrackingEntries("artist")
         DB.removeAllTrackingEntries("location")
-        skApi.getUserTrackedItems("artist")
-        skApi.getUserTrackedItems("location")
+        skApi.getUserTrackedItemsAsync("artist",1)
+        skApi.getUserTrackedItemsAsync("location")
     }
 
     Connections {
@@ -188,9 +186,9 @@ Item {
             updateTrackingItemsInDb('location', 1, "username", skApi.userLocationsResults)
         }
         onArtistsSuccess: {
-            console.log("Locations received, filling model")
+            console.log("Artist received, filling model, page: " + page)
             //todo: pagination is not working yet
-            updateTrackingItemsInDb('artist', 1, "username", skApi.userArtistsResults)
+            updateTrackingItemsInDb('artist', page, "username", skApi.userArtistsResults)
         }        
         onActionFailed: {
             if (action === "locations") {
@@ -213,17 +211,19 @@ Item {
         var count = items.length
         for (var i = 0; i < count; i++) {
           var currentItem = items[i];
-          log('storing: ' +  currentItem.title)
+          if (i=== 0) {
+            log('first item: ' + currentItem.title)
+          }
           DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.uri,currentItem.body)
         }
         log('number of items: ' + items.length)
 
         if (items.length === 50) {
+            console.log("more items to come, get next page, current page: " + page)
             // API.getUsersTrackedItems(type,page+1,username, updateTrackingItemsInDb)
-            //todo: pagination is not working yet
+            skApi.getUserTrackedItemsAsync(type, parseInt(page)+1)
         }
-        if (page === 1) {
-            // this is the first page, we can now update the model
+        else {
             applicationController.trackedItemsReloaded(type)
         }
     }

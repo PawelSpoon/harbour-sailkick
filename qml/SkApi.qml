@@ -15,16 +15,21 @@ Item {
     // signal for data loading success
     signal plansSuccess()
     signal concertsSuccess()
-    signal artistsSuccess()
+    // tracked items success
+    signal artistsSuccess(string page)
     signal locationsSuccess()
+    // single tracked item success
+    signal trackedItemSuccess(string type)
 
     property bool logedIn: false
     //property string artistsResults
     property var userPlansResults
     property var userConcertsResults
-    // will finally go into db
+    // will finally go into db ?
     property var userArtistsResults
     property var userLocationsResults
+    // single tracked item results
+    property var userTrackedItemResults
     
 
     Python {
@@ -78,18 +83,26 @@ Item {
                 console.log(events.length)
                 root.concertsSuccess()
             })
-            setHandler('artists_success', function(events) {
+            // list of tracked items
+            setHandler('artists_success', function(events,page) {
                 console.log("artists_success")
                 userArtistsResults = events
-                console.log(events.length)
-                root.artistsSuccess()
+                console.log("page:" + page + ", events:" + events.length)
+                root.artistsSuccess(page)
             })                  
             setHandler('locations_success', function(events) {
                 console.log("locations_success")
                 userLocationsResults = events
                 console.log(events.length)
                 root.locationsSuccess()
-            })   
+            })  
+            // single artist events           
+            setHandler('item_success', function(events,type) {
+                console.log("item_success")
+                userTrackedItemResults = events
+                console.log(events.length)
+                root.trackedItemSuccess(type)
+            }) 
 
             importModule('songkick_bridge', function() {
                 console.log("songkick bridge module imported successfully")
@@ -127,14 +140,20 @@ Item {
         pythonSkApi.call('songkick_bridge.Bridge.getUserConcerts', [])
     }
     // Function to get user plans
-    function getUserTrackedItems(type) {
+    function getUserTrackedItemsAsync(type,page) {
         console.log("getUserTrackedItems: " + type)
         if (type === "artist") {
-            pythonSkApi.call('songkick_bridge.Bridge.getUserTrackedArtists', [])
+            pythonSkApi.call('songkick_bridge.Bridge.getUserTrackedArtists', [page])
         } else if (type === "location") {
             pythonSkApi.call('songkick_bridge.Bridge.getUserTrackedLocations', [])
         } else {
             console.log("Unknown type: " + type)            
         }
     }
+
+    function getTrackedItemEventsAsync(type, trackedItemId) {
+        console.log("getTrackedItemEventsAsync: " + type)
+        pythonSkApi.call('songkick_bridge.Bridge.getTrackedItemEvents', [type, trackedItemId])
+    }
+
 }

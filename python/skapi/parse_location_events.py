@@ -61,7 +61,7 @@ def parse_location_events(html_content, base_url):
                 results.append(event_data)
 
         except Exception as e:
-            print(f"Error parsing event: {str(e)}")
+            print(f"Error parsing location event: {str(e)}")
             continue
 
     return results

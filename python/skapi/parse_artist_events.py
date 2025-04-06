@@ -53,16 +53,19 @@ def parse_artist_events(html_content, base_url):
                     location = 'N/A'
                     venue = 'N/A'
 
+#          ({"title": name, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri })
             event_data = {
+                'name': '',   # event name
                 'artists': [artist_name] if artist_name else [],  # Use extracted artist name
-                'venue': venue,
+                'venueName': venue,
+                'metroAreaName': '',
                 'date': date,
                 'url': url
             }
             results.append(event_data)
 
         except Exception as e:
-            print(f"Error parsing event: {str(e)}")
+            print(f"Error parsing artists event: {str(e)}")
             continue
 
     return results

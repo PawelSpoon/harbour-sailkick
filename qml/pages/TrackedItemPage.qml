@@ -5,7 +5,6 @@ import Nemo.Notifications 1.0
 import Sailfish.Silica 1.0
 import Sailfish.Share 1.0
 import "../Persistance.js" as DB
-import "../SongKickApi.js" as API
 import "../common"
 
 // shows all upcomming events of one item
@@ -33,7 +32,8 @@ Page {
         if (page == 0)
           upcommingModel.clear()
         console.log(type, songKickId, page)
-        API.getUpcommingEventsForTrackedItem(type, songKickId, page, fillUpCommingModelForOneTrackingEntry, onError, minDate)
+        //API.getUpcommingEventsForTrackedItem(type, songKickId, page, fillUpCommingModelForOneTrackingEntry, onError, minDate)
+        skApi.getTrackedItemEventsAsync(type, songKickId)
     }
 
     function dateWithDay(datum)
@@ -52,6 +52,7 @@ Page {
             if (pos > 1) shortTitle = shortTitle.substr(0,pos)
               upcommingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri })
         }
+        //todo: we need to extract all the attributes for event page
         applicationWindow.controller.updateCoverList(titleOf,upcommingModel)
     }
 
@@ -62,6 +63,16 @@ Page {
         applicationWindow.controller.setCurrentPage(titleOf)
         applicationWindow.controller.updateCoverList(titleOf,upcommingModel)
     }
+
+    Connections {
+        target: skApi
+        onTrackedItemSuccess: {
+            // Handle received plans
+            console.log("Item received, filling model")
+            trackingModel.clear()
+            fillUpCommingModelForOneTrackingEntry(type, skApi.userTrackedItemResults)
+        }
+    }    
 
     property ListModel locationList : trackingModel
 

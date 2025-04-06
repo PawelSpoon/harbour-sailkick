@@ -65,8 +65,8 @@ def parse_user_artists(html_content, base_url):
             if url:
                 if not url.startswith('http'):
                     url = base_url + url
-                # Extract ID from URL (e.g., /artists/549892-a-perfect-circle -> 549892)
-                artist_id = url.split('/')[-1].split('-')[0]
+                # Extract ID from URL (e.g., /artists/549892-a-perfect-circle -> 549892-a-perfect-circle)
+                artist_id = url.split('/')[-1]
             else:
                 artist_id = None
 
@@ -76,7 +76,8 @@ def parse_user_artists(html_content, base_url):
                 'url': url,
                 'image_url': image_url,
                 'id': artist_id,
-                'uid': artist_id
+                'uid': artist_id,
+                'body' : None
             }
             results.append(artist_data)
 

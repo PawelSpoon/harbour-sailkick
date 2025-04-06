@@ -29,7 +29,7 @@ Dialog {
             MenuItem {
                 text: qsTr("Get tracked items from songkick")
                 onClicked: {
-                    applicationWindow.controller.getTrackingItemsFromSongKick(entrySongKickUserName.text);
+                    applicationWindow.controller.getTrackingItemsFromSongKick();
                 }
             }
         }
