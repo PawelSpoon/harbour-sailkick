@@ -1,4 +1,6 @@
 from bs4 import BeautifulSoup
+from .event import Event
+import json
 
 def parse_artist_events(html_content, base_url):
     """Parse artist events from HTML content
@@ -32,6 +34,7 @@ def parse_artist_events(html_content, base_url):
     
     for event in events:
         try:
+            myEvent = Event()
             # Get date from time element
             time_elem = event.find('time')
             date = time_elem.get('datetime') if time_elem else 'N/A'
@@ -45,6 +48,7 @@ def parse_artist_events(html_content, base_url):
                 event_details = event_link.find('div', class_='event-details')
                 if event_details:
                     primary_detail = event_details.find('strong', class_='primary-detail')
+                    name = primary_detail.text.strip() if primary_detail else 'N/A'
                     location = primary_detail.text.strip() if primary_detail else 'N/A'
                     
                     secondary_detail = event_details.find('p', class_='secondary-detail')
@@ -52,17 +56,25 @@ def parse_artist_events(html_content, base_url):
                 else:
                     location = 'N/A'
                     venue = 'N/A'
+            try:
+                myEvent['eventUrl'] = url
+                myEvent['artists'] = [artist_name] if artist_name else []
+                myEvent['artistName'] = artist_name
+                myEvent['venueName'] = venue
+                myEvent['date'] = date
+                myEvent['name'] = name.split(',')[0] if name else 'N/A'
+                myEvent['metroAreaName'] = myEvent['name']
+                myEvent['startTime'] = date.split('T')[1] if date and 'T' in date else 'N/A' 
+                myEvent['venueStreet'] = 'N/A'
+                myEvent['venueCity'] = myEvent['name']
+                myEvent['venueCountry'] = name.split(',')[2] if len(name.split(',')) > 2 else 'N/A'
+                myEvent['attendance'] = 'N/A'
+                myEvent['venuePostalCode'] ='N/A'
+            except json.JSONDecodeError as e:
+                pyotherside.send('debug', f"JSON decode error: {str(e)}")           
 
-#          ({"title": name, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri })
-            event_data = {
-                'name': '',   # event name
-                'artists': [artist_name] if artist_name else [],  # Use extracted artist name
-                'venueName': venue,
-                'metroAreaName': '',
-                'date': date,
-                'url': url
-            }
-            results.append(event_data)
+            results.append(myEvent)
+
 
         except Exception as e:
             print(f"Error parsing artists event: {str(e)}")

@@ -193,6 +193,7 @@ SilicaListView {
                     upcommingList.currentIndex = index
                     // console.log(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
+                    console.log(JSON.stringify(current))
                     pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri ,
                                        name: current.title ,
                                        type: current.type ,

@@ -3,8 +3,8 @@ import json
 class Event(dict):
 
     def __init__(self):
-        self['skid'] = []
-        self['name'] = []
+        self['skid'] = None
+        self['name'] = None
         self['artists'] = []
         self['metroAreaName'] = None
         self['metroAreaId'] = None
@@ -22,6 +22,7 @@ class Event(dict):
         self['artistId'] = None
         self['artistUrl'] = None
         self['artistName'] = None
+        self['artistImageUrl'] = None
  
 
     def __repr__(self):
@@ -73,4 +74,5 @@ class Event(dict):
                f"venueCountry: {self['venueCountry']}\n" \
                f"venuePostalCode: {self['venuePostalCode']}\n" \
                f"venueStreetAddress: {self['venueStreetAddress']}\n"    
+    
         

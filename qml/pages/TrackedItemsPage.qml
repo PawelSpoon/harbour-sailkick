@@ -178,10 +178,13 @@ SilicaFlickable {
 
                 onClicked: {
                     trackedItemsList.currentIndex = index
-                    console.log("onClicked:"+ trackingModel.currentIndex)
+                    //console.log("onClicked:" + index + " " + trackedItemsList.currentIndex)
                     var current = trackingModel.get(trackedItemsList.currentIndex)
-                    console.log(current.title + " " + current.type + " " + current.skid)
-                    pageStack.push(Qt.resolvedUrl("TrackedItemPage.qml"), { type: current.type, songKickId: current.uri, titleOf: current.title })
+                    //console.log(trackedItemsList.currentItem)
+                    //console.log(current.title + " " + current.type + " " + current.skid)
+                    pageStack.push(Qt.resolvedUrl("TrackedItemPage.qml"), { type: current.type,
+                            songKickId: current.skid,
+                            titleOf: current.title })
                 }
 
                 onPressAndHold: {

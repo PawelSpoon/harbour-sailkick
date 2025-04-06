@@ -72,11 +72,9 @@ def parse_user_artists(html_content, base_url):
 
             artist_data = {
                 'name': name,
-                'title': name,
                 'url': url,
                 'image_url': image_url,
                 'id': artist_id,
-                'uid': artist_id,
                 'body' : None
             }
             results.append(artist_data)

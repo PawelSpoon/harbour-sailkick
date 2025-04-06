@@ -32,7 +32,6 @@ Page {
         if (page == 0)
           upcommingModel.clear()
         console.log(type, songKickId, page)
-        //API.getUpcommingEventsForTrackedItem(type, songKickId, page, fillUpCommingModelForOneTrackingEntry, onError, minDate)
         skApi.getTrackedItemEventsAsync(type, songKickId)
     }
 
@@ -47,12 +46,24 @@ Page {
         console.log('number of events: ' +  events.length)
         for (var i = 0; i < events.length; i++)
         {
+            console.log(events[i])
             var shortTitle = events[i].name
-            var pos = shortTitle.indexOf(" at ");
-            if (pos > 1) shortTitle = shortTitle.substr(0,pos)
-              upcommingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), "uri" : events[i].uri })
+            // most of the attr are for the detail page
+            upcommingModel.append({"title": shortTitle,
+             "type": events[i].metroAreaName,
+             "venue": events[i].venueName,
+             "date": dateWithDay(events[i].date),
+             "uri" : events[i].uri,
+             "name": events[i].name,  
+             "metroArea": events[i].metroAreaName, 
+             "startTime": events[i].startTime,
+             "street": events[i].venueStreet,
+             "city": events[i].venueCity,
+             "attendance" : events[i].attendance,
+             "postalCode":events[i].venuePostalCode,
+             "skid": events[i].skid,             
+             })
         }
-        //todo: we need to extract all the attributes for event page
         applicationWindow.controller.updateCoverList(titleOf,upcommingModel)
     }
 
@@ -80,7 +91,7 @@ Page {
     // this is going to be populated from db
     ListModel {
         id: trackingModel
-        ListElement {title: "Title"; type: "Type"; uid: "UID"; skid: "Skid"}
+        ListElement {title: "Title"; type: "Type"; name: "Name"; uid: "UID"; skid: "Skid"}
 
         function contains(uid) {
             for (var i=0; i<count; i++) {
@@ -97,12 +108,13 @@ Page {
     // this list is going to be populated from songkick webpage
     ListModel {
         id: upcommingModel
-        ListElement { title : "Title"; type : "Type"; date: "Date"; venue: "Venue"; uri: "uri"; artistId: "artistId"; skid: "Skid"}
+        ListElement { title : "Title"; name :"Name" ; type : "Type"; date: "Date"; venue: "Venue"; uri: "uri"; artistId: "artistId"; skid: "Skid"}
     }
 
     ListElement {
         id: upcommingModelElement
         property string title
+        property string name
         property string type
         property string skid
         property string date
@@ -232,9 +244,22 @@ Page {
                     upcommingList.currentIndex = index
                     console.log(upcommingList.currentIndex)
                     var current = upcommingModel.get(upcommingList.currentIndex)
-                     pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri })
-                    // pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{ uri: current.uri, songKickId: current.skid, titleOf: current.title })
+                    console.log(JSON.stringify(current))
+                    pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ 
+                        uri: current.uri,
+                        name: current.name,
+                        type: type,
+                        date: current.date,
+                        startTime: current.startTime,
+                        venue: current.venueName,
+                        street: current.venueStreet,
+                        city: current.venueCity,
+                        attendance : current.attendance,
+                        postalCode : current.postalCode,
+                        artists   : current.artists
+                        })           
                 }
+                    // pageStack.push(Qt.resolvedUrl("EventWebViewPage.qml"),{ uri: current.uri, songKickId: current.skid, titleOf: current.title })
 
                 Image {
                     id: typeIcon
@@ -251,7 +276,7 @@ Page {
                 }
                 Label {
                     id: titleText
-                    text: title
+                    text: name
                     anchors.left: typeIcon.right
                     anchors.leftMargin: Theme.paddingMedium
                     anchors.top: parent.top

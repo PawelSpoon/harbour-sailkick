@@ -174,8 +174,9 @@ Item {
         DB.removeAllTrackingEntries("Type")
         DB.removeAllTrackingEntries("artist")
         DB.removeAllTrackingEntries("location")
-        skApi.getUserTrackedItemsAsync("artist",1)
         skApi.getUserTrackedItemsAsync("location")
+        skApi.getUserTrackedItemsAsync("artist",1)
+        
     }
 
     Connections {
@@ -212,15 +213,15 @@ Item {
         for (var i = 0; i < count; i++) {
           var currentItem = items[i];
           if (i=== 0) {
-            log('first item: ' + currentItem.title)
+            console.log('first item: ' + currentItem.title + " " + currentItem.id + " " + currentItem.uid + " " + currentItem.uri + " " + currentItem.body)
           }
-          DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.uri,currentItem.body)
+          //type,uid,title,skid,uri,body
+          DB.setTrackingEntry(type,currentItem.id, currentItem.name, currentItem.id,currentItem.url,currentItem.body)
         }
         log('number of items: ' + items.length)
 
         if (items.length === 50) {
             console.log("more items to come, get next page, current page: " + page)
-            // API.getUsersTrackedItems(type,page+1,username, updateTrackingItemsInDb)
             skApi.getUserTrackedItemsAsync(type, parseInt(page)+1)
         }
         else {

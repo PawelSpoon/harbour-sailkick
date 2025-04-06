@@ -79,6 +79,12 @@ class TestSongkickApi(unittest.TestCase):
         results = self.api.get_location_events(location_id)
         self.assertIsNotNone(results, "Get events returned None")
         self.assertGreater(len(results), 0, "No location events found")
+        if results:
+            event = results[0]
+            self.assertIn('artists', event)
+            self.assertIn('venueName', event)
+            self.assertIn('date', event)
+            self.assertIn('url', event)
 
     def test_get_artist_events(self):
         """Test getting events for a specific artist"""
@@ -92,9 +98,9 @@ class TestSongkickApi(unittest.TestCase):
         if results:
             event = results[0]
             self.assertIn('artists', event)
-            self.assertIn('venue', event)
+            self.assertIn('venueName', event)
             self.assertIn('date', event)
-            self.assertIn('url', event)
+            self.assertIn('eventUrl', event)
 
     def test_get_user_plans(self):
         """Test getting plans for logged in user"""
@@ -108,9 +114,9 @@ class TestSongkickApi(unittest.TestCase):
         if results:
             event = results[0]
             self.assertIn('artists', event)
-            self.assertIn('venue', event)
+            self.assertIn('venueName', event)
             self.assertIn('date', event)
-            self.assertIn('url', event)   
+            self.assertIn('eventUrl', event)   
 
     def test_get_user_concerts(self):
         """Test getting concerts for logged-in user"""
@@ -123,9 +129,9 @@ class TestSongkickApi(unittest.TestCase):
         if results:
             event = results[0]
             self.assertIn('artists', event)
-            self.assertIn('venue', event)
+            self.assertIn('venueName', event)
             self.assertIn('date', event)
-            self.assertIn('url', event)  
+            self.assertIn('eventUrl', event)  
 
     def test_get_user_artists(self):
         """Test getting tracked artists for logged-in user"""

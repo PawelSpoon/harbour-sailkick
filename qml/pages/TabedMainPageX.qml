@@ -46,46 +46,7 @@ Page  {
         viewsSlideshow.currentIndex ++;
     }
 
-    // should be moved to db or api, is api callback ..
-    function updateTrackingItemsInDb(type, page, username, items)
-    {
-        console.log('number of items: ' +  items.length)
 
-        var count = items.length
-        for (var i = 0; i < count; i++) {
-          var currentItem = items[i];
-          console.log('storing: ' +  currentItem.title)
-          DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.uri,currentItem.body)
-        }
-        console.log('number of items: ' + items.length)
-
-        if (items.length === 50) {
-            API.getUsersTrackedItems(type,page+1,username, tabsPage.updateTrackingItemsInDb)
-        }
-        else
-        {/*
-          //clearTrackingModel()
-          var trackedItems = DB.getTrackedItems("location")
-          for (i=0; i< trackedItems.length; i++)
-          {
-             fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri)
-          }
-          console.debug("locations loaded")
-          trackedItems = DB.getTrackedItems("venue")
-          for (i=0; i< trackedItems.length; i++)
-          {
-             fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri)
-          }
-          console.log("venue loaded")
-          trackedItems = DB.getTrackedItems("artist")
-          for (i=0; i< trackedItems.length; i++)
-          {
-             fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri, trackedItems[i].body)
-          }
-          console.log("artist loaded")
-*/
-        }
-    }
 
     SilicaFlickable {
 
