@@ -7,6 +7,8 @@ import Sailfish.Share 1.0
 import "../Persistance.js" as DB
 import "../common"
 
+// shoould be a component for concerts and plans
+// if only i could
 
 SilicaListView {
     id: plans

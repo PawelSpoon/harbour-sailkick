@@ -37,15 +37,15 @@ class SongkickBridge:
         action = 'getUserPlans'
         pyotherside.send('loadingStarted')
         try:
-            plans = self.api.get_user_plans()
-            if plans:
-                pyotherside.send('plans_success', plans)
+            result = self.api.get_user_plans()
+            if result:
+                pyotherside.send('plans_success', result)
             else:
-                pyotherside.send('debug', f"failed in getUserPlans")
+                pyotherside.send('debug', f"failed in {action}")
                 pyotherside.send('action_failed', action)
-            return plans
+            return result
         except Exception as e:
-            pyotherside.send('debug', f"exception in getUserPlans: {e}")
+            pyotherside.send('debug', f"exception in {action}: {e}")
             pyotherside.send('action_error', action, str(e))
             return []  
         finally:
@@ -55,19 +55,55 @@ class SongkickBridge:
         action = 'getUserConcerts'
         pyotherside.send('loadingStarted')
         try:
-            plans = self.api.get_user_concerts()
-            if plans:
-                pyotherside.send('concerts_success', plans)
+            result = self.api.get_user_concerts()
+            if result:
+                pyotherside.send('concerts_success', result)
             else:
                 pyotherside.send('debug', f"failed in getUserConcerts")
                 pyotherside.send('action_failed', action)
-            return plans
+            return result
         except Exception as e:
             pyotherside.send('debug', f"exception in getUserConcerts: {e}")
             pyotherside.send('action_error', action, str(e))
             return []  
         finally:
             pyotherside.send('loadingFinished') 
+
+    def getUserTrackedArtists(self):
+        action = 'getUserTrackedArtists'
+        pyotherside.send('loadingStarted')
+        try:
+            result = self.api.get_user_artists()
+            if result:
+                pyotherside.send('artists_success', result)
+            else:
+                pyotherside.send('debug', f"failed in {action}")
+                pyotherside.send('action_failed', action)
+            return result
+        except Exception as e:
+            pyotherside.send('debug', f"exception in {action}: {e}")
+            pyotherside.send('action_error', action, str(e))
+            return []  
+        finally:
+            pyotherside.send('loadingFinished')  
+
+    def getUserTrackedLocations(self):
+        action = 'getUserTrackedLocations'
+        pyotherside.send('loadingStarted')
+        try:
+            result = self.api.get_user_locations()
+            if result:
+                pyotherside.send('locations_success', result)
+            else:
+                pyotherside.send('debug', f"failed in {action}")
+                pyotherside.send('action_failed', action)
+            return result
+        except Exception as e:
+            pyotherside.send('debug', f"exception in {action}: {e}")
+            pyotherside.send('action_error', action, str(e))
+            return []  
+        finally:
+            pyotherside.send('loadingFinished')             
 
 # Create single instance
 Bridge = SongkickBridge()

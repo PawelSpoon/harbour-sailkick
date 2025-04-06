@@ -12,11 +12,11 @@ def parse_user_locations(html_content, base_url):
     results = []
 
     # Save parsed HTML for debugging
-    with open("parsed_user_artist_html.html", "w", encoding="utf-8") as f:
+    with open("parsed_user_locations_html.html", "w", encoding="utf-8") as f:
         f.write(str(soup.prettify()))
 
     # Find the main calendar listings container  event-listings artist-calendar-summary
-    tracked_listings = soup.find('ul', class_='un-tracker')
+    tracked_listings = soup.find('ul', class_='un-tracker') # metro-area')
     if not tracked_listings:
         print("No tracked listings found.")
         return results
@@ -24,7 +24,7 @@ def parse_user_locations(html_content, base_url):
     # Find all artist elements
     artists = tracked_listings.find_all('li')
     if not artists:
-        print("No artists found.")
+        print("No locations found.")
         return results
     
     for artist in artists:
@@ -36,6 +36,7 @@ def parse_user_locations(html_content, base_url):
 
             # Get artist name and clean it
             name = artist_link.get_text(strip=True)
+            name = name.split(',')[0].strip()
             
             # Get artist URL
             url = artist_link.get('href')
@@ -52,8 +53,9 @@ def parse_user_locations(html_content, base_url):
             # Get artist image and name from alt text
             img = artist_link.find('img')
             if img:
-                alt_text = img.get('alt', '')
-                name = alt_text.split('Concert Tickets')[0].strip()
+                #alt_text = img.get('alt', '')
+                #alt_text = img.get_text(strip=True)
+                #name = alt_text.split(',')[0].strip()
                 image_url = img.get('src')
                 if image_url and image_url.startswith('//'):
                     image_url = 'https:' + image_url
@@ -70,11 +72,14 @@ def parse_user_locations(html_content, base_url):
             else:
                 artist_id = None
 
+            #uid:undefined, title:undefined, type:location
             artist_data = {
                 'name': name,
+                'title': name,
                 'url': url,
                 'image_url': image_url,
-                'id': artist_id
+                'id': artist_id,
+                'uid': artist_id
             }
             results.append(artist_data)
 

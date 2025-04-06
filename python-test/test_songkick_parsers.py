@@ -255,9 +255,11 @@ class TestSongkickParsers(unittest.TestCase):
         with open(debug_file, 'w', encoding='utf-8') as f:
             f.write(f"Found {len(results)} tracked locations\n\n")
             for i, artist in enumerate(results, 1):
-                f.write(f"Name: {artist['name']}\n")
-                f.write(f"URL: {artist['url']}\n")
-                f.write(f"ID: {artist['id']}\n")
+                f.write(f"name: {artist['name']}\n")
+                f.write(f"url: {artist['url']}\n")
+                f.write(f"id: {artist['id']}\n")
+                f.write(f"title: {artist['title']}\n")
+                f.write(f"uid: {artist['uid']}\n")               
                 f.write("-" * 50 + "\n")
 
         # Verify structure

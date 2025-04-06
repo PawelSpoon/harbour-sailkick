@@ -38,7 +38,6 @@ SilicaFlickable {
         {
            fillTrackingModel(trackedItems[i].title, trackedItems[i].type, trackedItems[i].skid, trackedItems[i].uid, trackedItems[i].uri, trackedItems[i].body)
         }
-        // console.debug(trackedItems.length + " " + trackedType + " loaded from DB")
     }
 
     function getCoverPageModel()

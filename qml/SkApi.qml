@@ -15,11 +15,16 @@ Item {
     // signal for data loading success
     signal plansSuccess()
     signal concertsSuccess()
+    signal artistsSuccess()
+    signal locationsSuccess()
 
     property bool logedIn: false
     //property string artistsResults
     property var userPlansResults
     property var userConcertsResults
+    // will finally go into db
+    property var userArtistsResults
+    property var userLocationsResults
     
 
     Python {
@@ -60,7 +65,7 @@ Item {
             setHandler('loadingFinished', function() {
                 root.loading = false
             })
-            // Plans handlers
+            // Data handlers
             setHandler('plans_success', function(plans) {
                 console.log("plans_success")
                 userPlansResults = plans
@@ -72,9 +77,19 @@ Item {
                 userConcertsResults = events
                 console.log(events.length)
                 root.concertsSuccess()
+            })
+            setHandler('artists_success', function(events) {
+                console.log("artists_success")
+                userArtistsResults = events
+                console.log(events.length)
+                root.artistsSuccess()
+            })                  
+            setHandler('locations_success', function(events) {
+                console.log("locations_success")
+                userLocationsResults = events
+                console.log(events.length)
+                root.locationsSuccess()
             })   
-
-
 
             importModule('songkick_bridge', function() {
                 console.log("songkick bridge module imported successfully")
@@ -111,6 +126,15 @@ Item {
         console.log("getUserConcerts")
         pythonSkApi.call('songkick_bridge.Bridge.getUserConcerts', [])
     }
-
-
+    // Function to get user plans
+    function getUserTrackedItems(type) {
+        console.log("getUserTrackedItems: " + type)
+        if (type === "artist") {
+            pythonSkApi.call('songkick_bridge.Bridge.getUserTrackedArtists', [])
+        } else if (type === "location") {
+            pythonSkApi.call('songkick_bridge.Bridge.getUserTrackedLocations', [])
+        } else {
+            console.log("Unknown type: " + type)            
+        }
+    }
 }

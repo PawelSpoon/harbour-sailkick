@@ -5,7 +5,7 @@ import io.thp.pyotherside 1.5
 import "AppController.js" as Helper
 import "pages"
 import "Persistance.js" as DB
-import "SongKickApi.js" as API
+
 
 
 Item {
@@ -13,6 +13,8 @@ Item {
     id: applicationController
     property string currentPage: 'plan'
     property bool logEnabled : false
+
+    signal trackedItemsReloaded(string type)
 
     // array of registered pages
     property variant pages: []
@@ -174,10 +176,34 @@ Item {
         DB.removeAllTrackingEntries("Type")
         DB.removeAllTrackingEntries("artist")
         DB.removeAllTrackingEntries("location")
-        API.getUsersTrackedItems("artist",1,user, updateTrackingItemsInDb)
-        API.getUsersTrackedItems("location",1,user, updateTrackingItemsInDb)
+        skApi.getUserTrackedItems("artist")
+        skApi.getUserTrackedItems("location")
     }
 
+    Connections {
+        target: skApi
+        onLocationsSuccess: {
+            console.log("Locations received, filling model")
+            //todo: pagination is not working yet
+            updateTrackingItemsInDb('location', 1, "username", skApi.userLocationsResults)
+        }
+        onArtistsSuccess: {
+            console.log("Locations received, filling model")
+            //todo: pagination is not working yet
+            updateTrackingItemsInDb('artist', 1, "username", skApi.userArtistsResults)
+        }        
+        onActionFailed: {
+            if (action === "locations") {
+                // Handle plans failure
+                console.log("Failed to get " + action)
+            }
+        }
+        onActionError: {
+            if (action === "locations") {
+                console.error("Error during " + action + " :", error)
+            }
+        }        
+    }
 
     // callback of getUsersTrackedItems
     function updateTrackingItemsInDb(type, page, username, items)
@@ -193,7 +219,12 @@ Item {
         log('number of items: ' + items.length)
 
         if (items.length === 50) {
-            API.getUsersTrackedItems(type,page+1,username, updateTrackingItemsInDb)
+            // API.getUsersTrackedItems(type,page+1,username, updateTrackingItemsInDb)
+            //todo: pagination is not working yet
+        }
+        if (page === 1) {
+            // this is the first page, we can now update the model
+            applicationController.trackedItemsReloaded(type)
         }
     }
 
