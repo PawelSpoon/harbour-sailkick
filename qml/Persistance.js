@@ -166,7 +166,7 @@ function setTrackingEntry(type,uid,title,skid,uri,body) {
         var rs = tx.executeSql('INSERT OR REPLACE INTO tracked VALUES (?,?,?,?,?,?);', [uid,title,type,skid,uri,JSON.stringify(body)]);
         if (rs.rowsAffected > 0) {
             res = "OK";
-            console.log ("Saved to database: uid:" + uid + ", title:" + title + ", type:"+ type); // + ", body: " + JSON.stringify(body));
+            console.log ("Saved to database: uid:" + uid + ", title:" + title + ", type:"+ type + ", skid:" + skid + ", uri:" + uri); // + ", body: " + JSON.stringify(body));
         } else {
             res = "Error";
             console.log ("Error saving to database");

@@ -21,6 +21,7 @@ Dialog {
     property string attendance
     property string postalCode
     property string uri
+    property string artistImageUrl
     property var artists
     property string im_going : qsTr("Going")
     property string i_might_go : qsTr("Interested")

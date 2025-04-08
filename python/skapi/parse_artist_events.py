@@ -56,6 +56,7 @@ def parse_artist_events(html_content, base_url):
                 else:
                     location = 'N/A'
                     venue = 'N/A'
+            # todo: use  <div class="microformat"> to get artist image
             try:
                 myEvent['eventUrl'] = url
                 myEvent['artists'] = [artist_name] if artist_name else []

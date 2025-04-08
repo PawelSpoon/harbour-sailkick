@@ -216,7 +216,7 @@ Item {
             console.log('first item: ' + currentItem.title + " " + currentItem.id + " " + currentItem.uid + " " + currentItem.uri + " " + currentItem.body)
           }
           //type,uid,title,skid,uri,body
-          DB.setTrackingEntry(type,currentItem.id, currentItem.name, currentItem.id,currentItem.url,currentItem.body)
+          DB.setTrackingEntry(type,currentItem.id, currentItem.name, currentItem.id,currentItem.url, { "imageUrl" : currentItem.image_url })
         }
         log('number of items: ' + items.length)
 

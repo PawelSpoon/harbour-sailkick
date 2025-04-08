@@ -3,7 +3,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Persistance.js" as DB
-import "../SongKickApi.js" as API
 import "../common"
 
 // shows all tracked items of one type,
@@ -136,6 +135,7 @@ SilicaFlickable {
         anchors.topMargin: headerContainer.height
 
         model: trackingModel
+        clip: true
 
         ViewPlaceholder {
             enabled: trackingModel.count === 0 // show placeholder text when no locations/artists are tracked
@@ -184,7 +184,8 @@ SilicaFlickable {
                     //console.log(current.title + " " + current.type + " " + current.skid)
                     pageStack.push(Qt.resolvedUrl("TrackedItemPage.qml"), { type: current.type,
                             songKickId: current.skid,
-                            titleOf: current.title })
+                            titleOf: current.title,
+                            imageUrl: current.body.imageUrl }) //todo: make safe
                 }
 
                 onPressAndHold: {

@@ -70,7 +70,7 @@ class TestSongkickParsers(unittest.TestCase):
         self.assertIn('artists', first_event)
         self.assertIn('venueName', first_event)
         self.assertIn('date', first_event)
-        self.assertIn('url', first_event)
+        self.assertIn('eventUrl', first_event)
         
         # Verify some known test data
         self.assertIsInstance(first_event['artists'], list)
