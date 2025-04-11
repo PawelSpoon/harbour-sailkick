@@ -4,23 +4,26 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Nemo.Notifications 1.0
 import Sailfish.Share 1.0
-// DB should not be needed here !!
 import "../Persistance.js" as DB
 import "../common"
 
+// shoould be a component for concerts and plans
+// if only i could
 
 SilicaListView {
-    id: root
+    id: plans
     anchors.fill: parent
+    contentHeight: parent.height
+    contentWidth: parent.width
+
     property string im_going : qsTr("Going")
     property string i_might_go : qsTr("Interested")
-    property string listType : 'concert'
-
+    property string listType : 'plans'
 
     // the interface method
     function refresh()
     {
-		skApi.getUserConcertsAsync();
+        skApi.getUserPlansAsync()
     }
 
     // to show plans on cover
@@ -57,36 +60,45 @@ SilicaListView {
             console.log("added to model: " + JSON.stringify(upcomingModel.get(upcomingModel.count-1)))
         }
         sortModel()
-        applicationWindow.controller.setCurrentPage(listType)
-        applicationWindow.controller.updateCoverList(listType, upcomingModel)
+        applicationWindow.controller.setCurrentPage(type)
+        applicationWindow.controller.updateCoverList(type, upcomingModel)
     }
 
+    QtObject {
+        id: priv
+        property Item optionsPage
+        property string nextPageToken: ""
+        property variant searchParams: ({})
+        property bool ignoreNextAtYBeginning: false
+        property real autoLoadThreshold: 0.8
+    }
 
     Component.onCompleted:
     {
-       skApi.getUserConcertsAsync();
+       //skApi.getUserPlansAsync();
     }
 
     Connections {
         target: skApi
-        onConcertsSuccess: {
+        onPlansSuccess: {
             // Handle received plans
-            console.log("Concerts received, filling model")
+            console.log("Plans received, filling model")
             upcomingModel.clear()
-            fillUpCommingModelForOneTrackingEntry(listType, skApi.userConcertsResults)
+            fillUpCommingModelForOneTrackingEntry(listType, skApi.userPlansResults)
         }
         onActionFailed: {
-            if (action === "concerts") {
+            if (action === "plans") {
                 // Handle plans failure
                 console.log("Failed to get " + action)
             }
         }
         onActionError: {
-            if (action === "concerts") {
+            if (action === "plans") {
                 console.error("Error during " + action + " :", error)
             }
         }        
     }
+
 
     function sortModel()
     {
@@ -101,25 +113,6 @@ SilicaListView {
             }
         }
     }
-
-    property ListModel locationList : trackingModel
-
-    // list of all tracked locations and artists
-    // this is going to be populated from db
-    ListModel {
-        id: trackingModel
-        ListElement {title: "Title"; type: "Type"; uid: "UID"; skid: "Skid"}
-
-        function contains(uid) {
-            for (var i=0; i<count; i++) {
-                if (get(i).uid === uid)  {
-                    return [true, i];
-                }
-            }
-            return [false, i];
-        }
-    }
-
 
     // list of all upcomming events based on tracked locations and artists
     // this list is going to be populated from songkick webpage
@@ -219,7 +212,7 @@ SilicaListView {
                 onPressAndHold: {
                     upcommingList.currentIndex = index
                     if (!contextMenu)
-                        contextMenu = contextMenuComponent.createObject(mainPage.locationList)
+                        contextMenu = contextMenuComponent.createObject(upcommingList)
                     contextMenu.show(myListItem)
                 }
 
@@ -231,10 +224,10 @@ SilicaListView {
                     anchors.topMargin: Theme.paddingMedium
                     anchors.leftMargin: Theme.paddingSmall
                     source: {
-                        if (attendance === "im_going")
-                            "../sk-badge-white.png"  // -pink not working
+                        if (attendance === 'im_going')
+                            "../sk-badge-pink.png"  // -pink not working
                         else
-                        "../sk-badge-white.png"
+                            "../sk-badge-white.png"
                     }
                     height: 0.8 * (titleText.height + locationText.height + dateText.height)
                     width: height
@@ -280,6 +273,20 @@ SilicaListView {
                     elide: Text.ElideRight
                     color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
                 }
+                Label {
+                    id: planText
+                    text:  setTrackingInfo(attendance)
+                    anchors.right: parent.right//typeIcon.right
+                    anchors.rightMargin: Theme.paddingMedium
+                    anchors.top: dateText.bottom
+                    anchors.topMargin: 0//Theme.paddingSmall
+                    font.capitalization: Font.AllUppercase
+                    font.bold: true
+                    font.pixelSize: Theme.fontSizeTiny
+                    truncationMode: TruncationMode.Elide
+                    elide: Text.ElideRight
+                    color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
+                }
             }
         }
 
@@ -301,7 +308,7 @@ SilicaListView {
                         else
                             console.log("no artist id")
                     }
-                }                
+                }  
                 MenuItem {
                     text: qsTr("Open in browser")
                     onClicked: {
@@ -319,22 +326,24 @@ SilicaListView {
                 }
                 /*MenuItem {
                     text: qsTr("Share")
-                    ShareAction { id:share
-                        mimeType: "text/x-"
-                        title: qsTr("Share event")
+                    ShareAction {
+                         id:shareAction
+                         mimeType: "text/xml"
+                         title: qsTr("Share event")
                     }
+                    // icon: con-m-share
                     onClicked: {
                         console.log(upcommingList.currentIndex)
                         var mimeType = "text/x-url";
                         var current = upcomingModel.get(upcommingList.currentIndex)
                         var he = {}
                         he.data = current.uri
-                        he.name = "Hey, check this out"
                         he.type = mimeType
                         he["linkTitle"] = current.uri // works in email body
-                        share.mimeType = "text/x-url";
-                        share.resources = [he]
-                        share.trigger()
+                        //he["shareText"] = current.uri // does not work
+                        shareAction.mimeType = mimeType
+                        shareAction.resources = [he]
+                        shareAction.trigger()
                     }
                 }*/
             }

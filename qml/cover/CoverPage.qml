@@ -81,7 +81,7 @@ CoverBackground {
         delegate: Item {
             id: myListItem
             width: ListView.view.width
-            height: 65
+            height: 50
 
             BackgroundItem {
                 id: contentItem

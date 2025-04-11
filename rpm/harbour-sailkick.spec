@@ -13,7 +13,7 @@ Name:       harbour-sailkick
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Native Songkick Client
-Version:    4.20
+Version:    5.10
 Release:    0
 Group:      Qt/Qt
 License:    MIT
@@ -55,6 +55,11 @@ rm -rf %{buildroot}
 %qmake5_install
 
 # >> install post
+
+cd %{buildroot}%{_datadir}/%{name}/external/python-future
+python3 setup.py install --root=%{buildroot} --prefix=%{_datadir}/%{name}/
+rm -rf  %{buildroot}%{_datadir}/%{name}/external/python-future
+
 # << install post
 
 desktop-file-install --delete-original       \

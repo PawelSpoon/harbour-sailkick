@@ -8,6 +8,14 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun March 11 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.5.10-0
+- fixes
+- image on tracked item page
+
+* Sun March 04 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.5.02-0
+- backend updated
+- partly working
+
 * Sat Feb 15 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.4.20-0
 - updated swedish translation
 

@@ -166,7 +166,7 @@ function setTrackingEntry(type,uid,title,skid,uri,body) {
         var rs = tx.executeSql('INSERT OR REPLACE INTO tracked VALUES (?,?,?,?,?,?);', [uid,title,type,skid,uri,JSON.stringify(body)]);
         if (rs.rowsAffected > 0) {
             res = "OK";
-            console.log ("Saved to database: uid:" + uid + ", title:" + title + ", type:"+ type); // + ", body: " + JSON.stringify(body));
+            console.log ("Saved to database: uid:" + uid + ", title:" + title + ", type:"+ type + ", skid:" + skid + ", uri:" + uri); // + ", body: " + JSON.stringify(body));
         } else {
             res = "Error";
             console.log ("Error saving to database");
@@ -178,19 +178,6 @@ function setTrackingEntry(type,uid,title,skid,uri,body) {
     return res;
 }
 
-// This function is used to retrieve a tracked items from the database
-/*function getTrackedItem(type,uid)
-{
-    var db = getDatabase();
-    var respath="";
-    var sql = "SELECT DISTINCT uid, title, type, skid, txt, body from tracked where type='" + type + "' and uid='" + uid + "' ;";
-    var detail;
-    db.transaction(function(tx) {
-        var rs = tx.executeSql(sql);
-        detail = [rs.rows.item(0).title,rs.rows.item(0).type,rs.rows.item(0).skid,rs.rows.item(0).uid,JSON.parse(rs.rows.item(0).body)]
-    })
-    return detail;
-}*/
 
 //this should return a list
 function getTrackedItems(type)

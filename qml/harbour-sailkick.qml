@@ -2,6 +2,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import io.thp.pyotherside 1.5
 import "pages"
 import "cover"
 import "common"
@@ -13,7 +14,7 @@ ApplicationWindow
     id: applicationWindow
     property Item mainPage: null
     property ApplicationController controller: myController
-
+    property SkApi skApi: _skApi
     // from tab sample
     property alias tabBar: _tabBar
     readonly property string mainPageName: "TabedMainPageX"
@@ -23,6 +24,32 @@ ApplicationWindow
 
     ApplicationController {
         id: myController
+
+        Component.onCompleted: {
+            //authMan.checkAndLogin();
+            myController.logIn();
+        }
+    }
+
+    AuthManager {
+        id: authMan
+    }
+
+    SkApi {
+        id: _skApi
+        onLoginSuccess: {
+            console.log("Login success")
+        }
+        onLoginFailed: {
+            console.log("Login failed")
+        }
+
+    }
+
+    BusyIndicator {
+        size: BusyIndicatorSize.Large
+        anchors.centerIn: parent
+        running: skApi.loading
     }
 
     initialPage: Component {
@@ -76,8 +103,18 @@ ApplicationWindow
     allowedOrientations: Orientation.All
 
     Component.onCompleted: {
+        //authMan.checkAndLogin();
+        //myController.logIn();
     }
 
+    /*Python {
+        id: python
+
+        Component.onCompleted: {
+            addImportPath(Qt.resolvedUrl('../'));
+            importModule('harbour-sailkick', function() {});
+        }
+    }*/
     /*onApplicationActiveChanged: {
         // Application goes into background or returns to active focus again
         if (applicationActive) {

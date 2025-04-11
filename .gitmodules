@@ -1,0 +1,3 @@
+[submodule "python-future"]
+	path = external/python-future
+	url = https://github.com/PythonCharmers/python-future

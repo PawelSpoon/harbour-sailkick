@@ -1,16 +1,19 @@
 import QtQuick 2.0
 // import Sailfish.Silica 1.0
-
-import "AppController.js" as Helper
+import io.thp.pyotherside 1.5
 import "pages"
 import "Persistance.js" as DB
-import "SongKickApi.js" as API
+
+
 
 Item {
 
     id: applicationController
     property string currentPage: 'plan'
     property bool logEnabled : false
+    property bool calDateLocked : false
+
+    signal trackedItemsReloaded(string type)
 
     // array of registered pages
     property variant pages: []
@@ -81,7 +84,7 @@ Item {
     // updates cover page
     // updates menues
     function setCurrentPage(pageName) {
-        log("setCurrentPage: " + pageName)
+        console.log("setCurrentPage: " + pageName)
         currentPage = pageName
         applicationWindow.cover.setTitle(pageName);
         showMyMenues(pageName)
@@ -103,6 +106,7 @@ Item {
     // refreshes all pages
     function refreshAll()
     {
+        console.log("refreshAll")
         var count = pages.length
         for (var i = 0; i < count; i++) {
           var currentItem = pages[i].page;
@@ -166,16 +170,49 @@ Item {
     // clean stored tracking itmes and get fresh from songkick
     // all views do not pass user, only in settings dialog, before you store the user back to db
     // you can already trigger an get-items-call
-    function getTrackingItemsFromSongKick(user) {
-        if (user === null)
-            user = DB.getUser().name
+    function getTrackingItemsFromSongKick() {
+
         DB.removeAllTrackingEntries("Type")
         DB.removeAllTrackingEntries("artist")
         DB.removeAllTrackingEntries("location")
-        API.getUsersTrackedItems("artist",1,user, updateTrackingItemsInDb)
-        API.getUsersTrackedItems("location",1,user, updateTrackingItemsInDb)
+        skApi.getUserTrackedItemsAsync("location")
+        skApi.getUserTrackedItemsAsync("artist",1)
+        
     }
 
+    // called from tracked-item-page to keep the date across items    
+    function setLockdate(locked) {
+        applicationController.calDateLocked = locked
+    }
+
+    function getLockdate() {
+        return applicationController.calDateLocked
+    }
+
+    Connections {
+        target: skApi
+        onLocationsSuccess: {
+            console.log("Locations received, filling model")
+            //todo: pagination is not working yet
+            updateTrackingItemsInDb('location', 1, "username", skApi.userLocationsResults)
+        }
+        onArtistsSuccess: {
+            console.log("Artist received, filling model, page: " + page)
+            //todo: pagination is not working yet
+            updateTrackingItemsInDb('artist', page, "username", skApi.userArtistsResults)
+        }        
+        onActionFailed: {
+            if (action === "locations") {
+                // Handle plans failure
+                console.log("Failed to get " + action)
+            }
+        }
+        onActionError: {
+            if (action === "locations") {
+                console.error("Error during " + action + " :", error)
+            }
+        }        
+    }
 
     // callback of getUsersTrackedItems
     function updateTrackingItemsInDb(type, page, username, items)
@@ -185,13 +222,33 @@ Item {
         var count = items.length
         for (var i = 0; i < count; i++) {
           var currentItem = items[i];
-          log('storing: ' +  currentItem.title)
-          DB.setTrackingEntry(type,currentItem.uid, currentItem.title,currentItem.skid,currentItem.uri,currentItem.body)
+          if (i=== 0) {
+            console.log('first item: ' + currentItem.title + " " + currentItem.id + " " + currentItem.uid + " " + currentItem.uri + " " + currentItem.body)
+          }
+          //type,uid,title,skid,uri,body
+          DB.setTrackingEntry(type,currentItem.id, currentItem.name, currentItem.id,currentItem.url, { "imageUrl" : currentItem.image_url })
         }
         log('number of items: ' + items.length)
 
         if (items.length === 50) {
-            API.getUsersTrackedItems(type,page+1,username, updateTrackingItemsInDb)
+            console.log("more items to come, get next page, current page: " + page)
+            skApi.getUserTrackedItemsAsync(type, parseInt(page)+1)
+        }
+        else {
+            applicationController.trackedItemsReloaded(type)
         }
     }
+
+    function logIn()
+    {
+        var user = DB.getUser()
+        if (user === null) {
+            error("no user found")
+            return
+        }
+        var userName = user.name
+        var pwd = DB.getUser().password
+        skApi.logIn(userName,pwd)
+    }
+
 }

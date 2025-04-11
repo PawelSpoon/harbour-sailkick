@@ -43,14 +43,34 @@ TRANSLATIONS += translations/harbour-sailkick-de.ts \
                 translations/harbour-sailkick-hu.ts \
                 translations/harbour-sailkick-nl.ts
 
+
+# Python dependencies deployment
+pythondeps.files = python-deps/*
+pythondeps.path = /usr/share/harbour-sailkick/python
+
+# Python files deployment
+python.files = python/*.py
+python.path = /usr/share/harbour-sailkick/python
+
+# skapi folder deployment
+skapi.files = python/skapi/*.py
+skapi.path = /usr/share/harbour-sailkick/python/skapi
+
+INSTALLS += python pythondeps skapi
+
+
+
 DISTFILES += \
     qml/SongKickApiConversion.js \
+    qml/common/AuthManager.qml \
     qml/pages/Concerts4DatePage.qml \
     qml/pages/TabedMainPageX.qml \
     qml/sf-docked-tab-bar/*.qml \
     qml/Persistance.js \
     qml/SongKickApi.js \
+    qml/ApplicationContoler.qml \
     qml/pages/ConcertsPage.qml \
+    qml/pages/EventListView.qml \
     qml/sk-badge-white.png \
     qml/sk-badge-black.png \
     qml/sk-badge-pink.png \
@@ -70,6 +90,16 @@ DISTFILES += \
     qml/pages/TrackedItemsPage.qml \
     translations/harbour-sailkick-es.ts \
     qml/pages/EventWebViewPage.qml \
-    qml/pages/EventPage.qml
+    qml/pages/EventPage.qml \
+    python/songkick_api.py \
+    python/songkick_bridge.py \
+    python/parse_user_artists.py 
+
+COPIES += future dateutil
+
+libs.path = /usr/share/$${TARGET}
+libs.files = external
+INSTALLS += libs
 
 RESOURCES +=
+

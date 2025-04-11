@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
-def parse_user_locations(html_content, base_url):
-    """Parse users tracked areas from HTML content
+def parse_user_artists(html_content, base_url):
+    """Parse users tracked artists from HTML content
     Args:
         html_content (str): HTML content to parse
         base_url (str): Base URL for completing relative URLs
@@ -65,8 +65,8 @@ def parse_user_locations(html_content, base_url):
             if url:
                 if not url.startswith('http'):
                     url = base_url + url
-                # Extract ID from URL (e.g., /artists/549892-a-perfect-circle -> 549892)
-                artist_id = url.split('/')[-1].split('-')[0]
+                # Extract ID from URL (e.g., /artists/549892-a-perfect-circle -> 549892-a-perfect-circle)
+                artist_id = url.split('/')[-1]
             else:
                 artist_id = None
 
@@ -74,7 +74,8 @@ def parse_user_locations(html_content, base_url):
                 'name': name,
                 'url': url,
                 'image_url': image_url,
-                'id': artist_id
+                'id': artist_id,
+                'body' : None
             }
             results.append(artist_data)
 
