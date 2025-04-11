@@ -432,15 +432,34 @@ class SongkickApi:
         return results
     
     # this page has min and max date and filters for genre etc.
-    # could be extended
-    def get_location_events(self, location_id):
+    # ?filters%5BmaxDate%5D=&filters%5BminDate%5D=04%2F24%2F2025&page=2&utf8=✓#metro-area-calendar
+    # ?page=2#metro-area-calendar
+    # todo: date conversion
+    def get_location_events(self, location_id, page, min_date=None):
         """Get events for a specific location
         Args:
             location_id (str): Location ID like '26766-austria-graz'
         """
         events_url = f"{self.base_url}/metro-areas/{location_id}"
-        print(f"Fetching events for location: {location_id}")
+        pyotherside.send('debug', f"Fetching events for location: {location_id} {page} {min_date}")
         
+        # default page is 1
+        if page is None:
+            page = 1
+        
+        # paging only    
+        if page > 1 : #and min_date is None:
+            events_url += f"?page={page}"
+        
+        # mindate with/-out paging
+        if min_date:
+            temp = min_date.split('-')
+            min_date = temp[1] + '%2F' + temp[2] + '%2F' + temp[0]
+            events_url += f"?filters%5BminDate%5D={min_date}"
+            if page > 1:
+                events_url += f"&page={page}"
+
+        pyotherside.send('debug', f"Fetching events for location: {events_url}")
         response = self.session.get(events_url, headers=self.sk_headers)
         
         if not response.ok:

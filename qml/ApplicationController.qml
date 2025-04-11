@@ -11,6 +11,7 @@ Item {
     id: applicationController
     property string currentPage: 'plan'
     property bool logEnabled : false
+    property bool calDateLocked : false
 
     signal trackedItemsReloaded(string type)
 
@@ -177,6 +178,15 @@ Item {
         skApi.getUserTrackedItemsAsync("location")
         skApi.getUserTrackedItemsAsync("artist",1)
         
+    }
+
+    // called from tracked-item-page to keep the date across items    
+    function setLockdate(locked) {
+        applicationController.calDateLocked = locked
+    }
+
+    function getLockdate() {
+        return applicationController.calDateLocked
     }
 
     Connections {

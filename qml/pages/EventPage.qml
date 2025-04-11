@@ -130,7 +130,7 @@ Dialog {
                 anchors.horizontalCenter: parent.horizontalCenter;
                 // text: qsTr('copy')
                 onClicked: {
-                    var clip = venue.text;
+                    var clip = venueLabel.text;
                     if (street.text !== 'street') { clip += ", " + street.text };
                     if (city.text !== 'city') { clip += ", " + city.text };
                     Clipboard.text = clip;

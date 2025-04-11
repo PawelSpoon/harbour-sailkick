@@ -25,7 +25,8 @@ Page  {
     }
 
     function menuGotoDateVisible(visible) {
-        menuConcertsGoToDate.visible = visible
+        //temporarly ? removed
+        //menuConcertsGoToDate.visible = visible
     }
 
     function moveToNext()
@@ -77,14 +78,14 @@ Page  {
                     applicationWindow.controller.getTrackingItemsFromSongKick(null)
                 }
             }
-            MenuItem {
+            /*MenuItem {
                 id: menuConcertsGoToDate
                 text: qsTr("Open concerts in my areas page")
                 visible: false
                 onClicked: {
                     applicationWindow.controller.openConcertsForDatePage();
                 }
-            }
+            }*/
             MenuItem {
                 id: menuRefresh
                 text: qsTr("Refresh")

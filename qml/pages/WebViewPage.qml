@@ -50,9 +50,9 @@ Dialog {
     Component.onCompleted: {
        webView.url = uri
        webView.reload()
-       webView.experimental.evaluateJavaScript(
+       /*webView.experimental.evaluateJavaScript(
                     "document.querySelector(\"meta[name=viewport]\").setAttribute('content', 'width=device-width, initial-scale=1.0');");
-
+*/
     }
 
     onAccepted: {

@@ -105,14 +105,15 @@ class SongkickBridge:
         finally:
             pyotherside.send('loadingFinished')             
 
-    def getTrackedItemEvents(self, type, id):
+    def getTrackedItemEvents(self, type, id, page=None, minDate=None):
         action = 'getTrackedItemEvents'
         pyotherside.send('loadingStarted')
+        pyotherside.send('debug', f"getTrackedItemEvents {type} {page}")
         try:
             if type == 'artist':
                 result = self.api.get_artist_events(id)
             elif type == 'location':
-                result = self.api.get_location_events(id)
+                result = self.api.get_location_events(id, page, minDate)
             else:
                 pyotherside.send('debug', f"Unknown type: {type}")
                 return []

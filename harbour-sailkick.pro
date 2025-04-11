@@ -68,6 +68,7 @@ DISTFILES += \
     qml/sf-docked-tab-bar/*.qml \
     qml/Persistance.js \
     qml/SongKickApi.js \
+    qml/ApplicationContoler.qml \
     qml/pages/ConcertsPage.qml \
     qml/pages/EventListView.qml \
     qml/sk-badge-white.png \
@@ -96,4 +97,9 @@ DISTFILES += \
 
 COPIES += future dateutil
 
+libs.path = /usr/share/$${TARGET}
+libs.files = external
+INSTALLS += libs
+
 RESOURCES +=
+

@@ -151,9 +151,9 @@ Item {
         }
     }
 
-    function getTrackedItemEventsAsync(type, trackedItemId) {
+    function getTrackedItemEventsAsync(type, trackedItemId, page, minDate) {
         console.log("getTrackedItemEventsAsync: " + type)
-        pythonSkApi.call('songkick_bridge.Bridge.getTrackedItemEvents', [type, trackedItemId])
+        pythonSkApi.call('songkick_bridge.Bridge.getTrackedItemEvents', [type, trackedItemId, page, minDate])
     }
 
 }

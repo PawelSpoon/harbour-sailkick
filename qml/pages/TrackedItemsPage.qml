@@ -185,7 +185,8 @@ SilicaFlickable {
                     pageStack.push(Qt.resolvedUrl("TrackedItemPage.qml"), { type: current.type,
                             songKickId: current.skid,
                             titleOf: current.title,
-                            imageUrl: current.body.imageUrl }) //todo: make safe
+                            imageUrl: current.body.imageUrl,
+                            page: 1}) //todo: make imageUrl safe
                 }
 
                 onPressAndHold: {

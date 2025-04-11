@@ -17,23 +17,26 @@ Page {
     property string songKickId
     property string titleOf
     property string imageUrl : "image://theme/icon-m-media-artists"
-    property int page : 0
+    property int page : 1
+    property string startDate : ""
+    property bool lockDate : false
 
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
-
 
     function onError()
     {
         console.log("Error in loading upcomming events")
     }
 
-    function reloadUpCommingModel(minDate)
+    function reloadUpCommingModel(next)
     {
-        if (page == 0)
+        if (next)
+            page = page+1
+        if (!next)
           upcommingModel.clear()
-        console.log(type, songKickId, page)
-        skApi.getTrackedItemEventsAsync(type, songKickId)
+        console.log(type, songKickId, page, startDate)
+        skApi.getTrackedItemEventsAsync(type, songKickId, page, startDate)
     }
 
     function dateWithDay(datum)
@@ -56,7 +59,7 @@ Page {
              "type": events[i].metroAreaName,
              "venueName": events[i].venueName,
              "date": dateWithDay(events[i].date),
-             "uri" : events[i].uri,
+             "uri" : events[i].eventUrl,
              "name": events[i].name,  
              "metroAreaName": events[i].metroAreaName,
              "startTime": events[i].startTime,
@@ -65,9 +68,9 @@ Page {
              "attendance" : events[i].attendance,
              "venuePostalCode":events[i].venuePostalCode,
              "artistName": events[i].artistName,
-             "imageUrl": image,
-             "skid": events[i].skid,             
-             })
+             "imageUrl": image })
+             /*"skid": events[i].skid             
+             })*/
         }
         applicationWindow.controller.updateCoverList(titleOf,upcommingModel)
     }
@@ -75,7 +78,7 @@ Page {
 
     Component.onCompleted:
     {
-        reloadUpCommingModel("")
+        reloadUpCommingModel(false)
         coverImage.source = imageUrl
         // applicationWindow.controller.setCurrentPage(titleOf)
         applicationWindow.controller.updateCoverList(titleOf,upcommingModel)
@@ -131,7 +134,7 @@ Page {
                 onClicked: {
                     //todo: if text already set put it to new Date()
                     // a previous load more might have increased the page
-                    page = 0
+                    page = 1
                     var dialog = pageStack.push(pickerComponent, {
                         date: new Date( )
                     })
@@ -150,7 +153,8 @@ Page {
                         } else {
                             skDateText = skDateText + "-" +day
                         }
-                        reloadUpCommingModel(skDateText)
+                        startDate = skDateText
+                        reloadUpCommingModel(false)
                     })
                 }
                 Component {
@@ -165,9 +169,8 @@ Page {
                 text: qsTr("Load more")
                 enabled: true//((upcommingModel.count % 50) != 0)
                 onClicked: {
-                    page = page + 1
                     upcommingList.currentIndex = ((page * 50) -1)
-                    reloadUpCommingModel() // as page > 1, it will not empty view
+                    reloadUpCommingModel(true) // as page > 1, it will not empty view
                 }
             }
         }
@@ -196,6 +199,40 @@ Page {
                     source: imageUrl
                     anchors.leftMargin: Theme.paddingMedium
                     z: 200
+                }
+                Label {
+                    id: startDateText
+                    anchors.left: coverImage.right
+                    anchors.leftMargin: Theme.paddingLarge
+                    anchors.verticalCenter: coverImage.verticalCenter
+                    font.pixelSize: Theme.fontSizeMedium
+                    font.bold: true
+                    text: startDate
+                    color: Theme.primaryColor
+                    z: 200
+                }
+                IconButton {
+                    id: lockDateButton
+                    anchors.left: startDateText.right
+                    anchors.leftMargin: Theme.paddingMedium
+                    anchors.verticalCenter: coverImage.verticalCenter
+                    width: Theme.iconSizeMedium
+                    height: Theme.iconSizeMedium
+                    visible: startDateText.text != ""
+                    icon.source: lockDate? "image://theme/icon-s-secure" : "image://theme/icon-s-outline-secure"
+                    onClicked: {
+                        if (lockDate) {
+                            lockDate = false
+                        } else {
+                            lockDate = true
+                            // this might not be neede if i load the page value into dialog always
+                            minDateButton.text = startDateText.text
+                        }
+                        /*if (albumData) {
+                            playlistManager.clearPlayList()
+                            playlistManager.playAlbum(albumId, true) // start playing immediately
+                        }*/
+                    }
                 }
            }
            Separator {
@@ -272,7 +309,7 @@ Page {
                                 console.log(JSON.stringify(current))
                                 pageStack.push(Qt.resolvedUrl("EventPage.qml"),{
                                     uri: current.uri,
-                                    name: current.name,
+                                    name: current.artistName,
                                     type: type,
                                     date: current.date,
                                     startTime: current.startTime,
