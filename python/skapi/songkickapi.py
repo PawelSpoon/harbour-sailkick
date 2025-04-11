@@ -446,13 +446,16 @@ class SongkickApi:
         # default page is 1
         if page is None:
             page = 1
-        
+        else :
+            page = int(page)
+        pyotherside.send('debug', f"Fetching events for location: {page} " + str(page > 1))
+
         # paging only    
-        if page > 1 : #and min_date is None:
-            events_url += f"?page={page}"
-        
-        # mindate with/-out paging
-        if min_date:
+        if min_date is None or min_date == '':
+            if page > 1 : #and min_date is None:
+                events_url += f"?page={page}"
+        else:
+            # mindate with/-out paging
             temp = min_date.split('-')
             min_date = temp[1] + '%2F' + temp[2] + '%2F' + temp[0]
             events_url += f"?filters%5BminDate%5D={min_date}"
