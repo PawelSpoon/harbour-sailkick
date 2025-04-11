@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <link rel="stylesheet" type="text/css" href="https://accounts.sk-static.com/assets/stylesheets/session-new-SLNU2YF3.css">
+  <script type="text/javascript" src="https://accounts.sk-static.com/assets/javascripts/entryPoints/JQuery-T4LB42BY.js"></script>
+  <script type="text/javascript" src="https://accounts.sk-static.com/assets/javascripts/entryPoints/Songkick-V3ZY4HUW.js"></script>
+  <!-- OneTrust Cookies Consent Notice start -->
+<script id="onetrustcdn" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="a140dd39-6095-48bd-9b3f-b87994ae3f99"></script>
+
+<script type="text/javascript">
+function OptanonWrapper() {
+	var cookiePolicyLink = 'https://www.wminewmedia.com/cookies-policy/';
+	var allLinks = document.querySelectorAll('a');
+	for(i = 0; i < allLinks.length; i++) {
+		let href = allLinks[i].href;
+		if (href.indexOf(cookiePolicyLink) > -1 && href.indexOf('?ot=') < 0) {
+			href = href + '?ot=' + document.getElementById('onetrustcdn').getAttribute('data-domain-script') + '&url=' + window.location.hostname;
+			allLinks[i].setAttribute("href", href);
+			allLinks[i].setAttribute("target", "_blank");
+		}
+	}
+	var eOT = new Event("OneTrustGroupsUpdated");
+	document.dispatchEvent(eOT);
+}
+</script>
+<link rel="stylesheet" type="text/css" href="https://www.wminewmedia.com/cookies-policy/onetrust/ot.css">
+<!-- OneTrust Cookies Consent Notice end -->
+  <script src="//assets.adobedtm.com/63d771e85c87/245e451639b1/launch-1b6860521326-development.min.js" async></script>
+
+
+  <title>Songkick</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Biryani:wght@200;300;400;600;700;800;900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="M6EaPQ4uq773tOsTI/u8suRt25Q/tkwn3BzJ9B/4TlEqJ8g4cIGiICSCGap6d88XMaFZJnaZ7lpVZG+lB2i4iw==" />
+</head>
+<body class="variant">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2CCCJB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+  <div class="nav-container-v2">
+  <nav class="nav-v2">
+    <a class="back-link" href="javascript:history.back()">
+      <img alt="back" class="back-button" src="https://accounts.sk-static.com/images/back-button.svg" />
+</a>    
+      <a class="songkick-link" href="https://www.songkick.com/">
+        <img alt="songkick" class="sk-logo variant" src="https://accounts.sk-static.com/images/songkick-logo.svg" />
+</a>
+    <a class="support-link" target="_blank" data-analytics-category="auth_skweb" data-analytics-label="help_FAQ" href="http://support.songkick.com/">Help</a>
+  </nav>
+</div>
+
+  <div class="main-container">
+
+    <div class="container variant">
+  <div class="accounts-content variant">
+    <div class="accounts-options variant">
+          <div class="text-header-wrapper">
+              <h2 class="accounts-title">Log in to Songkick</h2>
+
+              <p class="description">Continue on your journey to concert greatness</p>
+          </div>
+        
+        
+        
+
+       <div class="social-wrapper">
+          <div class="spotify-login">
+  <form data-analytics-category="auth_skweb" data-analytics-label="login_spotify" data-analytics-action="submit" action="/session" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" /><input type="hidden" name="authenticity_token" value="igflwtVcciCIdlF56Xurp9fTop5SyD+kXlx6d8KqxliTgTfHq/N7vltAo8Cw99gCAh8gLBvnndnXJNwm2jowgg==" autocomplete="off" />
+      <input type="hidden" name="login_success_url" id="login_success_url" value="https://www.songkick.com/" autocomplete="off" />
+  <input type="hidden" name="source_product" id="source_product" value="skweb" autocomplete="off" />
+  <input type="hidden" name="locale" id="locale" value="en" autocomplete="off" />
+
+
+    <input type="hidden" name="access_token" id="spotify_access_token" autocomplete="off" />
+    <input type="hidden" name="authorization_code" id="spotify_authorization_code" autocomplete="off" />
+    <input type="hidden" name="redirect_uri" id="spotify_redirect_uri" value="https://accounts.songkick.com/session/spotify" autocomplete="off" />
+    <input type="hidden" name="expires_in" id="spotify_expires_in" autocomplete="off" />
+    <input type="hidden" name="provider" id="provider" value="spotify" autocomplete="off" />
+
+    <button name="button" type="submit" class="cta-button cta-button-spotify spotify-connect variant">
+      <i class="icon spotify variant"></i>
+      <span class="text spotify variant">Continue with Spotify</span>
+</button>  <p class="information-text hidden">Please finish signing in through Spotify or refresh the page</p>
+</form></div>
+
+<form class="spotify hidden" action="https://accounts.spotify.com/authorize" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" />
+  <input type="hidden" name="redirect_uri" value="https://accounts.songkick.com/session/spotify">
+  <input type="hidden" name="client_id" value="ab17781c92324fc8ae01c6796d97285d">
+  <input type="hidden" name="scope" value="user-library-read user-follow-read playlist-read-private user-top-read user-read-email">
+  <input type="hidden" name="response_type" value="code">
+</form>
+
+        </div>
+        <div class="social-wrapper">
+          <div class="google-login">
+
+  <a class="cta-button cta-button-google google-connect variant variant-button" data-analytics-category="auth_skweb" data-analytics-label="login_google" data-analytics-action="submit" rel="nofollow" data-method="post" href="/auth/google_oauth2?locale=en&amp;locale=en&amp;login_success_url=https%3A%2F%2Fwww.songkick.com%2F&amp;source_product=skweb">
+    <i class="icon google variant"></i>
+    <span class="text google variant">Continue with Google</span>
+</a>
+  <p class="information-text hidden">Translation missing: en.page_models.shared.google_connect.information_text</p>
+
+</div>
+
+
+
+        </div>
+        <div class="social-wrapper">
+          <div class="apple-login">
+
+  <a class="cta-button cta-button-apple apple-connect variant variant-button" data-analytics-category="auth_skweb" data-analytics-label="login_apple" data-analytics-action="submit" rel="nofollow" data-method="post" href="/auth/apple?locale=en&amp;locale=en&amp;login_success_url=https%3A%2F%2Fwww.songkick.com%2F&amp;source_product=skweb">
+    <i class="icon apple variant"></i>
+    <span class="text apple variant">Continue with Apple</span>
+</a>
+</div>
+
+
+        </div>
+        <div class="social-wrapper">
+          <div class="facebook-login">
+<a class="cta-button cta-button-facebook facebook-connect variant" href="/facebook-password-reset?locale=en&amp;login_success_url=https%3A%2F%2Fwww.songkick.com%2F&amp;source_product=skweb">
+    <i class="icon facebook variant"></i>
+    <span class="text facebook variant">Continue with Facebook</span>
+</a></div>
+
+
+        </div>
+        <div class="divider-wrapper">
+            <div class="divider-line"></div>
+            <div class="or-divider-text">or</div>
+            <div class="divider-line"></div>
+        </div>
+       <div class="form-wrapper">
+        <div class="component login-form accounts-form variant">
+  <form id="login-form" action="/session" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" /><input type="hidden" name="authenticity_token" value="ulvQFw76D+gnN0o00bfkpUCMsY4VxIEg2W2z1H86Jnaj3QIScFUGdvQBuI2IO5cAlUAzPFzrI11QFRWFZ6rQrA==" autocomplete="off" />
+      <input type="hidden" name="login_success_url" id="login_success_url" value="https://www.songkick.com/" autocomplete="off" />
+  <input type="hidden" name="source_product" id="source_product" value="skweb" autocomplete="off" />
+  <input type="hidden" name="locale" id="locale" value="en" autocomplete="off" />
+
+
+    <fieldset>
+      <div class="form-field variant">
+          <div class="input-wrapper">
+    <div class="input-wrapper-label">Email address or username</div>
+
+    <input type="text" name="username_or_email" id="username_or_email" data-hj-masked="" placeholder="" aria-label="Email address or username" class="variant" />
+  <div id=username_or_email class="validation-error">
+    <img class="validation-icon"/>
+    <span class="validation-text"></span>
+  </div>
+</div>
+
+
+
+
+        <div class="password-field">
+          <div class="input-wrapper">
+    <div class="input-wrapper-label">Password</div>
+
+    <input type="password" name="password" id="password" placeholder="" aria-label="Password" class="variant" />
+      <img class="password-eye-icon" id="password" src="https://accounts.sk-static.com/images/password-eye-v2.svg" />
+  <div id=password class="validation-error">
+    <img class="validation-icon"/>
+    <span class="validation-text"></span>
+  </div>
+</div>
+
+
+
+        </div>
+
+        <div class="form-field variant">
+          <p class="options forgot-password variant">
+            <a data-analytics-category="auth_skweb" data-analytics-label="forgot_password" class="variant" href="/password_reset_requests/new?locale=en&amp;login_success_url=https%3A%2F%2Fwww.songkick.com%2F&amp;source_product=skweb">Forgot your password?</a>
+            <br>
+          </p>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <p class="songkick-login">
+          <input type="submit" class="songkick-login-button variant" value="Log in" name="commit">
+        </p>
+      </div>
+
+    </fieldset>
+</form></div>
+
+        </div>
+
+
+      <div>
+        <p class="signup-link variant">
+         New here?
+          <a data-analytics-category="auth_skweb" data-analytics-label="switch_to_signup" class="variant" href="/signup/new?locale=en&amp;login_success_url=https%3A%2F%2Fwww.songkick.com%2F&amp;source_product=skweb">Sign up</a>
+        </p>
+      </div>
+      </div>
+  </div>
+
+</div>
+
+
+  </div>
+  <div id="fb-root"></div>
+  <script type="text/javascript" src="https://accounts.sk-static.com/assets/javascripts/entryPoints/session_new-DVZGUD5S.js"></script>
+  
+  <script>
+    Songkick.EventBus.bind("app:initialize", function (config) {
+      new Songkick.Component.SpotifyConnect(config.events);
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      const information_text = document.querySelector("form .information-text");
+      document
+        .querySelector(".spotify-connect")
+        .addEventListener("click", function (e) {
+          information_text.classList.remove("hidden");
+          e.preventDefault();
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            signup_type: "login_spotify",
+            event: "login_submit",
+            product_source: 'skweb',
+          });
+        });
+    });
+
+  </script>
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const googleButton = document.querySelector(".google-connect");
+
+      if (googleButton) {
+        googleButton.addEventListener("click", function (e) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "login_submit",
+            signup_type: "login_google",
+            product_source: 'skweb',
+            timestamp: new Date().toISOString(),
+          });
+        });
+      }
+    });
+  </script>
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const appleButton = document.querySelector(".apple-connect");
+
+      if (appleButton) {
+        appleButton.addEventListener("click", function (e) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "login_submit",
+            signup_type: "login_apple",
+            product_source: 'skweb',
+            timestamp: new Date().toISOString(),
+          });
+        });
+      }
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelector(".facebook-connect")
+        .addEventListener("click", function (e) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "login_submit",
+            signup_type: "login_facebook",
+            product_source: 'skweb',
+          });
+        });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document
+        .querySelector("#login-form")
+        .addEventListener("submit", function (e) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "login_submit",
+            login_type: "login_manual",
+            product_source: 'skweb',
+          });
+        });
+    });
+  </script>
+  <script>
+    var hidePasswordSvg = '/images/password-hide-eye-v2.svg'
+    var showPasswordSvg = '/images/password-eye-v2.svg'
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var passwordField = document.getElementById("password");
+      var passwordEye = document.querySelector(".password-eye-icon#password");
+      var passwordValidation = document.querySelector(".validation-error#password");
+
+      var password;
+      var togglePassword = function () {
+        if (passwordField.type === "password") {
+          passwordEye.src= hidePasswordSvg
+          passwordField.type = "text";
+        } else {
+          passwordEye.src= showPasswordSvg
+          passwordField.type = "password";
+        }
+      };
+
+      passwordEye.addEventListener("click", togglePassword);
+      passwordField.addEventListener("input", (event) => {
+        password = event.target.value;
+        if(password && password.length < 3){
+          passwordValidation.innerHTML = "Password must be 3 characters or longer";
+          passwordField.style.border = "1px solid #D41149";
+        } else {
+          passwordValidation.innerHTML = "";
+          passwordField.style.border = "1px solid #DCDBDF";
+        }
+    });
+    });
+
+  </script>
+
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   window.dataLayer.push({
+    'page_type' : 'session_new',
+    'login_status': 'visitor',
+    'cached_page':  '',
+    'send_page_view': true,
+    'product_source': 'skweb'
+   });
+</script>
+
+
+</body>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    Songkick.boot();
+  });
+  </script>
+</html>

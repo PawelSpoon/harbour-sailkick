@@ -1,0 +1,1101 @@
+Parsed Events:
+Event 1:
+skid: None
+name: Eisbrecher
+eventUrl: https://www.songkick.com/concerts/42072288-eisbrecher-at-orpheum
+eventType: None
+date: 2025-03-29T20:00:00+0100
+startTime: 20:00:00+0100
+attendance: N/A
+artists: ['Eisbrecher']
+artistId: None
+artistName: Eisbrecher
+artistUrl: None
+artistImageUrl: None
+venueName: Orpheum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 2:
+skid: None
+name: Helge Schneider
+eventUrl: https://www.songkick.com/concerts/41908827-helge-schneider-at-helmut-list-halle
+eventType: None
+date: 2025-03-29T20:00:00+0100
+startTime: 20:00:00+0100
+attendance: N/A
+artists: ['Helge Schneider']
+artistId: None
+artistName: Helge Schneider
+artistUrl: None
+artistImageUrl: None
+venueName: Helmut List Halle
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 3:
+skid: None
+name: Ulli Bäer
+eventUrl: https://www.songkick.com/concerts/42084078-ulli-baer-at-kammermusiksaal-kulturzentrum-oberschutzen
+eventType: None
+date: 2025-03-29T19:30:00+0100
+startTime: 19:30:00+0100
+attendance: N/A
+artists: ['Ulli Bäer']
+artistId: None
+artistName: Ulli Bäer
+artistUrl: None
+artistImageUrl: None
+venueName: Kammermusiksaal, Kulturzentrum Oberschützen
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 4:
+skid: None
+name: Thorsteinn Einarsson
+eventUrl: https://www.songkick.com/concerts/42156665-thorsteinn-einarsson-at-orpheum
+eventType: None
+date: 2025-03-30T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Thorsteinn Einarsson']
+artistId: None
+artistName: Thorsteinn Einarsson
+artistUrl: None
+artistImageUrl: None
+venueName: Orpheum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 5:
+skid: None
+name: Gesang
+eventUrl: https://www.songkick.com/concerts/42291368-gesang-at-europasaal
+eventType: None
+date: 2025-03-30T15:00:00+0200
+startTime: 15:00:00+0200
+attendance: N/A
+artists: ['Gesang']
+artistId: None
+artistName: Gesang
+artistUrl: None
+artistImageUrl: None
+venueName: Europasaal
+venueId: None
+metroAreaName: Weiz
+metroAreaId: None
+venueCity: Weiz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 6:
+skid: None
+name: Henrik Freischlader
+eventUrl: https://www.songkick.com/concerts/42391755-henrik-freischlader-at-bluegarage
+eventType: None
+date: 2025-03-30T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Henrik Freischlader']
+artistId: None
+artistName: Henrik Freischlader
+artistUrl: None
+artistImageUrl: None
+venueName: Bluegarage
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 7:
+skid: None
+name: Martin Kohlstedt
+eventUrl: https://www.songkick.com/concerts/42030568-martin-kohlstedt-at-orpheum
+eventType: None
+date: 2025-04-01T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Martin Kohlstedt']
+artistId: None
+artistName: Martin Kohlstedt
+artistUrl: None
+artistImageUrl: None
+venueName: Orpheum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 8:
+skid: None
+name: Cari Cari
+eventUrl: https://www.songkick.com/concerts/42221459-cari-cari-at-orpheum
+eventType: None
+date: 2025-04-02T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Cari Cari']
+artistId: None
+artistName: Cari Cari
+artistUrl: None
+artistImageUrl: None
+venueName: Orpheum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 9:
+skid: None
+name: Simone Kopmajer
+eventUrl: https://www.songkick.com/concerts/42006477-simone-kopmajer-at-kulturhaus-knittelfeld
+eventType: None
+date: 2025-04-03T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: N/A
+artists: ['Simone Kopmajer']
+artistId: None
+artistName: Simone Kopmajer
+artistUrl: None
+artistImageUrl: None
+venueName: Kulturhaus Knittelfeld
+venueId: None
+metroAreaName: Knittelfeld
+metroAreaId: None
+venueCity: Knittelfeld
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 10:
+skid: None
+name: Polizeimusik Steiermark goes Hollywood 2025
+eventUrl: https://www.songkick.com/festivals/3707440-polizeimusik-steiermark-goes-hollywood/id/42346306-polizeimusik-steiermark-goes-hollywood-2025
+eventType: None
+date: 2025-04-03T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: N/A
+artists: ['Polizeimusik Steiermark goes Hollywood 2025']
+artistId: None
+artistName: Polizeimusik Steiermark goes Hollywood 2025
+artistUrl: None
+artistImageUrl: None
+venueName: Stefaniensaal, Congress Graz
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 11:
+skid: None
+name: 5/8erl in Ehr'n
+eventUrl: https://www.songkick.com/concerts/42255834-58erl-in-ehrn-at-orpheum
+eventType: None
+date: 2025-04-04T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ["5/8erl in Ehr'n"]
+artistId: None
+artistName: 5/8erl in Ehr'n
+artistUrl: None
+artistImageUrl: None
+venueName: Orpheum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 12:
+skid: None
+name: CATALYST_Official
+eventUrl: https://www.songkick.com/concerts/42294499-catalystofficial-at-music-house
+eventType: None
+date: 2025-04-04T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['CATALYST_Official']
+artistId: None
+artistName: CATALYST_Official
+artistUrl: None
+artistImageUrl: None
+venueName: Music House
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 13:
+skid: None
+name: Allan Taylor
+eventUrl: https://www.songkick.com/concerts/42420020-allan-taylor-at-bluegarage
+eventType: None
+date: 2025-04-04T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Allan Taylor']
+artistId: None
+artistName: Allan Taylor
+artistUrl: None
+artistImageUrl: None
+venueName: Bluegarage
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 14:
+skid: None
+name: Andromedik
+eventUrl: https://www.songkick.com/concerts/42495762-andromedik-at-postgarage
+eventType: None
+date: 2025-04-04T23:00:00+0200
+startTime: 23:00:00+0200
+attendance: N/A
+artists: ['Andromedik']
+artistId: None
+artistName: Andromedik
+artistUrl: None
+artistImageUrl: None
+venueName: Postgarage
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 15:
+skid: None
+name: Wolfgang Ambros
+eventUrl: https://www.songkick.com/concerts/42004019-wolfgang-ambros-at-kulturhaus-knittelfeld
+eventType: None
+date: 2025-04-05
+startTime: N/A
+attendance: N/A
+artists: ['Wolfgang Ambros']
+artistId: None
+artistName: Wolfgang Ambros
+artistUrl: None
+artistImageUrl: None
+venueName: Kulturhaus Knittelfeld
+venueId: None
+metroAreaName: Knittelfeld
+metroAreaId: None
+venueCity: Knittelfeld
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 16:
+skid: None
+name: Peter Schneider Guitar, Sir Oliver Mally, Ian Siegal, and Martin Gasselsberger
+eventUrl: https://www.songkick.com/concerts/41973983-peter-schneider-guitar-at-altes-kino-leibnitz
+eventType: None
+date: 2025-04-05T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Peter Schneider Guitar, Sir Oliver Mally, Ian Siegal, and Martin Gasselsberger']
+artistId: None
+artistName: Peter Schneider Guitar, Sir Oliver Mally, Ian Siegal, and Martin Gasselsberger
+artistUrl: None
+artistImageUrl: None
+venueName: Altes Kino Leibnitz
+venueId: None
+metroAreaName: Leibnitz
+metroAreaId: None
+venueCity: Leibnitz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 17:
+skid: None
+name: The Amy Winehouse Band
+eventUrl: https://www.songkick.com/concerts/42324583-amy-winehouse-band-at-ppc
+eventType: None
+date: 2025-04-05T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['The Amy Winehouse Band']
+artistId: None
+artistName: The Amy Winehouse Band
+artistUrl: None
+artistImageUrl: None
+venueName: PPC
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 18:
+skid: None
+name: Saso Avsenik & seine Oberkrainer 2025
+eventUrl: https://www.songkick.com/festivals/3673722-saso-avsenik-seine-oberkrainer/id/42216036-saso-avsenik--seine-oberkrainer-2025
+eventType: None
+date: 2025-04-05T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Saso Avsenik & seine Oberkrainer 2025']
+artistId: None
+artistName: Saso Avsenik & seine Oberkrainer 2025
+artistUrl: None
+artistImageUrl: None
+venueName: Stefaniensaal, Congress Graz
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 19:
+skid: None
+name: Herman van Veen
+eventUrl: https://www.songkick.com/concerts/41797907-herman-van-veen-at-stefaniensaal-congress-graz
+eventType: None
+date: 2025-04-06T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['Herman van Veen']
+artistId: None
+artistName: Herman van Veen
+artistUrl: None
+artistImageUrl: None
+venueName: Stefaniensaal, Congress Graz
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 20:
+skid: None
+name: Sonntag
+eventUrl: https://www.songkick.com/concerts/42166290-sonntag-at-festhalle-vaz-obdach
+eventType: None
+date: 2025-04-06T11:00:00+0200
+startTime: 11:00:00+0200
+attendance: N/A
+artists: ['Sonntag']
+artistId: None
+artistName: Sonntag
+artistUrl: None
+artistImageUrl: None
+venueName: Festhalle Vaz Obdach
+venueId: None
+metroAreaName: Obdach
+metroAreaId: None
+venueCity: Obdach
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 21:
+skid: None
+name: Kadonnut Manner and Edgars Rubenis
+eventUrl: https://www.songkick.com/concerts/42479019-kadonnut-manner-at-dolly-bell-balkan-cafe
+eventType: None
+date: 2025-04-06
+startTime: N/A
+attendance: N/A
+artists: ['Kadonnut Manner and Edgars Rubenis']
+artistId: None
+artistName: Kadonnut Manner and Edgars Rubenis
+artistUrl: None
+artistImageUrl: None
+venueName: Dolly Bell Balkan Cafe
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 22:
+skid: None
+name: 40 Fingers
+eventUrl: https://www.songkick.com/concerts/42280203-40-fingers-at-orpheum
+eventType: None
+date: 2025-04-07T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['40 Fingers']
+artistId: None
+artistName: 40 Fingers
+artistUrl: None
+artistImageUrl: None
+venueName: Orpheum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 23:
+skid: None
+name: Avec
+eventUrl: https://www.songkick.com/concerts/41989510-avec-at-orpheum
+eventType: None
+date: 2025-04-08T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Avec']
+artistId: None
+artistName: Avec
+artistUrl: None
+artistImageUrl: None
+venueName: Orpheum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 24:
+skid: None
+name: Cliff Stevens Band
+eventUrl: https://www.songkick.com/concerts/42420021-cliff-stevens-band-at-bluegarage
+eventType: None
+date: 2025-04-08T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Cliff Stevens Band']
+artistId: None
+artistName: Cliff Stevens Band
+artistUrl: None
+artistImageUrl: None
+venueName: Bluegarage
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 25:
+skid: None
+name: Molden
+eventUrl: https://www.songkick.com/concerts/42454820-molden-at-forum-kloster
+eventType: None
+date: 2025-04-09T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Molden']
+artistId: None
+artistName: Molden
+artistUrl: None
+artistImageUrl: None
+venueName: Forum Kloster
+venueId: None
+metroAreaName: Gleisdorf
+metroAreaId: None
+venueCity: Gleisdorf
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 26:
+skid: None
+name: Styrian Sounds 2025
+eventUrl: https://www.songkick.com/festivals/1684044-styrian-sounds/id/42377839-styrian-sounds-2025
+eventType: None
+date: 2025-04-10
+startTime: N/A
+attendance: N/A
+artists: ['Styrian Sounds 2025']
+artistId: None
+artistName: Styrian Sounds 2025
+artistUrl: None
+artistImageUrl: None
+venueName: PPC
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 27:
+skid: None
+name: Montreal
+eventUrl: https://www.songkick.com/concerts/42295144-montreal-at-postgarage
+eventType: None
+date: 2025-04-11T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['Montreal']
+artistId: None
+artistName: Montreal
+artistUrl: None
+artistImageUrl: None
+venueName: Postgarage
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 28:
+skid: None
+name: Nitsch
+eventUrl: https://www.songkick.com/concerts/42360718-nitsch-at-ppc
+eventType: None
+date: 2025-04-11T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['Nitsch']
+artistId: None
+artistName: Nitsch
+artistUrl: None
+artistImageUrl: None
+venueName: PPC
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 29:
+skid: None
+name: SIEBER
+eventUrl: https://www.songkick.com/concerts/42374757-sieber-at-kulturkeller
+eventType: None
+date: 2025-04-11T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['SIEBER']
+artistId: None
+artistName: SIEBER
+artistUrl: None
+artistImageUrl: None
+venueName: Kulturkeller
+venueId: None
+metroAreaName: Gleisdorf
+metroAreaId: None
+venueCity: Gleisdorf
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 30:
+skid: None
+name: Backstage 2025
+eventUrl: https://www.songkick.com/festivals/730789-backstage/id/42296292-backstage-2025
+eventType: None
+date: 2025-04-11T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: N/A
+artists: ['Backstage 2025']
+artistId: None
+artistName: Backstage 2025
+artistUrl: None
+artistImageUrl: None
+venueName: Theater am Ortweinplatz (TaO)
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 31:
+skid: None
+name: Fairtrade Floyd, DAARK, and Lost in a Moment
+eventUrl: https://www.songkick.com/concerts/42304442-fairtrade-floyd-at-unknown-venue
+eventType: None
+date: 2025-04-12T18:00:00+0200
+startTime: 18:00:00+0200
+attendance: N/A
+artists: ['Fairtrade Floyd, DAARK, and Lost in a Moment']
+artistId: None
+artistName: Fairtrade Floyd, DAARK, and Lost in a Moment
+artistUrl: None
+artistImageUrl: None
+venueName: N/A
+venueId: None
+metroAreaName: Koflach
+metroAreaId: None
+venueCity: Koflach
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 32:
+skid: None
+name: Tastemakers
+eventUrl: https://www.songkick.com/concerts/42420022-tastemakers-at-bluegarage
+eventType: None
+date: 2025-04-12T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Tastemakers']
+artistId: None
+artistName: Tastemakers
+artistUrl: None
+artistImageUrl: None
+venueName: Bluegarage
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 33:
+skid: None
+name: Saor, In the Woods..., Cân Bardd, and Imperium Dekadenz
+eventUrl: https://www.songkick.com/concerts/42384923-saor-at-juz-explosiv
+eventType: None
+date: 2025-04-18T17:30:00+0200
+startTime: 17:30:00+0200
+attendance: N/A
+artists: ['Saor, In the Woods..., Cân Bardd, and Imperium Dekadenz']
+artistId: None
+artistName: Saor, In the Woods..., Cân Bardd, and Imperium Dekadenz
+artistUrl: None
+artistImageUrl: None
+venueName: JUZ Explosiv
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 34:
+skid: None
+name: Wight
+eventUrl: https://www.songkick.com/concerts/42479660-wight-at-club-wakuum
+eventType: None
+date: 2025-04-18T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['Wight']
+artistId: None
+artistName: Wight
+artistUrl: None
+artistImageUrl: None
+venueName: Club Wakuum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 35:
+skid: None
+name: La Femme
+eventUrl: https://www.songkick.com/concerts/42239569-la-femme-at-orpheum
+eventType: None
+date: 2025-04-21T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['La Femme']
+artistId: None
+artistName: La Femme
+artistUrl: None
+artistImageUrl: None
+venueName: Orpheum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 36:
+skid: None
+name: Kariti
+eventUrl: https://www.songkick.com/concerts/42514367-kariti-at-sub
+eventType: None
+date: 2025-04-21T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['Kariti']
+artistId: None
+artistName: Kariti
+artistUrl: None
+artistImageUrl: None
+venueName: Sub
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 37:
+skid: None
+name: Llc
+eventUrl: https://www.songkick.com/concerts/42508384-llc-at-forum-stadtpark
+eventType: None
+date: 2025-04-22T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Llc']
+artistId: None
+artistName: Llc
+artistUrl: None
+artistImageUrl: None
+venueName: Forum Stadtpark
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 38:
+skid: None
+name: Rolando Villazón
+eventUrl: https://www.songkick.com/concerts/42261851-rolando-villazon-at-stefaniensaal-congress-graz
+eventType: None
+date: 2025-04-24T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: N/A
+artists: ['Rolando Villazón']
+artistId: None
+artistName: Rolando Villazón
+artistUrl: None
+artistImageUrl: None
+venueName: Stefaniensaal, Congress Graz
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 39:
+skid: None
+name: Julian Grabmayer
+eventUrl: https://www.songkick.com/concerts/42357527-julian-grabmayer-at-kunsthaus-weiz
+eventType: None
+date: 2025-04-24T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['Julian Grabmayer']
+artistId: None
+artistName: Julian Grabmayer
+artistUrl: None
+artistImageUrl: None
+venueName: Kunsthaus Weiz
+venueId: None
+metroAreaName: Weiz
+metroAreaId: None
+venueCity: Weiz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 40:
+skid: None
+name: The Freaky Friday Jailhouse Gang
+eventUrl: https://www.songkick.com/concerts/42435882-freaky-friday-jailhouse-gang-at-murinsel
+eventType: None
+date: 2025-04-24T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['The Freaky Friday Jailhouse Gang']
+artistId: None
+artistName: The Freaky Friday Jailhouse Gang
+artistUrl: None
+artistImageUrl: None
+venueName: Murinsel
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 41:
+skid: None
+name: Dool
+eventUrl: https://www.songkick.com/concerts/42378291-dool-at-ppc
+eventType: None
+date: 2025-04-25T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['Dool']
+artistId: None
+artistName: Dool
+artistUrl: None
+artistImageUrl: None
+venueName: PPC
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 42:
+skid: None
+name: Nockis
+eventUrl: https://www.songkick.com/concerts/41764267-nockis-at-forum-kloster
+eventType: None
+date: 2025-04-25T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Nockis']
+artistId: None
+artistName: Nockis
+artistUrl: None
+artistImageUrl: None
+venueName: Forum Kloster
+venueId: None
+metroAreaName: Gleisdorf
+metroAreaId: None
+venueCity: Gleisdorf
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 43:
+skid: None
+name: Mensch oder Tier, Dan Ganove, and Fairtrade Floyd
+eventUrl: https://www.songkick.com/concerts/42258357-mensch-oder-tier-at-club-wakuum
+eventType: None
+date: 2025-04-25T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['Mensch oder Tier, Dan Ganove, and Fairtrade Floyd']
+artistId: None
+artistName: Mensch oder Tier, Dan Ganove, and Fairtrade Floyd
+artistUrl: None
+artistImageUrl: None
+venueName: Club Wakuum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 44:
+skid: None
+name: Nockis
+eventUrl: https://www.songkick.com/concerts/41764268-nockis-at-mehrzweckhalle-wagna
+eventType: None
+date: 2025-04-26T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Nockis']
+artistId: None
+artistName: Nockis
+artistUrl: None
+artistImageUrl: None
+venueName: Mehrzweckhalle Wagna
+venueId: None
+metroAreaName: Wagna
+metroAreaId: None
+venueCity: Wagna
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 45:
+skid: None
+name: Manuel Randi
+eventUrl: https://www.songkick.com/concerts/42389259-manuel-randi-at-orpheum
+eventType: None
+date: 2025-04-26T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Manuel Randi']
+artistId: None
+artistName: Manuel Randi
+artistUrl: None
+artistImageUrl: None
+venueName: Orpheum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 46:
+skid: None
+name: Grazer Jägerball 2025
+eventUrl: https://www.songkick.com/festivals/3719672-grazer-jagerball/id/42487864-grazer-jgerball-2025
+eventType: None
+date: 2025-04-26T18:30:00+0200
+startTime: 18:30:00+0200
+attendance: N/A
+artists: ['Grazer Jägerball 2025']
+artistId: None
+artistName: Grazer Jägerball 2025
+artistUrl: None
+artistImageUrl: None
+venueName: Seifenfabrik
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 47:
+skid: None
+name: Christian Becker
+eventUrl: https://www.songkick.com/concerts/42470142-christian-becker-at-bluegarage
+eventType: None
+date: 2025-05-02T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Christian Becker']
+artistId: None
+artistName: Christian Becker
+artistUrl: None
+artistImageUrl: None
+venueName: Bluegarage
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 48:
+skid: None
+name: The Freaky Friday Jailhouse Gang
+eventUrl: https://www.songkick.com/concerts/42508618-freaky-friday-jailhouse-gang-at-stockwerk-jazz
+eventType: None
+date: 2025-05-03T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['The Freaky Friday Jailhouse Gang']
+artistId: None
+artistName: The Freaky Friday Jailhouse Gang
+artistUrl: None
+artistImageUrl: None
+venueName: Stockwerk Jazz
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 49:
+skid: None
+name: Spire of Lazarus and Klynt
+eventUrl: https://www.songkick.com/concerts/42512809-spire-of-lazarus-at-club-wakuum
+eventType: None
+date: 2025-05-03T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: N/A
+artists: ['Spire of Lazarus and Klynt']
+artistId: None
+artistName: Spire of Lazarus and Klynt
+artistUrl: None
+artistImageUrl: None
+venueName: Club Wakuum
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 50:
+skid: None
+name: Strung Out, Belvedere
+eventUrl: https://www.songkick.com/concerts/42430038-strung-out-belvedere-at-juz-explosiv
+eventType: None
+date: 2025-05-04T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: N/A
+artists: ['Strung Out, Belvedere']
+artistId: None
+artistName: Strung Out, Belvedere
+artistUrl: None
+artistImageUrl: None
+venueName: JUZ Explosiv
+venueId: None
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------

@@ -1,0 +1,221 @@
+Parsed Events:
+Event 1:
+skid: None
+name: Palm Desert
+eventUrl: https://www.songkick.com/concerts/42175809-a-perfect-circle-at-acrisure-arena-at-greater-palm-springs
+eventType: None
+date: 2025-04-24T20:00:00-0700
+startTime: 20:00:00-0700
+attendance: N/A
+artists: ['A Perfect Circle']
+artistId: None
+artistName: A Perfect Circle
+artistUrl: None
+artistImageUrl: None
+venueName: Acrisure Arena at Greater Palm Springs
+venueId: None
+metroAreaName: Palm Desert
+metroAreaId: None
+venueCity: Palm Desert
+venueCountry:  US
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 2:
+skid: None
+name: Las Vegas
+eventUrl: https://www.songkick.com/concerts/42175445-primus-at-ph-live
+eventType: None
+date: 2025-04-25T20:00:00-0700
+startTime: 20:00:00-0700
+attendance: N/A
+artists: ['A Perfect Circle']
+artistId: None
+artistName: A Perfect Circle
+artistUrl: None
+artistImageUrl: None
+venueName: PH Live
+venueId: None
+metroAreaName: Las Vegas
+metroAreaId: None
+venueCity: Las Vegas
+venueCountry:  US
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 3:
+skid: None
+name: Albuquerque
+eventUrl: https://www.songkick.com/concerts/42175509-primus-at-isleta-amphitheater
+eventType: None
+date: 2025-04-27T19:30:00-0600
+startTime: 19:30:00-0600
+attendance: N/A
+artists: ['A Perfect Circle']
+artistId: None
+artistName: A Perfect Circle
+artistUrl: None
+artistImageUrl: None
+venueName: Isleta Amphitheater
+venueId: None
+metroAreaName: Albuquerque
+metroAreaId: None
+venueCity: Albuquerque
+venueCountry:  US
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 4:
+skid: None
+name: San Antonio
+eventUrl: https://www.songkick.com/concerts/42175795-primus-at-freeman-coliseum
+eventType: None
+date: 2025-04-29T20:00:00-0500
+startTime: 20:00:00-0500
+attendance: N/A
+artists: ['A Perfect Circle']
+artistId: None
+artistName: A Perfect Circle
+artistUrl: None
+artistImageUrl: None
+venueName: Freeman Coliseum
+venueId: None
+metroAreaName: San Antonio
+metroAreaId: None
+venueCity: San Antonio
+venueCountry:  US
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 5:
+skid: None
+name: Tulsa
+eventUrl: https://www.songkick.com/concerts/42175547-primus-at-bok-center
+eventType: None
+date: 2025-05-01T20:00:00-0500
+startTime: 20:00:00-0500
+attendance: N/A
+artists: ['A Perfect Circle']
+artistId: None
+artistName: A Perfect Circle
+artistUrl: None
+artistImageUrl: None
+venueName: BOK Center
+venueId: None
+metroAreaName: Tulsa
+metroAreaId: None
+venueCity: Tulsa
+venueCountry:  US
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 6:
+skid: None
+name: Rogers
+eventUrl: https://www.songkick.com/concerts/42179470-puscifer-at-walmart-arkansas-music-pavilion
+eventType: None
+date: 2025-05-02T20:00:00-0500
+startTime: 20:00:00-0500
+attendance: N/A
+artists: ['A Perfect Circle']
+artistId: None
+artistName: A Perfect Circle
+artistUrl: None
+artistImageUrl: None
+venueName: Walmart Arkansas Music Pavilion (AMP)
+venueId: None
+metroAreaName: Rogers
+metroAreaId: None
+venueCity: Rogers
+venueCountry:  US
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 7:
+skid: None
+name: Huntsville
+eventUrl: https://www.songkick.com/concerts/42174556-primus-at-orion-amphitheater
+eventType: None
+date: 2025-05-04T18:00:00-0500
+startTime: 18:00:00-0500
+attendance: N/A
+artists: ['A Perfect Circle']
+artistId: None
+artistName: A Perfect Circle
+artistUrl: None
+artistImageUrl: None
+venueName: Orion Amphitheater
+venueId: None
+metroAreaName: Huntsville
+metroAreaId: None
+venueCity: Huntsville
+venueCountry:  US
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 8:
+skid: None
+name: Hollywood
+eventUrl: https://www.songkick.com/concerts/42175663-primus-at-hard-rock-live-seminole-hard-rock-hotel-and-casino-hollywood
+eventType: None
+date: 2025-05-06T20:00:00-0400
+startTime: 20:00:00-0400
+attendance: N/A
+artists: ['A Perfect Circle']
+artistId: None
+artistName: A Perfect Circle
+artistUrl: None
+artistImageUrl: None
+venueName: Hard Rock Live - Seminole Hard Rock Hotel & Casino Hollywood
+venueId: None
+metroAreaName: Hollywood
+metroAreaId: None
+venueCity: Hollywood
+venueCountry:  US
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 9:
+skid: None
+name: Tampa
+eventUrl: https://www.songkick.com/concerts/42175372-primus-at-midflorida-credit-union-amphitheatre
+eventType: None
+date: 2025-05-08T20:00:00-0400
+startTime: 20:00:00-0400
+attendance: N/A
+artists: ['A Perfect Circle']
+artistId: None
+artistName: A Perfect Circle
+artistUrl: None
+artistImageUrl: None
+venueName: MIDFLORIDA Credit Union Amphitheatre
+venueId: None
+metroAreaName: Tampa
+metroAreaId: None
+venueCity: Tampa
+venueCountry:  US
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------
+Event 10:
+skid: None
+name: Charlotte
+eventUrl: https://www.songkick.com/concerts/42175660-primus-at-pnc-music-pavilion
+eventType: None
+date: 2025-05-10T20:00:00-0400
+startTime: 20:00:00-0400
+attendance: N/A
+artists: ['A Perfect Circle']
+artistId: None
+artistName: A Perfect Circle
+artistUrl: None
+artistImageUrl: None
+venueName: PNC Music Pavilion
+venueId: None
+metroAreaName: Charlotte
+metroAreaId: None
+venueCity: Charlotte
+venueCountry:  US
+venuePostalCode: N/A
+venueStreetAddress: None
+--------------------------------------------------

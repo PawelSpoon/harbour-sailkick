@@ -1,0 +1,1101 @@
+Parsed Events:
+Event 1:
+skid: 42263500-voodoo-jurgens-at-metropol
+name: Voodoo Jürgens @ Metropol
+eventUrl: https://www.songkick.com/concerts/42263500-voodoo-jurgens-at-metropol
+eventType: concert
+date: 2025-03-31T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: None
+artists: ['Voodoo Jürgens']
+artistId: 8806779-voodoo-jurgens
+artistName: Voodoo Jürgens
+artistUrl: https://www.songkick.com/artists/8806779-voodoo-jurgens
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/8806779/huge_avatar
+venueName: Metropol
+venueId: 55648-metropol
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1170
+venueStreetAddress: Hernalser Hauptstrasse 55
+--------------------------------------------------
+Event 2:
+skid: 41836498-spider-murphy-gang-at-stadthalle-erding-grosser-saal
+name: Spider Murphy Gang @ Stadthalle Erding - großer Saal
+eventUrl: https://www.songkick.com/concerts/41836498-spider-murphy-gang-at-stadthalle-erding-grosser-saal
+eventType: concert
+date: 2025-04-23
+startTime: None
+attendance: None
+artists: ['Spider Murphy Gang']
+artistId: 143369-spider-murphy-gang
+artistName: Spider Murphy Gang
+artistUrl: https://www.songkick.com/artists/143369-spider-murphy-gang
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/143369/huge_avatar
+venueName: Stadthalle Erding - großer Saal
+venueId: 2297769-stadthalle-erding-grosser-saal
+metroAreaName: Erding
+metroAreaId: None
+venueCity: Erding
+venueCountry: Germany
+venuePostalCode: 85435
+venueStreetAddress: Alois-Schießl-Platz 1
+--------------------------------------------------
+Event 3:
+skid: 41936220-bilderbuch-at-halle-d-wiener-stadthalle
+name: Bilderbuch @ Halle D, Wiener Stadthalle
+eventUrl: https://www.songkick.com/concerts/41936220-bilderbuch-at-halle-d-wiener-stadthalle
+eventType: concert
+date: 2025-04-24T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: None
+artists: ['Bilderbuch']
+artistId: 1093699-bilderbuch
+artistName: Bilderbuch
+artistUrl: https://www.songkick.com/artists/1093699-bilderbuch
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/1093699/huge_avatar
+venueName: Halle D, Wiener Stadthalle
+venueId: 771576-halle-d-wiener-stadthalle
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1150
+venueStreetAddress: Roland-Rainer-Platz 1 / Eingang Märzpark
+--------------------------------------------------
+Event 4:
+skid: /festivals/1019578-noppen-air/id/42313488-noppen-air-2025
+name: Noppen Air 2025 @ Noppenhof
+eventUrl: https://www.songkick.com/festivals/1019578-noppen-air/id/42313488-noppen-air-2025
+eventType: concert
+date: 2025-04-25
+startTime: None
+attendance: Going
+artists: ['Noppen Air 2025', "Mother 's Cake", 'Kontrust', 'Anda Morts', 'Endless Wellness', 'VIECH', 'Coverrun', 'Anna Buchegger', 'and Sound Gurus']
+artistId: 4467763-mothers-cake
+artistName: Noppen Air 2025
+artistUrl: https://www.songkick.com/artists/4467763-mothers-cake
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/events/42313488/huge_avatar?series_id=1019578
+venueName: Noppenhof
+venueId: 2947198-noppenhof
+metroAreaName: Neußerling
+metroAreaId: None
+venueCity: Neußerling
+venueCountry: Austria
+venuePostalCode: 4175 Herzogsdorf
+venueStreetAddress: Buchholz 49
+--------------------------------------------------
+Event 5:
+skid: 42159823-iamx-at-ampere-muffatwerk
+name: IAMX @ Ampere / Muffatwerk
+eventUrl: https://www.songkick.com/concerts/42159823-iamx-at-ampere-muffatwerk
+eventType: concert
+date: 2025-05-01
+startTime: None
+attendance: None
+artists: ['IAMX']
+artistId: 44666-iamx
+artistName: IAMX
+artistUrl: https://www.songkick.com/artists/44666-iamx
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/44666/huge_avatar
+venueName: Ampere / Muffatwerk
+venueId: 2047714-ampere-muffatwerk
+metroAreaName: Munich
+metroAreaId: None
+venueCity: Munich
+venueCountry: Germany
+venuePostalCode: 81667
+venueStreetAddress: Zellstr. 4
+--------------------------------------------------
+Event 6:
+skid: 42219812-team-scheisse-at-muffathalle
+name: Team Scheisse @ Muffathalle
+eventUrl: https://www.songkick.com/concerts/42219812-team-scheisse-at-muffathalle
+eventType: concert
+date: 2025-05-02
+startTime: None
+attendance: None
+artists: ['Team Scheisse']
+artistId: 10187704-team-scheisse
+artistName: Team Scheisse
+artistUrl: https://www.songkick.com/artists/10187704-team-scheisse
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/10187704/huge_avatar
+venueName: Muffathalle
+venueId: 33264-muffathalle
+metroAreaName: Munich
+metroAreaId: None
+venueCity: Munich
+venueCountry: Germany
+venuePostalCode: 81667
+venueStreetAddress: Zellstr. 4
+--------------------------------------------------
+Event 7:
+skid: 42173775-pixies-at-zenith-die-kulturhalle
+name: Pixies @ Zenith, die Kulturhalle
+eventUrl: https://www.songkick.com/concerts/42173775-pixies-at-zenith-die-kulturhalle
+eventType: concert
+date: 2025-05-03T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: Interested
+artists: ['Pixies']
+artistId: 297809-pixies
+artistName: Pixies
+artistUrl: https://www.songkick.com/artists/297809-pixies
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/297809/huge_avatar
+venueName: Zenith, die Kulturhalle
+venueId: 880251-zenith-die-kulturhalle
+metroAreaName: Munich
+metroAreaId: None
+venueCity: Munich
+venueCountry: Germany
+venuePostalCode: 80939
+venueStreetAddress: Lilienthalallee 29
+--------------------------------------------------
+Event 8:
+skid: 42198264-bilderbuch-at-kino-siska
+name: Bilderbuch @ Kino Šiška (Centre for Urban Culture)
+eventUrl: https://www.songkick.com/concerts/42198264-bilderbuch-at-kino-siska
+eventType: concert
+date: 2025-05-12T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: Interested
+artists: ['Bilderbuch']
+artistId: 1093699-bilderbuch
+artistName: Bilderbuch
+artistUrl: https://www.songkick.com/artists/1093699-bilderbuch
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/1093699/huge_avatar
+venueName: Kino Šiška (Centre for Urban Culture)
+venueId: 470056-kino-siska
+metroAreaName: Ljubljana
+metroAreaId: None
+venueCity: Ljubljana
+venueCountry: Slovenia
+venuePostalCode: 1000
+venueStreetAddress: Trg prekomorskih brigad 3
+--------------------------------------------------
+Event 9:
+skid: 42159827-iamx-at-ppc
+name: IAMX @ PPC
+eventUrl: https://www.songkick.com/concerts/42159827-iamx-at-ppc
+eventType: concert
+date: 2025-05-14T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: Interested
+artists: ['IAMX']
+artistId: 44666-iamx
+artistName: IAMX
+artistUrl: https://www.songkick.com/artists/44666-iamx
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/44666/huge_avatar
+venueName: PPC
+venueId: 101199-ppc
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: 8020
+venueStreetAddress: Neubaugasse 6
+--------------------------------------------------
+Event 10:
+skid: 42159828-iamx-at-simm-city-festsaal-zentrum-simmering
+name: IAMX @ Simm City Festsaal, Zentrum Simmering
+eventUrl: https://www.songkick.com/concerts/42159828-iamx-at-simm-city-festsaal-zentrum-simmering
+eventType: concert
+date: 2025-05-16T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: Interested
+artists: ['IAMX']
+artistId: 44666-iamx
+artistName: IAMX
+artistUrl: https://www.songkick.com/artists/44666-iamx
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/44666/huge_avatar
+venueName: Simm City Festsaal, Zentrum Simmering
+venueId: 2886528-simm-city-festsaal-zentrum-simmering
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1110
+venueStreetAddress: Simmeringer Hauptstraße 96A
+--------------------------------------------------
+Event 11:
+skid: /festivals/3670075-forever-young-2025-osterreichs-grosstes-80er-open-air/id/41964538-forever-young-2025--sterreichs-grtes-80er-open-air-festival-2025
+name: Forever Young 2025 - Österreichs größtes 80'er Open Air Festival 2025 @ Donauinsel Wien
+eventUrl: https://www.songkick.com/festivals/3670075-forever-young-2025-osterreichs-grosstes-80er-open-air/id/41964538-forever-young-2025--sterreichs-grtes-80er-open-air-festival-2025
+eventType: concert
+date: 2025-05-16T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: Interested
+artists: ["Forever Young 2025 - Österreichs größtes 80 'er Open Air Festival 2025", 'Starship', 'Cutting Crew', 'Level 42', 'Paul Young', 'Taylor Dayne', 'Nik Kershaw', 'Spider Murphy Gang', 'and Gazebo']
+artistId: 60786-starship
+artistName: Forever Young 2025 - Österreichs größtes 80 'er Open Air Festival 2025
+artistUrl: https://www.songkick.com/artists/60786-starship
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/events/41964538/huge_avatar?series_id=3670075
+venueName: Donauinsel Wien
+venueId: 70096-donauinsel-wien
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1210
+venueStreetAddress: Donauinsel bei Floridsdorfer Brücke
+--------------------------------------------------
+Event 12:
+skid: 42329656-smokie-at-salzburgarena
+name: Smokie @ Salzburgarena
+eventUrl: https://www.songkick.com/concerts/42329656-smokie-at-salzburgarena
+eventType: concert
+date: 2025-05-21T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: Interested
+artists: ['Smokie']
+artistId: 366289-smokie
+artistName: Smokie
+artistUrl: https://www.songkick.com/artists/366289-smokie
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/366289/huge_avatar
+venueName: Salzburgarena
+venueId: 29541-salzburgarena
+metroAreaName: Salzburg
+metroAreaId: None
+venueCity: Salzburg
+venueCountry: Austria
+venuePostalCode: 5020
+venueStreetAddress: Am Messezentrum 1
+--------------------------------------------------
+Event 13:
+skid: 42315414-peterlicht-at-flucc
+name: PeterLicht @ FLUCC
+eventUrl: https://www.songkick.com/concerts/42315414-peterlicht-at-flucc
+eventType: concert
+date: 2025-05-26T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: None
+artists: ['PeterLicht']
+artistId: 518304-peterlicht
+artistName: PeterLicht
+artistUrl: https://www.songkick.com/artists/518304-peterlicht
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/518304/huge_avatar
+venueName: FLUCC
+venueId: 4531835-flucc
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1020
+venueStreetAddress: Praterstern 5
+--------------------------------------------------
+Event 14:
+skid: 42321621-peterlicht-at-argekultur
+name: PeterLicht @ ARGEkultur
+eventUrl: https://www.songkick.com/concerts/42321621-peterlicht-at-argekultur
+eventType: concert
+date: 2025-05-27T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: None
+artists: ['PeterLicht']
+artistId: 518304-peterlicht
+artistName: PeterLicht
+artistUrl: https://www.songkick.com/artists/518304-peterlicht
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/518304/huge_avatar
+venueName: ARGEkultur
+venueId: 81353-argekultur
+metroAreaName: Salzburg
+metroAreaId: None
+venueCity: Salzburg
+venueCountry: Austria
+venuePostalCode: 5020
+venueStreetAddress: Ulrike-Gschwandtner-Straße 5
+--------------------------------------------------
+Event 15:
+skid: 42182249-iron-maiden-at-letiste-letnany-letnany-airport
+name: Iron Maiden @ Letiště Letňany / Letňany Airport
+eventUrl: https://www.songkick.com/concerts/42182249-iron-maiden-at-letiste-letnany-letnany-airport
+eventType: concert
+date: 2025-05-31T16:00:00+0200
+startTime: 16:00:00+0200
+attendance: None
+artists: ['Iron Maiden and Halestorm']
+artistId: 438390-iron-maiden
+artistName: Iron Maiden and Halestorm
+artistUrl: https://www.songkick.com/artists/438390-iron-maiden
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/438390/huge_avatar
+venueName: Letiště Letňany / Letňany Airport
+venueId: 3031644-letiste-letnany-letnany-airport
+metroAreaName: Prague
+metroAreaId: None
+venueCity: Prague
+venueCountry: Czech Republic
+venuePostalCode: 19700
+venueStreetAddress: Hůlkova 35
+--------------------------------------------------
+Event 16:
+skid: 42180277-iron-maiden-at-unknown-venue
+name: Iron Maiden @ Prague
+eventUrl: https://www.songkick.com/concerts/42180277-iron-maiden-at-unknown-venue
+eventType: concert
+date: 2025-05-31T16:00:00+0200
+startTime: 16:00:00+0200
+attendance: None
+artists: ['Iron Maiden']
+artistId: 438390-iron-maiden
+artistName: Iron Maiden
+artistUrl: https://www.songkick.com/artists/438390-iron-maiden
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/438390/huge_avatar
+venueName: N/A
+venueId: N/A
+metroAreaName: Prague
+metroAreaId: None
+venueCity: Prague
+venueCountry: Czech Republic
+venuePostalCode: None
+venueStreetAddress: None
+--------------------------------------------------
+Event 17:
+skid: 42182278-iron-maiden-at-uschovna-letiste-letnany
+name: Iron Maiden @ Úschovna - Letiště Letňany
+eventUrl: https://www.songkick.com/concerts/42182278-iron-maiden-at-uschovna-letiste-letnany
+eventType: concert
+date: 2025-05-31T16:00:00+0200
+startTime: 16:00:00+0200
+attendance: None
+artists: ['Iron Maiden and Halestorm']
+artistId: 438390-iron-maiden
+artistName: Iron Maiden and Halestorm
+artistUrl: https://www.songkick.com/artists/438390-iron-maiden
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/438390/huge_avatar
+venueName: Úschovna - Letiště Letňany
+venueId: 4560062-uschovna-letiste-letnany
+metroAreaName: Prague
+metroAreaId: None
+venueCity: Prague
+venueCountry: Czech Republic
+venuePostalCode: 19700
+venueStreetAddress: None
+--------------------------------------------------
+Event 18:
+skid: 42180288-iron-maiden-at-unknown-venue
+name: Iron Maiden @ Bratislava
+eventUrl: https://www.songkick.com/concerts/42180288-iron-maiden-at-unknown-venue
+eventType: concert
+date: 2025-06-01T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: Interested
+artists: ['Iron Maiden']
+artistId: 438390-iron-maiden
+artistName: Iron Maiden
+artistUrl: https://www.songkick.com/artists/438390-iron-maiden
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/438390/huge_avatar
+venueName: N/A
+venueId: N/A
+metroAreaName: Bratislava
+metroAreaId: None
+venueCity: Bratislava
+venueCountry: Slovakia
+venuePostalCode: None
+venueStreetAddress: None
+--------------------------------------------------
+Event 19:
+skid: 42254303-smokie-at-sono-centrum
+name: Smokie @ Sono Centrum
+eventUrl: https://www.songkick.com/concerts/42254303-smokie-at-sono-centrum
+eventType: concert
+date: 2025-06-13T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: None
+artists: ['Smokie']
+artistId: 366289-smokie
+artistName: Smokie
+artistUrl: https://www.songkick.com/artists/366289-smokie
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/366289/huge_avatar
+venueName: Sono Centrum
+venueId: 2782348-sono-centrum
+metroAreaName: Brno
+metroAreaId: None
+venueCity: Brno
+venueCountry: Czech Republic
+venuePostalCode: 61600
+venueStreetAddress: Veveří 113
+--------------------------------------------------
+Event 20:
+skid: 42197995-smokie-at-lucerna-velky-sal
+name: Smokie @ Lucerna - Velký sál
+eventUrl: https://www.songkick.com/concerts/42197995-smokie-at-lucerna-velky-sal
+eventType: concert
+date: 2025-06-14T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: Interested
+artists: ['Smokie']
+artistId: 366289-smokie
+artistName: Smokie
+artistUrl: https://www.songkick.com/artists/366289-smokie
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/366289/huge_avatar
+venueName: Lucerna - Velký sál
+venueId: 4471633-lucerna-velky-sal
+metroAreaName: Prague
+metroAreaId: None
+venueCity: Prague
+venueCountry: Czech Republic
+venuePostalCode: 11000
+venueStreetAddress: Štěpánská 61
+--------------------------------------------------
+Event 21:
+skid: 42209601-wilco-at-rathausplatz
+name: Wilco @ Rathausplatz
+eventUrl: https://www.songkick.com/concerts/42209601-wilco-at-rathausplatz
+eventType: concert
+date: 2025-06-19T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: None
+artists: ['Wilco']
+artistId: 61494-wilco
+artistName: Wilco
+artistUrl: https://www.songkick.com/artists/61494-wilco
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/61494/huge_avatar
+venueName: Rathausplatz
+venueId: 1762418-rathausplatz
+metroAreaName: Dachau
+metroAreaId: None
+venueCity: Dachau
+venueCountry: Germany
+venuePostalCode: 85221
+venueStreetAddress: None
+--------------------------------------------------
+Event 22:
+skid: 42335883-guns-n-roses-at-allianz-arena
+name: Guns N' Roses @ Allianz Arena
+eventUrl: https://www.songkick.com/concerts/42335883-guns-n-roses-at-allianz-arena
+eventType: concert
+date: 2025-06-20T18:00:00+0200
+startTime: 18:00:00+0200
+attendance: None
+artists: ["Guns N 'Roses"]
+artistId: 509644-guns-n-roses
+artistName: Guns N 'Roses
+artistUrl: https://www.songkick.com/artists/509644-guns-n-roses
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/509644/huge_avatar
+venueName: Allianz Arena
+venueId: 1413538-allianz-arena
+metroAreaName: Munich
+metroAreaId: None
+venueCity: Munich
+venueCountry: Germany
+venuePostalCode: 80939
+venueStreetAddress: None
+--------------------------------------------------
+Event 23:
+skid: 42032811-suzi-quatro-at-tollwood-sommerfestival-musik-arena
+name: Suzi Quatro @ Tollwood Sommerfestival - Musik Arena
+eventUrl: https://www.songkick.com/concerts/42032811-suzi-quatro-at-tollwood-sommerfestival-musik-arena
+eventType: concert
+date: 2025-06-22
+startTime: None
+attendance: Interested
+artists: ['Suzi Quatro']
+artistId: 126246-suzi-quatro
+artistName: Suzi Quatro
+artistUrl: https://www.songkick.com/artists/126246-suzi-quatro
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/126246/huge_avatar
+venueName: Tollwood Sommerfestival - Musik Arena
+venueId: 2786313-tollwood-sommerfestival-musik-arena
+metroAreaName: Munich
+metroAreaId: None
+venueCity: Munich
+venueCountry: Germany
+venuePostalCode: 80809
+venueStreetAddress: Spiridon-Louis-Ring
+--------------------------------------------------
+Event 24:
+skid: 42308298-iggy-pop-at-tollwood
+name: Iggy Pop @ Tollwood
+eventUrl: https://www.songkick.com/concerts/42308298-iggy-pop-at-tollwood
+eventType: concert
+date: 2025-06-24T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: None
+artists: ['Iggy Pop']
+artistId: 170739-iggy-pop
+artistName: Iggy Pop
+artistUrl: https://www.songkick.com/artists/170739-iggy-pop
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/170739/huge_avatar
+venueName: Tollwood
+venueId: 69619-tollwood
+metroAreaName: Munich
+metroAreaId: None
+venueCity: Munich
+venueCountry: Germany
+venuePostalCode: 80809
+venueStreetAddress: Olympiapark Süd, München
+--------------------------------------------------
+Event 25:
+skid: 42379024-amyl-and-the-sniffers-at-gasometer
+name: Amyl and The Sniffers @ Gasometer
+eventUrl: https://www.songkick.com/concerts/42379024-amyl-and-the-sniffers-at-gasometer
+eventType: concert
+date: 2025-06-24T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: Interested
+artists: ['Amyl and The Sniffers']
+artistId: 8796449-amyl-and-the-sniffers
+artistName: Amyl and The Sniffers
+artistUrl: https://www.songkick.com/artists/8796449-amyl-and-the-sniffers
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/8796449/huge_avatar
+venueName: Gasometer
+venueId: 43440-gasometer
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1110
+venueStreetAddress: Guglgasse 6
+--------------------------------------------------
+Event 26:
+skid: 42341914-voodoo-jurgens-at-postsaal
+name: Voodoo Jürgens @ Postsaal
+eventUrl: https://www.songkick.com/concerts/42341914-voodoo-jurgens-at-postsaal
+eventType: concert
+date: 2025-06-25T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: None
+artists: ['Voodoo Jürgens']
+artistId: 8806779-voodoo-jurgens
+artistName: Voodoo Jürgens
+artistUrl: https://www.songkick.com/artists/8806779-voodoo-jurgens
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/8806779/huge_avatar
+venueName: Postsaal
+venueId: 2194689-postsaal
+metroAreaName: Trostberg
+metroAreaId: None
+venueCity: Trostberg
+venueCountry: Germany
+venuePostalCode: 83308
+venueStreetAddress: Marktmülleranger 1
+--------------------------------------------------
+Event 27:
+skid: 42407395-acdc-at-letiste-letnany-letnany-airport
+name: AC/DC @ Letiště Letňany / Letňany Airport
+eventUrl: https://www.songkick.com/concerts/42407395-acdc-at-letiste-letnany-letnany-airport
+eventType: concert
+date: 2025-06-26T16:00:00+0200
+startTime: 16:00:00+0200
+attendance: Interested
+artists: ['AC/DC']
+artistId: 276130-acdc
+artistName: AC/DC
+artistUrl: https://www.songkick.com/artists/276130-acdc
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/276130/huge_avatar
+venueName: Letiště Letňany / Letňany Airport
+venueId: 3031644-letiste-letnany-letnany-airport
+metroAreaName: Prague
+metroAreaId: None
+venueCity: Prague
+venueCountry: Czech Republic
+venuePostalCode: 19700
+venueStreetAddress: Hůlkova 35
+--------------------------------------------------
+Event 28:
+skid: 42387028-nine-inch-nails-at-halle-d-wiener-stadthalle
+name: Nine Inch Nails @ Halle D, Wiener Stadthalle
+eventUrl: https://www.songkick.com/concerts/42387028-nine-inch-nails-at-halle-d-wiener-stadthalle
+eventType: concert
+date: 2025-06-27T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: None
+artists: ['Nine Inch Nails']
+artistId: 241755-nine-inch-nails
+artistName: Nine Inch Nails
+artistUrl: https://www.songkick.com/artists/241755-nine-inch-nails
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/241755/huge_avatar
+venueName: Halle D, Wiener Stadthalle
+venueId: 771576-halle-d-wiener-stadthalle
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1150
+venueStreetAddress: Roland-Rainer-Platz 1 / Eingang Märzpark
+--------------------------------------------------
+Event 29:
+skid: 42440227-billy-idol-at-konigsplatz
+name: Billy Idol @ Königsplatz
+eventUrl: https://www.songkick.com/concerts/42440227-billy-idol-at-konigsplatz
+eventType: concert
+date: 2025-06-27T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: Interested
+artists: ['Billy Idol and New Model Army']
+artistId: 347869-billy-idol
+artistName: Billy Idol and New Model Army
+artistUrl: https://www.songkick.com/artists/347869-billy-idol
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/347869/huge_avatar
+venueName: Königsplatz
+venueId: 80939-konigsplatz
+metroAreaName: Munich
+metroAreaId: None
+venueCity: Munich
+venueCountry: Germany
+venuePostalCode: 80333
+venueStreetAddress: None
+--------------------------------------------------
+Event 30:
+skid: 42497421-dead-daisies-at-majestic-music-club
+name: The Dead Daisies @ Majestic Music Club
+eventUrl: https://www.songkick.com/concerts/42497421-dead-daisies-at-majestic-music-club
+eventType: concert
+date: 2025-06-27T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: None
+artists: ['The Dead Daisies']
+artistId: 6410229-dead-daisies
+artistName: The Dead Daisies
+artistUrl: https://www.songkick.com/artists/6410229-dead-daisies
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/6410229/huge_avatar
+venueName: Majestic Music Club
+venueId: 789086-majestic-music-club
+metroAreaName: Bratislava
+metroAreaId: None
+venueCity: Bratislava
+venueCountry: Slovakia
+venuePostalCode: 81105
+venueStreetAddress: Karpatská 2
+--------------------------------------------------
+Event 31:
+skid: 42229811-spider-murphy-gang-at-kasemattenbuhne
+name: Spider Murphy Gang @ Kasemattenbühne
+eventUrl: https://www.songkick.com/concerts/42229811-spider-murphy-gang-at-kasemattenbuhne
+eventType: concert
+date: 2025-07-03T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: Interested
+artists: ['Spider Murphy Gang']
+artistId: 143369-spider-murphy-gang
+artistName: Spider Murphy Gang
+artistUrl: https://www.songkick.com/artists/143369-spider-murphy-gang
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/143369/huge_avatar
+venueName: Kasemattenbühne
+venueId: 53035-kasemattenbuhne
+metroAreaName: Graz
+metroAreaId: None
+venueCity: Graz
+venueCountry: Austria
+venuePostalCode: 8010
+venueStreetAddress: Schlossberg
+--------------------------------------------------
+Event 32:
+skid: 42337317-kills-at-tvornica-kulture
+name: The Kills @ Tvornica kulture
+eventUrl: https://www.songkick.com/concerts/42337317-kills-at-tvornica-kulture
+eventType: concert
+date: 2025-07-12T21:00:00+0200
+startTime: 21:00:00+0200
+attendance: None
+artists: ['The Kills']
+artistId: 236059-kills
+artistName: The Kills
+artistUrl: https://www.songkick.com/artists/236059-kills
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/236059/huge_avatar
+venueName: Tvornica kulture
+venueId: 124521-tvornica-kulture
+metroAreaName: Zagreb
+metroAreaId: None
+venueCity: Zagreb
+venueCountry: Croatia
+venuePostalCode: 10000
+venueStreetAddress: Ljudevita Posavskog 1 / Šubićeva 2
+--------------------------------------------------
+Event 33:
+skid: 42377796-queens-of-the-stone-age-at-wiener-stadthalle
+name: Queens of the Stone Age @ Wiener Stadthalle
+eventUrl: https://www.songkick.com/concerts/42377796-queens-of-the-stone-age-at-wiener-stadthalle
+eventType: concert
+date: 2025-07-13T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: None
+artists: ['Queens of the Stone Age']
+artistId: 479466-queens-of-the-stone-age
+artistName: Queens of the Stone Age
+artistUrl: https://www.songkick.com/artists/479466-queens-of-the-stone-age
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/479466/huge_avatar
+venueName: Wiener Stadthalle
+venueId: 514381-wiener-stadthalle
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1150
+venueStreetAddress: Hütteldorferstraße 2F
+--------------------------------------------------
+Event 34:
+skid: 42259144-judas-priest-at-olympiahalle-munchen
+name: Judas Priest @ Olympiahalle München
+eventUrl: https://www.songkick.com/concerts/42259144-judas-priest-at-olympiahalle-munchen
+eventType: concert
+date: 2025-07-13T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: None
+artists: ['Judas Priest']
+artistId: 313183-judas-priest
+artistName: Judas Priest
+artistUrl: https://www.songkick.com/artists/313183-judas-priest
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/313183/huge_avatar
+venueName: Olympiahalle München
+venueId: 46871-olympiahalle-munchen
+metroAreaName: Munich
+metroAreaId: None
+venueCity: Munich
+venueCountry: Germany
+venuePostalCode: 80809
+venueStreetAddress: Spiridon-Louis-Ring 21
+--------------------------------------------------
+Event 35:
+skid: 42329876-kills-at-arena-wien
+name: The Kills @ Arena Wien
+eventUrl: https://www.songkick.com/concerts/42329876-kills-at-arena-wien
+eventType: concert
+date: 2025-07-13T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: Interested
+artists: ['The Kills']
+artistId: 236059-kills
+artistName: The Kills
+artistUrl: https://www.songkick.com/artists/236059-kills
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/236059/huge_avatar
+venueName: Arena Wien
+venueId: 29983-arena-wien
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1030
+venueStreetAddress: Baumgasse 80
+--------------------------------------------------
+Event 36:
+skid: 42032741-spider-murphy-gang-at-tollwood-sommerfestival-musik-arena
+name: Spider Murphy Gang @ Tollwood Sommerfestival - Musik Arena
+eventUrl: https://www.songkick.com/concerts/42032741-spider-murphy-gang-at-tollwood-sommerfestival-musik-arena
+eventType: concert
+date: 2025-07-13T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: None
+artists: ['Spider Murphy Gang']
+artistId: 143369-spider-murphy-gang
+artistName: Spider Murphy Gang
+artistUrl: https://www.songkick.com/artists/143369-spider-murphy-gang
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/143369/huge_avatar
+venueName: Tollwood Sommerfestival - Musik Arena
+venueId: 2786313-tollwood-sommerfestival-musik-arena
+metroAreaName: Munich
+metroAreaId: None
+venueCity: Munich
+venueCountry: Germany
+venuePostalCode: 80809
+venueStreetAddress: Spiridon-Louis-Ring
+--------------------------------------------------
+Event 37:
+skid: 42183933-iron-maiden-at-ernst-happel-stadion
+name: Iron Maiden @ Ernst Happel Stadion
+eventUrl: https://www.songkick.com/concerts/42183933-iron-maiden-at-ernst-happel-stadion
+eventType: concert
+date: 2025-07-17
+startTime: None
+attendance: Interested
+artists: ['Iron Maiden']
+artistId: 438390-iron-maiden
+artistName: Iron Maiden
+artistUrl: https://www.songkick.com/artists/438390-iron-maiden
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/438390/huge_avatar
+venueName: Ernst Happel Stadion
+venueId: 61520-ernst-happel-stadion
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1020
+venueStreetAddress: Meiereistrasse 7
+--------------------------------------------------
+Event 38:
+skid: /festivals/1476458-lieder-am-see/id/42267941-lieder-am-see-2025
+name: Lieder AM See 2025 @ Strandbad Enderndorf
+eventUrl: https://www.songkick.com/festivals/1476458-lieder-am-see/id/42267941-lieder-am-see-2025
+eventType: concert
+date: 2025-07-19
+startTime: None
+attendance: None
+artists: ['Lieder AM See 2025', 'Slade', 'Michael Schenker', 'and Fury In the Slaughterhouse']
+artistId: 345260-slade
+artistName: Lieder AM See 2025
+artistUrl: https://www.songkick.com/artists/345260-slade
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/events/42267941/huge_avatar?series_id=1476458
+venueName: Strandbad Enderndorf
+venueId: 3108589-strandbad-enderndorf
+metroAreaName: Enderndorf
+metroAreaId: None
+venueCity: Enderndorf
+venueCountry: Germany
+venuePostalCode: 91174
+venueStreetAddress: Am Segelhafen
+--------------------------------------------------
+Event 39:
+skid: 42377801-queens-of-the-stone-age-at-src-salata
+name: Queens of the Stone Age @ SRC Šalata
+eventUrl: https://www.songkick.com/concerts/42377801-queens-of-the-stone-age-at-src-salata
+eventType: concert
+date: 2025-07-22T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: None
+artists: ['Queens of the Stone Age']
+artistId: 479466-queens-of-the-stone-age
+artistName: Queens of the Stone Age
+artistUrl: https://www.songkick.com/artists/479466-queens-of-the-stone-age
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/479466/huge_avatar
+venueName: SRC Šalata
+venueId: 49600-src-salata
+metroAreaName: Zagreb
+metroAreaId: None
+venueCity: Zagreb
+venueCountry: Croatia
+venuePostalCode: 10000
+venueStreetAddress: Schlosserove stube 2
+--------------------------------------------------
+Event 40:
+skid: 42377802-queens-of-the-stone-age-at-src-salata
+name: Queens of the Stone Age @ SRC Šalata
+eventUrl: https://www.songkick.com/concerts/42377802-queens-of-the-stone-age-at-src-salata
+eventType: concert
+date: 2025-07-23T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: None
+artists: ['Queens of the Stone Age']
+artistId: 479466-queens-of-the-stone-age
+artistName: Queens of the Stone Age
+artistUrl: https://www.songkick.com/artists/479466-queens-of-the-stone-age
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/479466/huge_avatar
+venueName: SRC Šalata
+venueId: 49600-src-salata
+metroAreaName: Zagreb
+metroAreaId: None
+venueCity: Zagreb
+venueCountry: Croatia
+venuePostalCode: 10000
+venueStreetAddress: Schlosserove stube 2
+--------------------------------------------------
+Event 41:
+skid: 42335937-guns-n-roses-at-ernst-happel-stadion
+name: Guns N' Roses @ Ernst Happel Stadion
+eventUrl: https://www.songkick.com/concerts/42335937-guns-n-roses-at-ernst-happel-stadion
+eventType: concert
+date: 2025-07-24T17:00:00+0200
+startTime: 17:00:00+0200
+attendance: None
+artists: ["Guns N 'Roses"]
+artistId: 509644-guns-n-roses
+artistName: Guns N 'Roses
+artistUrl: https://www.songkick.com/artists/509644-guns-n-roses
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/509644/huge_avatar
+venueName: Ernst Happel Stadion
+venueId: 61520-ernst-happel-stadion
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1020
+venueStreetAddress: Meiereistrasse 7
+--------------------------------------------------
+Event 42:
+skid: 42377803-queens-of-the-stone-age-at-zenith
+name: Queens of the Stone Age @ Zenith
+eventUrl: https://www.songkick.com/concerts/42377803-queens-of-the-stone-age-at-zenith
+eventType: concert
+date: 2025-07-25T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: None
+artists: ['Queens of the Stone Age']
+artistId: 479466-queens-of-the-stone-age
+artistName: Queens of the Stone Age
+artistUrl: https://www.songkick.com/artists/479466-queens-of-the-stone-age
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/479466/huge_avatar
+venueName: Zenith
+venueId: 4592668-zenith
+metroAreaName: Munich
+metroAreaId: None
+venueCity: Munich
+venueCountry: Germany
+venuePostalCode: 80939
+venueStreetAddress: Lilienthalallee 29
+--------------------------------------------------
+Event 43:
+skid: 42279992-spider-murphy-gang-at-seeanlagen-diessen-am-ammersee
+name: Spider Murphy Gang @ Seeanlagen Dießen Am Ammersee
+eventUrl: https://www.songkick.com/concerts/42279992-spider-murphy-gang-at-seeanlagen-diessen-am-ammersee
+eventType: concert
+date: 2025-07-26
+startTime: None
+attendance: None
+artists: ['Spider Murphy Gang']
+artistId: 143369-spider-murphy-gang
+artistName: Spider Murphy Gang
+artistUrl: https://www.songkick.com/artists/143369-spider-murphy-gang
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/143369/huge_avatar
+venueName: Seeanlagen Dießen Am Ammersee
+venueId: 4438352-seeanlagen-diessen-am-ammersee
+metroAreaName: Dießen am Ammersee
+metroAreaId: None
+venueCity: Dießen am Ammersee
+venueCountry: Germany
+venuePostalCode: 86911
+venueStreetAddress: Seestraße 30
+--------------------------------------------------
+Event 44:
+skid: /festivals/709559-punk-rock-holiday/id/42234875-punk-rock-holiday-2025
+name: Punk Rock Holiday 2025 @ Sotočje
+eventUrl: https://www.songkick.com/festivals/709559-punk-rock-holiday/id/42234875-punk-rock-holiday-2025
+eventType: concert
+date: 2025-08-04
+startTime: None
+attendance: Interested
+artists: ['Punk Rock Holiday 2025', 'Millencolin', 'Refused', 'Turbonegro', 'Agnostic Front', 'Authority Zero', 'Madball', 'Gob', 'and Bodyjar']
+artistId: 554312-millencolin
+artistName: Punk Rock Holiday 2025
+artistUrl: https://www.songkick.com/artists/554312-millencolin
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/events/42234875/huge_avatar?series_id=709559
+venueName: Sotočje
+venueId: 495341-sotocje
+metroAreaName: Tolmin
+metroAreaId: None
+venueCity: Tolmin
+venueCountry: Slovenia
+venuePostalCode: 5220
+venueStreetAddress: Dijaska ulica 18
+--------------------------------------------------
+Event 45:
+skid: 42360315-prong-at-strom
+name: Prong @ Strom
+eventUrl: https://www.songkick.com/concerts/42360315-prong-at-strom
+eventType: concert
+date: 2025-08-06
+startTime: None
+attendance: Interested
+artists: ['Prong']
+artistId: 149100-prong
+artistName: Prong
+artistUrl: https://www.songkick.com/artists/149100-prong
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/149100/huge_avatar
+venueName: Strom
+venueId: 2114934-strom
+metroAreaName: Munich
+metroAreaId: None
+venueCity: Munich
+venueCountry: Germany
+venuePostalCode: 80337
+venueStreetAddress: Lindwurmstraße 88
+--------------------------------------------------
+Event 46:
+skid: /festivals/46951-picture-on/id/42315222-picture-on-2025
+name: Picture On 2025 @ Open-air-festivalgelände
+eventUrl: https://www.songkick.com/festivals/46951-picture-on/id/42315222-picture-on-2025
+eventType: concert
+date: 2025-08-08
+startTime: None
+attendance: None
+artists: ['Picture On 2025', 'Refused', 'Kosheen', 'Kettcar', 'Bibiza', 'Friedberg', 'UCHE YARA', 'Ocho Macho', 'and Kreiml &Samurai']
+artistId: 88426-refused
+artistName: Picture On 2025
+artistUrl: https://www.songkick.com/artists/88426-refused
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/events/42315222/huge_avatar?series_id=46951
+venueName: Open-air-festivalgelände
+venueId: 4481323-openairfestivalgelande
+metroAreaName: Bildein
+metroAreaId: None
+venueCity: Bildein
+venueCountry: Austria
+venuePostalCode: 7521
+venueStreetAddress: Florianigasse 1
+--------------------------------------------------
+Event 47:
+skid: 42386975-lord-huron-at-raiffeisen-halle-im-gasometer
+name: Lord Huron @ Raiffeisen Halle im Gasometer
+eventUrl: https://www.songkick.com/concerts/42386975-lord-huron-at-raiffeisen-halle-im-gasometer
+eventType: concert
+date: 2025-09-10T20:00:00+0200
+startTime: 20:00:00+0200
+attendance: None
+artists: ['Lord Huron']
+artistId: 3447511-lord-huron
+artistName: Lord Huron
+artistUrl: https://www.songkick.com/artists/3447511-lord-huron
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/3447511/huge_avatar
+venueName: Raiffeisen Halle im Gasometer
+venueId: 4548954-raiffeisen-halle-im-gasometer
+metroAreaName: Vienna
+metroAreaId: None
+venueCity: Vienna
+venueCountry: Austria
+venuePostalCode: 1110
+venueStreetAddress: Guglgasse 8
+--------------------------------------------------
+Event 48:
+skid: 42480959-nada-surf-at-salzburg-rockhouse
+name: Nada Surf @ Salzburg Rockhouse
+eventUrl: https://www.songkick.com/concerts/42480959-nada-surf-at-salzburg-rockhouse
+eventType: concert
+date: 2025-09-14T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: None
+artists: ['Nada Surf']
+artistId: 172227-nada-surf
+artistName: Nada Surf
+artistUrl: https://www.songkick.com/artists/172227-nada-surf
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/172227/huge_avatar
+venueName: Salzburg Rockhouse
+venueId: 34688-salzburg-rockhouse
+metroAreaName: Salzburg
+metroAreaId: None
+venueCity: Salzburg
+venueCountry: Austria
+venuePostalCode: 5020
+venueStreetAddress: Schallmooser Hauptstrasse 46
+--------------------------------------------------
+Event 49:
+skid: 42223189-offspring-at-sportovni-hala-fortuna
+name: The Offspring @ Sportovní Hala Fortuna
+eventUrl: https://www.songkick.com/concerts/42223189-offspring-at-sportovni-hala-fortuna
+eventType: concert
+date: 2025-10-02T19:00:00+0200
+startTime: 19:00:00+0200
+attendance: None
+artists: ['The Offspring']
+artistId: 422558-offspring
+artistName: The Offspring
+artistUrl: https://www.songkick.com/artists/422558-offspring
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/422558/huge_avatar
+venueName: Sportovní Hala Fortuna
+venueId: 1663288-sportovni-hala-fortuna
+metroAreaName: Prague
+metroAreaId: None
+venueCity: Prague
+venueCountry: Czech Republic
+venuePostalCode: 170 00
+venueStreetAddress: Za Elektrárnou 419/1
+--------------------------------------------------
+Event 50:
+skid: 42449537-disturbed-at-o2-arena
+name: Disturbed @ O2 arena
+eventUrl: https://www.songkick.com/concerts/42449537-disturbed-at-o2-arena
+eventType: concert
+date: 2025-10-07T19:30:00+0200
+startTime: 19:30:00+0200
+attendance: None
+artists: ['Disturbed and Megadeth']
+artistId: 455175-disturbed
+artistName: Disturbed and Megadeth
+artistUrl: https://www.songkick.com/artists/455175-disturbed
+artistImageUrl: https://images.sk-static.com/images/media/profile_images/artists/455175/huge_avatar
+venueName: O2 arena
+venueId: 33524-o2-arena
+metroAreaName: Prague
+metroAreaId: None
+venueCity: Prague
+venueCountry: Czech Republic
+venuePostalCode: 19000
+venueStreetAddress: Ocelarska ul. 460/2
+--------------------------------------------------

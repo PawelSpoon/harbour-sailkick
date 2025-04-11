@@ -1,0 +1,128 @@
+Found 18 tracked locations
+
+Artist 1:
+name: Bratislava
+url: https://www.songkick.com/metro-areas/32262-slovakia-bratislava
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 32262-slovakia-bratislava
+body: None
+--------------------------------------------------
+Artist 2:
+name: Brno
+url: https://www.songkick.com/metro-areas/28407-czech-republic-brno
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 28407-czech-republic-brno
+body: None
+--------------------------------------------------
+Artist 3:
+name: Graz
+url: https://www.songkick.com/metro-areas/26766-austria-graz
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 26766-austria-graz
+body: None
+--------------------------------------------------
+Artist 4:
+name: Lignano Sabbiadoro
+url: https://www.songkick.com/metro-areas/67916-italy-lignano-sabbiadoro
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 67916-italy-lignano-sabbiadoro
+body: None
+--------------------------------------------------
+Artist 5:
+name: Linz
+url: https://www.songkick.com/metro-areas/26769-austria-linz
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 26769-austria-linz
+body: None
+--------------------------------------------------
+Artist 6:
+name: Ljubljana
+url: https://www.songkick.com/metro-areas/32259-slovenia-ljubljana
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 32259-slovenia-ljubljana
+body: None
+--------------------------------------------------
+Artist 7:
+name: Maribor
+url: https://www.songkick.com/metro-areas/32260-slovenia-maribor
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 32260-slovenia-maribor
+body: None
+--------------------------------------------------
+Artist 8:
+name: Munich
+url: https://www.songkick.com/metro-areas/28549-germany-munich
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 28549-germany-munich
+body: None
+--------------------------------------------------
+Artist 9:
+name: Prague
+url: https://www.songkick.com/metro-areas/28425-czech-republic-prague
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 28425-czech-republic-prague
+body: None
+--------------------------------------------------
+Artist 10:
+name: Rijeka
+url: https://www.songkick.com/metro-areas/29032-croatia-rijeka
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 29032-croatia-rijeka
+body: None
+--------------------------------------------------
+Artist 11:
+name: Salzburg
+url: https://www.songkick.com/metro-areas/26770-austria-salzburg
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 26770-austria-salzburg
+body: None
+--------------------------------------------------
+Artist 12:
+name: Tolmin
+url: https://www.songkick.com/metro-areas/70976-slovenia-tolmin
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 70976-slovenia-tolmin
+body: None
+--------------------------------------------------
+Artist 13:
+name: Trieste
+url: https://www.songkick.com/metro-areas/30382-italy-trieste
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 30382-italy-trieste
+body: None
+--------------------------------------------------
+Artist 14:
+name: Udine
+url: https://www.songkick.com/metro-areas/30384-italy-udine
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 30384-italy-udine
+body: None
+--------------------------------------------------
+Artist 15:
+name: Venice
+url: https://www.songkick.com/metro-areas/30387-italy-venice
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 30387-italy-venice
+body: None
+--------------------------------------------------
+Artist 16:
+name: Vienna
+url: https://www.songkick.com/metro-areas/26771-austria-vienna
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 26771-austria-vienna
+body: None
+--------------------------------------------------
+Artist 17:
+name: Wiesen
+url: https://www.songkick.com/metro-areas/56638-austria-wiesen
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 56638-austria-wiesen
+body: None
+--------------------------------------------------
+Artist 18:
+name: Zagreb
+url: https://www.songkick.com/metro-areas/29037-croatia-zagreb
+image_url: https://assets.sk-static.com/images/icons/default-location.png
+id: 29037-croatia-zagreb
+body: None
+--------------------------------------------------

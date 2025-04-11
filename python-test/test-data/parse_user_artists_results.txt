@@ -1,0 +1,352 @@
+Found 50 tracked artists
+
+Artist 1:
+name: A Perfect Circle
+url: https://www.songkick.com/artists/549892-a-perfect-circle
+image_url: https://images.sk-static.com/images/media/profile_images/artists/549892/avatar
+id: 549892-a-perfect-circle
+body: None
+--------------------------------------------------
+Artist 2:
+name: Abba Fever
+url: https://www.songkick.com/artists/2682091-abba-fever
+image_url: https://images.sk-static.com/images/media/profile_images/artists/2682091/avatar
+id: 2682091-abba-fever
+body: None
+--------------------------------------------------
+Artist 3:
+name: Abba Gold
+url: https://www.songkick.com/artists/445583-abba-gold
+image_url: https://images.sk-static.com/images/media/profile_images/artists/445583/avatar
+id: 445583-abba-gold
+body: None
+--------------------------------------------------
+Artist 4:
+name: ABBA GOld Europe
+url: https://www.songkick.com/artists/10109463-abba-gold-europe
+image_url: https://images.sk-static.com/images/media/profile_images/artists/10109463/avatar
+id: 10109463-abba-gold-europe
+body: None
+--------------------------------------------------
+Artist 5:
+name: Abba Gold the Concert Show
+url: https://www.songkick.com/artists/7101104-abba-gold-the-concert-show
+image_url: https://images.sk-static.com/images/media/profile_images/artists/7101104/avatar
+id: 7101104-abba-gold-the-concert-show
+body: None
+--------------------------------------------------
+Artist 6:
+name: Abba Mania
+url: https://www.songkick.com/artists/199399-abba-mania
+image_url: https://images.sk-static.com/images/media/profile_images/artists/199399/avatar
+id: 199399-abba-mania
+body: None
+--------------------------------------------------
+Artist 7:
+name: AC/DC
+url: https://www.songkick.com/artists/276130-acdc
+image_url: https://images.sk-static.com/images/media/profile_images/artists/276130/avatar
+id: 276130-acdc
+body: None
+--------------------------------------------------
+Artist 8:
+name: The Afghan Whigs
+url: https://www.songkick.com/artists/233309-afghan-whigs
+image_url: https://images.sk-static.com/images/media/profile_images/artists/233309/avatar
+id: 233309-afghan-whigs
+body: None
+--------------------------------------------------
+Artist 9:
+name: Against Me!
+url: https://www.songkick.com/artists/165747-against-me
+image_url: https://images.sk-static.com/images/media/profile_images/artists/165747/avatar
+id: 165747-against-me
+body: None
+--------------------------------------------------
+Artist 10:
+name: Akne Kid Joe
+url: https://www.songkick.com/artists/9408354-akne-kid-joe
+image_url: https://images.sk-static.com/images/media/profile_images/artists/9408354/avatar
+id: 9408354-akne-kid-joe
+body: None
+--------------------------------------------------
+Artist 11:
+name: Alice Cooper
+url: https://www.songkick.com/artists/538293-alice-cooper
+image_url: https://images.sk-static.com/images/media/profile_images/artists/538293/avatar
+id: 538293-alice-cooper
+body: None
+--------------------------------------------------
+Artist 12:
+name: Alien Ant Farm
+url: https://www.songkick.com/artists/381679-alien-ant-farm
+image_url: https://images.sk-static.com/images/media/profile_images/artists/381679/avatar
+id: 381679-alien-ant-farm
+body: None
+--------------------------------------------------
+Artist 13:
+name: Amyl and The Sniffers
+url: https://www.songkick.com/artists/8796449-amyl-and-the-sniffers
+image_url: https://images.sk-static.com/images/media/profile_images/artists/8796449/avatar
+id: 8796449-amyl-and-the-sniffers
+body: None
+--------------------------------------------------
+Artist 14:
+name: …And You Will Know Us by the Trail of Dead
+url: https://www.songkick.com/artists/4301-and-you-will-know-us-by-the-trail-of-dead
+image_url: https://images.sk-static.com/images/media/profile_images/artists/4301/avatar
+id: 4301-and-you-will-know-us-by-the-trail-of-dead
+body: None
+--------------------------------------------------
+Artist 15:
+name: Annie Lennox
+url: https://www.songkick.com/artists/503310-annie-lennox
+image_url: https://images.sk-static.com/images/media/profile_images/artists/503310/avatar
+id: 503310-annie-lennox
+body: None
+--------------------------------------------------
+Artist 16:
+name: Arcade Fire
+url: https://www.songkick.com/artists/66758-arcade-fire
+image_url: https://images.sk-static.com/images/media/profile_images/artists/66758/avatar
+id: 66758-arcade-fire
+body: None
+--------------------------------------------------
+Artist 17:
+name: Arctic Monkeys
+url: https://www.songkick.com/artists/520117-arctic-monkeys
+image_url: https://images.sk-static.com/images/media/profile_images/artists/520117/avatar
+id: 520117-arctic-monkeys
+body: None
+--------------------------------------------------
+Artist 18:
+name: At the Drive-In
+url: https://www.songkick.com/artists/206412-at-the-drivein
+image_url: https://images.sk-static.com/images/media/profile_images/artists/206412/avatar
+id: 206412-at-the-drivein
+body: None
+--------------------------------------------------
+Artist 19:
+name: The Autonomics
+url: https://www.songkick.com/artists/3977226-autonomics
+image_url: https://images.sk-static.com/images/media/profile_images/artists/3977226/avatar
+id: 3977226-autonomics
+body: None
+--------------------------------------------------
+Artist 20:
+name: The B-52's
+url: https://www.songkick.com/artists/360904-b52s
+image_url: https://images.sk-static.com/images/media/profile_images/artists/360904/avatar
+id: 360904-b52s
+body: None
+--------------------------------------------------
+Artist 21:
+name: The Base
+url: https://www.songkick.com/artists/173964-base
+image_url: https://images.sk-static.com/images/media/profile_images/artists/173964/avatar
+id: 173964-base
+body: None
+--------------------------------------------------
+Artist 22:
+name: Beatsteaks
+url: https://www.songkick.com/artists/540123-beatsteaks
+image_url: https://images.sk-static.com/images/media/profile_images/artists/540123/avatar
+id: 540123-beatsteaks
+body: None
+--------------------------------------------------
+Artist 23:
+name: Beck
+url: https://www.songkick.com/artists/430505-beck
+image_url: https://images.sk-static.com/images/media/profile_images/artists/430505/avatar
+id: 430505-beck
+body: None
+--------------------------------------------------
+Artist 24:
+name: Beirut
+url: https://www.songkick.com/artists/355452-beirut
+image_url: https://images.sk-static.com/images/media/profile_images/artists/355452/avatar
+id: 355452-beirut
+body: None
+--------------------------------------------------
+Artist 25:
+name: Bilderbuch
+url: https://www.songkick.com/artists/1093699-bilderbuch
+image_url: https://images.sk-static.com/images/media/profile_images/artists/1093699/avatar
+id: 1093699-bilderbuch
+body: None
+--------------------------------------------------
+Artist 26:
+name: Billy Talent
+url: https://www.songkick.com/artists/53989-billy-talent
+image_url: https://images.sk-static.com/images/media/profile_images/artists/53989/avatar
+id: 53989-billy-talent
+body: None
+--------------------------------------------------
+Artist 27:
+name: Black Rebel Motorcycle Club
+url: https://www.songkick.com/artists/274854-black-rebel-motorcycle-club
+image_url: https://images.sk-static.com/images/media/profile_images/artists/274854/avatar
+id: 274854-black-rebel-motorcycle-club
+body: None
+--------------------------------------------------
+Artist 28:
+name: Black Star Riders
+url: https://www.songkick.com/artists/6511684-black-star-riders
+image_url: https://images.sk-static.com/images/media/profile_images/artists/6511684/avatar
+id: 6511684-black-star-riders
+body: None
+--------------------------------------------------
+Artist 29:
+name: blink-182
+url: https://www.songkick.com/artists/479410-blink182
+image_url: https://images.sk-static.com/images/media/profile_images/artists/479410/avatar
+id: 479410-blink182
+body: None
+--------------------------------------------------
+Artist 30:
+name: Bloc Party
+url: https://www.songkick.com/artists/443396-bloc-party
+image_url: https://images.sk-static.com/images/media/profile_images/artists/443396/avatar
+id: 443396-bloc-party
+body: None
+--------------------------------------------------
+Artist 31:
+name: Blondie
+url: https://www.songkick.com/artists/232609-blondie
+image_url: https://images.sk-static.com/images/media/profile_images/artists/232609/avatar
+id: 232609-blondie
+body: None
+--------------------------------------------------
+Artist 32:
+name: Blood Red Shoes
+url: https://www.songkick.com/artists/461906-blood-red-shoes
+image_url: https://images.sk-static.com/images/media/profile_images/artists/461906/avatar
+id: 461906-blood-red-shoes
+body: None
+--------------------------------------------------
+Artist 33:
+name: Blur
+url: https://www.songkick.com/artists/43227-blur
+image_url: https://images.sk-static.com/images/media/profile_images/artists/43227/avatar
+id: 43227-blur
+body: None
+--------------------------------------------------
+Artist 34:
+name: Bob Dylan
+url: https://www.songkick.com/artists/408511-bob-dylan
+image_url: https://images.sk-static.com/images/media/profile_images/artists/408511/avatar
+id: 408511-bob-dylan
+body: None
+--------------------------------------------------
+Artist 35:
+name: Brand New
+url: https://www.songkick.com/artists/352662-brand-new
+image_url: https://images.sk-static.com/images/media/profile_images/artists/352662/avatar
+id: 352662-brand-new
+body: None
+--------------------------------------------------
+Artist 36:
+name: The Breeders
+url: https://www.songkick.com/artists/184416-breeders
+image_url: https://images.sk-static.com/images/media/profile_images/artists/184416/avatar
+id: 184416-breeders
+body: None
+--------------------------------------------------
+Artist 37:
+name: Brody Dalle
+url: https://www.songkick.com/artists/936150-brody-dalle
+image_url: https://images.sk-static.com/images/media/profile_images/artists/936150/avatar
+id: 936150-brody-dalle
+body: None
+--------------------------------------------------
+Artist 38:
+name: The Cardigans
+url: https://www.songkick.com/artists/107413-cardigans
+image_url: https://images.sk-static.com/images/media/profile_images/artists/107413/avatar
+id: 107413-cardigans
+body: None
+--------------------------------------------------
+Artist 39:
+name: Cinderella
+url: https://www.songkick.com/artists/2475636-cinderella
+image_url: https://images.sk-static.com/images/media/profile_images/artists/2475636/avatar
+id: 2475636-cinderella
+body: None
+--------------------------------------------------
+Artist 40:
+name: The Claypool Lennon Delirium
+url: https://www.songkick.com/artists/8747989-claypool-lennon-delirium
+image_url: https://images.sk-static.com/images/media/profile_images/artists/8747989/avatar
+id: 8747989-claypool-lennon-delirium
+body: None
+--------------------------------------------------
+Artist 41:
+name: The Concert: A Tribute to ABBA
+url: https://www.songkick.com/artists/10244501-concert-a-tribute-to-abba
+image_url: https://images.sk-static.com/images/media/profile_images/artists/10244501/avatar
+id: 10244501-concert-a-tribute-to-abba
+body: None
+--------------------------------------------------
+Artist 42:
+name: Courtney Barnett
+url: https://www.songkick.com/artists/3909026-courtney-barnett
+image_url: https://images.sk-static.com/images/media/profile_images/artists/3909026/avatar
+id: 3909026-courtney-barnett
+body: None
+--------------------------------------------------
+Artist 43:
+name: The Cult
+url: https://www.songkick.com/artists/397363-cult
+image_url: https://images.sk-static.com/images/media/profile_images/artists/397363/avatar
+id: 397363-cult
+body: None
+--------------------------------------------------
+Artist 44:
+name: The Cure
+url: https://www.songkick.com/artists/474439-cure
+image_url: https://images.sk-static.com/images/media/profile_images/artists/474439/avatar
+id: 474439-cure
+body: None
+--------------------------------------------------
+Artist 45:
+name: Cyndi Lauper
+url: https://www.songkick.com/artists/362622-cyndi-lauper
+image_url: https://images.sk-static.com/images/media/profile_images/artists/362622/avatar
+id: 362622-cyndi-lauper
+body: None
+--------------------------------------------------
+Artist 46:
+name: The Damned
+url: https://www.songkick.com/artists/381837-damned
+image_url: https://images.sk-static.com/images/media/profile_images/artists/381837/avatar
+id: 381837-damned
+body: None
+--------------------------------------------------
+Artist 47:
+name: Danko Jones
+url: https://www.songkick.com/artists/535795-danko-jones
+image_url: https://images.sk-static.com/images/media/profile_images/artists/535795/avatar
+id: 535795-danko-jones
+body: None
+--------------------------------------------------
+Artist 48:
+name: The Dead Daisies
+url: https://www.songkick.com/artists/6410229-dead-daisies
+image_url: https://images.sk-static.com/images/media/profile_images/artists/6410229/avatar
+id: 6410229-dead-daisies
+body: None
+--------------------------------------------------
+Artist 49:
+name: Dead Kennedys
+url: https://www.songkick.com/artists/520381-dead-kennedys
+image_url: https://images.sk-static.com/images/media/profile_images/artists/520381/avatar
+id: 520381-dead-kennedys
+body: None
+--------------------------------------------------
+Artist 50:
+name: The Dead Weather
+url: https://www.songkick.com/artists/2395848-dead-weather
+image_url: https://images.sk-static.com/images/media/profile_images/artists/2395848/avatar
+id: 2395848-dead-weather
+body: None
+--------------------------------------------------
