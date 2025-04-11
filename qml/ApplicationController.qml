@@ -11,7 +11,7 @@ Item {
     id: applicationController
     property string currentPage: 'plan'
     property bool logEnabled : false
-    property bool calDateLocked : false
+    property string calDate : ""
 
     signal trackedItemsReloaded(string type)
 
@@ -182,11 +182,12 @@ Item {
 
     // called from tracked-item-page to keep the date across items    
     function setLockdate(locked) {
-        applicationController.calDateLocked = locked
+        console.log("setLockdate: " + locked)
+        applicationController.calDate = locked
     }
 
     function getLockdate() {
-        return applicationController.calDateLocked
+        return applicationController.calDate
     }
 
     Connections {
