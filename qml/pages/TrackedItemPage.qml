@@ -50,7 +50,6 @@ Page {
         console.log('number of events: ' +  events.length)
         for (var i = 0; i < events.length; i++)
         {
-            console.log(events[i])
             var shortTitle = events[i].name
             var image = imageUrl
             if (type === "artist") img = events[i].artistImageUrl
@@ -72,6 +71,12 @@ Page {
              /*"skid": events[i].skid             
              })*/
         }
+        var more = false
+        if ((upcommingModel.count % 50 ) === 0)
+        {
+            more = true
+        } 
+        loadMoreMenuItem.enabled = more
         applicationWindow.controller.updateCoverList(titleOf,upcommingModel)
     }
 
@@ -166,13 +171,15 @@ Page {
 
         PushUpMenu {
             MenuItem {
+                id: loadMoreMenuItem
                 text: qsTr("Load more")
                 enabled: true//((upcommingModel.count % 50) != 0)
                 onClicked: {
                     upcommingList.currentIndex = ((page * 50) -1)
                     reloadUpCommingModel(true) // as page > 1, it will not empty view
                 }
-            }
+                visible: true           
+             }
         }
 
         Column {

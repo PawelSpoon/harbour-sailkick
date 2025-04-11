@@ -135,12 +135,12 @@ SilicaListView {
     // yet another try to get that multilingual but failing
     function setTrackingInfo(info)
     {
-        console.log(info);
-        if (info === 'im_going') {
-            console.log('here')
-            return applicationWindow.imgoing
-       }
-        return applicationWindow.imightgo
+        // console.log(info);
+        if (info === 'Interested') {
+            return applicationWindow.imightgo
+        }
+       return applicationWindow.imgoing
+       
     }
 
     // To enable PullDownMenu, place our content in a SilicaFlickable

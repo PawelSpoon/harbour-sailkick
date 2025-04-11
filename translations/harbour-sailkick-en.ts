@@ -98,27 +98,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventListView.qml" line="156"/>
+        <location filename="../qml/pages/EventListView.qml" line="155"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation type="unfinished">You have no upcomming concerts in your calendar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventListView.qml" line="299"/>
+        <location filename="../qml/pages/EventListView.qml" line="298"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished">Copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventListView.qml" line="302"/>
+        <location filename="../qml/pages/EventListView.qml" line="301"/>
         <source>Open artists page</source>
         <translation type="unfinished">Open artists page</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventListView.qml" line="313"/>
+        <location filename="../qml/pages/EventListView.qml" line="312"/>
         <source>Open in browser</source>
         <translation type="unfinished">Open in browser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventListView.qml" line="319"/>
+        <location filename="../qml/pages/EventListView.qml" line="318"/>
         <source>Copy</source>
         <translation type="unfinished">Copy</translation>
     </message>
@@ -349,32 +349,32 @@
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="132"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="137"/>
         <source>Choose from date</source>
         <translation type="unfinished">Choose from date</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="169"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="175"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="260"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="267"/>
         <source>Seems there are no events planed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="391"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="398"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished">Copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="394"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="401"/>
         <source>Open in browser</source>
         <translation type="unfinished">Open in browser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="409"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="416"/>
         <source>Copy</source>
         <translation type="unfinished">Copy</translation>
     </message>
