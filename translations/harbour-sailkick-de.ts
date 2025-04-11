@@ -355,27 +355,27 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
         <translation type="unfinished">Wähle Datum</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="179"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="180"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="269"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="270"/>
         <source>Seems there are no events planed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="400"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="401"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished">In Zwischenablage kopiert</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="403"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="404"/>
         <source>Open in browser</source>
         <translation type="unfinished">Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="418"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="419"/>
         <source>Copy</source>
         <translation type="unfinished">Kopieren</translation>
     </message>

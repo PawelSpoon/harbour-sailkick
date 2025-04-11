@@ -145,7 +145,7 @@ Page {
                     // a previous load more might have increased the page
                     page = 1
                     var dialog = pageStack.push(pickerComponent, {
-                        date: new Date( )
+                        date: (startDate === "") ? new Date() : new Date(startDate)
                     })
                     dialog.accepted.connect(function() {
                         minDateButton.text = dialog.dateText
@@ -163,6 +163,7 @@ Page {
                             skDateText = skDateText + "-" +day
                         }
                         startDate = skDateText
+                        lockDate = false
                         reloadUpCommingModel(false)
                     })
                 }
