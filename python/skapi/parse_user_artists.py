@@ -73,7 +73,7 @@ def parse_user_artists(html_content, base_url):
             artist_data = {
                 'name': name,
                 'url': url,
-                'image_url': image_url,
+                'image_url': image_url.replace('avatar', 'large_avatar') if image_url else None,
                 'id': artist_id,
                 'body' : None
             }
