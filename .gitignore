@@ -4,5 +4,5 @@ node_modules
 dist
 external
 babel.config.js
-harbour-sailkick.pro.user
 python/skapi/__pycache__
+
