@@ -89,7 +89,7 @@ class TestSongkickApi(unittest.TestCase):
     def test_get_artist_events(self):
         """Test getting events for a specific artist"""
         # Use A Perfect Circle as test case
-        results = self.api.get_artist_events("549892-a-perfect-circle")
+        results, meta  = self.api.get_artist_events("549892-a-perfect-circle")
         self.assertIsNotNone(results)
         self.assertIsInstance(results, list)
         self.assertGreater(len(results), 0, "No artist events")

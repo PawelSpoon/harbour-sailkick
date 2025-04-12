@@ -26,7 +26,8 @@ try:
     from skapi.parse_user_concerts import parse_user_concerts
     from skapi.parse_user_artists import parse_user_artists
     from skapi.parse_user_locations import parse_user_locations
-except ImportError as e:
+    from skapi.parse_artist_meta import parse_artist_meta
+except ImportError as e:    
     print(f"Import error: {e}")
     print(f"Python path: {sys.path}")
     raise
@@ -116,6 +117,31 @@ class TestSongkickParsers(unittest.TestCase):
         self.assertIsInstance(first_event['artists'], list)
         #self.assertIsInstance(first_event['venueName'], str)
         #self.assertIsInstance(first_event['date'], str)     
+
+    def test_parse_artist_meta(self):
+        """Test parsing of artist events from test data"""
+        # Load test data
+        test_file = os.path.join(self.test_data_dir, 'get_artist_events_response.html')
+        
+        # Ensure test data directory exists
+        os.makedirs(self.test_data_dir, exist_ok=True)
+
+        with open(test_file, 'r', encoding='utf-8') as f:
+            html_content = f.read()
+            
+        # Parse test data
+        result = parse_artist_meta(html_content,"https://www.songkick.com")
+        
+        # Save results to file for debugging
+        debug_file = os.path.join(self.test_data_dir, 'parse_artist_meta_results.txt')
+        with open(debug_file, 'w', encoding='utf-8') as f:
+            f.write("Parsed Artist Meta:\n")          
+            f.write(f"imageUrl: {result['imgUrl']}\n")
+            f.write(f"onTour: {result['onTour']}\n")
+            f.write(f"tracking: {result['tracking']}\n")
+            #    f.write(event.toMultilineString())
+            #    f.write("-" * 50 + "\n")
+
 
     def test_parse_user_plans(self):
         """Test parsing of user plans from test data"""

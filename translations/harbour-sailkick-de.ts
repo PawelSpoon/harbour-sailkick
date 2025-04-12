@@ -383,14 +383,19 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>TrackedItemsPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="142"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="143"/>
         <source>You are not tracking any ...</source>
-        <translation>Du folgst Niemandem ..</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="247"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="230"/>
+        <source>on tour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="248"/>
         <source>Open in browser</source>
-        <translation>Im Browser öffnen</translation>
+        <translation type="unfinished">Im Browser öffnen</translation>
     </message>
 </context>
 <context>

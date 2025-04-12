@@ -107,11 +107,12 @@ class SongkickBridge:
 
     def getTrackedItemEvents(self, type, id, page=None, minDate=None):
         action = 'getTrackedItemEvents'
+        meta = None
         pyotherside.send('loadingStarted')
         pyotherside.send('debug', f"getTrackedItemEvents {type} {page}")
         try:
             if type == 'artist':
-                result = self.api.get_artist_events(id)
+                result, meta = self.api.get_artist_events(id)
             elif type == 'location':
                 result = self.api.get_location_events(id, page, minDate)
             else:
@@ -123,6 +124,8 @@ class SongkickBridge:
             else:
                 pyotherside.send('debug', f"failed in {action}")
                 pyotherside.send('action_failed', action)
+            if meta:
+                pyotherside.send('item_meta', type, id, meta)
             return result
         except Exception as e:
             pyotherside.send('debug', f"exception in {action}: {e}")

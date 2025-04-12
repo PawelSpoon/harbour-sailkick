@@ -212,7 +212,20 @@ Item {
             if (action === "locations") {
                 console.error("Error during " + action + " :", error)
             }
-        }        
+        } 
+        onTrackedItemMeta: {//(type, id, meta) {
+            var tIs = DB.getTrackedItems(type)
+            for (var i=0; i < tIs.length; i++) {
+                var ti = tIs[i]
+                if (ti.skid === id) {
+                    meta["imageUrl"] = ti.body.imageUrl
+                    console.log("found item: " + ti.title + " " + ti.id + " " + ti.uid + " " + ti.uri + " " + ti.body)
+                    DB.setTrackingEntry(type,ti.skid, ti.title, ti.skid, ti.uri, meta) // .id should be correct but seams not
+                    break;
+                }
+            }
+
+        }       
     }
 
     // callback of getUsersTrackedItems

@@ -11,6 +11,7 @@
 * Sun March 20 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.5.20-0
 - lock date on locations
 - fixing load more with start date
+- load artist meta when open artist page (extract tour-info)
 
 * Sun March 11 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.5.10-0
 - fixes

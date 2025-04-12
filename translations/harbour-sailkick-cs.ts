@@ -382,14 +382,19 @@
 <context>
     <name>TrackedItemsPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="142"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="143"/>
         <source>You are not tracking any ...</source>
-        <translation>Nesledujete nikoho ...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="247"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="230"/>
+        <source>on tour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="248"/>
         <source>Open in browser</source>
-        <translation>Otevřít v prohlížeči</translation>
+        <translation type="unfinished">Otevřít v prohlížeči</translation>
     </message>
 </context>
 <context>
