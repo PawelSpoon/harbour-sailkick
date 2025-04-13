@@ -105,11 +105,12 @@ Item {
                 console.log(events.length)
                 root.trackedItemSuccess(type)
             }) 
-            // on load of artist events i do extract also artist meta data
-            // this shoudl then enrich the artist object in the db
+            // on load of artist events i do extract also artist meta data as boolean
+            // conversion is needed from true/false to 0/1/2
             setHandler('item_meta', function(type, id, meta) {
                 console.log("item_meta")
                 console.log(type, id, meta)
+                meta = myController.convertBodyTourInfo(meta)
                 root.trackedItemMeta(type, id, meta)
             }) 
             importModule('songkick_bridge', function() {
