@@ -167,17 +167,17 @@ Item {
         applicationWindow.mainPage.moveToNext()
     }
 
-    // clean stored tracking itmes and get fresh from songkick
-    // all views do not pass user, only in settings dialog, before you store the user back to db
-    // you can already trigger an get-items-call
-    function getTrackingItemsFromSongKick() {
-
-        DB.removeAllTrackingEntries("Type")
-        DB.removeAllTrackingEntries("artist")
-        DB.removeAllTrackingEntries("location")
+    // clean stored tracking items and get fresh from songkick
+    // DB now also stores meta data for the items, therefore we do not want to clear db
+    // just to get fresh data
+    function getTrackingItemsFromSongKick(reset) {
+        if (reset) {
+            DB.removeAllTrackingEntries("Type")
+            DB.removeAllTrackingEntries("artist")
+            DB.removeAllTrackingEntries("location")
+        }
         skApi.getUserTrackedItemsAsync("location")
-        skApi.getUserTrackedItemsAsync("artist",1)
-        
+        skApi.getUserTrackedItemsAsync("artist",1)       
     }
 
     // called from tracked-item-page to keep the date across items    
@@ -240,7 +240,8 @@ Item {
             console.log('first item: ' + currentItem.title + " " + currentItem.id + " " + currentItem.uid + " " + currentItem.uri + " " + currentItem.body)
           }
           //type,uid,title,skid,uri,body
-          DB.setTrackingEntry(type,currentItem.id, currentItem.name, currentItem.id,currentItem.url, { "imageUrl" : currentItem.image_url })
+          //DB.setTrackingEntry(type,currentItem.id, currentItem.name, currentItem.id,currentItem.url, { "imageUrl" : currentItem.image_url })
+          DB.upsertTrackingEntry(type, currentItem.id, currentItem.name, currentItem.id, currentItem.url, { "imageUrl" : currentItem.image_url })
         }
         log('number of items: ' + items.length)
 

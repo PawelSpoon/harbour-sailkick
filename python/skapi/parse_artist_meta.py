@@ -49,10 +49,13 @@ def parse_artist_meta(html_content, base_url):
         result['onTour'] = artist_ontour
 
     # Get tracking status from form
-    tracking = soup.find('button', class_='artist track').text.strip()
-    if tracking.lower() == 'tracking':
-        result['tracking'] = True
-    else:
-        result['tracking'] = False
+    tracking = soup.find('button', class_='selected artist track')
+    track = False
+    if tracking:
+        tracking = tracking.text.strip()
+        if tracking.lower() == 'tracking':
+            track = True
 
+    result['tracking'] = track
+    
     return result
