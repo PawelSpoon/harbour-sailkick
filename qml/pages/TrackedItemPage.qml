@@ -83,6 +83,10 @@ Page {
 
     Component.onCompleted:
     {
+        startDate = myController.getLockdate()
+        if (startDate !="") {
+            lockDate = true
+        }
         reloadUpCommingModel(false)
         coverImage.source = imageUrl
         // applicationWindow.controller.setCurrentPage(titleOf)
@@ -141,7 +145,7 @@ Page {
                     // a previous load more might have increased the page
                     page = 1
                     var dialog = pageStack.push(pickerComponent, {
-                        date: new Date( )
+                        date: (startDate === "") ? new Date() : new Date(startDate)
                     })
                     dialog.accepted.connect(function() {
                         minDateButton.text = dialog.dateText
@@ -159,6 +163,7 @@ Page {
                             skDateText = skDateText + "-" +day
                         }
                         startDate = skDateText
+                        lockDate = false
                         reloadUpCommingModel(false)
                     })
                 }
@@ -226,19 +231,17 @@ Page {
                     width: Theme.iconSizeMedium
                     height: Theme.iconSizeMedium
                     visible: startDateText.text != ""
-                    icon.source: lockDate? "image://theme/icon-s-secure" : "image://theme/icon-s-outline-secure"
+                    icon.source: lockDate ? "image://theme/icon-s-secure" : "image://theme/icon-s-outline-secure"
                     onClicked: {
                         if (lockDate) {
                             lockDate = false
+                            myController.setLockdate("")
                         } else {
                             lockDate = true
+                            myController.setLockdate(startDate)
                             // this might not be neede if i load the page value into dialog always
                             minDateButton.text = startDateText.text
                         }
-                        /*if (albumData) {
-                            playlistManager.clearPlayList()
-                            playlistManager.playAlbum(albumId, true) // start playing immediately
-                        }*/
                     }
                 }
            }

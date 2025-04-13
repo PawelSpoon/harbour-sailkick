@@ -71,20 +71,21 @@ SilicaFlickable {
         }
     }
 
-
-/*    QtObject {
-        id: priv
-        property Item optionsPage
-        property string nextPageToken: ""
-        property variant searchParams: ({})
-        property bool ignoreNextAtYBeginning: false
-        property real autoLoadThreshold: 0.8
-    }*/
-
     Component.onCompleted:
     {
         console.log("trackeditemspage onCompleted")
         refresh()
+    }
+
+    Connections {
+        target: skApi
+
+        onTrackedItemMeta: {//(type, id, meta) {
+            if (page.trackedType !== type) return
+            if (!meta) return
+
+            refresh()
+        }
     }
 
     function fillTrackingModel(title, type, skid, uid, uri, body)
@@ -226,7 +227,7 @@ SilicaFlickable {
 
                 Label {
                     id: onTour
-                    text: "" // not available
+                    text: body.onTour ? qsTr("on tour") : (trackedType =="location") ? "": "-" //todo: hide for locations an non checked
                     anchors.right: parent.right
                     anchors.rightMargin: Theme.paddingMedium
                     anchors.verticalCenter : parent.verticalCenter

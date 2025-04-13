@@ -76,7 +76,7 @@ class TestSongkickApi(unittest.TestCase):
     def test_location_events(self):
         """Test getting events for a location"""
         location_id = "26766-austria-graz"
-        results = self.api.get_location_events(location_id)
+        results = self.api.get_location_events(location_id,1)
         self.assertIsNotNone(results, "Get events returned None")
         self.assertGreater(len(results), 0, "No location events found")
         if results:
@@ -84,12 +84,12 @@ class TestSongkickApi(unittest.TestCase):
             self.assertIn('artists', event)
             self.assertIn('venueName', event)
             self.assertIn('date', event)
-            self.assertIn('url', event)
+            self.assertIn('eventUrl', event)
 
     def test_get_artist_events(self):
         """Test getting events for a specific artist"""
         # Use A Perfect Circle as test case
-        results = self.api.get_artist_events("549892-a-perfect-circle")
+        results, meta  = self.api.get_artist_events("549892-a-perfect-circle")
         self.assertIsNotNone(results)
         self.assertIsInstance(results, list)
         self.assertGreater(len(results), 0, "No artist events")

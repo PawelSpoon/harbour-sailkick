@@ -15,6 +15,7 @@ from .parse_user_concerts import parse_user_concerts
 from .parse_user_plans import parse_user_plans
 from .parse_user_artists import parse_user_artists
 from .parse_user_locations import parse_user_locations
+from .parse_artist_meta import parse_artist_meta
 
 
 class SongkickApi:
@@ -502,7 +503,12 @@ class SongkickApi:
 
         results = parse_artist_events(response.text, self.base_url)
         print(f"Found {len(results)} events")
-        return results
+
+        # Extract artist meta like on-tour,  tracking status, track/untrack link
+        meta = parse_artist_meta(response.text, self.base_url)
+
+        # returning tupple with events and meta data
+        return results, meta
     
     # shows events I am going to / or am interested in
     # probably paged but no date filtering is possible

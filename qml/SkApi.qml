@@ -20,6 +20,8 @@ Item {
     signal locationsSuccess()
     // single tracked item success
     signal trackedItemSuccess(string type)
+    // signal for meta data update
+    signal trackedItemMeta(string type, string id, var meta)
 
     property bool logedIn: false
     //property string artistsResults
@@ -103,7 +105,13 @@ Item {
                 console.log(events.length)
                 root.trackedItemSuccess(type)
             }) 
-
+            // on load of artist events i do extract also artist meta data
+            // this shoudl then enrich the artist object in the db
+            setHandler('item_meta', function(type, id, meta) {
+                console.log("item_meta")
+                console.log(type, id, meta)
+                root.trackedItemMeta(type, id, meta)
+            }) 
             importModule('songkick_bridge', function() {
                 console.log("songkick bridge module imported successfully")
             })

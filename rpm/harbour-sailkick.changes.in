@@ -8,6 +8,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun March 20 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.5.20-0
+- lock date on locations
+- fixing load more with start date
+- load artist meta when open artist page (extract tour-info)
+- separate clear db from get-tracked-items, to keep artist meta data
+
 * Sun March 11 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.5.10-0
 - fixes
 - image on tracked item page

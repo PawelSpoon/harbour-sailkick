@@ -254,47 +254,52 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
         <translation>Lade deine Orte / Artisten von songkick.com</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="44"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="36"/>
+        <source>Reset Db and get tracked items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="50"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="45"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="51"/>
         <source>Discard</source>
         <translation>Verwerfen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="49"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="55"/>
         <source>Songkick credentials</source>
         <translation>Songkick Zugangsdaten</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="57"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="63"/>
         <source>Songkick Username</source>
         <translation>Songkick Benutzername</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="59"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="65"/>
         <source>set username (mandatory)</source>
         <translation>Setze Nutzernamen (Pflichtfeld)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="77"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
         <source>Songkick Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="79"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
         <source>Set password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="104"/>
         <source>If you do not have a &lt;br&gt;Songkick account yet, &lt;br&gt;please create one. &lt;br&gt;When ever you modify your &lt;br&gt;tracking items on songkick.com, &lt;br&gt;sync them using&lt;br&gt;&apos;Get tracked items ..&apos;&lt;br&gt;pulldown menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="111"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
         <source>Enable verbose logging</source>
         <translation type="unfinished"></translation>
     </message>
@@ -350,32 +355,32 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="137"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="141"/>
         <source>Choose from date</source>
         <translation type="unfinished">Wähle Datum</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="175"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="180"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="267"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="270"/>
         <source>Seems there are no events planed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="398"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="401"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished">In Zwischenablage kopiert</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="401"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="404"/>
         <source>Open in browser</source>
         <translation type="unfinished">Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="416"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="419"/>
         <source>Copy</source>
         <translation type="unfinished">Kopieren</translation>
     </message>
@@ -383,14 +388,19 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>TrackedItemsPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="142"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="143"/>
         <source>You are not tracking any ...</source>
-        <translation>Du folgst Niemandem ..</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="247"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="230"/>
+        <source>on tour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="248"/>
         <source>Open in browser</source>
-        <translation>Im Browser öffnen</translation>
+        <translation type="unfinished">Im Browser öffnen</translation>
     </message>
 </context>
 <context>

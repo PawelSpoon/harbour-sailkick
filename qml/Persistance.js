@@ -158,10 +158,20 @@ function getUser()
     return user;
 }
 
+function upsertTrackingEntry(type,uid,title,skid,uri,body) {
+    var x=getFilteredTrackedItems(type, title)
+    if (x.length > 0) {
+        console.log("updating body with value of existing entry");
+        body = x[0].body
+    } 
+    setTrackingEntry(type,uid,title,skid,uri,body)    
+}
+
 // This function is used to saved tracked entries into the database, new and existing ones
 function setTrackingEntry(type,uid,title,skid,uri,body) {
     var db = getDatabase();
     var res = "";
+    title = encryptTitle(title)
     db.transaction(function(tx) {
         var rs = tx.executeSql('INSERT OR REPLACE INTO tracked VALUES (?,?,?,?,?,?);', [uid,title,type,skid,uri,JSON.stringify(body)]);
         if (rs.rowsAffected > 0) {
@@ -178,6 +188,14 @@ function setTrackingEntry(type,uid,title,skid,uri,body) {
     return res;
 }
 
+function encryptTitle(title) {
+    // handle special characters in the title
+    return title.replace("'","%27")
+}
+
+function decryptTitle(title) {
+    return title.replace("%27","'")
+}
 
 //this should return a list
 function getTrackedItems(type)
@@ -189,7 +207,7 @@ function getTrackedItems(type)
     db.transaction(function(tx) {
         var rs = tx.executeSql(sql);
         for (var i = 0; i < rs.rows.length; i++) {
-            var trackedItem = {title: rs.rows.item(i).title, type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid, uri: rs.rows.item(i).txt, body: JSON.parse(rs.rows.item(i).body)}
+            var trackedItem = {title: decryptTitle(rs.rows.item(i).title), type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid, uri: rs.rows.item(i).txt, body: JSON.parse(rs.rows.item(i).body)}
             console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid); //  + " and body: " + rs.rows.item(i).body);
             trackedItems.push(trackedItem)
         }
@@ -200,7 +218,8 @@ function getTrackedItems(type)
 //this should return a list
 function getFilteredTrackedItems(type, nameLike)
 {
-    console.log('getFiltered  ..')
+    console.log('getFiltered  .. >> ' + nameLike)
+    nameLike = encryptTitle(nameLike)
     var trackedItems = []
     var db = getDatabase(); //UPPER(name) like '%" + itemName + "%'"
     var respath="";
@@ -209,7 +228,7 @@ function getFilteredTrackedItems(type, nameLike)
     db.transaction(function(tx) {
         var rs = tx.executeSql(sql);
         for (var i = 0; i < rs.rows.length; i++) {
-            var trackedItem = {title: rs.rows.item(i).title, type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid, uri: rs.rows.item(i).txt, body: JSON.parse(rs.rows.item(i).body)}
+            var trackedItem = {title: decryptTitle(rs.rows.item(i).title), type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid, uri: rs.rows.item(i).txt, body: JSON.parse(rs.rows.item(i).body)}
             console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid); //  + " and body: " + rs.rows.item(i).body);
             trackedItems.push(trackedItem)
         }
@@ -221,6 +240,7 @@ function getFilteredTrackedItems(type, nameLike)
 function removeTrackingEntry(type,title,uid) {
     var db = getDatabase();
     var respath="";
+    title = encryptTitle(title)
     //console.debug("Removing Note: " + uid)
      db.transaction(function(tx) {
         var rs = tx.executeSql('DELETE FROM tracked WHERE title=?;' , [title]);

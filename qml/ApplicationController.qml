@@ -11,7 +11,7 @@ Item {
     id: applicationController
     property string currentPage: 'plan'
     property bool logEnabled : false
-    property bool calDateLocked : false
+    property string calDate : ""
 
     signal trackedItemsReloaded(string type)
 
@@ -167,26 +167,27 @@ Item {
         applicationWindow.mainPage.moveToNext()
     }
 
-    // clean stored tracking itmes and get fresh from songkick
-    // all views do not pass user, only in settings dialog, before you store the user back to db
-    // you can already trigger an get-items-call
-    function getTrackingItemsFromSongKick() {
-
-        DB.removeAllTrackingEntries("Type")
-        DB.removeAllTrackingEntries("artist")
-        DB.removeAllTrackingEntries("location")
+    // clean stored tracking items and get fresh from songkick
+    // DB now also stores meta data for the items, therefore we do not want to clear db
+    // just to get fresh data
+    function getTrackingItemsFromSongKick(reset) {
+        if (reset) {
+            DB.removeAllTrackingEntries("Type")
+            DB.removeAllTrackingEntries("artist")
+            DB.removeAllTrackingEntries("location")
+        }
         skApi.getUserTrackedItemsAsync("location")
-        skApi.getUserTrackedItemsAsync("artist",1)
-        
+        skApi.getUserTrackedItemsAsync("artist",1)       
     }
 
     // called from tracked-item-page to keep the date across items    
     function setLockdate(locked) {
-        applicationController.calDateLocked = locked
+        console.log("setLockdate: " + locked)
+        applicationController.calDate = locked
     }
 
     function getLockdate() {
-        return applicationController.calDateLocked
+        return applicationController.calDate
     }
 
     Connections {
@@ -211,7 +212,20 @@ Item {
             if (action === "locations") {
                 console.error("Error during " + action + " :", error)
             }
-        }        
+        } 
+        onTrackedItemMeta: {//(type, id, meta) {
+            var tIs = DB.getTrackedItems(type)
+            for (var i=0; i < tIs.length; i++) {
+                var ti = tIs[i]
+                if (ti.skid === id) {
+                    meta["imageUrl"] = ti.body.imageUrl
+                    console.log("found item: " + ti.title + " " + ti.id + " " + ti.uid + " " + ti.uri + " " + ti.body)
+                    DB.setTrackingEntry(type,ti.skid, ti.title, ti.skid, ti.uri, meta) // .id should be correct but seams not
+                    break;
+                }
+            }
+
+        }       
     }
 
     // callback of getUsersTrackedItems
@@ -226,7 +240,8 @@ Item {
             console.log('first item: ' + currentItem.title + " " + currentItem.id + " " + currentItem.uid + " " + currentItem.uri + " " + currentItem.body)
           }
           //type,uid,title,skid,uri,body
-          DB.setTrackingEntry(type,currentItem.id, currentItem.name, currentItem.id,currentItem.url, { "imageUrl" : currentItem.image_url })
+          //DB.setTrackingEntry(type,currentItem.id, currentItem.name, currentItem.id,currentItem.url, { "imageUrl" : currentItem.image_url })
+          DB.upsertTrackingEntry(type, currentItem.id, currentItem.name, currentItem.id, currentItem.url, { "imageUrl" : currentItem.image_url })
         }
         log('number of items: ' + items.length)
 

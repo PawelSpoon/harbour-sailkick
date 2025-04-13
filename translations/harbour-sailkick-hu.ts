@@ -253,47 +253,52 @@
         <translation>Követett elemek letöltése a songkickről</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="44"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="36"/>
+        <source>Reset Db and get tracked items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="50"/>
         <source>Save</source>
         <translation>Mentés</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="45"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="51"/>
         <source>Discard</source>
         <translation>Elvetés</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="49"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="55"/>
         <source>Songkick credentials</source>
         <translation>Songkick hitelesítő adatok</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="57"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="63"/>
         <source>Songkick Username</source>
         <translation>Songkick felhasználónév</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="59"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="65"/>
         <source>set username (mandatory)</source>
         <translation>felhasználónév beállítása (kötelező)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="77"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
         <source>Songkick Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="79"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
         <source>Set password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="104"/>
         <source>If you do not have a &lt;br&gt;Songkick account yet, &lt;br&gt;please create one. &lt;br&gt;When ever you modify your &lt;br&gt;tracking items on songkick.com, &lt;br&gt;sync them using&lt;br&gt;&apos;Get tracked items ..&apos;&lt;br&gt;pulldown menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="111"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
         <source>Enable verbose logging</source>
         <translation type="unfinished"></translation>
     </message>
@@ -349,32 +354,32 @@
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="137"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="141"/>
         <source>Choose from date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="175"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="180"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="267"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="270"/>
         <source>Seems there are no events planed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="398"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="401"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="401"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="404"/>
         <source>Open in browser</source>
         <translation type="unfinished">Megnyitás böngészőben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="416"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="419"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
@@ -382,14 +387,19 @@
 <context>
     <name>TrackedItemsPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="142"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="143"/>
         <source>You are not tracking any ...</source>
-        <translation>Nem követsz semmilyen ...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="247"/>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="230"/>
+        <source>on tour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TrackedItemsPage.qml" line="248"/>
         <source>Open in browser</source>
-        <translation>Megnyitás böngészőben</translation>
+        <translation type="unfinished">Megnyitás böngészőben</translation>
     </message>
 </context>
 <context>

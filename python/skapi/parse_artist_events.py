@@ -48,11 +48,13 @@ def parse_artist_events(html_content, base_url):
                 event_details = event_link.find('div', class_='event-details')
                 if event_details:
                     primary_detail = event_details.find('strong', class_='primary-detail')
-                    name = primary_detail.text.strip() if primary_detail else 'N/A'
-                    location = primary_detail.text.strip() if primary_detail else 'N/A'
+                    if primary_detail:
+                        name = primary_detail.text.strip() if primary_detail else 'N/A'
+                        location = primary_detail.text.strip() if primary_detail else 'N/A'
                     
                     secondary_detail = event_details.find('p', class_='secondary-detail')
-                    venue = secondary_detail.text.strip() if secondary_detail else 'N/A'
+                    if secondary_detail:
+                        venue = secondary_detail.text.strip() if secondary_detail else 'N/A'
                 else:
                     location = 'N/A'
                     venue = 'N/A'
