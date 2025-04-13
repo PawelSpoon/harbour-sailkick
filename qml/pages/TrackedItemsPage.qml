@@ -227,7 +227,7 @@ SilicaFlickable {
 
                 Label {
                     id: onTour
-                    text: body.onTour ? qsTr("on tour") : (trackedType =="location") ? "": "-" //todo: hide for locations an non checked
+                    text: (trackedType =="location") ? "": myController.getLocalizedTrackInfo(body.onTour) 
                     anchors.right: parent.right
                     anchors.rightMargin: Theme.paddingMedium
                     anchors.verticalCenter : parent.verticalCenter

@@ -113,11 +113,6 @@ function v_2_3(db, version)
     return 2.3;
 }
 
-function getRandom()
-{
-    return "123456"
-}
-
 function setUser(title,txt)
 {
     // title: represents user name, this is needed for songkick queries
@@ -176,7 +171,7 @@ function setTrackingEntry(type,uid,title,skid,uri,body) {
         var rs = tx.executeSql('INSERT OR REPLACE INTO tracked VALUES (?,?,?,?,?,?);', [uid,title,type,skid,uri,JSON.stringify(body)]);
         if (rs.rowsAffected > 0) {
             res = "OK";
-            console.log ("Saved to database: uid:" + uid + ", title:" + title + ", type:"+ type + ", skid:" + skid + ", uri:" + uri); // + ", body: " + JSON.stringify(body));
+            console.log ("Saved to database: uid:" + uid + ", title:" + title + ", type:"+ type + ", skid:" + skid + ", uri:" + uri + ", body: " + JSON.stringify(body));
         } else {
             res = "Error";
             console.log ("Error saving to database");
@@ -208,7 +203,7 @@ function getTrackedItems(type)
         var rs = tx.executeSql(sql);
         for (var i = 0; i < rs.rows.length; i++) {
             var trackedItem = {title: decryptTitle(rs.rows.item(i).title), type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid, uri: rs.rows.item(i).txt, body: JSON.parse(rs.rows.item(i).body)}
-            console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid); //  + " and body: " + rs.rows.item(i).body);
+            console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid + " and body: " + rs.rows.item(i).body);
             trackedItems.push(trackedItem)
         }
     })

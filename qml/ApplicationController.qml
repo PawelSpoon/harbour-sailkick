@@ -214,13 +214,18 @@ Item {
             }
         } 
         onTrackedItemMeta: {//(type, id, meta) {
+            if (type == "location") return
+            // console.log("onTrackedItemMeta: " + id + ", meta: " + JSON.stringify(meta))
             var tIs = DB.getTrackedItems(type)
             for (var i=0; i < tIs.length; i++) {
                 var ti = tIs[i]
                 if (ti.skid === id) {
-                    meta["imageUrl"] = ti.body.imageUrl
-                    console.log("found item: " + ti.title + " " + ti.id + " " + ti.uid + " " + ti.uri + " " + ti.body)
-                    DB.setTrackingEntry(type,ti.skid, ti.title, ti.skid, ti.uri, meta) // .id should be correct but seams not
+                    var body = ti.body
+                    // not needed and will currently not be returned by meta service
+                    // body = updateBodyWithImageUrl(body, ti.imageUrl)
+                    body = updateBodyWithTourInfo(body, meta.onTour)
+                    // console.log("found item: " + ti.title + " " + ti.id + " " + ti.uid + " " + ti.uri + " " + JSON.stringify(ti.body))  
+                    DB.setTrackingEntry(type,ti.skid, ti.title, ti.skid, ti.uri, body) // .id should be correct but seams not
                     break;
                 }
             }
@@ -266,4 +271,47 @@ Item {
         skApi.logIn(userName,pwd)
     }
 
+    // tourinfo: 0 -unknown, 1 - no, 2 -ontour
+    function tourInfo_toInt(tourInfo) {
+        if (tourInfo === null) return 0
+        if (tourInfo === false) return 1
+        if (tourInfo === true)  return 2
+        return 0    
+    }
+    function tourInfo_toBool(tourInfo) {
+        if (tourInfo === null) return false
+        if (tourInfo === 0) return false
+        if (tourInfo === 1) return false
+        if (tourInfo === 2) return true
+        return false    
+    }
+    function getLocalizedTrackInfo(tourInfo)
+    {
+        if (tourInfo === null) return ""
+        if (tourInfo === undefined) return ""
+        if (tourInfo === 0) return ""
+        if (tourInfo === 1) return "-"
+        if (tourInfo === 2) return qsTr("on tour")
+        console.log("should not be here: getLocalizedTrackInfo: " + tourInfo)
+        return ""
+    }
+
+    function convertBodyTourInfo(body)
+    {
+        body['onTour'] = tourInfo_toInt(body['onTour'])
+        return body
+    }
+    function updateBodyWithTourInfo(body, tourInfo)
+    {
+        if (body === null) return { 'onTour': tourInfo }
+        body['onTour'] = tourInfo
+        return body
+    }
+    function updateBodyWithImageUrl(body, imageUrl)
+    {
+        if (imageUrl === null ||imageUrl === undefined) return body
+        if (body === null || body == undefined) return { 'imageUrl': imageUrl }
+        body['imageUrl'] = imageUrl
+        return body
+    }
 }

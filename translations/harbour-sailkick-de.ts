@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de">
 <context>
+    <name>ApplicationController</name>
+    <message>
+        <location filename="../qml/ApplicationController.qml" line="294"/>
+        <source>on tour</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Concerts4DatePage</name>
     <message>
         <location filename="../qml/pages/Concerts4DatePage.qml" line="44"/>
@@ -390,11 +398,6 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="143"/>
         <source>You are not tracking any ...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TrackedItemsPage.qml" line="230"/>
-        <source>on tour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
