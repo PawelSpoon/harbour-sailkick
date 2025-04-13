@@ -1,0 +1,4 @@
+Parsed Artist Meta:
+imageUrl: 
+onTour: True
+tracking: False
