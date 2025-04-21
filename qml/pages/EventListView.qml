@@ -55,13 +55,23 @@ SilicaListView {
             if (events[i].artistId) strArtistId = events[i].artistId.toString()
             upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), 
             "startTime": events[i].startTime , "uri" : events[i].eventUrl, "attendance": events[i].attendance,
-             "artist": events[i].artistName, "artistId": strArtistId, "artists": events[i].artists, "skid": events[i].skid,
+             "artist": events[i].artistName, "artistId": strArtistId, "artists": toList(events[i].artists), "skid": events[i].skid,
              "street": events[i].venueStreetAddress, "city": events[i].venueCity, "postalCode": events[i].venuePostalCode})
             console.log("added to model: " + JSON.stringify(upcomingModel.get(upcomingModel.count-1)))
         }
         sortModel()
         applicationWindow.controller.setCurrentPage(type)
         applicationWindow.controller.updateCoverList(type, upcomingModel)
+    }
+
+    function toList(artists)
+    {
+        var list
+        for (var i = 0; i < artists.length; i++)
+        {
+            list.append({ "artistName" :artists[i]})
+        }
+        return list
     }
 
     QtObject {

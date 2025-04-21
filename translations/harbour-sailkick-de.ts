@@ -12,37 +12,37 @@
 <context>
     <name>Concerts4DatePage</name>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="44"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="43"/>
         <source>Refresh</source>
         <translation>Neu Laden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="49"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="48"/>
         <source>Choose from date</source>
         <translation>Wähle Datum</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="174"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="173"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>Noch keine Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="292"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="291"/>
         <source>Copied to clipboard</source>
         <translation>In Zwischenablage kopiert</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="295"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="294"/>
         <source>Open artists page</source>
         <translation>Gehe zum Künstler</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="306"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="305"/>
         <source>Open in browser</source>
         <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Concerts4DatePage.qml" line="312"/>
+        <location filename="../qml/pages/Concerts4DatePage.qml" line="311"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
@@ -60,29 +60,29 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="163"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="178"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">Noch keine Pläne</translation>
+        <translation>Noch keine Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="292"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="307"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">In Zwischenablage kopiert</translation>
+        <translation>In Zwischenablage kopiert</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="295"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="310"/>
         <source>Open artists page</source>
-        <translation type="unfinished">Gehe zum Künstler</translation>
+        <translation>Gehe zum Künstler</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="306"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="321"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Im Browser öffnen</translation>
+        <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="312"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="327"/>
         <source>Copy</source>
-        <translation type="unfinished">Kopieren</translation>
+        <translation>Kopieren</translation>
     </message>
 </context>
 <context>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../qml/pages/ConcertsPage__.qml" line="25"/>
         <source>Concerts</source>
-        <translation type="unfinished">Konzerte</translation>
+        <translation>Konzerte</translation>
     </message>
 </context>
 <context>
@@ -98,37 +98,37 @@
     <message>
         <location filename="../qml/pages/EventListView.qml" line="19"/>
         <source>Going</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gehe</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventListView.qml" line="20"/>
         <source>Interested</source>
-        <translation type="unfinished"></translation>
+        <translation>Vielleicht</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventListView.qml" line="155"/>
+        <location filename="../qml/pages/EventListView.qml" line="165"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">Noch keine Pläne</translation>
+        <translation>Noch keine Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventListView.qml" line="298"/>
+        <location filename="../qml/pages/EventListView.qml" line="308"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">In Zwischenablage kopiert</translation>
+        <translation>In Zwischenablage kopiert</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventListView.qml" line="301"/>
+        <location filename="../qml/pages/EventListView.qml" line="311"/>
         <source>Open artists page</source>
-        <translation type="unfinished">Gehe zum Künstler</translation>
+        <translation>Gehe zum Künstler</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventListView.qml" line="312"/>
+        <location filename="../qml/pages/EventListView.qml" line="322"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Im Browser öffnen</translation>
+        <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventListView.qml" line="318"/>
+        <location filename="../qml/pages/EventListView.qml" line="328"/>
         <source>Copy</source>
-        <translation type="unfinished">Kopieren</translation>
+        <translation>Kopieren</translation>
     </message>
 </context>
 <context>
@@ -189,7 +189,7 @@
         <translation>Veranstaltungsort</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="199"/>
+        <location filename="../qml/pages/EventPage.qml" line="200"/>
         <source>Performer(s)</source>
         <translation>Künstler</translation>
     </message>
@@ -219,37 +219,37 @@ Wische nach links um zurückzukehren, nach rechts um Konzert im externen Browser
 <context>
     <name>PlansPage</name>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="154"/>
+        <location filename="../qml/pages/PlansPage.qml" line="169"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">Noch keine Pläne</translation>
+        <translation>Noch keine Pläne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="298"/>
+        <location filename="../qml/pages/PlansPage.qml" line="313"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">In Zwischenablage kopiert</translation>
+        <translation>In Zwischenablage kopiert</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="312"/>
+        <location filename="../qml/pages/PlansPage.qml" line="327"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Im Browser öffnen</translation>
+        <translation>Im Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="301"/>
+        <location filename="../qml/pages/PlansPage.qml" line="316"/>
         <source>Open artists page</source>
-        <translation type="unfinished">Gehe zum Künstler</translation>
+        <translation>Gehe zum Künstler</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="17"/>
         <source>Going</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehe</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="18"/>
         <source>Interested</source>
-        <translation type="unfinished"></translation>
+        <translation>Vielleicht</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="318"/>
+        <location filename="../qml/pages/PlansPage.qml" line="333"/>
         <source>Copy</source>
         <translation type="unfinished">Kopieren</translation>
     </message>

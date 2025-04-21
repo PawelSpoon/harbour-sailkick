@@ -6,7 +6,6 @@ import Nemo.Notifications 1.0
 import Sailfish.Share 1.0
 // DB should not be needed here !!
 import "../Persistance.js" as DB
-import "../SongKickApi.js" as API
 import "../common"
 
 

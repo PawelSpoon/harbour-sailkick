@@ -61,14 +61,12 @@ INSTALLS += python pythondeps skapi
 
 
 DISTFILES += \
-    qml/SongKickApiConversion.js \
     qml/common/AuthManager.qml \
     qml/pages/Concerts4DatePage.qml \
     qml/pages/TabedMainPageX.qml \
     qml/sf-docked-tab-bar/*.qml \
     qml/Persistance.js \
-    qml/SongKickApi.js \
-    qml/ApplicationContoler.qml \
+    qml/ApplicationControler.qml \
     qml/pages/ConcertsPage.qml \
     qml/pages/EventListView.qml \
     qml/sk-badge-white.png \
