@@ -53,13 +53,28 @@ SilicaListView {
             if (events[i].artistId) strArtistId = events[i].artistId.toString()
             upcomingModel.append({"title": shortTitle, "type": events[i].metroAreaName, "venue": events[i].venueName ,"date": dateWithDay(events[i].date), 
             "startTime": events[i].startTime , "uri" : events[i].eventUrl, "attendance": events[i].attendance,
-             "artist": events[i].artistName, "artistId": strArtistId, "artists": events[i].artists, "skid": events[i].skid,
+             "artist": events[i].artistName, "artistId": strArtistId, "artists": toSeparatedString(events[i].artists), "skid": events[i].skid,
              "street": events[i].venueStreetAddress, "city": events[i].venueCity, "postalCode": events[i].venuePostalCode})
-            console.log("added to model: " + JSON.stringify(upcomingModel.get(upcomingModel.count-1)))
+            //console.log("added to model: " + JSON.stringify(upcomingModel.get(upcomingModel.count-1)))
         }
         sortModel()
         applicationWindow.controller.setCurrentPage(type)
         applicationWindow.controller.updateCoverList(type, upcomingModel)
+    }
+
+    function toSeparatedString(artists)
+    {
+        var list
+        for (var i = 0; i < artists.length; i++)
+        { 
+            if (i === 0) {
+                list = artists[i]
+            } else {
+                list += ";" + artists[i]
+            }  
+        }
+
+        return list
     }
 
     QtObject {
@@ -116,7 +131,7 @@ SilicaListView {
     // this list is going to be populated from songkick webpage
     ListModel {
         id: upcomingModel
-        ListElement { title : "Title"; type : "Type"; date: "Date"; venue: "Venue"; uri: "uri"; attendance:"attendance"; artist: "artist"; artistId: "artistId"}
+        ListElement { title : "Title"; type : "Type"; date: "Date"; venue: "Venue"; uri: "uri"; attendance:"attendance"; artist: "artist"; artistId: "artistId"; artists:"artist1;artist2"; skid: "skid"; street: "street"; city: "city"; postalCode: "postalCode"}
     }
 
     ListElement {
@@ -193,7 +208,7 @@ SilicaListView {
                     upcommingList.currentIndex = index
                     // console.log(upcommingList.currentIndex)
                     var current = upcomingModel.get(upcommingList.currentIndex)
-                    console.log(JSON.stringify(current))
+                    console.log("before push:" + JSON.stringify(current))
                     pageStack.push(Qt.resolvedUrl("EventPage.qml"),{ uri: current.uri ,
                                        name: current.title ,
                                        type: current.type ,

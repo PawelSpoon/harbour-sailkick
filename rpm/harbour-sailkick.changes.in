@@ -14,6 +14,10 @@
 - load artist meta when open artist page (extract tour-info)
 - separate clear db from get-tracked-items, to keep artist meta data
 
+* Sun March 11 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.5.30-0
+- show artists on event page in case of festivals
+- fixes
+
 * Sun March 11 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.5.10-0
 - fixes
 - image on tracked item page

@@ -22,7 +22,7 @@ Dialog {
     property string postalCode
     property string uri
     property string artistImageUrl
-    property var artists
+    property var artists // array of strings
     property string im_going : qsTr("Going")
     property string i_might_go : qsTr("Interested")
 
@@ -186,6 +186,7 @@ Dialog {
 
             ListModel {
                 id: artistsModel
+                ListElement {displayName: "Name"; skid: "Skid"}
 
             }
 
@@ -250,6 +251,21 @@ Dialog {
 
     Component.onCompleted: {
         setTrackingInfo()
+        if (artistsModel.count > 0) {
+            artistsModel.clear()
+        }
+        var artistArray = artists.split(";")
+        if (true) {
+            for (var i=0; i<artistArray.length; i++)
+            {
+                var artist = artistArray[i]
+                artist = artist.trim()
+                artistsModel.append({displayName: artist});
+            }
+        } else {
+            console.log("No artists found")
+            artistsModel.append({displayName: "No artists found"});
+        }
     }
 
     function setTrackingInfo()
