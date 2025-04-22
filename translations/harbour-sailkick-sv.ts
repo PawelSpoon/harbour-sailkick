@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/ApplicationController.qml" line="294"/>
         <source>on tour</source>
-        <translation type="unfinished"></translation>
+        <translation>turnerar</translation>
     </message>
 </context>
 <context>
@@ -52,37 +52,37 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="15"/>
         <source>Going</source>
-        <translation type="unfinished"></translation>
+        <translation>Skall gå</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="16"/>
         <source>Interested</source>
-        <translation type="unfinished"></translation>
+        <translation>Intresserad</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="178"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">Du har inga kommande konserter i din kalender</translation>
+        <translation>Du har inga kommande konserter i din kalender</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="307"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">Kopierat till urklipp</translation>
+        <translation>Kopierat till urklipp</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="310"/>
         <source>Open artists page</source>
-        <translation type="unfinished">Öppna artistsida</translation>
+        <translation>Öppna artistsida</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="321"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Öppna i webbläsaren</translation>
+        <translation>Öppna i webbläsaren</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="327"/>
         <source>Copy</source>
-        <translation type="unfinished">Kopiera</translation>
+        <translation>Kopiera</translation>
     </message>
 </context>
 <context>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../qml/pages/ConcertsPage__.qml" line="25"/>
         <source>Concerts</source>
-        <translation type="unfinished">Konserter</translation>
+        <translation>Konserter</translation>
     </message>
 </context>
 <context>
@@ -98,37 +98,37 @@
     <message>
         <location filename="../qml/pages/EventListView.qml" line="19"/>
         <source>Going</source>
-        <translation type="unfinished"></translation>
+        <translation>Skall gå</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventListView.qml" line="20"/>
         <source>Interested</source>
-        <translation type="unfinished"></translation>
+        <translation>Intresserad</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventListView.qml" line="165"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">Du har inga kommande konserter i din kalender</translation>
+        <translation>Du har inga kommande konserter i din kalender</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventListView.qml" line="308"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">Kopierat till urklipp</translation>
+        <translation>Kopierat till urklipp</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventListView.qml" line="311"/>
         <source>Open artists page</source>
-        <translation type="unfinished">Öppna artistsida</translation>
+        <translation>Öppna artistsida</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventListView.qml" line="322"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Öppna i webbläsaren</translation>
+        <translation>Öppna i webbläsaren</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventListView.qml" line="328"/>
         <source>Copy</source>
-        <translation type="unfinished">Kopiera</translation>
+        <translation>Kopiera</translation>
     </message>
 </context>
 <context>
@@ -136,12 +136,12 @@
     <message>
         <location filename="../qml/pages/EventPage.qml" line="26"/>
         <source>Going</source>
-        <translation type="unfinished"></translation>
+        <translation>Skall gå</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="27"/>
         <source>Interested</source>
-        <translation type="unfinished"></translation>
+        <translation>Intresserad</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventPage.qml" line="40"/>
@@ -240,12 +240,12 @@
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="17"/>
         <source>Going</source>
-        <translation type="unfinished"></translation>
+        <translation>Skall gå</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="18"/>
         <source>Interested</source>
-        <translation type="unfinished"></translation>
+        <translation>Intresserad</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="333"/>
@@ -263,7 +263,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="36"/>
         <source>Reset Db and get tracked items</source>
-        <translation type="unfinished"></translation>
+        <translation>Återställ databas och hämta spårade objekt</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="50"/>
@@ -293,17 +293,17 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
         <source>Songkick Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Songkick-lösenord</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="85"/>
         <source>Set password</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange lösenord</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="104"/>
         <source>If you do not have a &lt;br&gt;Songkick account yet, &lt;br&gt;please create one. &lt;br&gt;When ever you modify your &lt;br&gt;tracking items on songkick.com, &lt;br&gt;sync them using&lt;br&gt;&apos;Get tracked items ..&apos;&lt;br&gt;pulldown menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Om du inte har något &lt;br&gt;Songkick-konto ännu, &lt;br&gt;kan du skapa ett.&lt;br&gt;När du ändrar dina &lt;br&gt;spårningsobjekt på songkick.com,&lt;br&gt;kan du synka dem med&lt;br&gt;&quot;Hämta spårade objekt...&quot;&lt;br&gt;i toppmenyn.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="117"/>
@@ -364,32 +364,32 @@
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="141"/>
         <source>Choose from date</source>
-        <translation type="unfinished">Välj från datum</translation>
+        <translation>Välj från datum</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="180"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Läs in mer</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="270"/>
         <source>Seems there are no events planed</source>
-        <translation type="unfinished"></translation>
+        <translation>Det verkar inte finnas några planerade händelser</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="401"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">Kopierat till urklipp</translation>
+        <translation>Kopierat till urklipp</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="404"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Öppna i webbläsaren</translation>
+        <translation>Öppna i webbläsaren</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemPage.qml" line="419"/>
         <source>Copy</source>
-        <translation type="unfinished">Kopiera</translation>
+        <translation>Kopiera</translation>
     </message>
 </context>
 <context>
@@ -397,12 +397,12 @@
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="143"/>
         <source>You are not tracking any ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Du spårar inga...</translation>
     </message>
     <message>
         <location filename="../qml/pages/TrackedItemsPage.qml" line="248"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Öppna i webbläsaren</translation>
+        <translation>Öppna i webbläsaren</translation>
     </message>
 </context>
 <context>
