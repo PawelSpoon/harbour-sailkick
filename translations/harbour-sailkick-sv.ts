@@ -4,7 +4,7 @@
 <context>
     <name>ApplicationController</name>
     <message>
-        <location filename="../qml/ApplicationController.qml" line="294"/>
+        <location filename="../qml/ApplicationController.qml" line="304"/>
         <source>on tour</source>
         <translation>turnerar</translation>
     </message>
@@ -134,62 +134,62 @@
 <context>
     <name>EventPage</name>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="26"/>
+        <location filename="../qml/pages/EventPage.qml" line="27"/>
         <source>Going</source>
         <translation>Skall gå</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="27"/>
+        <location filename="../qml/pages/EventPage.qml" line="28"/>
         <source>Interested</source>
         <translation>Intresserad</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="40"/>
+        <location filename="../qml/pages/EventPage.qml" line="41"/>
         <source>Webview</source>
         <translation>Webbvy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="46"/>
+        <location filename="../qml/pages/EventPage.qml" line="47"/>
         <source>Open in browser</source>
         <translation>Öppna i webbläsaren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="47"/>
+        <location filename="../qml/pages/EventPage.qml" line="48"/>
         <source> </source>
         <translation> </translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="54"/>
+        <location filename="../qml/pages/EventPage.qml" line="55"/>
         <source>Copied to clipboard</source>
         <translation>Kopierat till urklipp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="69"/>
+        <location filename="../qml/pages/EventPage.qml" line="70"/>
         <source>  </source>
         <translation>  </translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="80"/>
+        <location filename="../qml/pages/EventPage.qml" line="81"/>
         <source>Event name</source>
         <translation>Händelsenamn</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="91"/>
+        <location filename="../qml/pages/EventPage.qml" line="92"/>
         <source>Date unknown</source>
         <translation>Datum okänt</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="101"/>
+        <location filename="../qml/pages/EventPage.qml" line="102"/>
         <source>Start time unknown</source>
         <translation>Starttid okänd</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="121"/>
+        <location filename="../qml/pages/EventPage.qml" line="122"/>
         <source>Venue</source>
         <translation>Plats</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="200"/>
+        <location filename="../qml/pages/EventPage.qml" line="201"/>
         <source>Performer(s)</source>
         <translation>Aktör(er)</translation>
     </message>
@@ -362,32 +362,32 @@
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="141"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="142"/>
         <source>Choose from date</source>
         <translation>Välj från datum</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="180"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="181"/>
         <source>Load more</source>
         <translation>Läs in mer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="270"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="271"/>
         <source>Seems there are no events planed</source>
         <translation>Det verkar inte finnas några planerade händelser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="401"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="402"/>
         <source>Copied to clipboard</source>
         <translation>Kopierat till urklipp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="404"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="405"/>
         <source>Open in browser</source>
         <translation>Öppna i webbläsaren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="419"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="420"/>
         <source>Copy</source>
         <translation>Kopiera</translation>
     </message>

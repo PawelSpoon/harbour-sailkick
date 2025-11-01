@@ -1,4 +1,4 @@
 Parsed Artist Meta:
-imageUrl: 
+imageUrl: //assets.sk-static.com/images/default_images/thumb/default-artist.png
 onTour: True
 tracking: False

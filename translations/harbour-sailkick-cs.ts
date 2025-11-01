@@ -4,9 +4,9 @@
 <context>
     <name>ApplicationController</name>
     <message>
-        <location filename="../qml/ApplicationController.qml" line="294"/>
+        <location filename="../qml/ApplicationController.qml" line="304"/>
         <source>on tour</source>
-        <translation type="unfinished"></translation>
+        <translation>na cestách</translation>
     </message>
 </context>
 <context>
@@ -134,62 +134,62 @@
 <context>
     <name>EventPage</name>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="26"/>
-        <source>Going</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/pages/EventPage.qml" line="27"/>
-        <source>Interested</source>
-        <translation type="unfinished"></translation>
+        <source>Going</source>
+        <translation>Musím</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="40"/>
+        <location filename="../qml/pages/EventPage.qml" line="28"/>
+        <source>Interested</source>
+        <translation>Možná</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EventPage.qml" line="41"/>
         <source>Webview</source>
         <translation>Otevřít v Webview</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="46"/>
+        <location filename="../qml/pages/EventPage.qml" line="47"/>
         <source>Open in browser</source>
         <translation>Otevřít v prohlížeči</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="47"/>
+        <location filename="../qml/pages/EventPage.qml" line="48"/>
         <source> </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="54"/>
+        <location filename="../qml/pages/EventPage.qml" line="55"/>
         <source>Copied to clipboard</source>
         <translation>Kopírovalo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="69"/>
+        <location filename="../qml/pages/EventPage.qml" line="70"/>
         <source>  </source>
         <translation> </translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="80"/>
+        <location filename="../qml/pages/EventPage.qml" line="81"/>
         <source>Event name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="91"/>
+        <location filename="../qml/pages/EventPage.qml" line="92"/>
         <source>Date unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="101"/>
+        <location filename="../qml/pages/EventPage.qml" line="102"/>
         <source>Start time unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="121"/>
+        <location filename="../qml/pages/EventPage.qml" line="122"/>
         <source>Venue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EventPage.qml" line="200"/>
+        <location filename="../qml/pages/EventPage.qml" line="201"/>
         <source>Performer(s)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -362,32 +362,32 @@
 <context>
     <name>TrackedItemPage</name>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="141"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="142"/>
         <source>Choose from date</source>
         <translation type="unfinished">Vyber si datum</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="180"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="181"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="270"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="271"/>
         <source>Seems there are no events planed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="401"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="402"/>
         <source>Copied to clipboard</source>
         <translation type="unfinished">Kopírovat</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="404"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="405"/>
         <source>Open in browser</source>
         <translation type="unfinished">Otevřít v prohlížeči</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TrackedItemPage.qml" line="419"/>
+        <location filename="../qml/pages/TrackedItemPage.qml" line="420"/>
         <source>Copy</source>
         <translation type="unfinished">Kopírovat</translation>
     </message>

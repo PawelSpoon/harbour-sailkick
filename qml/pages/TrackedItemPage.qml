@@ -20,6 +20,7 @@ Page {
     property int page : 1
     property string startDate : ""
     property bool lockDate : false
+    property string headers : ""
 
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All

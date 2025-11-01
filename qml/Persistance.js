@@ -145,7 +145,7 @@ function getUser()
         var rs = tx.executeSql('SELECT DISTINCT title,pwd FROM user;');
         for (var i = 0; i < rs.rows.length; i++) {
             //root.addLocation(rs.rows.item(i).title,rs.rows.item(i).uid)
-            console.debug("get user:" + rs.rows.item(i).title + " with pwd:" + rs.rows.item(i).pwd);
+            // console.debug("get user:" + rs.rows.item(i).title + " with pwd:" + rs.rows.item(i).pwd);
             user = {"name": rs.rows.item(i).title, "pwd":rs.rows.item(i).pwd}
             break;
         }
@@ -203,7 +203,7 @@ function getTrackedItems(type)
         var rs = tx.executeSql(sql);
         for (var i = 0; i < rs.rows.length; i++) {
             var trackedItem = {title: decryptTitle(rs.rows.item(i).title), type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid, uri: rs.rows.item(i).txt, body: JSON.parse(rs.rows.item(i).body)}
-            console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid + " and body: " + rs.rows.item(i).body);
+            //console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid + " and body: " + rs.rows.item(i).body);
             trackedItems.push(trackedItem)
         }
     })
@@ -224,7 +224,7 @@ function getFilteredTrackedItems(type, nameLike)
         var rs = tx.executeSql(sql);
         for (var i = 0; i < rs.rows.length; i++) {
             var trackedItem = {title: decryptTitle(rs.rows.item(i).title), type: rs.rows.item(i).type, skid: rs.rows.item(i).skid, uid: rs.rows.item(i).uid, uri: rs.rows.item(i).txt, body: JSON.parse(rs.rows.item(i).body)}
-            console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid); //  + " and body: " + rs.rows.item(i).body);
+            //console.debug("get " + type + ": " + rs.rows.item(i).title + " with id:" + rs.rows.item(i).uid); //  + " and body: " + rs.rows.item(i).body);
             trackedItems.push(trackedItem)
         }
     })

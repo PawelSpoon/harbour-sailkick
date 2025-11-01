@@ -21,6 +21,7 @@ Dialog {
     property string attendance
     property string postalCode
     property string uri
+    property string headers
     property string artistImageUrl
     property var artists // array of strings
     property string im_going : qsTr("Going")
@@ -38,7 +39,7 @@ Dialog {
         PullDownMenu {
             MenuItem {
                 text: qsTr("Webview")
-                onClicked: pageStack.push(Qt.resolvedUrl("WebViewPage.qml"), {mainPage: root, uri: uri})
+                onClicked: pageStack.push(Qt.resolvedUrl("WebViewPage.qml"), {mainPage: root, uri: uri, headers: headers})
             }
         }
 
@@ -254,6 +255,7 @@ Dialog {
         if (artistsModel.count > 0) {
             artistsModel.clear()
         }
+        if (artists == undefined) return
         var artistArray = artists.split(";")
         if (true) {
             for (var i=0; i<artistArray.length; i++)
@@ -266,6 +268,7 @@ Dialog {
             console.log("No artists found")
             artistsModel.append({displayName: "No artists found"});
         }
+        console.log("EventPage - headers",headers)
     }
 
     function setTrackingInfo()

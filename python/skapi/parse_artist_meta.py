@@ -25,37 +25,32 @@ when not tracked:
 </form></div>'''
 
 def parse_artist_meta(html_content, base_url):
-    """Parse artist events from HTML content
+    """Parse artist meta information from HTML content
     Args:
         html_content (str): HTML content to parse
         base_url (str): Base URL for completing relative URLs
     Returns:
-        list: List of parsed events
+        dict: Dictionary with meta information (imageUrl, onTour, tracking)
     """
     soup = BeautifulSoup(html_content, 'html.parser')
-    result = {'imageUrl':'', 'onTour': False, 'tracking': False}
+    result = {'imageUrl': '', 'onTour': False, 'tracking': False}
 
-    # Get artist name from header
-    artist_ontour = False
-    artist_header = soup.find('div', class_='col-8 primary artist-overview')
-    if artist_header:
-        try:
-            ontour = artist_header.find('ul').find('li').find('strong').text.strip()
-            if ontour.lower() == 'yes':
-                artist_ontour = True
-        except Exception as e:
-            print(f"Error parsing artists event: {str(e)}")
-    
-        result['onTour'] = artist_ontour
+    # New calendar format has "on-tour" class on profile image
+    profile_image = soup.find('img', class_='artist-profile-image')
 
-    # Get tracking status from form
-    tracking = soup.find('button', class_='selected artist track')
-    track = False
-    if tracking:
-        tracking = tracking.text.strip()
-        if tracking.lower() == 'tracking':
-            track = True
+    # Check for on tour status
+    off_tour_button = soup.find('div', {'class': ['off-tour-button']})
+    if off_tour_button is None:
+        result['onTour'] = True
 
-    result['tracking'] = track
-    
+    # Check tracking status - works for both formats
+    # Tracking button is not available on /calendar page
+    #tracking_button = soup.find('button', {'class': ['artist', 'track']})
+    #if tracking_button and 'selected' in tracking_button.get('class', []):
+    #    result['tracking'] = True
+
+    # Get artist image URL if available
+    if profile_image:
+        result['imageUrl'] = profile_image.get('src', '')
+
     return result

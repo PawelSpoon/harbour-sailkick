@@ -99,7 +99,12 @@ Item {
     // opens the artist or location page on top of the carousell
     function openTrackedItemPageOnTop(type, trackedItemId, trackedItemName) {
         log(type, trackedItemId)
-        pageStack.push(Qt.resolvedUrl("pages/TrackedItemPage.qml"), { type: type, songKickId: trackedItemId, titleOf: trackedItemName })
+        var cleanName = trackedItemName.indexOf('@') > -1 ? 
+                   trackedItemName.substring(0, trackedItemName.indexOf('@') - 1) : 
+                   trackedItemName
+        var header = getHeadersForUrl("https://www.songkick.com/")
+        log(header)
+        pageStack.push(Qt.resolvedUrl("pages/TrackedItemPage.qml"), { type: type, songKickId: trackedItemId, titleOf: cleanName, headers: header })
     }
 
     // app specific
@@ -139,6 +144,11 @@ Item {
             model = getCurrentPageView(pageName).getCoverPageModel()
         }
         coverPage.fillModel(model)
+    }
+
+    function getHeadersForUrl(url) {
+        var header = applicationWindow.skApi.getHeadersForUrl(url)
+        return JSON.stringify(header)
     }
 
     // app specific

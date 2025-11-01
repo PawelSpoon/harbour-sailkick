@@ -23,6 +23,7 @@ class SongkickBridge:
             success = self.api.login(email, password)
             if success:
                 pyotherside.send('login_success')
+                pyotherside.send('headers', self.api.sk_headers, self.api.accounts_headers)
             else:
                 pyotherside.send('login_failed')
             return success
@@ -32,6 +33,12 @@ class SongkickBridge:
             return False
         finally:
             pyotherside.send('loadingFinished')
+
+    def getHeadersForUrl(self, url):
+        """Bridge method to get headers for URL"""
+        headers = self.api.get_headers_for_url(url)
+        pyotherside.send('debug', f"getHeadersForUrl {url} {headers}")
+        return headers
 
     def getUserPlans(self):
         action = 'getUserPlans'
@@ -109,7 +116,7 @@ class SongkickBridge:
         action = 'getTrackedItemEvents'
         meta = None
         pyotherside.send('loadingStarted')
-        pyotherside.send('debug', f"getTrackedItemEvents {type} {page}")
+        pyotherside.send('debug', f"getTrackedItemEvents {type} {id} {page}")
         try:
             if type == 'artist':
                 result, meta = self.api.get_artist_events(id)

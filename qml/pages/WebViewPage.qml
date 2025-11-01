@@ -11,6 +11,7 @@ import "../common"
 Dialog {
     id: trackedItemDetailsPage
     property string uri
+    property string headers
     property string agent: "Mozilla/5.0 (Linux; Android 4.4; Nexus 4 Build/KRT16H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36"
 
     allowedOrientations: Orientation.All
@@ -27,9 +28,14 @@ Dialog {
             //contentWidth : 600
             //settings.defaultFontSize: Theme.fontSizeMedium
             url: "http://www.google.com"
+            // httpHeaders: JSON.parse(headers)
             //scale: 1.5 // does scale but that is not good
-            httpUserAgent: "Mozilla/5.0 (Mobile; rv:78.0) Gecko/78.0"
-                        + " Firefox/78.0"
+            /*httpUserAgent: "Mozilla/5.0 (Mobile; rv:78.0) Gecko/78.0"
+                        + " Firefox/78.0"*/
+            canShowSelectionMarkers: true
+            downloadsEnabled: true
+            chrome: true
+            chromeGestureEnabled: true
 
             property variant devicePixelRatio: {//1.5
                 console.log(Screen.width)
@@ -48,7 +54,12 @@ Dialog {
     }
 
     Component.onCompleted: {
-       webView.url = uri
+       //WebEngineSettings.globalSettings.enableWebGLExtensions = true
+       webView.url = uri //+ "&source_product=skweb"
+
+       //webView.experimental.httpHeaders= JSON.parse(headers)
+       //webView.experimental.header = headers
+       //webView.experimental.headers = headers
        webView.reload()
        /*webView.experimental.evaluateJavaScript(
                     "document.querySelector(\"meta[name=viewport]\").setAttribute('content', 'width=device-width, initial-scale=1.0');");

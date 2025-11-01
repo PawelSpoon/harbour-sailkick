@@ -315,7 +315,30 @@ class SongkickApi:
             ]
             return any(logged_in_indicators)
         return False
-      
+
+    def get_headers_for_url(self, url):
+        """Get appropriate headers for a given URL
+        Args:
+            url (str): URL to get headers for
+        Returns:
+            dict: Headers appropriate for the URL"""
+        if 'accounts.songkick.com' in url:
+            headers = self.accounts_headers.copy()
+        else:
+            headers = self.sk_headers.copy()
+        
+        # Add cookies to headers
+        cookie_parts = []
+        for name, value in self.session.cookies.items():
+            cookie_parts.append(f"{name}={value}")
+        
+        if cookie_parts:
+            headers['Cookie'] = '; '.join(cookie_parts)
+        
+        pyotherside.send("debug", self.sk_headers)
+        pyotherside.send("debug", self.accounts_headers)
+        return headers
+         
     def search(self, query, search_type):
         """Search Songkick
         Args:
@@ -488,10 +511,12 @@ class SongkickApi:
         Returns:
             list: List of events for the artist
         """
-        events_url = f"{self.base_url}/artists/{artist_id}"
-        print(f"Fetching events for artist: {artist_id}")
+        events_url = f"{self.base_url}/artists/{artist_id}/calendar"
+        print(f"Fetching events for artist: {artist_id}/calendar")
+        pyotherside.send('debug', f"Fetching events for artist: {artist_id}/calendar")
 
         response = self.session.get(events_url, headers=self.sk_headers)
+        pyotherside.send('debug', f"Response status: {response.text}")
         
         if not response.ok:
             print("Failed to fetch events!")

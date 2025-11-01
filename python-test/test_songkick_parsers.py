@@ -109,7 +109,7 @@ class TestSongkickParsers(unittest.TestCase):
     def test_parse_artist_events(self):
         """Test parsing of artist events from test data"""
         # Load test data
-        test_file = os.path.join(self.test_data_dir, 'get_artist_events_response.html')
+        test_file = os.path.join(self.test_data_dir, 'get_artist_events_calendar_response.html')
         
         # Ensure test data directory exists
         os.makedirs(self.test_data_dir, exist_ok=True)
@@ -149,7 +149,7 @@ class TestSongkickParsers(unittest.TestCase):
     def test_parse_artist_meta(self):
         """Test parsing of artist events from test data"""
         # Load test data
-        test_file = os.path.join(self.test_data_dir, 'get_artist_events_response.html')
+        test_file = os.path.join(self.test_data_dir, 'get_artist_events_calendar_response.html')
         
         # Ensure test data directory exists
         os.makedirs(self.test_data_dir, exist_ok=True)

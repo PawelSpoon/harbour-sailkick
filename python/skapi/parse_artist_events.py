@@ -3,7 +3,7 @@ from .event import Event
 import json
 
 def parse_artist_events(html_content, base_url):
-    """Parse artist events from HTML content
+    """Parse artist events from HTML content with calendar format
     Args:
         html_content (str): HTML content to parse
         base_url (str): Base URL for completing relative URLs
@@ -15,16 +15,15 @@ def parse_artist_events(html_content, base_url):
 
     # Get artist name from header
     artist_name = None
-    artist_header = soup.find('h1', class_='h0')
+    artist_header = soup.find('div', class_='brief')
     if artist_header:
-        artist_name = artist_header.text.strip()
+        title = artist_header.find('h1', class_='title-copy')
+        if title:
+            full_text = title.text.strip()
+            artist_name = full_text.split('tour dates')[0].strip()
 
-    # Save parsed HTML for debugging
-    with open("parsed_html.html", "w", encoding="utf-8") as f:
-        f.write(str(soup.prettify()))
-
-    # Find the main calendar listings container  event-listings artist-calendar-summary 
-    calendar_listings = soup.find('ol', class_='event-listings artist-calendar-summary')
+    # Find the upcoming events section
+    calendar_listings = soup.find('ol', class_='event-listings tour-calendar-summary dynamic-ad-container')
     if not calendar_listings:
         print("No calendar listings found.")
         return results
@@ -35,52 +34,46 @@ def parse_artist_events(html_content, base_url):
     for event in events:
         try:
             myEvent = Event()
-            # Get date from time element
-            time_elem = event.find('time')
-            date = time_elem.get('datetime') if time_elem else 'N/A'
-
-            # Get event link and details
-            event_link = event.find('a')
-            if event_link:
-                url = base_url + event_link.get('href') if event_link.get('href') else None
-                
-                # Get location and venue from event details div
-                event_details = event_link.find('div', class_='event-details')
-                if event_details:
-                    primary_detail = event_details.find('strong', class_='primary-detail')
-                    if primary_detail:
-                        name = primary_detail.text.strip() if primary_detail else 'N/A'
-                        location = primary_detail.text.strip() if primary_detail else 'N/A'
+            
+            # Get event data from microformat JSON-LD
+            microformat = event.find('div', class_='microformat')
+            if microformat and microformat.script:
+                try:
+                    json_data = json.loads(microformat.script.string)[0]
                     
-                    secondary_detail = event_details.find('p', class_='secondary-detail')
-                    if secondary_detail:
-                        venue = secondary_detail.text.strip() if secondary_detail else 'N/A'
-                else:
-                    location = 'N/A'
-                    venue = 'N/A'
-            # todo: use  <div class="microformat"> to get artist image
-            try:
-                myEvent['eventUrl'] = url
-                myEvent['artists'] = [artist_name] if artist_name else []
-                myEvent['artistName'] = artist_name
-                myEvent['venueName'] = venue
-                myEvent['date'] = date
-                myEvent['name'] = name.split(',')[0] if name else 'N/A'
-                myEvent['metroAreaName'] = myEvent['name']
-                myEvent['startTime'] = date.split('T')[1] if date and 'T' in date else 'N/A' 
-                myEvent['venueStreet'] = 'N/A'
-                myEvent['venueCity'] = myEvent['name']
-                myEvent['venueCountry'] = name.split(',')[2] if len(name.split(',')) > 2 else 'N/A'
-                myEvent['attendance'] = 'N/A'
-                myEvent['venuePostalCode'] ='N/A'
-            except json.JSONDecodeError as e:
-                pyotherside.send('debug', f"JSON decode error: {str(e)}")           
+                    # Extract event details
+                    myEvent['eventUrl'] = json_data.get('url', '').split('?')[0]  # Remove tracking parameters
+                    myEvent['artists'] = [artist_name] if artist_name else []
+                    myEvent['artistName'] = artist_name
+                    myEvent['date'] = json_data.get('startDate', 'N/A')
+                    
+                    # Extract venue details
+                    location = json_data.get('location', {})
+                    myEvent['venueName'] = location.get('name', 'N/A')
+                    address = location.get('address', {})
+                    myEvent['venueCity'] = address.get('addressLocality', 'N/A')
+                    myEvent['venueCountry'] = address.get('addressCountry', 'N/A')
+                    myEvent['venueStreet'] = address.get('streetAddress', 'N/A')
+                    myEvent['venuePostalCode'] = address.get('postalCode', 'N/A')
+                    
+                    # Extract time from startDate if available
+                    if 'T' in myEvent['date']:
+                        myEvent['startTime'] = myEvent['date'].split('T')[1]
+                    else:
+                        myEvent['startTime'] = 'N/A'
+                        
+                    myEvent['name'] = myEvent['venueCity']
+                    myEvent['metroAreaName'] = myEvent['venueCity']
+                    myEvent['attendance'] = 'N/A'
+
+                except json.JSONDecodeError as e:
+                    print(f"Error parsing JSON-LD: {str(e)}")
+                    continue
 
             results.append(myEvent)
 
-
         except Exception as e:
-            print(f"Error parsing artists event: {str(e)}")
+            print(f"Error parsing event: {str(e)}")
             continue
 
     return results

@@ -32,6 +32,8 @@ Item {
     property var userLocationsResults
     // single tracked item results
     property var userTrackedItemResults
+    property var skHeaders
+    property var accountsHeaders
     
 
     Python {
@@ -113,6 +115,11 @@ Item {
                 meta = myController.convertBodyTourInfo(meta)
                 root.trackedItemMeta(type, id, meta)
             }) 
+            setHandler('headers', function(h1,h2) {
+                skHeaders = h1
+                accountsHeaders = h2
+                console.log("headers", h1, h2)
+            }) 
             importModule('songkick_bridge', function() {
                 console.log("songkick bridge module imported successfully")
             })
@@ -138,6 +145,18 @@ Item {
         pythonSkApi.call('songkick_bridge.Bridge.logIn', [username, pwd])
     }
 
+     // Synchronous function to get headers for URL
+    function getHeadersForUrl(url) {
+        /*var result = undefined
+        pythonSkApi.call_sync('songkick_bridge.Bridge.getHeadersForUrl', [url], function(headers) {
+            console.log("Headers for URL ini " + url + ": ", headers)    
+            result = headers
+        })*/
+        var result = skHeaders
+        console.log("Headers for URL " + url + ": ", result)
+        return result
+    }   
+
     // Function to get user plans
     function getUserPlansAsync() {
         console.log("getUserPlans")
@@ -161,7 +180,7 @@ Item {
     }
 
     function getTrackedItemEventsAsync(type, trackedItemId, page, minDate) {
-        console.log("getTrackedItemEventsAsync: " + type)
+        console.log("getTrackedItemEventsAsync: " + type + ", id: " + trackedItemId)
         pythonSkApi.call('songkick_bridge.Bridge.getTrackedItemEvents', [type, trackedItemId, page, minDate])
     }
 
