@@ -218,22 +218,22 @@
 <context>
     <name>PlansPage</name>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="169"/>
+        <location filename="../qml/pages/PlansPage.qml" line="170"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>You have no upcomming concerts in your calendar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="313"/>
+        <location filename="../qml/pages/PlansPage.qml" line="320"/>
         <source>Copied to clipboard</source>
         <translation>Copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="327"/>
+        <location filename="../qml/pages/PlansPage.qml" line="334"/>
         <source>Open in browser</source>
         <translation>Open in browser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="316"/>
+        <location filename="../qml/pages/PlansPage.qml" line="323"/>
         <source>Open artists page</source>
         <translation>Open artists page</translation>
     </message>
@@ -248,7 +248,12 @@
         <translation type="unfinished">Interested</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="333"/>
+        <location filename="../qml/pages/PlansPage.qml" line="176"/>
+        <source>Loading</source>
+        <translation>Loading ...</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PlansPage.qml" line="340"/>
         <source>Copy</source>
         <translation>Copy</translation>
     </message>

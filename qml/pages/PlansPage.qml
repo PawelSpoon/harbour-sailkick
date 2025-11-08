@@ -165,8 +165,15 @@ SilicaListView {
         model: upcomingModel
 
         ViewPlaceholder {
+            id: placeholder1
             enabled: upcomingModel.count === 0 // show placeholder text when no locations/artists are tracked
             text: qsTr("You have no upcomming concerts in your calendar")
+        }
+
+        ViewPlaceholder {
+            id: placeholder2
+            enabled: upcomingModel.count === 1 // show placeholder text when no locations/artists are tracked
+            text: qsTr("Loading")
         }
 
         // try to have sections by date

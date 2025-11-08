@@ -218,39 +218,44 @@
 <context>
     <name>PlansPage</name>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="169"/>
+        <location filename="../qml/pages/PlansPage.qml" line="170"/>
         <source>You have no upcomming concerts in your calendar</source>
-        <translation type="unfinished">No tienes próximos conciertos anotados en el calendario</translation>
+        <translation>No tienes próximos conciertos anotados en el calendario</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="313"/>
+        <location filename="../qml/pages/PlansPage.qml" line="320"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiado al portapapeles</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="327"/>
+        <location filename="../qml/pages/PlansPage.qml" line="334"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Abrir en el navegador</translation>
+        <translation>Abrir en el navegador</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="316"/>
+        <location filename="../qml/pages/PlansPage.qml" line="323"/>
         <source>Open artists page</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir página del artista</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="17"/>
         <source>Going</source>
-        <translation type="unfinished"></translation>
+        <translation>Me voy</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="18"/>
         <source>Interested</source>
-        <translation type="unfinished"></translation>
+        <translation>Interesado</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="333"/>
+        <location filename="../qml/pages/PlansPage.qml" line="176"/>
+        <source>Loading</source>
+        <translation>Cargando ...</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PlansPage.qml" line="340"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar</translation>
     </message>
 </context>
 <context>
