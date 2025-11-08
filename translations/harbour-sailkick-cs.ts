@@ -52,12 +52,12 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="15"/>
         <source>Going</source>
-        <translation type="unfinished"></translation>
+        <translation>Musím</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="16"/>
         <source>Interested</source>
-        <translation type="unfinished"></translation>
+        <translation>Možná</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="178"/>
@@ -98,12 +98,12 @@
     <message>
         <location filename="../qml/pages/EventListView.qml" line="19"/>
         <source>Going</source>
-        <translation type="unfinished"></translation>
+        <translation>Musím</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventListView.qml" line="20"/>
         <source>Interested</source>
-        <translation type="unfinished"></translation>
+        <translation>Možná</translation>
     </message>
     <message>
         <location filename="../qml/pages/EventListView.qml" line="165"/>
@@ -240,12 +240,12 @@
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="17"/>
         <source>Going</source>
-        <translation type="unfinished"></translation>
+        <translation>Musím</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="18"/>
         <source>Interested</source>
-        <translation type="unfinished"></translation>
+        <translation>Možná</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="333"/>
