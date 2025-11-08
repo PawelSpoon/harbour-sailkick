@@ -16,6 +16,10 @@ Name[cs]=Sailkick
 Name[sv]=Sailkick
 
 [X-Sailjail]
-Permissions=Internet
+Permissions=Internet;WebView
 OrganizationName=oarg.pawelspoon
 ApplicationName=harbour-sailkick
+
+[X-HarbourBackup]
+BackupPathList=.local/share/oarg.pawelspoon/harbour-sailkick/:.config/oarg.pawelspoon/harbour-sailkick/
+BackupConfigList=
