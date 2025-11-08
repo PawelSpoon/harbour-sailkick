@@ -15,7 +15,7 @@ SilicaListView {
     property string im_going : qsTr("Going")
     property string i_might_go : qsTr("Interested")
     property string listType : 'concert'
-
+    property bool initialized: false
 
     // the interface method
     function refresh()
@@ -76,10 +76,10 @@ SilicaListView {
         return list
     }
 
-
     Component.onCompleted:
     {
-       skApi.getUserConcertsAsync();
+        upcomingModel.clear() // remove dummy item for initialization        
+        skApi.getUserConcertsAsync();
     }
 
     Connections {
@@ -87,6 +87,7 @@ SilicaListView {
         onConcertsSuccess: {
             // Handle received plans
             console.log("Concerts received, filling model")
+            root.initialized = true
             upcomingModel.clear()
             fillUpCommingModelForOneTrackingEntry(listType, skApi.userConcertsResults)
         }
@@ -174,9 +175,16 @@ SilicaListView {
         model: upcomingModel
 
         ViewPlaceholder {
-            enabled: upcomingModel.count === 0 // show placeholder text when no locations/artists are tracked
-            text: qsTr("You have no upcomming concerts in your calendar")
+            id: placeholder1
+            enabled: upcomingModel.count === 0  && root.initialized // show placeholder text when no locations/artists are tracked
+            text: qsTr("You have no concert suggestions")
         }
+
+        ViewPlaceholder {
+            id: placeholder2
+            enabled: upcomingModel.count === 0 && !root.initialized // show placeholder text when no locations/artists are tracked
+            text: qsTr("Loading")
+        }        
 
         // try to have sections by date
         section {

@@ -17,6 +17,7 @@ SilicaListView {
     property string im_going : qsTr("Going")
     property string i_might_go : qsTr("Interested")
     property string listType : 'plans'
+    property bool initialized: false
 
     // the interface method
     function refresh()
@@ -88,7 +89,8 @@ SilicaListView {
 
     Component.onCompleted:
     {
-       skApi.getUserPlansAsync();
+        upcomingModel.clear() // remove dummy item for initialization
+        skApi.getUserPlansAsync();
     }
 
     Connections {
@@ -96,6 +98,7 @@ SilicaListView {
         onPlansSuccess: {
             // Handle received plans
             console.log("Plans received, filling model")
+            plans.initialized = true
             upcomingModel.clear()
             fillUpCommingModelForOneTrackingEntry(listType, skApi.userPlansResults)
         }
@@ -136,6 +139,7 @@ SilicaListView {
 
     ListElement {
         id: upcommingModelElement
+        //property bool hidden
         property string title
         property string type
         property string skid
@@ -166,13 +170,13 @@ SilicaListView {
 
         ViewPlaceholder {
             id: placeholder1
-            enabled: upcomingModel.count === 0 // show placeholder text when no locations/artists are tracked
+            enabled: upcomingModel.count === 0  && plans.initialized // show placeholder text when no locations/artists are tracked
             text: qsTr("You have no upcomming concerts in your calendar")
         }
 
         ViewPlaceholder {
             id: placeholder2
-            enabled: upcomingModel.count === 1 // show placeholder text when no locations/artists are tracked
+            enabled: upcomingModel.count === 0 && !plans.initialized // show placeholder text when no locations/artists are tracked
             text: qsTr("Loading")
         }
 
@@ -204,7 +208,7 @@ SilicaListView {
 
             width: ListView.view.width
             height: menuOpen ? contextMenu.height + contentItem.height : contentItem.height
-
+            //visible: !hidden
 
             BackgroundItem {
                 id: contentItem

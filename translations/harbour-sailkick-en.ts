@@ -60,27 +60,32 @@
         <translation>Interested</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="178"/>
-        <source>You have no upcomming concerts in your calendar</source>
-        <translation>You have no upcomming concerts in your calendar</translation>
+        <location filename="../qml/pages/ConcertsPage.qml" line="180"/>
+        <source>You have no concert suggestions</source>
+        <translation>You have no concert suggestions</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="307"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="186"/>
+        <source>Loading</source>
+        <translation>Loading ...</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ConcertsPage.qml" line="315"/>
         <source>Copied to clipboard</source>
         <translation>Copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="310"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="318"/>
         <source>Open artists page</source>
         <translation>Open artists page</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="321"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="329"/>
         <source>Open in browser</source>
         <translation>Open in browser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ConcertsPage.qml" line="327"/>
+        <location filename="../qml/pages/ConcertsPage.qml" line="335"/>
         <source>Copy</source>
         <translation>Copy</translation>
     </message>
@@ -218,22 +223,22 @@
 <context>
     <name>PlansPage</name>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="170"/>
+        <location filename="../qml/pages/PlansPage.qml" line="174"/>
         <source>You have no upcomming concerts in your calendar</source>
         <translation>You have no upcomming concerts in your calendar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="320"/>
+        <location filename="../qml/pages/PlansPage.qml" line="324"/>
         <source>Copied to clipboard</source>
         <translation>Copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="334"/>
+        <location filename="../qml/pages/PlansPage.qml" line="338"/>
         <source>Open in browser</source>
         <translation>Open in browser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="323"/>
+        <location filename="../qml/pages/PlansPage.qml" line="327"/>
         <source>Open artists page</source>
         <translation>Open artists page</translation>
     </message>
@@ -248,12 +253,12 @@
         <translation type="unfinished">Interested</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="176"/>
+        <location filename="../qml/pages/PlansPage.qml" line="180"/>
         <source>Loading</source>
         <translation>Loading ...</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PlansPage.qml" line="340"/>
+        <location filename="../qml/pages/PlansPage.qml" line="344"/>
         <source>Copy</source>
         <translation>Copy</translation>
     </message>
