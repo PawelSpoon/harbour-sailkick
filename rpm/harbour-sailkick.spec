@@ -13,7 +13,7 @@ Name:       harbour-sailkick
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Native Songkick Client
-Version:    5.50
+Version:    5.61
 Release:    0
 Group:      Qt/Qt
 License:    MIT
@@ -26,9 +26,6 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
-# BuildArch: noarch
-# does currently fail due to
-# Requires: /usr/bin/python3 libc.so.6()(64bit) libc.so.6(GLIBC_2.17)(64bit) libsailfishapp.so.1()(64bit) python3dist(lxml)
 
 %description
 Short description of my Sailfish OS Application

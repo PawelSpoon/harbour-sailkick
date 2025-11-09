@@ -8,9 +8,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Sun November 2 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.5.60-0
+* Sun November 2 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.5.61-0
 - hide dummy item in calendar and plans page
 - some translation fixes
+- swedisch
 
 * Sun November 2 2025 Pawel Spoon <pawel@ich-habe-fertig.com> 0.5.50-0
 - adapting desktop file with webview
