@@ -62,12 +62,12 @@
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="180"/>
         <source>You have no concert suggestions</source>
-        <translation type="unfinished"></translation>
+        <translation>Det finns inga konsertförslag</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="186"/>
         <source>Loading</source>
-        <translation type="unfinished"></translation>
+        <translation>Läser in</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConcertsPage.qml" line="315"/>
@@ -255,7 +255,7 @@
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="180"/>
         <source>Loading</source>
-        <translation type="unfinished"></translation>
+        <translation>Läser in</translation>
     </message>
     <message>
         <location filename="../qml/pages/PlansPage.qml" line="344"/>
